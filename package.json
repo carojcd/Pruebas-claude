@@ -1,0 +1,26 @@
+{
+  "name": "litivo-cinematic",
+  "version": "1.0.0",
+  "description": "LITIVO — Cinematic UI Motion (10 s, 1080x1920, 60 FPS) producido 100% con código",
+  "scripts": {
+    "audio": "node scripts/audio.mjs",
+    "render": "node scripts/render.mjs",
+    "preview": "node scripts/render.mjs --preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carojcd/Pruebas-claude.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/carojcd/Pruebas-claude/issues"
+  },
+  "homepage": "https://github.com/carojcd/Pruebas-claude#readme",
+  "dependencies": {
+    "@fontsource/inter-tight": "^5.3.0",
+    "playwright-core": "^1.56.1"
+  },
+  "type": "module",
+  "private": true
+}

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="4.5 7.6 107.3 33" fill="none" stroke="#FFFFFF">
+  <!-- LITIVO: redibujo vectorial medido píxel a píxel sobre la captura oficial
+       (no se suministró el SVG oficial). Unidades = píxeles de la captura. -->
+  <defs>
+    <clipPath id="litivo-v-clip"><rect x="55" y="12.4" width="40" height="23.2"/></clipPath>
+  </defs>
+  <g stroke-width="4.4" stroke-linecap="butt" stroke-linejoin="round">
+    <path d="M6.7 8.3V29.1A4.2 4.2 0 0 0 10.9 33.3H17.1"/>
+    <path d="M25.4 12.4V35.6"/>
+    <path d="M35.7 8.3V29.1A4.2 4.2 0 0 0 39.9 33.3H46.3"/>
+    <path d="M35.7 17.05H46.1" stroke-width="3.2"/>
+    <path d="M54.5 12.4V35.6"/>
+    <path d="M62.5 8.5L73.1 37.6L83.7 8.5" stroke-linejoin="miter" stroke-miterlimit="10" clip-path="url(#litivo-v-clip)"/>
+  </g>
+  <circle cx="99.5" cy="24.1" r="10.1" stroke-width="3.6"/>
+  <g stroke-width="2.4" stroke-linecap="butt">
+    <path d="M92.55 10.47A15.3 15.3 0 0 1 106.45 10.47"/>
+    <path d="M92.55 37.73A15.3 15.3 0 0 0 106.45 37.73"/>
+  </g>
+</svg>

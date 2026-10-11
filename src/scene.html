@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>LITIVO — Cinematic UI Motion</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="scene.css">
+</head>
+<body>
+<!-- Biblioteca de iconos (trazados a mano a partir de las capturas) -->
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="16" rx="2.6"/><path d="M8 2.8v3.6M16 2.8v3.6M3.5 9.6h17"/><g class="dots"><circle cx="8.2" cy="13.3" r=".55"/><circle cx="12" cy="13.3" r=".55"/><circle cx="15.8" cy="13.3" r=".55"/><circle cx="8.2" cy="16.9" r=".55"/><circle cx="12" cy="16.9" r=".55"/><circle cx="15.8" cy="16.9" r=".55"/></g></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 2.8H7.2a2.1 2.1 0 0 0-2.1 2.1v14.2a2.1 2.1 0 0 0 2.1 2.1h9.6a2.1 2.1 0 0 0 2.1-2.1V7.7z"/><path d="M13.8 2.8v5.1h5.1M9 12.6h6M9 16.3h6M9 9h2"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.8"/><path d="M8.6 12.2l2.3 2.3 4.5-4.7"/></symbol>
+    <symbol id="i-sign" viewBox="0 0 24 24"><path d="M12.6 3.2H7a2.1 2.1 0 0 0-2.1 2.1v13.9A2.1 2.1 0 0 0 7 21.3h9.9a2.1 2.1 0 0 0 2.1-2.1v-6.4"/><path d="M18.3 3.9a1.8 1.8 0 0 1 2.6 2.6l-7.4 7.4-3.4.8.8-3.4z"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4.5 12h14.5M13.5 6.5L19 12l-5.5 5.5"/></symbol>
+    <symbol id="i-chev-d" viewBox="0 0 24 24"><path d="M6.5 9.5l5.5 5.5 5.5-5.5"/></symbol>
+    <symbol id="i-chev-l" viewBox="0 0 24 24"><path d="M14.5 6.5L9 12l5.5 5.5"/></symbol>
+    <symbol id="i-chev-r" viewBox="0 0 24 24"><path d="M9.5 6.5L15 12l-5.5 5.5"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="M4 10.4L12 4l8 6.4V19a1.4 1.4 0 0 1-1.4 1.4H14.5v-5.6h-5v5.6H5.4A1.4 1.4 0 0 1 4 19z"/></symbol>
+    <symbol id="i-hand" viewBox="0 0 24 24"><path d="M11 17.5l1.8 1.6a1.4 1.4 0 0 0 2-2"/><path d="M14 18.5l1 .8a1.4 1.4 0 0 0 2-2l-3.4-3.3"/><path d="M15.3 15.6l1.3 1.1a1.4 1.4 0 0 0 2-2l-4.3-4.3a2 2 0 0 0-2.8 0l-.9.9a1.4 1.4 0 0 1-2-2l2.9-2.8a3 3 0 0 1 3.6-.4l.4.2a3 3 0 0 0 1.6.4H21"/><path d="M21 15h-2.1M3 6.5h2.3l4.1 4.1M3 15h2l5.2 4.9"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M3 5.5h5.5A3 3 0 0 1 11.5 8.5v11a2.3 2.3 0 0 0-2.3-2.3H3z"/><path d="M21 5.5h-5.5a3 3 0 0 0-3 3v11a2.3 2.3 0 0 1 2.3-2.3H21z"/><path d="M16.5 9.5h2.5M17.75 8.25v2.5"/></symbol>
+    <symbol id="i-list" viewBox="0 0 24 24"><path d="M8.5 6.5h12M8.5 12h12M8.5 17.5h12M3.8 6.5h.01M3.8 12h.01M3.8 17.5h.01"/></symbol>
+    <symbol id="i-bank" viewBox="0 0 24 24"><path d="M3 20.5h18M5.5 17.5v-7M9.8 17.5v-7M14.2 17.5v-7M18.5 17.5v-7M3 8.2L12 3.5l9 4.7z"/></symbol>
+    <symbol id="i-folder" viewBox="0 0 24 24"><path d="M3.5 7a2 2 0 0 1 2-2h3.8l2.1 2.4h7.1a2 2 0 0 1 2 2V18a2 2 0 0 1-2 2H5.5a2 2 0 0 1-2-2z"/><path d="M14 13.5h4.5M16.25 11.25v4.5"/></symbol>
+    <symbol id="i-panel" viewBox="0 0 24 24"><rect x="3.5" y="3.8" width="17" height="16.4" rx="2.4"/><path d="M9.2 3.8v16.4M15.6 10l-2 2 2 2"/></symbol>
+    <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6.2 9.2a5.8 5.8 0 0 1 11.6 0c0 5.6 2.4 7.2 2.4 7.2H3.8s2.4-1.6 2.4-7.2"/><path d="M10.3 19.8a1.9 1.9 0 0 0 3.4 0"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="9.5" cy="8" r="3.8"/><path d="M3.5 20a6 6 0 0 1 9.4-4.9"/><circle cx="17.6" cy="16.6" r="2.3"/><path d="M17.6 12.9v1.4M17.6 18.9v1.4M21.3 16.6h-1.4M15.3 16.6h-1.4"/></symbol>
+  </defs>
+</svg>
+
+<div id="stage">
+  <!-- PLANO POSTERIOR (2D): fondo Dark + gradientes ambientales -->
+  <div id="bg">
+    <div class="bg-grad"></div>
+    <div class="bg-halo" id="bgHalo"></div>
+  </div>
+
+  <div id="fade">
+    <div id="persp">
+      <div id="cam">
+        <!-- Plano posterior 3D: halos y arcos derivados del isotipo -->
+        <div class="world-halo" id="worldHalo"></div>
+        <svg class="far-arcs" id="farArcs" viewBox="-1000 -1000 2000 2000">
+          <g fill="none" stroke="#63C2C8">
+            <circle r="420" stroke-width="2" opacity=".35"/>
+            <path d="M-268.5 -544.9A607.5 607.5 0 0 1 268.5 -544.9" stroke-width="3" opacity=".45"/>
+            <path d="M-268.5 544.9A607.5 607.5 0 0 0 268.5 544.9" stroke-width="3" opacity=".45"/>
+            <circle r="780" stroke-width="1.2" opacity=".18"/>
+            <path d="M-433 -848A952 952 0 0 1 433 -848" stroke-width="1.5" opacity=".22"/>
+            <path d="M-433 848A952 952 0 0 0 433 848" stroke-width="1.5" opacity=".22"/>
+          </g>
+        </svg>
+
+        <!-- PLANO INTERMEDIO: dashboard real reconstruido (coordenadas = píxeles de la captura) -->
+        <div id="dash">
+          <div class="leaf dash-edge" id="dashEdge"></div>
+          <div class="leaf panel" id="mainBg"></div>
+
+          <aside class="leaf panel" id="sidebar">
+            <img src="logo.svg" class="side-logo" alt="LITIVO">
+            <div class="nav-active"><svg class="ic"><use href="#i-home"/></svg><span>Inicio</span></div>
+            <div class="nav-label" style="top:150px">MI GESTIÓN</div>
+            <div class="nav-item" style="top:179px"><svg class="ic"><use href="#i-hand"/></svg><span>Conciliación</span><svg class="ic chev"><use href="#i-chev-d"/></svg></div>
+            <div class="nav-sub" style="top:222px"><svg class="ic"><use href="#i-book"/></svg><span>Crear solicitud</span></div>
+            <div class="nav-sub" style="top:259px"><svg class="ic"><use href="#i-list"/></svg><span>Lista de procesos</span></div>
+            <div class="nav-item" style="top:299px"><svg class="ic"><use href="#i-bank"/></svg><span>Insolvencia</span><svg class="ic chev"><use href="#i-chev-d"/></svg></div>
+            <div class="nav-sub" style="top:342px"><svg class="ic"><use href="#i-book"/></svg><span>Crear solicitud</span></div>
+            <div class="nav-sub" style="top:379px"><svg class="ic"><use href="#i-list"/></svg><span>Lista de procesos</span></div>
+            <div class="nav-item" style="top:419px"><svg class="ic"><use href="#i-cal"/></svg><span>Audiencias</span></div>
+            <div class="nav-item" style="top:463px"><svg class="ic"><use href="#i-folder"/></svg><span>Funciones</span><svg class="ic chev"><use href="#i-chev-d"/></svg></div>
+            <div class="nav-sub" style="top:506px"><svg class="ic"><use href="#i-list"/></svg><span>Tarifas</span></div>
+            <div class="nav-label" style="top:560px">ACCIONES</div>
+            <div class="side-cta"><svg class="ic"><use href="#i-cal"/></svg><span>Próxima audiencia</span></div>
+          </aside>
+
+          <header class="leaf panel" id="topbar">
+            <svg class="ic tb-panel"><use href="#i-panel"/></svg>
+            <div class="tb-icon" style="left:1453px"><svg class="ic"><use href="#i-cal"/></svg><i class="tb-dot"></i></div>
+            <div class="tb-icon" style="left:1500px"><svg class="ic"><use href="#i-bell"/></svg><i class="tb-dot"></i></div>
+            <div class="tb-icon" style="left:1546px"><svg class="ic"><use href="#i-user"/></svg></div>
+            <div class="tb-avatar">SM</div>
+            <div class="tb-name">Santiago Marín</div>
+            <div class="tb-role">Solicitante</div>
+            <svg class="ic tb-chev"><use href="#i-chev-d"/></svg>
+          </header>
+
+          <!-- Encabezado (capa con ligera elevación para parallax) -->
+          <div class="leaf txt" id="hDate">JUEVES, 10 DE SEPTIEMBRE</div>
+          <div class="leaf txt fit" id="hTitle" data-w="392">Buenos días, Santiago</div>
+          <div class="leaf txt" id="hSub">Aquí tienes el resumen de tu semana:</div>
+          <div class="leaf panel" id="hCta"><svg class="ic"><use href="#i-cal"/></svg><span>Próxima audiencia</span></div>
+
+          <!-- Huecos que dejan las tarjetas al desprenderse -->
+          <div class="leaf slot" id="slot1" style="left:488px"></div>
+          <div class="leaf slot" id="slot2" style="left:907px"></div>
+          <div class="leaf slot" id="slot3" style="left:1327px"></div>
+          <div class="leaf cshadow" id="shadow1"></div>
+          <div class="leaf cshadow" id="shadow2"></div>
+          <div class="leaf cshadow" id="shadow3"></div>
+
+          <div class="leaf txt sec-title" style="top:368px">Requiere tu atención</div>
+          <div class="leaf txt sec-more" style="top:372px">Ver más <svg class="ic"><use href="#i-arrow"/></svg></div>
+          <div class="leaf txt sec-title" style="top:667px">Próximas audiencias</div>
+          <div class="leaf txt sec-more" style="top:672px">Ver más <svg class="ic"><use href="#i-arrow"/></svg></div>
+          <div class="leaf txt sec-title" style="top:1024px">Últimos procesos admitidos</div>
+          <div class="leaf txt sec-more" style="top:1031px">Ver todos <svg class="ic"><use href="#i-arrow"/></svg></div>
+
+          <!-- MÓDULO: Requiere tu atención -->
+          <div class="mod3d" id="att">
+            <div class="leaf mod-plate" id="attPlate"></div>
+            <div class="row3d" id="attRow0">
+              <div class="leaf row-face">
+                <div class="ibox"><svg class="ic"><use href="#i-sign"/></svg></div>
+                <div class="r-title">Firmar documento</div>
+                <div class="r-sub">Insolvencia · María García López</div>
+                <div class="r-right"><span class="r-meta">Hoy</span><span class="btn">Firmar</span></div>
+              </div>
+            </div>
+            <div class="row3d" id="attRow1">
+              <div class="leaf row-face">
+                <div class="ibox"><svg class="ic"><use href="#i-file"/></svg></div>
+                <div class="r-title">Completar información del acreedor</div>
+                <div class="r-sub">Insolvencia · Daniela Ramírez</div>
+                <div class="r-right"><span class="r-meta">Pendiente</span><span class="btn">Completar</span></div>
+              </div>
+            </div>
+            <div class="row3d" id="attRow2">
+              <div class="leaf row-face">
+                <div class="ibox"><svg class="ic"><use href="#i-cal"/></svg></div>
+                <div class="r-title">Revisar audiencia</div>
+                <div class="r-sub">Conciliación · Carlos Rodríguez</div>
+                <div class="r-right"><span class="r-meta">12 sep</span><span class="btn">Revisar</span></div>
+              </div>
+            </div>
+            <div class="leaf neon-edge" id="attEdge"></div>
+            <div class="leaf neon-sweep" id="attSweep"></div>
+          </div>
+
+          <!-- MÓDULO: Próximas audiencias -->
+          <div class="mod3d" id="cal">
+            <div class="leaf mod-plate" id="calPlate"></div>
+            <div class="leaf txt cal-head" id="calHead">
+              <svg class="ic cal-prev"><use href="#i-chev-l"/></svg>
+              <div class="cal-month">Septiembre de 2026</div>
+              <svg class="ic cal-next"><use href="#i-chev-r"/></svg>
+            </div>
+            <div class="leaf panel day-sel" id="daySel"></div>
+            <div class="leaf txt day" id="day0" style="left:14px"><b>MAR</b><span>8</span></div>
+            <div class="leaf txt day" id="day1" style="left:188px"><b>MIÉ</b><span>9</span></div>
+            <div class="leaf txt day on" id="day2" style="left:362px"><b>JUE</b><span>10</span><i class="ddot"></i></div>
+            <div class="leaf txt day" id="day3" style="left:536px"><b>VIE</b><span>11</span></div>
+            <div class="leaf txt day" id="day4" style="left:710px"><b>SÁB</b><span>12</span><i class="ddot aq"></i></div>
+            <div class="leaf txt day" id="day5" style="left:884px"><b>DOM</b><span>13</span></div>
+            <div class="leaf txt day" id="day6" style="left:1058px"><b>LUN</b><span>14</span></div>
+            <div class="row3d aud" id="aud0">
+              <div class="leaf row-face">
+                <div class="ibox"><svg class="ic"><use href="#i-cal"/></svg></div>
+                <div class="r-title">Audiencia de negociación de deudas</div>
+                <div class="r-sub">Insolvencia · María García López</div>
+                <div class="r-right"><span class="r-time">10:00 a. m.</span><span class="btn">Ver expediente</span></div>
+              </div>
+            </div>
+            <div class="row3d aud" id="aud1">
+              <div class="leaf row-face">
+                <div class="ibox"><svg class="ic"><use href="#i-cal"/></svg></div>
+                <div class="r-title">Audiencia de verificación documental</div>
+                <div class="r-sub">Insolvencia · Daniela Ramírez</div>
+                <div class="r-right"><span class="r-time">2:30 p. m.</span><span class="btn">Ver expediente</span></div>
+              </div>
+            </div>
+            <div class="leaf neon-edge" id="calEdge"></div>
+            <div class="leaf neon-sweep" id="calSweep"></div>
+          </div>
+
+          <!-- Estelas luminosas (ecos de contorno) -->
+          <div id="trails"></div>
+
+          <!-- PLANO ANTERIOR: tarjetas de estadísticas -->
+          <div class="card3d" id="card1" data-slot="488">
+            <div class="leaf c-halo"></div>
+            <div class="leaf c-face">
+              <div class="c-num">5</div>
+              <div class="ibox c-ibox"><svg class="ic"><use href="#i-cal"/></svg></div>
+              <div class="c-label">Audiencias próximas</div>
+              <div class="c-more">Ver más <svg class="ic"><use href="#i-arrow"/></svg></div>
+              <div class="c-spec"></div><div class="c-shade"></div>
+            </div>
+            <div class="leaf neon-edge"></div>
+            <div class="leaf neon-sweep"></div>
+          </div>
+          <div class="card3d" id="card2" data-slot="907">
+            <div class="leaf c-halo"></div>
+            <div class="leaf c-face">
+              <div class="c-num">3</div>
+              <div class="ibox c-ibox"><svg class="ic"><use href="#i-file"/></svg></div>
+              <div class="c-label">Procesos admitidos</div>
+              <div class="c-more">Ver más <svg class="ic"><use href="#i-arrow"/></svg></div>
+              <div class="c-spec"></div><div class="c-shade"></div>
+            </div>
+            <div class="leaf neon-edge"></div>
+            <div class="leaf neon-sweep"></div>
+          </div>
+          <div class="card3d" id="card3" data-slot="1327">
+            <div class="leaf c-halo"></div>
+            <div class="leaf c-face">
+              <div class="c-num">2</div>
+              <div class="ibox c-ibox"><svg class="ic"><use href="#i-check"/></svg></div>
+              <div class="c-label">Procesos finalizados</div>
+              <div class="c-more">Ver más <svg class="ic"><use href="#i-arrow"/></svg></div>
+              <div class="c-spec"></div><div class="c-shade"></div>
+            </div>
+            <div class="leaf neon-edge"></div>
+            <div class="leaf neon-sweep"></div>
+          </div>
+
+          <!-- Línea Aqua de activación (vive sobre el plano del dashboard) -->
+          <div class="leaf scan-band" id="scanBand"></div>
+          <div class="leaf scan-line" id="scanLine"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Capa 2D de marca (no depende de la cámara, sin deformaciones del logotipo) -->
+  <div id="brand">
+    <div class="brand-halo" id="brandHalo"></div>
+    <svg class="brand-arcs" id="brandArcs" viewBox="-540 -540 1080 1080">
+      <g fill="none" stroke="#63C2C8" stroke-linecap="round">
+        <path id="ba1" d="M-197.6 -387.8A435 435 0 0 1 197.6 -387.8" stroke-width="2.4"/>
+        <path id="ba2" d="M-197.6 387.8A435 435 0 0 0 197.6 387.8" stroke-width="2.4"/>
+        <path id="ba3" d="M-232.6 -456.5A512 512 0 0 1 232.6 -456.5" stroke-width="1.2"/>
+        <path id="ba4" d="M-232.6 456.5A512 512 0 0 0 232.6 456.5" stroke-width="1.2"/>
+      </g>
+    </svg>
+    <img src="logo.svg" id="brandLogo" alt="LITIVO">
+    <div id="tagline">Donde la justicia evoluciona.</div>
+  </div>
+
+  <div id="vignette"></div>
+  <div id="flash"></div>
+</div>
+
+<script type="module" src="scene.js"></script>
+</body>
+</html>
