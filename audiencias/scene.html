@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>LITIVO — Audiencias</title>
+<link rel="icon" href="data:,">
+<style>
+@font-face { font-family: 'Inter Tight'; font-weight: 500; src: url(fonts/inter-tight-latin-500-normal.woff2) format('woff2'); }
+@font-face { font-family: 'Inter Tight'; font-weight: 600; src: url(fonts/inter-tight-latin-600-normal.woff2) format('woff2'); }
+@font-face { font-family: 'Inter Tight'; font-weight: 700; src: url(fonts/inter-tight-latin-700-normal.woff2) format('woff2'); }
+:root { --aqua: #63C2C8; --teal: #3E9891; --dark: #19292C; --aqua-l: #DCF6F3; --gray-l: #DDE2E5; --cell: #EFF8F7;
+  --aqua-rgb: 99, 194, 200; --teal-rgb: 62, 152, 145; --dark-rgb: 25, 41, 44; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { width: 1080px; height: 1920px; overflow: hidden; background: var(--dark); }
+body { font-family: 'Inter Tight', sans-serif; -webkit-font-smoothing: antialiased; color: var(--dark); }
+#stage { position: absolute; inset: 0; overflow: hidden;
+  background: radial-gradient(110% 55% at 50% 108%, rgba(var(--teal-rgb), .22), transparent 62%), radial-gradient(90% 45% at 50% -6%, rgba(var(--teal-rgb), .14), transparent 66%), var(--dark); }
+#halo { position: absolute; left: 540px; top: 960px; width: 1900px; height: 1900px; margin: -950px 0 0 -950px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(var(--aqua-rgb), .24) 0%, rgba(var(--teal-rgb), .1) 34%, transparent 66%); opacity: 0; }
+#arcs { position: absolute; left: -60px; top: 360px; width: 1200px; height: 1200px; opacity: 0; }
+#persp { position: absolute; inset: 0; perspective: 1500px; perspective-origin: 540px 960px; }
+#cam { position: absolute; left: 540px; top: 960px; transform-style: preserve-3d; }
+#card { position: absolute; left: -631px; top: -220px; width: 1262px; height: 440px; transform-style: preserve-3d; }
+#card > * { position: absolute; transform-style: flat; }
+.shadow { left: 60px; top: 380px; width: 1130px; height: 160px; border-radius: 50%; background: rgba(8, 16, 18, .7); filter: blur(40px); }
+.hglow { left: -110px; top: -110px; width: 1472px; height: 696px; border-radius: 140px;
+  background: radial-gradient(closest-side, rgba(var(--aqua-rgb), .42), rgba(var(--teal-rgb), .16) 62%, transparent); }
+.face { inset: 0; border-radius: 18px; background: #FFFFFF; border: 1px solid var(--gray-l); }
+.edge { inset: -2px; border-radius: 24px; border: 2px solid rgba(var(--aqua-rgb), 1);
+  box-shadow: 0 0 8px rgba(var(--aqua-rgb), .95), 0 0 30px rgba(var(--aqua-rgb), .6), 0 0 90px rgba(var(--teal-rgb), .5), inset 0 0 18px rgba(var(--aqua-rgb), .3); }
+.sweep { inset: -4px; border-radius: 26px; padding: 3.5px;
+  background: conic-gradient(from var(--ang, 0deg), transparent 0deg, transparent 240deg, rgba(var(--aqua-rgb), .9) 320deg, #FFFFFF 350deg, rgba(var(--aqua-rgb), .9) 355deg, transparent 360deg);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude;
+  filter: drop-shadow(0 0 8px rgba(var(--aqua-rgb), .9)); }
+.face { background: #F4FAF9 !important; }
+.h1 { left: 22px; top: 6px; font-size: 41px; font-weight: 700; letter-spacing: -.01em; }
+.h2 { left: 22px; top: 62px; font-size: 16.5px; font-weight: 500; color: rgba(var(--dark-rgb), .85); white-space: nowrap; }
+.pn { left: 22px; width: 1218px; border-radius: 16px; border: 1px solid #CFD8DB; background: #FFF; }
+.pn.bn { background: #DAF4F0; border-color: #BFE3DD; }
+.st { top: 120px; } .st b { position: absolute; top: 0; font-size: 23px; font-weight: 700; color: var(--teal); }
+.st span { position: absolute; top: 37px; font-size: 15px; font-weight: 500; white-space: nowrap; }
+.tx { white-space: nowrap; }
+.k { left: 38px; top: 224px; font-size: 12px; font-weight: 700; color: var(--teal); letter-spacing: .03em; }
+.l1 { left: 38px; top: 246px; font-size: 17.5px; font-weight: 700; } .l2 { left: 38px; top: 270px; font-size: 15px; font-weight: 500; color: rgba(var(--dark-rgb), .85); }
+.vb { left: 1090px; top: 234px; width: 134px; height: 44px; border-radius: 11px; border: 1.5px solid var(--teal); background: #FFF; color: var(--teal); font-size: 15.5px; font-weight: 700; display: grid; place-items: center; }
+.box { top: 342px; height: 44px; border-radius: 10px; border: 1px solid #CDD4D7; background: #FFF; display: flex; align-items: center; padding: 0 13px; gap: 10px; font-size: 15px; font-weight: 500; white-space: nowrap; }
+.box svg { fill: none; stroke: var(--dark); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.box .ph { color: rgba(var(--dark-rgb), .6); } .box.dd { justify-content: space-between; }
+.box.mf { border: 1.5px solid var(--teal); color: var(--teal); font-weight: 700; justify-content: center; } .box.mf svg { stroke: var(--teal); }
+#vignette { position: absolute; inset: 0; background: radial-gradient(120% 75% at 50% 50%, transparent 55%, rgba(14, 24, 26, .55) 100%); }
+</style>
+</head>
+<body>
+<div id="stage">
+  <div id="halo"></div>
+  <svg id="arcs" viewBox="-600 -600 1200 1200"><g fill="none" stroke="#63C2C8" stroke-linecap="round">
+    <path d="M-222 -436A490 490 0 0 1 222 -436" stroke-width="2.4" opacity=".5"/><path d="M-222 436A490 490 0 0 0 222 436" stroke-width="2.4" opacity=".5"/>
+    <path d="M-258 -508A570 570 0 0 1 258 -508" stroke-width="1.2" opacity=".25"/><path d="M-258 508A570 570 0 0 0 258 508" stroke-width="1.2" opacity=".25"/></g></svg>
+  <div id="persp"><div id="cam"><div id="card"></div></div></div>
+  <div id="vignette"></div>
+</div>
+<script type="module" src="scene.js"></script>
+</body>
+</html>
