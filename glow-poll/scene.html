@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<style>
+  :root { --W: 1920px; --H: 1080px; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: var(--W); height: var(--H); overflow: hidden; background: #03030a; }
+  #stage { position: absolute; inset: 0; transform-origin: 50% 46%; }
+  canvas { position: absolute; inset: 0; }
+  #vignette { position: absolute; inset: 0; pointer-events: none;
+    background:
+      radial-gradient(ellipse 75% 70% at 50% 45%, transparent 55%, rgba(0,0,6,.55) 100%),
+      linear-gradient(to bottom, transparent 88%, rgba(10,10,14,.85) 94%, rgba(22,22,26,.92) 100%); }
+
+  #title { position: absolute; left: 0; right: 0; top: 120px; text-align: center;
+    font: 700 132px/1 'Montserrat', sans-serif; letter-spacing: -1px; color: #fff; white-space: nowrap;
+    text-shadow: 0 0 6px rgba(205,195,255,.9), 0 0 22px rgba(150,120,255,.85), 0 0 48px rgba(120,90,255,.6), 0 0 90px rgba(100,70,240,.35);
+    z-index: 3; }
+
+  .card { position: absolute; top: 262px; width: 412px; height: 628px; border-radius: 34px;
+    background: linear-gradient(180deg, rgba(96,96,102,.55), rgba(74,74,80,.50));
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.10), 0 30px 60px rgba(0,0,0,.35);
+    backdrop-filter: blur(7px); -webkit-backdrop-filter: blur(7px);
+    transform-origin: 50% 60%; z-index: 2; }
+  .icon { position: absolute; left: 84px; top: 150px; width: 244px; height: 244px; border-radius: 52px;
+    background: #00005b; border: 4px solid #9b9bff; display: grid; place-items: center; }
+  .icon span { font: 700 128px/1 'Montserrat', sans-serif; color: #9999ff; letter-spacing: -2px; transform: translateY(-2px); }
+  .label { position: absolute; left: 0; right: 0; top: 476px; text-align: center;
+    font: 600 34px/1.38 'Montserrat', sans-serif; color: #e6e6ea; letter-spacing: .3px; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <canvas id="bg" width="1920" height="1080"></canvas>
+  <div id="vignette"></div>
+  <div id="title">¿Qué opción prefieres?</div>
+  <div class="card" style="left:231px"><div class="icon"><span>Pr</span></div><div class="label">ESTILO 1:<br>BRIGHT GLOW</div></div>
+  <div class="card" style="left:754px"><div class="icon"><span>Pr</span></div><div class="label">ESTILO 2:<br>MODERATE GLOW</div></div>
+  <div class="card" style="left:1277px"><div class="icon"><span>Pr</span></div><div class="label">ESTILO 3:<br>MINIMAL GLOW</div></div>
+</div>
+<script>
+const W = 1920, H = 1080, FPS = 60;
+const cv = document.getElementById('bg'), cx = cv.getContext('2d');
+const stage = document.getElementById('stage');
+const title = document.getElementById('title');
+const cards = [...document.querySelectorAll('.card')];
+
+// PRNG determinista
+let seed = 7; const rnd = () => ((seed = (seed * 16807) % 2147483647) - 1) / 2147483646;
+
+// --- Fondo estático: espacio profundo + estrellas (pre-renderizado una vez) ---
+const space = document.createElement('canvas'); space.width = W; space.height = H;
+{ const g = space.getContext('2d');
+  g.fillStyle = '#05061a'; g.fillRect(0, 0, W, H);
+  const neb = [[420, 300, 700, 'rgba(40,30,90,.35)'], [1500, 700, 800, 'rgba(25,35,90,.30)'], [1000, 520, 900, 'rgba(30,20,70,.22)']];
+  for (const [x, y, r, c] of neb) { const rg = g.createRadialGradient(x, y, 0, x, y, r); rg.addColorStop(0, c); rg.addColorStop(1, 'transparent'); g.fillStyle = rg; g.fillRect(0, 0, W, H); }
+  for (let i = 0; i < 2600; i++) { const a = Math.pow(rnd(), 2.6) * .85; g.fillStyle = `rgba(220,225,255,${a})`; g.fillRect(rnd() * W, rnd() * H, 1.4, 1.4); }
+}
+const twinkles = Array.from({ length: 120 }, () => ({ x: rnd() * W, y: rnd() * H, r: .8 + rnd() * 1.6, p: rnd() * 6.28, s: 1.5 + rnd() * 2.5 }));
+
+// --- Rejilla deformada ---
+const CELL = 86;
+function warp(x, y, t) {
+  const ph = t * 0.35;
+  const dx = 26 * Math.sin(y * 0.0062 + x * 0.0021 + ph) + 14 * Math.sin(y * 0.013 - x * 0.004 + 1.7 + ph * 1.3);
+  const dy = 22 * Math.sin(x * 0.0058 - y * 0.0018 + 0.9 + ph * 0.8) + 12 * Math.sin(x * 0.012 + y * 0.005 + 2.4 - ph);
+  return [x + dx, y + dy];
+}
+function drawGrid(t) {
+  cx.save();
+  const path = new Path2D();
+  const step = 12;
+  for (let gx = -2 * CELL; gx <= W + 2 * CELL; gx += CELL) {
+    for (let y = -60; y <= H + 60; y += step) { const [px, py] = warp(gx + 20, y, t); y === -60 ? path.moveTo(px, py) : path.lineTo(px, py); }
+  }
+  for (let gy = -2 * CELL; gy <= H + 2 * CELL; gy += CELL) {
+    for (let x = -60; x <= W + 60; x += step) { const [px, py] = warp(x, gy + 30, t); x === -60 ? path.moveTo(px, py) : path.lineTo(px, py); }
+  }
+  cx.lineJoin = 'round';
+  cx.strokeStyle = 'rgba(190,200,255,.10)'; cx.lineWidth = 9; cx.filter = 'blur(4px)'; cx.stroke(path);
+  cx.filter = 'none'; cx.strokeStyle = 'rgba(245,246,255,.92)'; cx.lineWidth = 2.6; cx.stroke(path);
+  cx.restore();
+}
+
+// --- Easing / utilidades ---
+const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
+const prog = (t, s, d) => clamp((t - s) / d);
+const easeOut = (p) => 1 - Math.pow(1 - p, 4);
+const easeOutBack = (p) => { const c = 1.25; return 1 + (c + 1) * Math.pow(p - 1, 3) + c * Math.pow(p - 1, 2); };
+
+// Glow por estilo: [radio interior, radio exterior, intensidad]
+const GLOW = [[34, 120, 1.0], [20, 60, .72], [9, 26, .45]];
+const CARD_START = [0.55, 0.95, 1.35], CARD_DUR = 0.65;
+
+window.renderFrame = (f) => {
+  const t = f / FPS;
+  // Cámara: empuje muy lento y continuo
+  const cam = 1.035 - 0.035 * easeOut(clamp(t / 5));
+  stage.style.transform = `scale(${cam})`;
+
+  cx.drawImage(space, 0, 0);
+  for (const s of twinkles) { const a = .25 + .55 * (0.5 + 0.5 * Math.sin(t * s.s + s.p)); cx.fillStyle = `rgba(235,238,255,${a})`; cx.beginPath(); cx.arc(s.x, s.y, s.r, 0, 6.283); cx.fill(); }
+  drawGrid(t);
+
+  // Título: 0.00 – 0.80 s
+  const pt = prog(t, 0, 0.8), et = easeOut(pt);
+  title.style.opacity = et;
+  title.style.filter = `blur(${(1 - et) * 14}px)`;
+  title.style.transform = `translateY(${(1 - et) * 26}px) scale(${1.06 - 0.06 * et})`;
+  title.style.letterSpacing = `${-1 + (1 - et) * 10}px`;
+
+  // Tarjetas: izquierda -> derecha, terminan en 2.0 s
+  cards.forEach((c, i) => {
+    const p = prog(t, CARD_START[i], CARD_DUR), e = easeOut(p), b = easeOutBack(p);
+    c.style.opacity = clamp(p * 1.6);
+    c.style.transform = `translateY(${(1 - e) * 70}px) scale(${0.9 + 0.1 * b})`;
+    c.style.filter = p < 1 ? `blur(${(1 - e) * 10}px)` : 'none';
+    // El glow del icono florece un poco después que la tarjeta
+    const g = easeOut(prog(t, CARD_START[i] + 0.2, 0.7));
+    const breathe = 1 + 0.06 * Math.sin((t - CARD_START[i]) * 2.2) * g;
+    const [r1, r2, k] = GLOW[i], a = g * k * breathe;
+    c.querySelector('.icon').style.boxShadow =
+      `0 0 ${r1}px rgba(170,150,255,${(.9 * a).toFixed(3)}), 0 0 ${r2}px rgba(150,130,255,${(.75 * a).toFixed(3)}), 0 0 ${r2 * 1.8}px rgba(120,100,255,${(.35 * a).toFixed(3)})`;
+  });
+};
+window.__ready = document.fonts.ready.then(() => { window.renderFrame(0); return true; });
+</script>
+</body>
+</html>
