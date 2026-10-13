@@ -8,7 +8,7 @@ import { fileURLToPath } from 'node:url';
 
 const DIR = path.dirname(fileURLToPath(import.meta.url));
 const BUILD = path.join(DIR, 'build');
-const FPS = 60, FRAMES = 300, WORKERS = 4;
+const FPS = 60, FRAMES = 540, WORKERS = 4;
 const args = process.argv.slice(2);
 const pi = args.indexOf('--preview');
 const PREVIEW = pi >= 0 ? args[pi + 1].split(',').map(Number) : null;
@@ -48,7 +48,7 @@ if (PREVIEW) {
   execFileSync('ffmpeg', ['-y', '-v', 'error', '-framerate', String(FPS), '-i', path.join(out, 'f%04d.jpg'), '-i', path.join(BUILD, 'audio.wav'),
     '-c:v', 'libx264', '-preset', 'slow', '-crf', '15', '-pix_fmt', 'yuv420p', '-profile:v', 'high',
     '-color_primaries', 'bt709', '-color_trc', 'bt709', '-colorspace', 'bt709',
-    '-c:a', 'aac', '-b:a', '256k', '-shortest', '-movflags', '+faststart', path.join(DIR, 'PREMIERE_GLOW_5S.mp4')], { stdio: 'inherit' });
+    '-c:a', 'aac', '-b:a', '256k', '-shortest', '-movflags', '+faststart', path.join(DIR, 'PREMIERE_GLOW_9S.mp4')], { stdio: 'inherit' });
 }
 console.log(`total: ${((Date.now() - t0) / 1000).toFixed(1)} s`);
 await browser.close();

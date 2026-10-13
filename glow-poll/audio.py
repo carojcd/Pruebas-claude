@@ -2,7 +2,7 @@
 import sys, wave
 import numpy as np
 
-SR, DUR = 48000, 5.0
+SR, DUR = 48000, 9.0
 N = int(SR * DUR)
 t = np.arange(N) / SR
 rng = np.random.default_rng(3)
@@ -53,6 +53,11 @@ add(chime(440) + 0.6 * chime(659.3), 0.30, 0, 0.22)
 for start, f, pan in [(0.55, 554.4, -0.45), (0.95, 659.3, 0.0), (1.35, 880.0, 0.45)]:
     add(whoosh(0.7, 0.22), start - 0.08, pan, 0.12)
     add(chime(f), start + 0.14, pan, 0.20)
+
+# Giros (3–9 s): whoosh suave en el punto de máxima velocidad de cada tarjeta
+for start, pan in [(3.7, -0.45), (4.15, 0.0), (4.6, 0.45)]:
+    add(whoosh(1.4, 0.75), start + 0.2, pan, 0.09)
+    add(chime(1108.7, 2.0), start + 1.7, pan, 0.07)
 
 # Reverb por convolución (IR de ruido con decaimiento exponencial)
 ir_n = int(SR * 1.8); irt = np.arange(ir_n) / SR

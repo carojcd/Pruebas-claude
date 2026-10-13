@@ -6,7 +6,7 @@
   :root { --W: 1920px; --H: 1080px; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html, body { width: var(--W); height: var(--H); overflow: hidden; background: #03030a; }
-  #stage { position: absolute; inset: 0; transform-origin: 50% 46%; }
+  #stage { position: absolute; inset: 0; transform-origin: 50% 46%; perspective: 1600px; }
   canvas { position: absolute; inset: 0; }
   #vignette { position: absolute; inset: 0; pointer-events: none;
     background:
@@ -25,6 +25,7 @@
     transform-origin: 50% 60%; z-index: 2; }
   .icon { position: absolute; left: 84px; top: 150px; width: 244px; height: 244px; border-radius: 52px;
     background: #00005b; border: 4px solid #9b9bff; display: grid; place-items: center; }
+  .icon span, .label { backface-visibility: visible; }
   .icon span { font: 700 128px/1 'Montserrat', sans-serif; color: #9999ff; letter-spacing: -2px; transform: translateY(-2px); }
   .label { position: absolute; left: 0; right: 0; top: 476px; text-align: center;
     font: 600 34px/1.38 'Montserrat', sans-serif; color: #e6e6ea; letter-spacing: .3px; }
@@ -92,11 +93,14 @@ const easeOutBack = (p) => { const c = 1.25; return 1 + (c + 1) * Math.pow(p - 1
 // Glow por estilo: [radio interior, radio exterior, intensidad]
 const GLOW = [[34, 120, 1.0], [20, 60, .72], [9, 26, .45]];
 const CARD_START = [0.55, 0.95, 1.35], CARD_DUR = 0.65;
+// Fase 2 (3–9 s): flotación leve + giro completo en cascada; todo vuelve a reposo en 9 s
+const easeInOut = (p) => p < .5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2;
+const SPIN_START = [3.7, 4.15, 4.6], SPIN_DUR = 1.9;
 
 window.renderFrame = (f) => {
   const t = f / FPS;
   // Cámara: empuje muy lento y continuo
-  const cam = 1.035 - 0.035 * easeOut(clamp(t / 5));
+  const cam = 1.035 - 0.035 * easeOut(clamp(t / 9));
   stage.style.transform = `scale(${cam})`;
 
   cx.drawImage(space, 0, 0);
@@ -114,7 +118,14 @@ window.renderFrame = (f) => {
   cards.forEach((c, i) => {
     const p = prog(t, CARD_START[i], CARD_DUR), e = easeOut(p), b = easeOutBack(p);
     c.style.opacity = clamp(p * 1.6);
-    c.style.transform = `translateY(${(1 - e) * 70}px) scale(${0.9 + 0.1 * b})`;
+    const amp = easeInOut(prog(t, 3, 0.9)) * (1 - easeInOut(prog(t, 7.8, 1.2)));
+    const ph = (t - 3) * 2.1 + i * 0.95;
+    const floatY = -16 * Math.sin(ph) * amp, tiltZ = 1.4 * Math.sin(ph * 0.8 + 0.6) * amp, tiltX = 4 * Math.sin(ph * 0.9) * amp;
+    const spin = 360 * easeInOut(prog(t, SPIN_START[i], SPIN_DUR));
+    c.style.transform = `translateY(${(1 - e) * 70 + floatY}px) scale(${0.9 + 0.1 * b}) rotateX(${tiltX}deg) rotateY(${spin}deg) rotateZ(${tiltZ}deg)`;
+    // Cara trasera: espeja el contenido para que nunca se lea al revés
+    const back = Math.cos(spin * Math.PI / 180) < 0 ? 'scaleX(-1)' : '';
+    for (const k of c.children) k.style.transform = back;
     c.style.filter = p < 1 ? `blur(${(1 - e) * 10}px)` : 'none';
     // El glow del icono florece un poco después que la tarjeta
     const g = easeOut(prog(t, CARD_START[i] + 0.2, 0.7));
