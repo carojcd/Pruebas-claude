@@ -1,0 +1,520 @@
+[
+  {
+    "text": " Una",
+    "startMs": 0,
+    "endMs": 180,
+    "timestampMs": 90,
+    "confidence": null
+  },
+  {
+    "text": " norma",
+    "startMs": 180,
+    "endMs": 500,
+    "timestampMs": 340,
+    "confidence": null
+  },
+  {
+    "text": " puede",
+    "startMs": 500,
+    "endMs": 640,
+    "timestampMs": 570,
+    "confidence": null
+  },
+  {
+    "text": " ser",
+    "startMs": 640,
+    "endMs": 880,
+    "timestampMs": 760,
+    "confidence": null
+  },
+  {
+    "text": " muy",
+    "startMs": 880,
+    "endMs": 1060,
+    "timestampMs": 970,
+    "confidence": null
+  },
+  {
+    "text": " virtuosa,",
+    "startMs": 1060,
+    "endMs": 1680,
+    "timestampMs": 1370,
+    "confidence": null
+  },
+  {
+    "text": " puede",
+    "startMs": 1920,
+    "endMs": 1920,
+    "timestampMs": 1920,
+    "confidence": null
+  },
+  {
+    "text": " estar",
+    "startMs": 1920,
+    "endMs": 2140,
+    "timestampMs": 2030,
+    "confidence": null
+  },
+  {
+    "text": " muy",
+    "startMs": 2140,
+    "endMs": 2340,
+    "timestampMs": 2240,
+    "confidence": null
+  },
+  {
+    "text": " bien",
+    "startMs": 2340,
+    "endMs": 2520,
+    "timestampMs": 2430,
+    "confidence": null
+  },
+  {
+    "text": " redactada,",
+    "startMs": 2520,
+    "endMs": 3120,
+    "timestampMs": 2820,
+    "confidence": null
+  },
+  {
+    "text": " puede",
+    "startMs": 3500,
+    "endMs": 3640,
+    "timestampMs": 3570,
+    "confidence": null
+  },
+  {
+    "text": " tener",
+    "startMs": 3640,
+    "endMs": 3900,
+    "timestampMs": 3770,
+    "confidence": null
+  },
+  {
+    "text": " características",
+    "startMs": 3900,
+    "endMs": 4560,
+    "timestampMs": 4230,
+    "confidence": null
+  },
+  {
+    "text": " muy",
+    "startMs": 4560,
+    "endMs": 4880,
+    "timestampMs": 4720,
+    "confidence": null
+  },
+  {
+    "text": " modernas,",
+    "startMs": 4880,
+    "endMs": 5620,
+    "timestampMs": 5250,
+    "confidence": null
+  },
+  {
+    "text": " funcionar",
+    "startMs": 5720,
+    "endMs": 6480,
+    "timestampMs": 6100,
+    "confidence": null
+  },
+  {
+    "text": " muy",
+    "startMs": 6480,
+    "endMs": 6700,
+    "timestampMs": 6590,
+    "confidence": null
+  },
+  {
+    "text": " bien",
+    "startMs": 6700,
+    "endMs": 7000,
+    "timestampMs": 6850,
+    "confidence": null
+  },
+  {
+    "text": " en",
+    "startMs": 7000,
+    "endMs": 7140,
+    "timestampMs": 7070,
+    "confidence": null
+  },
+  {
+    "text": " distintas",
+    "startMs": 7140,
+    "endMs": 7600,
+    "timestampMs": 7370,
+    "confidence": null
+  },
+  {
+    "text": " partes",
+    "startMs": 7600,
+    "endMs": 7900,
+    "timestampMs": 7750,
+    "confidence": null
+  },
+  {
+    "text": " del",
+    "startMs": 7900,
+    "endMs": 8460,
+    "timestampMs": 8180,
+    "confidence": null
+  },
+  {
+    "text": " mundo,",
+    "startMs": 8460,
+    "endMs": 8840,
+    "timestampMs": 8650,
+    "confidence": null
+  },
+  {
+    "text": " pero",
+    "startMs": 9360,
+    "endMs": 9540,
+    "timestampMs": 9450,
+    "confidence": null
+  },
+  {
+    "text": " si",
+    "startMs": 9540,
+    "endMs": 9740,
+    "timestampMs": 9640,
+    "confidence": null
+  },
+  {
+    "text": " no",
+    "startMs": 9740,
+    "endMs": 9860,
+    "timestampMs": 9800,
+    "confidence": null
+  },
+  {
+    "text": " encuentra",
+    "startMs": 9860,
+    "endMs": 10620,
+    "timestampMs": 10240,
+    "confidence": null
+  },
+  {
+    "text": " una",
+    "startMs": 10620,
+    "endMs": 11060,
+    "timestampMs": 10840,
+    "confidence": null
+  },
+  {
+    "text": " efectividad",
+    "startMs": 11060,
+    "endMs": 11840,
+    "timestampMs": 11450,
+    "confidence": null
+  },
+  {
+    "text": " real",
+    "startMs": 11840,
+    "endMs": 12420,
+    "timestampMs": 12130,
+    "confidence": null
+  },
+  {
+    "text": " en",
+    "startMs": 12420,
+    "endMs": 13100,
+    "timestampMs": 12760,
+    "confidence": null
+  },
+  {
+    "text": " la",
+    "startMs": 13100,
+    "endMs": 13200,
+    "timestampMs": 13150,
+    "confidence": null
+  },
+  {
+    "text": " práctica,",
+    "startMs": 13200,
+    "endMs": 13820,
+    "timestampMs": 13510,
+    "confidence": null
+  },
+  {
+    "text": " si",
+    "startMs": 14160,
+    "endMs": 14340,
+    "timestampMs": 14250,
+    "confidence": null
+  },
+  {
+    "text": " no",
+    "startMs": 14340,
+    "endMs": 14440,
+    "timestampMs": 14390,
+    "confidence": null
+  },
+  {
+    "text": " encuentra",
+    "startMs": 14440,
+    "endMs": 15320,
+    "timestampMs": 14880,
+    "confidence": null
+  },
+  {
+    "text": " una",
+    "startMs": 15320,
+    "endMs": 15500,
+    "timestampMs": 15410,
+    "confidence": null
+  },
+  {
+    "text": " infraestructura",
+    "startMs": 15500,
+    "endMs": 16240,
+    "timestampMs": 15870,
+    "confidence": null
+  },
+  {
+    "text": " institucional",
+    "startMs": 16240,
+    "endMs": 16920,
+    "timestampMs": 16580,
+    "confidence": null
+  },
+  {
+    "text": " que",
+    "startMs": 16920,
+    "endMs": 17120,
+    "timestampMs": 17020,
+    "confidence": null
+  },
+  {
+    "text": " pueda",
+    "startMs": 17120,
+    "endMs": 17300,
+    "timestampMs": 17210,
+    "confidence": null
+  },
+  {
+    "text": " reaccionar",
+    "startMs": 17300,
+    "endMs": 17900,
+    "timestampMs": 17600,
+    "confidence": null
+  },
+  {
+    "text": " rápida",
+    "startMs": 17900,
+    "endMs": 18820,
+    "timestampMs": 18360,
+    "confidence": null
+  },
+  {
+    "text": " y",
+    "startMs": 18820,
+    "endMs": 18960,
+    "timestampMs": 18890,
+    "confidence": null
+  },
+  {
+    "text": " adecuadamente",
+    "startMs": 18960,
+    "endMs": 19580,
+    "timestampMs": 19270,
+    "confidence": null
+  },
+  {
+    "text": " a",
+    "startMs": 19580,
+    "endMs": 20300,
+    "timestampMs": 19940,
+    "confidence": null
+  },
+  {
+    "text": " esas",
+    "startMs": 20300,
+    "endMs": 20440,
+    "timestampMs": 20370,
+    "confidence": null
+  },
+  {
+    "text": " disposiciones,",
+    "startMs": 20440,
+    "endMs": 21280,
+    "timestampMs": 20860,
+    "confidence": null
+  },
+  {
+    "text": " pues",
+    "startMs": 21400,
+    "endMs": 21480,
+    "timestampMs": 21440,
+    "confidence": null
+  },
+  {
+    "text": " realmente",
+    "startMs": 21480,
+    "endMs": 21960,
+    "timestampMs": 21720,
+    "confidence": null
+  },
+  {
+    "text": " se",
+    "startMs": 21960,
+    "endMs": 22840,
+    "timestampMs": 22400,
+    "confidence": null
+  },
+  {
+    "text": " convierte",
+    "startMs": 22840,
+    "endMs": 23220,
+    "timestampMs": 23030,
+    "confidence": null
+  },
+  {
+    "text": " en",
+    "startMs": 23220,
+    "endMs": 23400,
+    "timestampMs": 23310,
+    "confidence": null
+  },
+  {
+    "text": " letra",
+    "startMs": 23400,
+    "endMs": 23640,
+    "timestampMs": 23520,
+    "confidence": null
+  },
+  {
+    "text": " muerta",
+    "startMs": 23640,
+    "endMs": 24120,
+    "timestampMs": 23880,
+    "confidence": null
+  },
+  {
+    "text": " y",
+    "startMs": 24120,
+    "endMs": 24440,
+    "timestampMs": 24280,
+    "confidence": null
+  },
+  {
+    "text": " a",
+    "startMs": 24440,
+    "endMs": 24580,
+    "timestampMs": 24510,
+    "confidence": null
+  },
+  {
+    "text": " lo",
+    "startMs": 24580,
+    "endMs": 24680,
+    "timestampMs": 24630,
+    "confidence": null
+  },
+  {
+    "text": " sumo",
+    "startMs": 24680,
+    "endMs": 25640,
+    "timestampMs": 25160,
+    "confidence": null
+  },
+  {
+    "text": " será",
+    "startMs": 25640,
+    "endMs": 26500,
+    "timestampMs": 26070,
+    "confidence": null
+  },
+  {
+    "text": " una",
+    "startMs": 26500,
+    "endMs": 27320,
+    "timestampMs": 26910,
+    "confidence": null
+  },
+  {
+    "text": " guía,",
+    "startMs": 27320,
+    "endMs": 27740,
+    "timestampMs": 27530,
+    "confidence": null
+  },
+  {
+    "text": " tendrá",
+    "startMs": 28000,
+    "endMs": 28260,
+    "timestampMs": 28130,
+    "confidence": null
+  },
+  {
+    "text": " una",
+    "startMs": 28260,
+    "endMs": 28380,
+    "timestampMs": 28320,
+    "confidence": null
+  },
+  {
+    "text": " eficacia",
+    "startMs": 28380,
+    "endMs": 29100,
+    "timestampMs": 28740,
+    "confidence": null
+  },
+  {
+    "text": " simbólica",
+    "startMs": 29100,
+    "endMs": 30320,
+    "timestampMs": 29710,
+    "confidence": null
+  },
+  {
+    "text": " pero",
+    "startMs": 30320,
+    "endMs": 30840,
+    "timestampMs": 30580,
+    "confidence": null
+  },
+  {
+    "text": " no",
+    "startMs": 30840,
+    "endMs": 30980,
+    "timestampMs": 30910,
+    "confidence": null
+  },
+  {
+    "text": " una",
+    "startMs": 30980,
+    "endMs": 31100,
+    "timestampMs": 31040,
+    "confidence": null
+  },
+  {
+    "text": " eficacia",
+    "startMs": 31100,
+    "endMs": 31540,
+    "timestampMs": 31320,
+    "confidence": null
+  },
+  {
+    "text": " real,",
+    "startMs": 31540,
+    "endMs": 31960,
+    "timestampMs": 31750,
+    "confidence": null
+  },
+  {
+    "text": " la",
+    "startMs": 32300,
+    "endMs": 32560,
+    "timestampMs": 32430,
+    "confidence": null
+  },
+  {
+    "text": " práctica.",
+    "startMs": 32560,
+    "endMs": 33000,
+    "timestampMs": 32780,
+    "confidence": null
+  }
+]

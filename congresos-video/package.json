@@ -1,11 +1,12 @@
 {
   "name": "congresos-video",
   "version": "1.0.0",
-  "description": "My Remotion video",
+  "description": "Edición vertical para el Congreso de Insolvencia Económica (Remotion)",
   "repository": {},
   "license": "UNLICENSED",
   "private": true,
   "dependencies": {
+    "@fontsource/dm-sans": "^5.3.0",
     "@remotion/cli": "4.0.535",
     "react": "19.2.3",
     "react-dom": "19.2.3",
@@ -24,6 +25,10 @@
     "dev": "remotion studio",
     "build": "remotion bundle",
     "upgrade": "remotion upgrade",
-    "lint": "eslint src && tsc"
+    "lint": "eslint src && tsc",
+    "transcribir": "node scripts/transcribe.mjs public/mi-video.mp4 analisis/mi-video-palabras.json $WHISPER_MODELS spanish",
+    "editar": "python3 scripts/build_edit.py public/mi-video.mp4 analisis/mi-video-palabras.json src/data/edit.json",
+    "sfx": "python3 scripts/sfx.py public/sfx",
+    "render": "remotion render Congresos out/borrador.mp4 --codec h264 --crf 18 --audio-codec aac"
   }
 }
