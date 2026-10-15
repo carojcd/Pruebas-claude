@@ -1,0 +1,499 @@
+[
+  {
+    "text": " Cuando",
+    "startMs": 0,
+    "endMs": 1040,
+    "timestampMs": 520,
+    "confidence": null
+  },
+  {
+    "text": " pise",
+    "startMs": 1040,
+    "endMs": 1300,
+    "timestampMs": 1170,
+    "confidence": null
+  },
+  {
+    "text": " Roma",
+    "startMs": 1300,
+    "endMs": 1620,
+    "timestampMs": 1460,
+    "confidence": null
+  },
+  {
+    "text": " por",
+    "startMs": 1620,
+    "endMs": 1860,
+    "timestampMs": 1740,
+    "confidence": null
+  },
+  {
+    "text": " primera",
+    "startMs": 1860,
+    "endMs": 2140,
+    "timestampMs": 2000,
+    "confidence": null
+  },
+  {
+    "text": " vez,",
+    "startMs": 2140,
+    "endMs": 2580,
+    "timestampMs": 2360,
+    "confidence": null
+  },
+  {
+    "text": " esperaba",
+    "startMs": 3020,
+    "endMs": 3500,
+    "timestampMs": 3260,
+    "confidence": null
+  },
+  {
+    "text": " ver",
+    "startMs": 3500,
+    "endMs": 3720,
+    "timestampMs": 3610,
+    "confidence": null
+  },
+  {
+    "text": " una",
+    "startMs": 3720,
+    "endMs": 3880,
+    "timestampMs": 3800,
+    "confidence": null
+  },
+  {
+    "text": " ciudad",
+    "startMs": 3880,
+    "endMs": 4180,
+    "timestampMs": 4030,
+    "confidence": null
+  },
+  {
+    "text": " de",
+    "startMs": 4180,
+    "endMs": 4360,
+    "timestampMs": 4270,
+    "confidence": null
+  },
+  {
+    "text": " dioses,",
+    "startMs": 4360,
+    "endMs": 4760,
+    "timestampMs": 4560,
+    "confidence": null
+  },
+  {
+    "text": " pero",
+    "startMs": 5400,
+    "endMs": 5880,
+    "timestampMs": 5640,
+    "confidence": null
+  },
+  {
+    "text": " sólo",
+    "startMs": 5880,
+    "endMs": 6060,
+    "timestampMs": 5970,
+    "confidence": null
+  },
+  {
+    "text": " encontré",
+    "startMs": 6060,
+    "endMs": 6540,
+    "timestampMs": 6300,
+    "confidence": null
+  },
+  {
+    "text": " Marlo",
+    "startMs": 6540,
+    "endMs": 6920,
+    "timestampMs": 6730,
+    "confidence": null
+  },
+  {
+    "text": " Frio,",
+    "startMs": 6920,
+    "endMs": 7280,
+    "timestampMs": 7100,
+    "confidence": null
+  },
+  {
+    "text": " Linas",
+    "startMs": 7800,
+    "endMs": 8000,
+    "timestampMs": 7900,
+    "confidence": null
+  },
+  {
+    "text": " Toscas",
+    "startMs": 8000,
+    "endMs": 8660,
+    "timestampMs": 8330,
+    "confidence": null
+  },
+  {
+    "text": " y",
+    "startMs": 8660,
+    "endMs": 9080,
+    "timestampMs": 8870,
+    "confidence": null
+  },
+  {
+    "text": " hombres",
+    "startMs": 9080,
+    "endMs": 9320,
+    "timestampMs": 9200,
+    "confidence": null
+  },
+  {
+    "text": " crueles.",
+    "startMs": 9320,
+    "endMs": 9840,
+    "timestampMs": 9580,
+    "confidence": null
+  },
+  {
+    "text": " Sus",
+    "startMs": 10960,
+    "endMs": 11120,
+    "timestampMs": 11040,
+    "confidence": null
+  },
+  {
+    "text": " lejaciones",
+    "startMs": 11120,
+    "endMs": 11600,
+    "timestampMs": 11360,
+    "confidence": null
+  },
+  {
+    "text": " marchaban",
+    "startMs": 11600,
+    "endMs": 12120,
+    "timestampMs": 11860,
+    "confidence": null
+  },
+  {
+    "text": " con",
+    "startMs": 12120,
+    "endMs": 12300,
+    "timestampMs": 12210,
+    "confidence": null
+  },
+  {
+    "text": " hierro,",
+    "startMs": 12300,
+    "endMs": 12760,
+    "timestampMs": 12530,
+    "confidence": null
+  },
+  {
+    "text": " sí,",
+    "startMs": 13080,
+    "endMs": 13320,
+    "timestampMs": 13200,
+    "confidence": null
+  },
+  {
+    "text": " pero",
+    "startMs": 13960,
+    "endMs": 14120,
+    "timestampMs": 14040,
+    "confidence": null
+  },
+  {
+    "text": " carcian",
+    "startMs": 14120,
+    "endMs": 14580,
+    "timestampMs": 14350,
+    "confidence": null
+  },
+  {
+    "text": " del",
+    "startMs": 14580,
+    "endMs": 14760,
+    "timestampMs": 14670,
+    "confidence": null
+  },
+  {
+    "text": " alma",
+    "startMs": 14760,
+    "endMs": 14960,
+    "timestampMs": 14860,
+    "confidence": null
+  },
+  {
+    "text": " dorado",
+    "startMs": 14960,
+    "endMs": 15400,
+    "timestampMs": 15180,
+    "confidence": null
+  },
+  {
+    "text": " de",
+    "startMs": 15400,
+    "endMs": 15540,
+    "timestampMs": 15470,
+    "confidence": null
+  },
+  {
+    "text": " mi",
+    "startMs": 15540,
+    "endMs": 15660,
+    "timestampMs": 15600,
+    "confidence": null
+  },
+  {
+    "text": " alejandría.",
+    "startMs": 15660,
+    "endMs": 16260,
+    "timestampMs": 15960,
+    "confidence": null
+  },
+  {
+    "text": " Roma",
+    "startMs": 17700,
+    "endMs": 18060,
+    "timestampMs": 17880,
+    "confidence": null
+  },
+  {
+    "text": " creía",
+    "startMs": 18060,
+    "endMs": 18480,
+    "timestampMs": 18270,
+    "confidence": null
+  },
+  {
+    "text": " que",
+    "startMs": 18480,
+    "endMs": 18640,
+    "timestampMs": 18560,
+    "confidence": null
+  },
+  {
+    "text": " podía",
+    "startMs": 18640,
+    "endMs": 18920,
+    "timestampMs": 18780,
+    "confidence": null
+  },
+  {
+    "text": " someter",
+    "startMs": 18920,
+    "endMs": 19380,
+    "timestampMs": 19150,
+    "confidence": null
+  },
+  {
+    "text": " al",
+    "startMs": 19380,
+    "endMs": 19540,
+    "timestampMs": 19460,
+    "confidence": null
+  },
+  {
+    "text": " mundo",
+    "startMs": 19540,
+    "endMs": 19760,
+    "timestampMs": 19650,
+    "confidence": null
+  },
+  {
+    "text": " entero",
+    "startMs": 19760,
+    "endMs": 20180,
+    "timestampMs": 19970,
+    "confidence": null
+  },
+  {
+    "text": " con",
+    "startMs": 20180,
+    "endMs": 20360,
+    "timestampMs": 20270,
+    "confidence": null
+  },
+  {
+    "text": " sus",
+    "startMs": 20360,
+    "endMs": 20580,
+    "timestampMs": 20470,
+    "confidence": null
+  },
+  {
+    "text": " espadas,",
+    "startMs": 20580,
+    "endMs": 21040,
+    "timestampMs": 20810,
+    "confidence": null
+  },
+  {
+    "text": " pero",
+    "startMs": 21800,
+    "endMs": 22280,
+    "timestampMs": 22040,
+    "confidence": null
+  },
+  {
+    "text": " yo",
+    "startMs": 22280,
+    "endMs": 22440,
+    "timestampMs": 22360,
+    "confidence": null
+  },
+  {
+    "text": " supe,",
+    "startMs": 22440,
+    "endMs": 22880,
+    "timestampMs": 22660,
+    "confidence": null
+  },
+  {
+    "text": " al",
+    "startMs": 23520,
+    "endMs": 23640,
+    "timestampMs": 23580,
+    "confidence": null
+  },
+  {
+    "text": " mirar",
+    "startMs": 23640,
+    "endMs": 23880,
+    "timestampMs": 23760,
+    "confidence": null
+  },
+  {
+    "text": " a",
+    "startMs": 23880,
+    "endMs": 24000,
+    "timestampMs": 23940,
+    "confidence": null
+  },
+  {
+    "text": " César",
+    "startMs": 24000,
+    "endMs": 24260,
+    "timestampMs": 24130,
+    "confidence": null
+  },
+  {
+    "text": " a",
+    "startMs": 24260,
+    "endMs": 24380,
+    "timestampMs": 24320,
+    "confidence": null
+  },
+  {
+    "text": " los",
+    "startMs": 24380,
+    "endMs": 24540,
+    "timestampMs": 24460,
+    "confidence": null
+  },
+  {
+    "text": " ojos,",
+    "startMs": 24540,
+    "endMs": 24860,
+    "timestampMs": 24700,
+    "confidence": null
+  },
+  {
+    "text": " que",
+    "startMs": 25420,
+    "endMs": 25480,
+    "timestampMs": 25450,
+    "confidence": null
+  },
+  {
+    "text": " los",
+    "startMs": 25480,
+    "endMs": 25620,
+    "timestampMs": 25550,
+    "confidence": null
+  },
+  {
+    "text": " conquistaría",
+    "startMs": 25620,
+    "endMs": 26280,
+    "timestampMs": 25950,
+    "confidence": null
+  },
+  {
+    "text": " a",
+    "startMs": 26280,
+    "endMs": 26480,
+    "timestampMs": 26380,
+    "confidence": null
+  },
+  {
+    "text": " ellos",
+    "startMs": 26480,
+    "endMs": 26660,
+    "timestampMs": 26570,
+    "confidence": null
+  },
+  {
+    "text": " con",
+    "startMs": 26660,
+    "endMs": 26900,
+    "timestampMs": 26780,
+    "confidence": null
+  },
+  {
+    "text": " mi",
+    "startMs": 26900,
+    "endMs": 27040,
+    "timestampMs": 26970,
+    "confidence": null
+  },
+  {
+    "text": " mente",
+    "startMs": 27040,
+    "endMs": 27400,
+    "timestampMs": 27220,
+    "confidence": null
+  },
+  {
+    "text": " y",
+    "startMs": 27400,
+    "endMs": 28000,
+    "timestampMs": 27700,
+    "confidence": null
+  },
+  {
+    "text": " con",
+    "startMs": 28000,
+    "endMs": 28140,
+    "timestampMs": 28070,
+    "confidence": null
+  },
+  {
+    "text": " el",
+    "startMs": 28140,
+    "endMs": 28240,
+    "timestampMs": 28190,
+    "confidence": null
+  },
+  {
+    "text": " misticismo",
+    "startMs": 28240,
+    "endMs": 28880,
+    "timestampMs": 28560,
+    "confidence": null
+  },
+  {
+    "text": " de",
+    "startMs": 28880,
+    "endMs": 29020,
+    "timestampMs": 28950,
+    "confidence": null
+  },
+  {
+    "text": " Egipto.",
+    "startMs": 29020,
+    "endMs": 29480,
+    "timestampMs": 29250,
+    "confidence": null
+  }
+]

@@ -39,6 +39,18 @@ db = 20 * np.log10(np.sqrt((frames ** 2).mean(1)) + 1e-9)
 THR_DB = float(os.environ.get("THR_DB", np.percentile(db, 10) + 9.5))
 print(f"umbral de voz {THR_DB:.1f} dB"); open(os.path.join(os.path.dirname(os.path.abspath(out_path)), "thr.txt"), "w").write(f"{THR_DB:.1f}")
 voiced = db > THR_DB
+# ignora picos de «voz» de < 30 ms (clics, aliento) que partían un silencio largo
+i = 0
+while i < n:
+    if voiced[i]:
+        j = i
+        while j < n and voiced[j]:
+            j += 1
+        if j - i < 3:
+            voiced[i:j] = False
+        i = j
+    else:
+        i += 1
 
 # silencios = tramos sin voz de más de MIN_SIL
 silences = []

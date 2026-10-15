@@ -1,0 +1,616 @@
+{
+ "fps": 30,
+ "durationInFrames": 653,
+ "punchFrame": 574,
+ "shots": [
+  {
+   "from": 0,
+   "to": 51,
+   "zoom": 1.0
+  },
+  {
+   "from": 51,
+   "to": 105,
+   "zoom": 1.1
+  },
+  {
+   "from": 105,
+   "to": 158,
+   "zoom": 1.0
+  },
+  {
+   "from": 158,
+   "to": 186,
+   "zoom": 1.1
+  },
+  {
+   "from": 186,
+   "to": 216,
+   "zoom": 1.0
+  },
+  {
+   "from": 216,
+   "to": 274,
+   "zoom": 1.1
+  },
+  {
+   "from": 274,
+   "to": 286,
+   "zoom": 1.0
+  },
+  {
+   "from": 286,
+   "to": 360,
+   "zoom": 1.1
+  },
+  {
+   "from": 360,
+   "to": 406,
+   "zoom": 1.0
+  },
+  {
+   "from": 406,
+   "to": 464,
+   "zoom": 1.1
+  },
+  {
+   "from": 464,
+   "to": 489,
+   "zoom": 1.0
+  },
+  {
+   "from": 489,
+   "to": 536,
+   "zoom": 1.1
+  },
+  {
+   "from": 536,
+   "to": 574,
+   "zoom": 1.0
+  },
+  {
+   "from": 574,
+   "to": 602,
+   "zoom": 1.2
+  },
+  {
+   "from": 602,
+   "to": 653,
+   "zoom": 1.0
+  }
+ ],
+ "blocks": [
+  {
+   "lines": [
+    [
+     0,
+     1,
+     2
+    ]
+   ],
+   "key": 2,
+   "emoji": "🏛️",
+   "from": 0,
+   "to": 24,
+   "keyFrame": 14,
+   "text": [
+    [
+     "Cuando",
+     "pisé",
+     "Roma"
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     3,
+     4,
+     5
+    ]
+   ],
+   "key": 4,
+   "from": 24,
+   "to": 52,
+   "keyFrame": 31,
+   "text": [
+    [
+     "por",
+     "primera",
+     "vez,"
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     6,
+     7
+    ]
+   ],
+   "key": 6,
+   "from": 52,
+   "to": 71,
+   "keyFrame": 52,
+   "text": [
+    [
+     "esperaba",
+     "ver"
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     8,
+     9
+    ],
+    [
+     10,
+     11
+    ]
+   ],
+   "key": 11,
+   "from": 71,
+   "to": 106,
+   "keyFrame": 90,
+   "text": [
+    [
+     "una",
+     "ciudad"
+    ],
+    [
+     "de",
+     "dioses,"
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     12,
+     13,
+     14
+    ]
+   ],
+   "key": 14,
+   "from": 106,
+   "to": 129,
+   "keyFrame": 115,
+   "text": [
+    [
+     "pero",
+     "solo",
+     "encontré"
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     15,
+     16
+    ]
+   ],
+   "key": 16,
+   "emoji": "🧊",
+   "from": 129,
+   "to": 159,
+   "keyFrame": 141,
+   "text": [
+    [
+     "mármol",
+     "frío,"
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     17,
+     18
+    ]
+   ],
+   "key": 17,
+   "from": 160,
+   "to": 188,
+   "keyFrame": 160,
+   "text": [
+    [
+     "lanzas",
+     "toscas"
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     19,
+     20
+    ],
+    [
+     21
+    ]
+   ],
+   "key": 21,
+   "from": 188,
+   "to": 218,
+   "keyFrame": 198,
+   "text": [
+    [
+     "y",
+     "hombres"
+    ],
+    [
+     "crueles."
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     22,
+     23
+    ]
+   ],
+   "key": 23,
+   "from": 218,
+   "to": 236,
+   "keyFrame": 222,
+   "text": [
+    [
+     "Sus",
+     "legiones"
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     24,
+     25
+    ],
+    [
+     26
+    ]
+   ],
+   "key": 26,
+   "emoji": "⚔️",
+   "from": 236,
+   "to": 275,
+   "keyFrame": 257,
+   "text": [
+    [
+     "marchaban",
+     "con"
+    ],
+    [
+     "hierro,"
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     27,
+     28,
+     29
+    ]
+   ],
+   "key": 29,
+   "from": 275,
+   "to": 305,
+   "keyFrame": 292,
+   "text": [
+    [
+     "sí,",
+     "pero",
+     "carecían"
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     30,
+     31
+    ]
+   ],
+   "key": 31,
+   "from": 305,
+   "to": 317,
+   "keyFrame": 311,
+   "text": [
+    [
+     "del",
+     "alma"
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     32,
+     33,
+     34
+    ],
+    [
+     35
+    ]
+   ],
+   "key": 35,
+   "emoji": "👑",
+   "from": 317,
+   "to": 361,
+   "keyFrame": 338,
+   "text": [
+    [
+     "dorada",
+     "de",
+     "mi"
+    ],
+    [
+     "Alejandría."
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     36,
+     37
+    ]
+   ],
+   "key": 37,
+   "from": 361,
+   "to": 380,
+   "keyFrame": 368,
+   "text": [
+    [
+     "Roma",
+     "creía"
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     38,
+     39,
+     40
+    ]
+   ],
+   "key": 40,
+   "from": 380,
+   "to": 407,
+   "keyFrame": 394,
+   "text": [
+    [
+     "que",
+     "podía",
+     "someter"
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     41,
+     42,
+     43
+    ]
+   ],
+   "key": 42,
+   "emoji": "🌍",
+   "from": 407,
+   "to": 431,
+   "keyFrame": 412,
+   "text": [
+    [
+     "al",
+     "mundo",
+     "entero"
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     44,
+     45,
+     46
+    ]
+   ],
+   "key": 46,
+   "from": 431,
+   "to": 465,
+   "keyFrame": 443,
+   "text": [
+    [
+     "con",
+     "sus",
+     "espadas,"
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     47,
+     48,
+     49
+    ]
+   ],
+   "key": 49,
+   "from": 465,
+   "to": 490,
+   "keyFrame": 474,
+   "text": [
+    [
+     "pero",
+     "yo",
+     "supe,"
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     50,
+     51
+    ],
+    [
+     52,
+     53
+    ]
+   ],
+   "key": 53,
+   "from": 490,
+   "to": 513,
+   "keyFrame": 505,
+   "text": [
+    [
+     "al",
+     "mirar"
+    ],
+    [
+     "a",
+     "César"
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     54,
+     55,
+     56
+    ]
+   ],
+   "key": 56,
+   "emoji": "👁️",
+   "from": 513,
+   "to": 537,
+   "keyFrame": 521,
+   "text": [
+    [
+     "a",
+     "los",
+     "ojos,"
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     57,
+     58,
+     59
+    ]
+   ],
+   "key": 59,
+   "from": 537,
+   "to": 563,
+   "keyFrame": 544,
+   "text": [
+    [
+     "que",
+     "los",
+     "conquistaría"
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     60,
+     61
+    ]
+   ],
+   "key": 61,
+   "from": 563,
+   "to": 575,
+   "keyFrame": 569,
+   "text": [
+    [
+     "a",
+     "ellos"
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     62,
+     63,
+     64
+    ]
+   ],
+   "key": 64,
+   "emoji": "🧠",
+   "from": 575,
+   "to": 597,
+   "keyFrame": 586,
+   "text": [
+    [
+     "con",
+     "mi",
+     "mente"
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     65,
+     66,
+     67
+    ],
+    [
+     68
+    ]
+   ],
+   "key": 68,
+   "from": 597,
+   "to": 632,
+   "keyFrame": 613,
+   "text": [
+    [
+     "y",
+     "con",
+     "el"
+    ],
+    [
+     "misticismo"
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     69,
+     70
+    ]
+   ],
+   "key": 70,
+   "from": 632,
+   "to": 653,
+   "keyFrame": 637,
+   "text": [
+    [
+     "de",
+     "Egipto."
+    ]
+   ]
+  }
+ ],
+ "emojiFrames": [
+  14,
+  141,
+  257,
+  338,
+  412,
+  521,
+  586
+ ]
+}

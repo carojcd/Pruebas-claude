@@ -1,81 +1,81 @@
 {
  "fps": 30,
- "durationInFrames": 671,
- "punchFrame": 586,
+ "durationInFrames": 653,
+ "punchFrame": 574,
  "shots": [
   {
    "from": 0,
-   "to": 50,
+   "to": 51,
    "zoom": 1.0
   },
   {
-   "from": 50,
-   "to": 104,
+   "from": 51,
+   "to": 105,
    "zoom": 1.1
   },
   {
-   "from": 104,
-   "to": 161,
+   "from": 105,
+   "to": 158,
    "zoom": 1.0
   },
   {
-   "from": 161,
-   "to": 223,
+   "from": 158,
+   "to": 186,
    "zoom": 1.1
   },
   {
-   "from": 223,
-   "to": 228,
+   "from": 186,
+   "to": 216,
    "zoom": 1.0
   },
   {
-   "from": 228,
-   "to": 285,
+   "from": 216,
+   "to": 274,
    "zoom": 1.1
   },
   {
-   "from": 285,
-   "to": 297,
+   "from": 274,
+   "to": 286,
    "zoom": 1.0
   },
   {
-   "from": 297,
-   "to": 369,
+   "from": 286,
+   "to": 360,
    "zoom": 1.1
   },
   {
-   "from": 369,
-   "to": 416,
+   "from": 360,
+   "to": 406,
    "zoom": 1.0
   },
   {
-   "from": 416,
-   "to": 473,
+   "from": 406,
+   "to": 464,
    "zoom": 1.1
   },
   {
-   "from": 473,
-   "to": 500,
+   "from": 464,
+   "to": 489,
    "zoom": 1.0
   },
   {
-   "from": 500,
-   "to": 550,
+   "from": 489,
+   "to": 536,
    "zoom": 1.1
   },
   {
-   "from": 550,
-   "to": 586,
+   "from": 536,
+   "to": 574,
    "zoom": 1.0
   },
   {
-   "from": 586,
-   "to": 614,
+   "from": 574,
+   "to": 602,
    "zoom": 1.2
   },
   {
-   "from": 614,
-   "to": 671,
+   "from": 602,
+   "to": 653,
    "zoom": 1.0
   }
  ],
@@ -91,8 +91,8 @@
    "key": 2,
    "emoji": "🏛️",
    "from": 0,
-   "to": 23,
-   "keyFrame": 17,
+   "to": 24,
+   "keyFrame": 14,
    "text": [
     [
      "Cuando",
@@ -110,14 +110,14 @@
     ]
    ],
    "key": 4,
-   "from": 23,
+   "from": 24,
    "to": 52,
-   "keyFrame": 30,
+   "keyFrame": 31,
    "text": [
     [
      "por",
      "primera",
-     "vez"
+     "vez,"
     ]
    ]
   },
@@ -130,7 +130,7 @@
    ],
    "key": 6,
    "from": 52,
-   "to": 69,
+   "to": 71,
    "keyFrame": 52,
    "text": [
     [
@@ -151,9 +151,9 @@
     ]
    ],
    "key": 11,
-   "from": 69,
+   "from": 71,
    "to": 106,
-   "keyFrame": 89,
+   "keyFrame": 90,
    "text": [
     [
      "una",
@@ -175,8 +175,8 @@
    ],
    "key": 14,
    "from": 106,
-   "to": 131,
-   "keyFrame": 116,
+   "to": 129,
+   "keyFrame": 115,
    "text": [
     [
      "pero",
@@ -194,9 +194,9 @@
    ],
    "key": 16,
    "emoji": "🧊",
-   "from": 131,
-   "to": 164,
-   "keyFrame": 143,
+   "from": 129,
+   "to": 159,
+   "keyFrame": 141,
    "text": [
     [
      "mármol",
@@ -212,9 +212,9 @@
     ]
    ],
    "key": 17,
-   "from": 164,
-   "to": 191,
-   "keyFrame": 164,
+   "from": 160,
+   "to": 188,
+   "keyFrame": 160,
    "text": [
     [
      "lanzas",
@@ -233,9 +233,9 @@
     ]
    ],
    "key": 21,
-   "from": 191,
-   "to": 228,
-   "keyFrame": 204,
+   "from": 188,
+   "to": 218,
+   "keyFrame": 198,
    "text": [
     [
      "y",
@@ -254,9 +254,9 @@
     ]
    ],
    "key": 23,
-   "from": 229,
-   "to": 248,
-   "keyFrame": 233,
+   "from": 218,
+   "to": 236,
+   "keyFrame": 222,
    "text": [
     [
      "Sus",
@@ -276,9 +276,9 @@
    ],
    "key": 26,
    "emoji": "⚔️",
-   "from": 248,
-   "to": 287,
-   "keyFrame": 269,
+   "from": 236,
+   "to": 275,
+   "keyFrame": 257,
    "text": [
     [
      "marchaban",
@@ -298,9 +298,9 @@
     ]
    ],
    "key": 29,
-   "from": 287,
-   "to": 313,
-   "keyFrame": 302,
+   "from": 275,
+   "to": 305,
+   "keyFrame": 292,
    "text": [
     [
      "sí,",
@@ -313,18 +313,16 @@
    "lines": [
     [
      30,
-     31,
-     32
+     31
     ]
    ],
-   "key": 32,
-   "from": 313,
-   "to": 326,
-   "keyFrame": 321,
+   "key": 31,
+   "from": 305,
+   "to": 317,
+   "keyFrame": 311,
    "text": [
     [
-     "de",
-     "la",
+     "del",
      "alma"
     ]
    ]
@@ -332,19 +330,19 @@
   {
    "lines": [
     [
+     32,
      33,
-     34,
-     35
+     34
     ],
     [
-     36
+     35
     ]
    ],
-   "key": 36,
+   "key": 35,
    "emoji": "👑",
-   "from": 326,
-   "to": 370,
-   "keyFrame": 346,
+   "from": 317,
+   "to": 361,
+   "keyFrame": 338,
    "text": [
     [
      "dorada",
@@ -359,14 +357,14 @@
   {
    "lines": [
     [
-     37,
-     38
+     36,
+     37
     ]
    ],
-   "key": 38,
-   "from": 370,
-   "to": 390,
-   "keyFrame": 377,
+   "key": 37,
+   "from": 361,
+   "to": 380,
+   "keyFrame": 368,
    "text": [
     [
      "Roma",
@@ -377,15 +375,15 @@
   {
    "lines": [
     [
+     38,
      39,
-     40,
-     41
+     40
     ]
    ],
-   "key": 41,
-   "from": 390,
-   "to": 417,
-   "keyFrame": 404,
+   "key": 40,
+   "from": 380,
+   "to": 407,
+   "keyFrame": 394,
    "text": [
     [
      "que",
@@ -397,16 +395,16 @@
   {
    "lines": [
     [
+     41,
      42,
-     43,
-     44
+     43
     ]
    ],
-   "key": 43,
+   "key": 42,
    "emoji": "🌍",
-   "from": 417,
-   "to": 441,
-   "keyFrame": 422,
+   "from": 407,
+   "to": 431,
+   "keyFrame": 412,
    "text": [
     [
      "al",
@@ -418,15 +416,15 @@
   {
    "lines": [
     [
+     44,
      45,
-     46,
-     47
+     46
     ]
    ],
-   "key": 47,
-   "from": 441,
-   "to": 474,
-   "keyFrame": 452,
+   "key": 46,
+   "from": 431,
+   "to": 465,
+   "keyFrame": 443,
    "text": [
     [
      "con",
@@ -438,15 +436,15 @@
   {
    "lines": [
     [
+     47,
      48,
-     49,
-     50
+     49
     ]
    ],
-   "key": 50,
-   "from": 474,
-   "to": 501,
-   "keyFrame": 483,
+   "key": 49,
+   "from": 465,
+   "to": 490,
+   "keyFrame": 474,
    "text": [
     [
      "pero",
@@ -458,18 +456,18 @@
   {
    "lines": [
     [
-     51,
-     52
+     50,
+     51
     ],
     [
-     53,
-     54
+     52,
+     53
     ]
    ],
-   "key": 54,
-   "from": 501,
-   "to": 527,
-   "keyFrame": 515,
+   "key": 53,
+   "from": 490,
+   "to": 513,
+   "keyFrame": 505,
    "text": [
     [
      "al",
@@ -484,16 +482,16 @@
   {
    "lines": [
     [
+     54,
      55,
-     56,
-     57
+     56
     ]
    ],
-   "key": 57,
+   "key": 56,
    "emoji": "👁️",
-   "from": 527,
-   "to": 551,
-   "keyFrame": 535,
+   "from": 513,
+   "to": 537,
+   "keyFrame": 521,
    "text": [
     [
      "a",
@@ -505,15 +503,15 @@
   {
    "lines": [
     [
+     57,
      58,
-     59,
-     60
+     59
     ]
    ],
-   "key": 60,
-   "from": 551,
-   "to": 576,
-   "keyFrame": 557,
+   "key": 59,
+   "from": 537,
+   "to": 563,
+   "keyFrame": 544,
    "text": [
     [
      "que",
@@ -525,14 +523,14 @@
   {
    "lines": [
     [
-     61,
-     62
+     60,
+     61
     ]
    ],
-   "key": 62,
-   "from": 576,
-   "to": 587,
-   "keyFrame": 583,
+   "key": 61,
+   "from": 563,
+   "to": 575,
+   "keyFrame": 569,
    "text": [
     [
      "a",
@@ -543,16 +541,16 @@
   {
    "lines": [
     [
+     62,
      63,
-     64,
-     65
+     64
     ]
    ],
-   "key": 65,
+   "key": 64,
    "emoji": "🧠",
-   "from": 587,
-   "to": 609,
-   "keyFrame": 598,
+   "from": 575,
+   "to": 597,
+   "keyFrame": 586,
    "text": [
     [
      "con",
@@ -564,18 +562,18 @@
   {
    "lines": [
     [
+     65,
      66,
-     67,
-     68
+     67
     ],
     [
-     69
+     68
     ]
    ],
-   "key": 69,
-   "from": 609,
-   "to": 644,
-   "keyFrame": 625,
+   "key": 68,
+   "from": 597,
+   "to": 632,
+   "keyFrame": 613,
    "text": [
     [
      "y",
@@ -590,14 +588,14 @@
   {
    "lines": [
     [
-     70,
-     71
+     69,
+     70
     ]
    ],
-   "key": 71,
-   "from": 644,
-   "to": 671,
-   "keyFrame": 648,
+   "key": 70,
+   "from": 632,
+   "to": 653,
+   "keyFrame": 637,
    "text": [
     [
      "de",
@@ -607,12 +605,12 @@
   }
  ],
  "emojiFrames": [
-  17,
-  143,
-  269,
-  346,
-  422,
-  535,
-  598
+  14,
+  141,
+  257,
+  338,
+  412,
+  521,
+  586
  ]
 }
