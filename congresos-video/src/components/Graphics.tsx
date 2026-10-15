@@ -63,22 +63,6 @@ export const Card: React.FC<{ variant: "oscura" | "clara" }> = ({ variant }) => 
   );
 };
 
-// Entrada: panel azul oscuro que se retira hacia la izquierda con un filo de degradado (0–1 s)
-export const IntroWipe: React.FC = () => {
-  const frame = useCurrentFrame();
-  const x = interpolate(frame, [0, 30], [0, -1120], {
-    extrapolateLeft: "clamp",
-    extrapolateRight: "clamp",
-    easing: Easing.out(Easing.cubic),
-  });
-  return (
-    <AbsoluteFill style={{ transform: `translateX(${x}px)` }}>
-      <div style={{ position: "absolute", inset: 0, right: 0, width: 1080, background: BRAND.azulOscuro }} />
-      <div style={{ position: "absolute", top: 0, left: 1080, width: 14, height: "100%", background: "linear-gradient(180deg, #00F0BF, #36C8F7, #3B82F6, #704DFF)" }} />
-    </AbsoluteFill>
-  );
-};
-
 // Cierre con logotipo (manual: fondo oscuro, área de protección 2X, sin sombras ni deformaciones)
 export const EndCard: React.FC = () => {
   const frame = useCurrentFrame();

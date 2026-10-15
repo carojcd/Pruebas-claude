@@ -92,4 +92,6 @@ La estructura de edición (A1–A8) se mantiene; la **línea gráfica** se susti
 ---
 
 ## C. Correcciones aprobadas
-_(Aquí se añadirán las correcciones que te gusten, para que se mantengan en próximas ediciones.)_
+Estas reglas **mandan sobre las secciones A y B** cuando se contradicen.
+
+1. **Sin cortina de entrada** (borrador v1 → v2). El vídeo empieza directamente en el primer plano, con los subtítulos desde el fotograma 0; no se usa el barrido/panel de entrada de A1/A5.

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { AbsoluteFill, Audio, continueRender, delayRender, interpolate, Sequence, staticFile } from "remotion";
 import { Captions } from "./components/Captions";
-import { Card, EndCard, IntroWipe, Scrim } from "./components/Graphics";
+import { Card, EndCard, Scrim } from "./components/Graphics";
 import { ChannelFilters, Shot } from "./components/Shot";
 import {
   CARD_DARK_FROM,
@@ -67,10 +67,6 @@ export const Congresos: React.FC = () => {
       </Sequence>
 
       <Captions />
-
-      <Sequence name="Barrido de entrada" durationInFrames={31}>
-        <IntroWipe />
-      </Sequence>
 
       <Sequence name="Cierre" from={EDIT_END} durationInFrames={END_CARD}>
         <EndCard />
