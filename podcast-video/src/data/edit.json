@@ -1,0 +1,619 @@
+{
+ "fps": 30,
+ "sourceDurationS": 30.08,
+ "durationInFrames": 710,
+ "softPauses": [
+  [
+   2.48,
+   2.82
+  ],
+  [
+   7.98,
+   8.73
+  ],
+  [
+   9.6,
+   9.97
+  ]
+ ],
+ "silencesCut": [
+  [
+   0.0,
+   0.61
+  ],
+  [
+   2.31,
+   3.17
+  ],
+  [
+   6.32,
+   6.84
+  ],
+  [
+   7.54,
+   8.73
+  ],
+  [
+   9.58,
+   9.98
+  ],
+  [
+   12.78,
+   13.97
+  ],
+  [
+   17.03,
+   17.58
+  ],
+  [
+   21.18,
+   22.08
+  ],
+  [
+   22.9,
+   23.9
+  ],
+  [
+   25.74,
+   26.28
+  ]
+ ],
+ "segments": [
+  {
+   "srcStartFrame": 16,
+   "srcEndFrame": 72,
+   "outStartFrame": 0
+  },
+  {
+   "srcStartFrame": 93,
+   "srcEndFrame": 192,
+   "outStartFrame": 56
+  },
+  {
+   "srcStartFrame": 203,
+   "srcEndFrame": 229,
+   "outStartFrame": 155
+  },
+  {
+   "srcStartFrame": 260,
+   "srcEndFrame": 290,
+   "outStartFrame": 181
+  },
+  {
+   "srcStartFrame": 298,
+   "srcEndFrame": 386,
+   "outStartFrame": 211
+  },
+  {
+   "srcStartFrame": 417,
+   "srcEndFrame": 513,
+   "outStartFrame": 299
+  },
+  {
+   "srcStartFrame": 526,
+   "srcEndFrame": 638,
+   "outStartFrame": 395
+  },
+  {
+   "srcStartFrame": 661,
+   "srcEndFrame": 689,
+   "outStartFrame": 507
+  },
+  {
+   "srcStartFrame": 715,
+   "srcEndFrame": 775,
+   "outStartFrame": 535
+  },
+  {
+   "srcStartFrame": 787,
+   "srcEndFrame": 902,
+   "outStartFrame": 595
+  }
+ ],
+ "words": [
+  {
+   "text": " Decían",
+   "srcStartMs": 0,
+   "srcEndMs": 940,
+   "startMs": 0,
+   "endMs": 407
+  },
+  {
+   "text": " que",
+   "srcStartMs": 940,
+   "srcEndMs": 1120,
+   "startMs": 407,
+   "endMs": 587
+  },
+  {
+   "text": " caeríamos",
+   "srcStartMs": 1120,
+   "srcEndMs": 1560,
+   "startMs": 587,
+   "endMs": 1027
+  },
+  {
+   "text": " al",
+   "srcStartMs": 1560,
+   "srcEndMs": 1860,
+   "startMs": 1027,
+   "endMs": 1327
+  },
+  {
+   "text": " abismo,",
+   "srcStartMs": 1860,
+   "srcEndMs": 2260,
+   "startMs": 1327,
+   "endMs": 1727
+  },
+  {
+   "text": " pero",
+   "srcStartMs": 3150,
+   "srcEndMs": 3280,
+   "startMs": 1917,
+   "endMs": 2047
+  },
+  {
+   "text": " lo",
+   "srcStartMs": 3280,
+   "srcEndMs": 3420,
+   "startMs": 2047,
+   "endMs": 2187
+  },
+  {
+   "text": " que",
+   "srcStartMs": 3420,
+   "srcEndMs": 3520,
+   "startMs": 2187,
+   "endMs": 2287
+  },
+  {
+   "text": " mis",
+   "srcStartMs": 3520,
+   "srcEndMs": 3680,
+   "startMs": 2287,
+   "endMs": 2447
+  },
+  {
+   "text": " ojos",
+   "srcStartMs": 3680,
+   "srcEndMs": 3900,
+   "startMs": 2447,
+   "endMs": 2667
+  },
+  {
+   "text": " presenciaron",
+   "srcStartMs": 3900,
+   "srcEndMs": 4680,
+   "startMs": 2667,
+   "endMs": 3447
+  },
+  {
+   "text": " tras",
+   "srcStartMs": 4680,
+   "srcEndMs": 4920,
+   "startMs": 3447,
+   "endMs": 3687
+  },
+  {
+   "text": " semanas",
+   "srcStartMs": 4920,
+   "srcEndMs": 5340,
+   "startMs": 3687,
+   "endMs": 4107
+  },
+  {
+   "text": " de",
+   "srcStartMs": 5340,
+   "srcEndMs": 5560,
+   "startMs": 4107,
+   "endMs": 4327
+  },
+  {
+   "text": " infinita",
+   "srcStartMs": 5560,
+   "srcEndMs": 6020,
+   "startMs": 4327,
+   "endMs": 4787
+  },
+  {
+   "text": " mar",
+   "srcStartMs": 6020,
+   "srcEndMs": 6280,
+   "startMs": 4787,
+   "endMs": 5047
+  },
+  {
+   "text": " fue",
+   "srcStartMs": 6820,
+   "srcEndMs": 6920,
+   "startMs": 5220,
+   "endMs": 5320
+  },
+  {
+   "text": " un",
+   "srcStartMs": 6920,
+   "srcEndMs": 7080,
+   "startMs": 5320,
+   "endMs": 5480
+  },
+  {
+   "text": " milagro.",
+   "srcStartMs": 7080,
+   "srcEndMs": 7560,
+   "startMs": 5480,
+   "endMs": 5960
+  },
+  {
+   "text": " Al",
+   "srcStartMs": 8710,
+   "srcEndMs": 8840,
+   "startMs": 6077,
+   "endMs": 6207
+  },
+  {
+   "text": " tocar",
+   "srcStartMs": 8840,
+   "srcEndMs": 9080,
+   "startMs": 6207,
+   "endMs": 6447
+  },
+  {
+   "text": " tierra",
+   "srcStartMs": 9080,
+   "srcEndMs": 9480,
+   "startMs": 6447,
+   "endMs": 6847
+  },
+  {
+   "text": " sentí",
+   "srcStartMs": 9960,
+   "srcEndMs": 10360,
+   "startMs": 7060,
+   "endMs": 7460
+  },
+  {
+   "text": " una",
+   "srcStartMs": 10360,
+   "srcEndMs": 10540,
+   "startMs": 7460,
+   "endMs": 7640
+  },
+  {
+   "text": " arena",
+   "srcStartMs": 10540,
+   "srcEndMs": 10760,
+   "startMs": 7640,
+   "endMs": 7860
+  },
+  {
+   "text": " más",
+   "srcStartMs": 10760,
+   "srcEndMs": 11040,
+   "startMs": 7860,
+   "endMs": 8140
+  },
+  {
+   "text": " blanca",
+   "srcStartMs": 11040,
+   "srcEndMs": 11480,
+   "startMs": 8140,
+   "endMs": 8580
+  },
+  {
+   "text": " y",
+   "srcStartMs": 11480,
+   "srcEndMs": 11640,
+   "startMs": 8580,
+   "endMs": 8740
+  },
+  {
+   "text": " fina",
+   "srcStartMs": 11640,
+   "srcEndMs": 12000,
+   "startMs": 8740,
+   "endMs": 9100
+  },
+  {
+   "text": " que",
+   "srcStartMs": 12000,
+   "srcEndMs": 12100,
+   "startMs": 9100,
+   "endMs": 9200
+  },
+  {
+   "text": " en",
+   "srcStartMs": 12100,
+   "srcEndMs": 12220,
+   "startMs": 9200,
+   "endMs": 9320
+  },
+  {
+   "text": " Castilla.",
+   "srcStartMs": 12220,
+   "srcEndMs": 12760,
+   "startMs": 9320,
+   "endMs": 9860
+  },
+  {
+   "text": " Vi",
+   "srcStartMs": 13950,
+   "srcEndMs": 14080,
+   "startMs": 10017,
+   "endMs": 10147
+  },
+  {
+   "text": " árboles",
+   "srcStartMs": 14080,
+   "srcEndMs": 14420,
+   "startMs": 10147,
+   "endMs": 10487
+  },
+  {
+   "text": " inmensos",
+   "srcStartMs": 14420,
+   "srcEndMs": 15060,
+   "startMs": 10487,
+   "endMs": 11127
+  },
+  {
+   "text": " que",
+   "srcStartMs": 15060,
+   "srcEndMs": 15240,
+   "startMs": 11127,
+   "endMs": 11307
+  },
+  {
+   "text": " parecían",
+   "srcStartMs": 15240,
+   "srcEndMs": 15700,
+   "startMs": 11307,
+   "endMs": 11767
+  },
+  {
+   "text": " rasgar",
+   "srcStartMs": 15700,
+   "srcEndMs": 16120,
+   "startMs": 11767,
+   "endMs": 12187
+  },
+  {
+   "text": " el",
+   "srcStartMs": 16120,
+   "srcEndMs": 16260,
+   "startMs": 12187,
+   "endMs": 12327
+  },
+  {
+   "text": " firmamento",
+   "srcStartMs": 16260,
+   "srcEndMs": 16900,
+   "startMs": 12327,
+   "endMs": 12967
+  },
+  {
+   "text": " y",
+   "srcStartMs": 16900,
+   "srcEndMs": 17050,
+   "startMs": 12967,
+   "endMs": 13117
+  },
+  {
+   "text": " bandadas",
+   "srcStartMs": 17640,
+   "srcEndMs": 18120,
+   "startMs": 13273,
+   "endMs": 13753
+  },
+  {
+   "text": " de",
+   "srcStartMs": 18120,
+   "srcEndMs": 18260,
+   "startMs": 13753,
+   "endMs": 13893
+  },
+  {
+   "text": " papagayos",
+   "srcStartMs": 18260,
+   "srcEndMs": 18900,
+   "startMs": 13893,
+   "endMs": 14533
+  },
+  {
+   "text": " de",
+   "srcStartMs": 18900,
+   "srcEndMs": 19020,
+   "startMs": 14533,
+   "endMs": 14653
+  },
+  {
+   "text": " mil",
+   "srcStartMs": 19020,
+   "srcEndMs": 19180,
+   "startMs": 14653,
+   "endMs": 14813
+  },
+  {
+   "text": " colores",
+   "srcStartMs": 19180,
+   "srcEndMs": 19620,
+   "startMs": 14813,
+   "endMs": 15253
+  },
+  {
+   "text": " que",
+   "srcStartMs": 19620,
+   "srcEndMs": 19860,
+   "startMs": 15253,
+   "endMs": 15493
+  },
+  {
+   "text": " casi",
+   "srcStartMs": 19860,
+   "srcEndMs": 20180,
+   "startMs": 15493,
+   "endMs": 15813
+  },
+  {
+   "text": " ",
+   "srcStartMs": 20180,
+   "srcEndMs": 20340,
+   "startMs": 15813,
+   "endMs": 15973
+  },
+  {
+   "text": " oscurecían",
+   "srcStartMs": 20180,
+   "srcEndMs": 20720,
+   "startMs": 15813,
+   "endMs": 16353
+  },
+  {
+   "text": " el",
+   "srcStartMs": 20720,
+   "srcEndMs": 20900,
+   "startMs": 16353,
+   "endMs": 16533
+  },
+  {
+   "text": " sol.",
+   "srcStartMs": 20900,
+   "srcEndMs": 21140,
+   "startMs": 16533,
+   "endMs": 16773
+  },
+  {
+   "text": " En",
+   "srcStartMs": 22060,
+   "srcEndMs": 22180,
+   "startMs": 16927,
+   "endMs": 17047
+  },
+  {
+   "text": " verdad",
+   "srcStartMs": 22180,
+   "srcEndMs": 22380,
+   "startMs": 17047,
+   "endMs": 17247
+  },
+  {
+   "text": " os",
+   "srcStartMs": 22380,
+   "srcEndMs": 22580,
+   "startMs": 17247,
+   "endMs": 17447
+  },
+  {
+   "text": " digo,",
+   "srcStartMs": 22580,
+   "srcEndMs": 22840,
+   "startMs": 17447,
+   "endMs": 17707
+  },
+  {
+   "text": " si",
+   "srcStartMs": 23880,
+   "srcEndMs": 24040,
+   "startMs": 17880,
+   "endMs": 18040
+  },
+  {
+   "text": " el",
+   "srcStartMs": 24040,
+   "srcEndMs": 24160,
+   "startMs": 18040,
+   "endMs": 18160
+  },
+  {
+   "text": " edén",
+   "srcStartMs": 24160,
+   "srcEndMs": 24360,
+   "startMs": 18160,
+   "endMs": 18360
+  },
+  {
+   "text": " de",
+   "srcStartMs": 24360,
+   "srcEndMs": 24500,
+   "startMs": 18360,
+   "endMs": 18500
+  },
+  {
+   "text": " nuestro",
+   "srcStartMs": 24500,
+   "srcEndMs": 24640,
+   "startMs": 18500,
+   "endMs": 18640
+  },
+  {
+   "text": " Señor",
+   "srcStartMs": 24660,
+   "srcEndMs": 25080,
+   "startMs": 18660,
+   "endMs": 19080
+  },
+  {
+   "text": " existe,",
+   "srcStartMs": 25080,
+   "srcEndMs": 25620,
+   "startMs": 19080,
+   "endMs": 19620
+  },
+  {
+   "text": " sus",
+   "srcStartMs": 26300,
+   "srcEndMs": 26440,
+   "startMs": 19900,
+   "endMs": 20040
+  },
+  {
+   "text": " puertas",
+   "srcStartMs": 26440,
+   "srcEndMs": 26800,
+   "startMs": 20040,
+   "endMs": 20400
+  },
+  {
+   "text": " están",
+   "srcStartMs": 26800,
+   "srcEndMs": 27120,
+   "startMs": 20400,
+   "endMs": 20720
+  },
+  {
+   "text": " escondidas",
+   "srcStartMs": 27120,
+   "srcEndMs": 27720,
+   "startMs": 20720,
+   "endMs": 21320
+  },
+  {
+   "text": " entre",
+   "srcStartMs": 27720,
+   "srcEndMs": 28080,
+   "startMs": 21320,
+   "endMs": 21680
+  },
+  {
+   "text": " esas",
+   "srcStartMs": 28080,
+   "srcEndMs": 28360,
+   "startMs": 21680,
+   "endMs": 21960
+  },
+  {
+   "text": " selvas",
+   "srcStartMs": 28360,
+   "srcEndMs": 28780,
+   "startMs": 21960,
+   "endMs": 22380
+  },
+  {
+   "text": " inexploradas.",
+   "srcStartMs": 28780,
+   "srcEndMs": 29580,
+   "startMs": 22380,
+   "endMs": 23180
+  }
+ ]
+}

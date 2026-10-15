@@ -21,7 +21,7 @@ PAD_PRE = 0.06  # aire que se deja antes de retomar la voz
 PAD_POST = 0.08  # aire que se deja tras la última palabra
 SOFT_DB = -42.0  # pausas suaves (solo para alinear palabras, no se cortan)
 SOFT_MIN = 0.25
-THR_DB = -55.0  # umbral de voz (dBFS RMS); el fondo real está < -60 dB
+THR_DB = -34.0  # umbral de voz (dBFS RMS); el fondo real está < -60 dB
 
 src, words_path, out_path = sys.argv[1:4]
 
@@ -121,7 +121,7 @@ words = json.load(open(words_path))
 # Corrección de tiempos: Whisper alarga palabras sobre las pausas → recortar al silencio
 # Ajustes manuales (s de origen), verificados re-transcribiendo el render:
 # «pero» empieza tras la pausa suave 30,42–30,76 s (Whisper lo adelantaba 420 ms)
-OVERRIDES = {67: (30.74, 31.0)}
+OVERRIDES = {}
 
 for k, w in enumerate(words):
     s, e = w["startMs"] / 1000, w["endMs"] / 1000

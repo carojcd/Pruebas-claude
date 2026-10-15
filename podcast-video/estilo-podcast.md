@@ -11,9 +11,9 @@ Lo que decido yo va marcado **[SUPOSICIÓN]**. Tiempos en fotogramas a 30 fps (1
 ## 2. Cortes y planos
 | Parámetro | Valor |
 |---|---|
-| Silencios | se elimina todo silencio **> 0,30 s** (umbral −55 dB RMS, ventanas de 10 ms); se deja 0,06 s de aire antes y 0,08 s después de la voz |
+| Silencios | se elimina todo silencio **> 0,30 s**, ventanas RMS de 10 ms; se deja 0,06 s de aire antes y 0,08 s después de la voz. **Umbral: −34 dB [SUPOSICIÓN, medido]**: el ruido de sala de este tipo de clip está entre −44 y −35 dB, así que −55 dB no detecta nada. Si cambia el clip, medir el ruido de sala en las pausas y fijar el umbral ~3 dB por encima |
 | Jump cut | corte seco **al inicio de frase/cláusula** (primera palabra tras una pausa, o cada 1,5–2,5 s si no hay pausa: se busca el inicio de palabra más cercano) |
-| Duración de plano | objetivo **1,5–2,5 s** (45–75 f); nunca < 1,2 s ni > 3,0 s |
+| Duración de plano | objetivo **1,5–2,5 s** (45–75 f). Cada silencio eliminado es un corte obligatorio, así que pueden salir planos de 0,87–1,0 s; no se añaden cortes propios en planos < 45 f |
 | Zoom alterno | planos pares **100 %**, impares **110 %** (escala instantánea en el corte, sin zoom animado) |
 | Punch-in | **120 %** en la frase más potente (elegida por el editor: remate o afirmación clave, ≈ 1–2 s) |
 | Origen del zoom | punto sobre la cara: **x = 50 %, y = 24 %** del cuadro [SUPOSICIÓN: medido en fotogramas; la cabeza ocupa y 8–42 %] para que la cara no salga de cuadro |
@@ -47,7 +47,8 @@ Lo que decido yo va marcado **[SUPOSICIÓN]**. Tiempos en fotogramas a 30 fps (1
 | Voz | normalizada a **−14 LUFS integrados**, pico real máx. **−2 dBFS** (`loudnorm` 2 pasadas + limitador `alimiter`) |
 | «Pop» de emoji | burbuja sintetizada: seno 520→880 Hz, 90 ms, −24 dBFS, en el fotograma de entrada del emoji |
 | Whoosh en punch-in | ruido paso-banda 400→4000 Hz, 280 ms, −22 dBFS, **empieza 6 f antes** del corte y llega a su pico en él |
-| Música | **ninguna** salvo que el usuario la pida (se pregunta antes) |
+| Música | **pedida por el usuario** (clip 1): pad cálido sintetizado (Dm–Bb–F–C, campanitas suaves), ≈ −33 LUFS (≈ 19 LU bajo la voz), fundido de entrada 1 s y de salida 1,5 s. Se genera con `scripts/sfx.py`. En clips nuevos: preguntar |
+| Master final | tras el render, `scripts/export.sh` aplica `loudnorm` de 2 pasadas sobre la mezcla (−14 LUFS, −2 dBTP) sin recodificar el vídeo |
 | Resto de SFX | ninguno |
 
 ## 6. Color
@@ -62,3 +63,5 @@ Corrección suave global: `contrast(1.08) saturate(1.05)` (CSS filter). Sin toca
 
 ## 8. Correcciones aprobadas
 Reglas confirmadas por el usuario; **mandan sobre las secciones 1–7** cuando se contradicen. (Aún ninguna.)
+
+- *Preferencia del usuario (clip 1):* sí quiere música de fondo muy baja (ver §5).

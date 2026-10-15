@@ -1,98 +1,107 @@
 import { interpolate, Sequence, useCurrentFrame } from "remotion";
-import { Block, BLOCKS, blockWindow, BRAND, wordFrame, WORDS } from "../montaje";
+import { BlockDef, CAPTION_Y, PLAN, wordFrame, WORDS } from "../montaje";
 
-const FADE = 8; // 250 ms
-const BLUR = 6;
+// estilo-podcast.md §3 y §4
+const BASE = 78;
+const KEY = Math.round(BASE * 1.3); // 101 px
+const ORANGE = "#FF6A1A";
+const EMOJI = 90;
+const MAX_W = 880; // ancho útil (100 px de margen a cada lado)
+const MAX_W_EMOJI = 760;
 
-// Tamaños (estilo.md §B)
-const STYLE = {
-  normal: { size: 72, hlSize: 110, color: "#FFFFFF", align: "left" as const },
-  enfasis: { size: 100, hlSize: 160, color: "#FFFFFF", align: "center" as const },
-  tarjetaOscura: { size: 84, hlSize: 128, color: "#FFFFFF", align: "center" as const },
-  tarjetaClara: { size: 84, hlSize: 128, color: BRAND.azulOscuro, align: "center" as const },
-};
+const clamp = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
 
-const WordSpan: React.FC<{ i: number; hl: boolean; blockFrom: number; kind: keyof typeof STYLE }> = ({
-  i,
-  hl,
-  blockFrom,
-  kind,
-}) => {
+const Word: React.FC<{ i: number; isKey: boolean; blockFrom: number }> = ({ i, isKey, blockFrom }) => {
   const frame = useCurrentFrame() + blockFrom; // fotograma global
-  const start = wordFrame(i);
-  const p = interpolate(frame, [start, start + FADE], [0, 1], {
-    extrapolateLeft: "clamp",
-    extrapolateRight: "clamp",
-  });
-  const s = STYLE[kind];
-  const onVideo = kind === "normal" || kind === "enfasis";
-  const text = WORDS[i].text.trim();
-  const blur = `blur(${((1 - p) * BLUR).toFixed(2)}px)`;
-  const shadow = onVideo ? " drop-shadow(0 4px 18px rgba(0,0,0,0.45))" : "";
-
+  const t = frame - wordFrame(i);
+  // pop 0,8 → 1,05 → 1 en 6 f; la clave 0,7 → 1,15 → 0,97 → 1 en 9 f
+  const scale = isKey
+    ? interpolate(t, [0, 5, 7, 9], [0.7, 1.15, 0.97, 1], clamp)
+    : interpolate(t, [0, 4, 6], [0.8, 1.05, 1], clamp);
+  const opacity = interpolate(t, [0, isKey ? 6 : 6], [0, 1], clamp);
   return (
     <span
       style={{
         display: "inline-block",
-        marginRight: "0.24em",
-        opacity: p,
-        fontWeight: hl ? 800 : 500,
-        fontSize: hl ? s.hlSize : s.size,
-        letterSpacing: hl ? "-0.02em" : "-0.01em",
-        filter: blur + shadow,
-        ...(hl
+        margin: "0 0.13em",
+        opacity,
+        transform: `scale(${scale})`,
+        transformOrigin: "50% 75%",
+        ...(isKey
           ? {
-              backgroundImage: BRAND.gradiente,
-              WebkitBackgroundClip: "text",
-              backgroundClip: "text",
-              color: "transparent",
-              paddingBottom: "0.08em",
+              fontFamily: "Playfair Display",
+              fontStyle: "italic",
+              fontWeight: 800,
+              fontSize: KEY,
+              color: ORANGE,
+              textShadow: `0 0 18px ${ORANGE}99, 0 0 42px ${ORANGE}55, 0 4px 14px rgba(0,0,0,.55)`,
             }
-          : { color: s.color }),
+          : {
+              fontFamily: "Montserrat",
+              fontWeight: 800,
+              fontSize: BASE,
+              color: "#FFFFFF",
+              WebkitTextStroke: "2px rgba(0,0,0,.35)",
+              paintOrder: "stroke fill",
+              textShadow: "0 4px 14px rgba(0,0,0,.55)",
+            }),
       }}
     >
-      {text}
+      {WORDS[i].text.trim()}
     </span>
   );
 };
 
-const BlockView: React.FC<{ block: Block; from: number }> = ({ block, from }) => {
-  const kind = block.kind ?? "normal";
-  const s = STYLE[kind];
-  const centered = s.align === "center";
+const BlockView: React.FC<{ block: BlockDef }> = ({ block }) => {
+  const frame = useCurrentFrame() + block.from;
+  const te = frame - block.keyFrame;
+  const eScale = interpolate(te, [0, 5, 8], [0.5, 1.2, 1], clamp);
   return (
     <div
       style={{
         position: "absolute",
-        left: centered ? 90 : 120,
-        width: centered ? 900 : 820,
-        top: kind === "normal" ? 1070 : 960,
+        left: 0,
+        right: 0,
+        top: CAPTION_Y,
         transform: "translateY(-50%)",
-        textAlign: s.align,
-        fontFamily: "DM Sans",
-        lineHeight: 0.98,
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        gap: 14,
       }}
     >
-      {block.lines.map((line, li) => (
-        <div key={li}>
-          {line.map((i) => (
-            <WordSpan key={i} i={i} hl={block.hl === i} blockFrom={from} kind={kind} />
-          ))}
-        </div>
-      ))}
+      <div style={{ textAlign: "center", maxWidth: block.emoji ? MAX_W_EMOJI : MAX_W, lineHeight: 1.05, letterSpacing: "-0.01em" }}>
+        {block.lines.map((line, li) => (
+          <div key={li}>
+            {line.map((i) => (
+              <Word key={i} i={i} isKey={i === block.key} blockFrom={block.from} />
+            ))}
+          </div>
+        ))}
+      </div>
+      {block.emoji ? (
+        <span
+          style={{
+            fontFamily: "Noto Color Emoji",
+            fontSize: EMOJI,
+            lineHeight: 1,
+            opacity: interpolate(te, [0, 4], [0, 1], clamp),
+            transform: `scale(${eScale})`,
+          }}
+        >
+          {block.emoji}
+        </span>
+      ) : null}
     </div>
   );
 };
 
 export const Captions: React.FC = () => (
   <>
-    {BLOCKS.map((block, b) => {
-      const { from, to } = blockWindow(b);
-      return (
-        <Sequence key={b} name={`Subtítulo ${b + 1}`} from={from} durationInFrames={Math.max(1, to - from)} layout="none">
-          <BlockView block={block} from={from} />
-        </Sequence>
-      );
-    })}
+    {PLAN.blocks.map((block, b) => (
+      <Sequence key={b} name={`Subtítulo ${b + 1}`} from={block.from} durationInFrames={Math.max(1, block.to - block.from)} layout="none">
+        <BlockView block={block} />
+      </Sequence>
+    ))}
   </>
 );

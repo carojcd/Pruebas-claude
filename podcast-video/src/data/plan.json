@@ -1,0 +1,643 @@
+{
+ "fps": 30,
+ "durationInFrames": 705,
+ "punchFrame": 621,
+ "shots": [
+  {
+   "from": 0,
+   "to": 56,
+   "zoom": 1.0
+  },
+  {
+   "from": 56,
+   "to": 102,
+   "zoom": 1.1
+  },
+  {
+   "from": 102,
+   "to": 155,
+   "zoom": 1.0
+  },
+  {
+   "from": 155,
+   "to": 181,
+   "zoom": 1.1
+  },
+  {
+   "from": 181,
+   "to": 211,
+   "zoom": 1.0
+  },
+  {
+   "from": 211,
+   "to": 299,
+   "zoom": 1.1
+  },
+  {
+   "from": 299,
+   "to": 352,
+   "zoom": 1.0
+  },
+  {
+   "from": 352,
+   "to": 395,
+   "zoom": 1.1
+  },
+  {
+   "from": 395,
+   "to": 457,
+   "zoom": 1.0
+  },
+  {
+   "from": 457,
+   "to": 507,
+   "zoom": 1.1
+  },
+  {
+   "from": 507,
+   "to": 535,
+   "zoom": 1.0
+  },
+  {
+   "from": 535,
+   "to": 595,
+   "zoom": 1.1
+  },
+  {
+   "from": 595,
+   "to": 621,
+   "zoom": 1.0
+  },
+  {
+   "from": 621,
+   "to": 705,
+   "zoom": 1.2
+  }
+ ],
+ "blocks": [
+  {
+   "lines": [
+    [
+     0,
+     1
+    ],
+    [
+     2
+    ]
+   ],
+   "key": 2,
+   "from": 0,
+   "to": 31,
+   "keyFrame": 18,
+   "text": [
+    [
+     "Decían",
+     "que"
+    ],
+    [
+     "caeríamos"
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     3,
+     4
+    ]
+   ],
+   "key": 4,
+   "emoji": "🌊",
+   "from": 31,
+   "to": 58,
+   "keyFrame": 40,
+   "text": [
+    [
+     "al",
+     "abismo,"
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     5,
+     6,
+     7
+    ]
+   ],
+   "key": 5,
+   "from": 58,
+   "to": 69,
+   "keyFrame": 58,
+   "text": [
+    [
+     "pero",
+     "lo",
+     "que"
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     8,
+     9
+    ],
+    [
+     10
+    ]
+   ],
+   "key": 10,
+   "from": 69,
+   "to": 103,
+   "keyFrame": 80,
+   "text": [
+    [
+     "mis",
+     "ojos"
+    ],
+    [
+     "presenciaron"
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     11,
+     12
+    ]
+   ],
+   "key": 12,
+   "emoji": "⏳",
+   "from": 103,
+   "to": 123,
+   "keyFrame": 111,
+   "text": [
+    [
+     "tras",
+     "semanas"
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     13,
+     14,
+     15
+    ]
+   ],
+   "key": 14,
+   "from": 123,
+   "to": 157,
+   "keyFrame": 130,
+   "text": [
+    [
+     "de",
+     "infinita",
+     "mar"
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     16,
+     17
+    ],
+    [
+     18
+    ]
+   ],
+   "key": 18,
+   "from": 157,
+   "to": 182,
+   "keyFrame": 164,
+   "text": [
+    [
+     "fue",
+     "un"
+    ],
+    [
+     "milagro."
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     19,
+     20
+    ],
+    [
+     21
+    ]
+   ],
+   "key": 21,
+   "from": 182,
+   "to": 212,
+   "keyFrame": 193,
+   "text": [
+    [
+     "Al",
+     "tocar"
+    ],
+    [
+     "tierra"
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     22,
+     23
+    ],
+    [
+     24
+    ]
+   ],
+   "key": 24,
+   "from": 212,
+   "to": 236,
+   "keyFrame": 229,
+   "text": [
+    [
+     "sentí",
+     "una"
+    ],
+    [
+     "arena"
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     25,
+     26
+    ],
+    [
+     27,
+     28
+    ]
+   ],
+   "key": 26,
+   "emoji": "🏖️",
+   "from": 236,
+   "to": 273,
+   "keyFrame": 244,
+   "text": [
+    [
+     "más",
+     "blanca"
+    ],
+    [
+     "y",
+     "fina"
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     29,
+     30
+    ],
+    [
+     31
+    ]
+   ],
+   "key": 31,
+   "from": 273,
+   "to": 301,
+   "keyFrame": 280,
+   "text": [
+    [
+     "que",
+     "en"
+    ],
+    [
+     "Castilla."
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     32,
+     33
+    ]
+   ],
+   "key": 33,
+   "emoji": "🌳",
+   "from": 301,
+   "to": 315,
+   "keyFrame": 304,
+   "text": [
+    [
+     "Vi",
+     "árboles"
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     34
+    ],
+    [
+     35,
+     36
+    ]
+   ],
+   "key": 34,
+   "from": 315,
+   "to": 353,
+   "keyFrame": 315,
+   "text": [
+    [
+     "inmensos"
+    ],
+    [
+     "que",
+     "parecían"
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     37,
+     38
+    ],
+    [
+     39
+    ]
+   ],
+   "key": 39,
+   "from": 353,
+   "to": 389,
+   "keyFrame": 370,
+   "text": [
+    [
+     "rasgar",
+     "el"
+    ],
+    [
+     "firmamento"
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     40,
+     41
+    ],
+    [
+     42,
+     43
+    ]
+   ],
+   "key": 43,
+   "emoji": "🦜",
+   "from": 389,
+   "to": 436,
+   "keyFrame": 417,
+   "text": [
+    [
+     "y",
+     "bandadas"
+    ],
+    [
+     "de",
+     "papagayos"
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     44,
+     45
+    ],
+    [
+     46
+    ]
+   ],
+   "key": 46,
+   "from": 436,
+   "to": 458,
+   "keyFrame": 444,
+   "text": [
+    [
+     "de",
+     "mil"
+    ],
+    [
+     "colores"
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     47,
+     48
+    ],
+    [
+     50
+    ]
+   ],
+   "key": 50,
+   "from": 458,
+   "to": 491,
+   "keyFrame": 474,
+   "text": [
+    [
+     "que",
+     "casi"
+    ],
+    [
+     "oscurecían"
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     51,
+     52
+    ]
+   ],
+   "key": 52,
+   "emoji": "☀️",
+   "from": 491,
+   "to": 508,
+   "keyFrame": 496,
+   "text": [
+    [
+     "el",
+     "sol."
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     53,
+     54
+    ],
+    [
+     55,
+     56
+    ]
+   ],
+   "key": 54,
+   "from": 508,
+   "to": 536,
+   "keyFrame": 511,
+   "text": [
+    [
+     "En",
+     "verdad"
+    ],
+    [
+     "os",
+     "digo,"
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     57,
+     58,
+     59
+    ]
+   ],
+   "key": 59,
+   "from": 536,
+   "to": 551,
+   "keyFrame": 545,
+   "text": [
+    [
+     "si",
+     "el",
+     "edén"
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     60,
+     61
+    ],
+    [
+     62,
+     63
+    ]
+   ],
+   "key": 62,
+   "emoji": "🙏",
+   "from": 551,
+   "to": 597,
+   "keyFrame": 560,
+   "text": [
+    [
+     "de",
+     "nuestro"
+    ],
+    [
+     "Señor",
+     "existe,"
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     64,
+     65
+    ],
+    [
+     66
+    ]
+   ],
+   "key": 65,
+   "from": 597,
+   "to": 622,
+   "keyFrame": 601,
+   "text": [
+    [
+     "sus",
+     "puertas"
+    ],
+    [
+     "están"
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     67
+    ],
+    [
+     68,
+     69
+    ]
+   ],
+   "key": 67,
+   "from": 622,
+   "to": 659,
+   "keyFrame": 622,
+   "text": [
+    [
+     "escondidas"
+    ],
+    [
+     "entre",
+     "esas"
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     70
+    ],
+    [
+     71
+    ]
+   ],
+   "key": 71,
+   "emoji": "🌿",
+   "from": 659,
+   "to": 703,
+   "keyFrame": 671,
+   "text": [
+    [
+     "selvas"
+    ],
+    [
+     "inexploradas."
+    ]
+   ]
+  }
+ ],
+ "emojiFrames": [
+  40,
+  111,
+  244,
+  304,
+  417,
+  496,
+  560,
+  671
+ ]
+}

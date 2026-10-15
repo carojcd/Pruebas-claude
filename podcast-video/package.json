@@ -29,9 +29,11 @@
     "build": "remotion bundle",
     "upgrade": "remotion upgrade",
     "lint": "eslint src && tsc",
-    "transcribir": "node scripts/transcribe.mjs fuentes/clip.mp4 analisis/palabras.json $WHISPER_MODELS spanish",
-    "editar": "python3 scripts/build_edit.py fuentes/clip.mp4 analisis/palabras.json src/data/edit.json",
+    "transcribir": "node scripts/transcribe.mjs fuentes/clip.mp4 analisis/palabras-ok.json $WHISPER_MODELS spanish",
+    "editar": "python3 scripts/build_edit.py fuentes/clip.mp4 analisis/palabras-ok.json src/data/edit.json",
     "sfx": "python3 scripts/sfx.py public/sfx",
-    "render": "remotion render Congresos out/borrador.mp4 --codec h264 --crf 18 --audio-codec aac"
+    "render": "remotion render Podcast out/borrador.mp4 --codec h264 --crf 18 --audio-codec aac",
+    "plan": "python3 scripts/plan.py src/data/edit.json src/data/blocks.json src/data/plan.json",
+    "voz": "python3 scripts/voz.py fuentes/clip.mp4 src/data/edit.json public/voz.wav"
   }
 }
