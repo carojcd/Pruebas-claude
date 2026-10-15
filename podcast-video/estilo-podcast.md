@@ -11,12 +11,12 @@ Lo que decido yo va marcado **[SUPOSICIÓN]**. Tiempos en fotogramas a 30 fps (1
 ## 2. Cortes y planos
 | Parámetro | Valor |
 |---|---|
-| Silencios | se elimina todo silencio **> 0,30 s**, ventanas RMS de 10 ms; se deja 0,06 s de aire antes y 0,08 s después de la voz. **Umbral: −34 dB [SUPOSICIÓN, medido]**: el ruido de sala de este tipo de clip está entre −44 y −35 dB, así que −55 dB no detecta nada. Si cambia el clip, medir el ruido de sala en las pausas y fijar el umbral ~3 dB por encima |
+| Silencios | se elimina todo silencio **> 0,30 s**, ventanas RMS de 10 ms; se deja 0,06 s de aire antes y 0,08 s después de la voz. **Umbral automático [SUPOSICIÓN, calibrado con 2 clips]: percentil 10 del nivel + 9,5 dB** (clip 1: −34 dB, clip 2: −33 dB). El ruido de sala está entre −44 y −35 dB, así que −55 dB no detecta nada |
 | Jump cut | corte seco **al inicio de frase/cláusula** (primera palabra tras una pausa, o cada 1,5–2,5 s si no hay pausa: se busca el inicio de palabra más cercano) |
 | Duración de plano | objetivo **1,5–2,5 s** (45–75 f). Cada silencio eliminado es un corte obligatorio, así que pueden salir planos de 0,87–1,0 s; no se añaden cortes propios en planos < 45 f |
 | Zoom alterno | planos pares **100 %**, impares **110 %** (escala instantánea en el corte, sin zoom animado) |
 | Punch-in | **120 %** en la frase más potente (elegida por el editor: remate o afirmación clave, ≈ 1–2 s) |
-| Origen del zoom | punto sobre la cara: **x = 50 %, y = 24 %** del cuadro [SUPOSICIÓN: medido en fotogramas; la cabeza ocupa y 8–42 %] para que la cara no salga de cuadro |
+| Origen del zoom | por clip en `face.json`: x sobre la cara (50–55 %); y fija sobre la cara (clip 1: 24 %) o, si la boca se mueve, **a la altura de la boca** para que el zoom no la baje [SUPOSICIÓN: medido en fotogramas] |
 | Varias personas | no aplica en este clip (1 sola persona). Si en otro clip hay varias: se detecta hablante por audio+caras; si no es fiable, se pregunta |
 | Calidad | el original es 720 p: 110 % → ≈ 1,65× y 120 % → 1,8× de ampliación; aceptable con `image-rendering` por defecto [SUPOSICIÓN: no se reescala con IA] |
 
@@ -24,7 +24,7 @@ Lo que decido yo va marcado **[SUPOSICIÓN]**. Tiempos en fotogramas a 30 fps (1
 | Parámetro | Valor |
 |---|---|
 | Bloques | **2–4 palabras**, **1–2 líneas**, centrados horizontalmente |
-| Posición | centro del bloque en **y = 62 % (1190 px)** |
+| Posición | centro del bloque en **y = 62 % (1190 px)**; si la boca baja (cámara que se acerca), el bloque la sigue: **y = boca + 17 %**, máx. **80 %** (`face.json`, boca medida por clip en fotogramas con rejilla) para que nunca tape boca ni barbilla |
 | Zona segura | margen libre **200 px arriba** y **250 px abajo** (texto entre y 200 y y 1670); ancho útil **≤ 880 px** (100 px a cada lado) |
 | Boca | cara/boca en y ≈ 25–36 % (480–690 px); el bloque (y ≈ 1100–1280) queda ≥ 400 px por debajo [SUPOSICIÓN: se verifica con fotogramas de control] |
 | Texto base | **Montserrat ExtraBold 800**, **78 px**, blanco **#FFFFFF**, interlineado 1,05, tracking −0,01 em, sombra `0 4px 14px rgba(0,0,0,.55)` + contorno `-webkit-text-stroke: 2px rgba(0,0,0,.35)` |

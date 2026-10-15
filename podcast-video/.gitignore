@@ -12,3 +12,5 @@ analisis/ref/scores.txt
 out/
 public/clip-norm.mp4
 public/sfx
+public/voz.wav
+analisis/*.json

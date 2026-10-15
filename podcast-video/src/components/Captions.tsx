@@ -1,5 +1,5 @@
 import { interpolate, Sequence, useCurrentFrame } from "remotion";
-import { BlockDef, CAPTION_Y, PLAN, wordFrame, WORDS } from "../montaje";
+import { BlockDef, captionY, PLAN, wordFrame, WORDS } from "../montaje";
 
 // estilo-podcast.md §3 y §4
 const BASE = 78;
@@ -62,7 +62,7 @@ const BlockView: React.FC<{ block: BlockDef }> = ({ block }) => {
         position: "absolute",
         left: 0,
         right: 0,
-        top: CAPTION_Y,
+        top: captionY(block.from),
         transform: "translateY(-50%)",
         display: "flex",
         justifyContent: "center",

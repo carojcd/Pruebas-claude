@@ -8,6 +8,7 @@
 Uso: python3 scripts/build_edit.py public/mi-video.mp4 analisis/mi-video-palabras.json src/data/edit.json
 """
 import json
+import os
 import subprocess
 import sys
 
@@ -21,7 +22,7 @@ PAD_PRE = 0.06  # aire que se deja antes de retomar la voz
 PAD_POST = 0.08  # aire que se deja tras la última palabra
 SOFT_DB = -42.0  # pausas suaves (solo para alinear palabras, no se cortan)
 SOFT_MIN = 0.25
-THR_DB = -34.0  # umbral de voz (dBFS RMS); el fondo real está < -60 dB
+THR_DB = -44.0  # umbral de voz (dBFS RMS); el fondo real está < -60 dB
 
 src, words_path, out_path = sys.argv[1:4]
 
@@ -34,6 +35,9 @@ dur = len(audio) / SR
 n = int(len(audio) / (SR * WIN))
 frames = audio[: n * int(SR * WIN)].reshape(n, -1)
 db = 20 * np.log10(np.sqrt((frames ** 2).mean(1)) + 1e-9)
+# umbral automático: ruido de sala (percentil 10) + 9,5 dB (calibrado con 2 clips); THR_DB en el entorno lo fija a mano
+THR_DB = float(os.environ.get("THR_DB", np.percentile(db, 10) + 9.5))
+print(f"umbral de voz {THR_DB:.1f} dB"); open(os.path.join(os.path.dirname(os.path.abspath(out_path)), "thr.txt"), "w").write(f"{THR_DB:.1f}")
 voiced = db > THR_DB
 
 # silencios = tramos sin voz de más de MIN_SIL
