@@ -1,82 +1,87 @@
 {
  "fps": 30,
- "durationInFrames": 653,
- "punchFrame": 574,
+ "durationInFrames": 765,
+ "punchFrame": 666,
  "shots": [
   {
    "from": 0,
-   "to": 51,
+   "to": 61,
    "zoom": 1.0
   },
   {
-   "from": 51,
-   "to": 105,
+   "from": 61,
+   "to": 130,
    "zoom": 1.1
   },
   {
-   "from": 105,
-   "to": 158,
+   "from": 130,
+   "to": 194,
    "zoom": 1.0
   },
   {
-   "from": 158,
-   "to": 186,
+   "from": 194,
+   "to": 214,
    "zoom": 1.1
   },
   {
-   "from": 186,
-   "to": 216,
+   "from": 214,
+   "to": 280,
    "zoom": 1.0
   },
   {
-   "from": 216,
-   "to": 274,
+   "from": 280,
+   "to": 328,
    "zoom": 1.1
   },
   {
-   "from": 274,
-   "to": 286,
+   "from": 328,
+   "to": 405,
    "zoom": 1.0
   },
   {
-   "from": 286,
-   "to": 360,
+   "from": 405,
+   "to": 435,
    "zoom": 1.1
   },
   {
-   "from": 360,
-   "to": 406,
+   "from": 435,
+   "to": 491,
    "zoom": 1.0
   },
   {
-   "from": 406,
-   "to": 464,
+   "from": 491,
+   "to": 546,
    "zoom": 1.1
   },
   {
-   "from": 464,
-   "to": 489,
+   "from": 546,
+   "to": 609,
    "zoom": 1.0
   },
   {
-   "from": 489,
-   "to": 536,
+   "from": 609,
+   "to": 643,
    "zoom": 1.1
   },
   {
-   "from": 536,
-   "to": 574,
+   "from": 643,
+   "to": 665,
    "zoom": 1.0
   },
   {
-   "from": 574,
-   "to": 602,
+   "from": 665,
+   "to": 666,
+   "zoom": 1.1
+  },
+  {
+   "from": 666,
+   "to": 715,
    "zoom": 1.2
   },
   {
-   "from": 602,
-   "to": 653,
-   "zoom": 1.0
+   "from": 715,
+   "to": 765,
+   "zoom": 1.1
   }
  ],
  "blocks": [
@@ -84,58 +89,58 @@
    "lines": [
     [
      0,
-     1,
-     2
+     1
     ]
    ],
-   "key": 2,
-   "emoji": "🏛️",
+   "key": 1,
    "from": 0,
-   "to": 24,
-   "keyFrame": 14,
+   "to": 22,
+   "keyFrame": 7,
    "text": [
     [
-     "Cuando",
-     "pisé",
-     "Roma"
+     "A",
+     "ver,"
     ]
    ]
   },
   {
    "lines": [
     [
+     2,
      3,
-     4,
-     5
+     4
     ]
    ],
    "key": 4,
-   "from": 24,
-   "to": 52,
-   "keyFrame": 31,
+   "from": 33,
+   "to": 62,
+   "keyFrame": 44,
    "text": [
     [
-     "por",
-     "primera",
-     "vez,"
+     "me",
+     "da",
+     "muchísima"
     ]
    ]
   },
   {
    "lines": [
     [
+     5,
      6,
      7
     ]
    ],
-   "key": 6,
-   "from": 52,
-   "to": 71,
-   "keyFrame": 52,
+   "key": 5,
+   "emoji": "😂",
+   "from": 62,
+   "to": 86,
+   "keyFrame": 62,
    "text": [
     [
-     "esperaba",
-     "ver"
+     "risa",
+     "que",
+     "hoy"
     ]
    ]
   },
@@ -143,106 +148,107 @@
    "lines": [
     [
      8,
-     9
-    ],
-    [
-     10,
-     11
+     9,
+     10
     ]
    ],
-   "key": 11,
-   "from": 71,
-   "to": 106,
+   "key": 9,
+   "from": 86,
+   "to": 105,
    "keyFrame": 90,
    "text": [
     [
-     "una",
-     "ciudad"
+     "me",
+     "leen",
+     "en"
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     11,
+     12
+    ]
+   ],
+   "key": 12,
+   "emoji": "🎓",
+   "from": 105,
+   "to": 131,
+   "keyFrame": 109,
+   "text": [
+    [
+     "las",
+     "universidades"
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     13,
+     14,
+     15
+    ]
+   ],
+   "key": 15,
+   "from": 131,
+   "to": 152,
+   "keyFrame": 144,
+   "text": [
+    [
+     "con",
+     "esa",
+     "voz"
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     16,
+     17
     ],
     [
-     "de",
-     "dioses,"
-    ]
-   ]
-  },
-  {
-   "lines": [
-    [
-     12,
-     13,
-     14
-    ]
-   ],
-   "key": 14,
-   "from": 106,
-   "to": 129,
-   "keyFrame": 115,
-   "text": [
-    [
-     "pero",
-     "solo",
-     "encontré"
-    ]
-   ]
-  },
-  {
-   "lines": [
-    [
-     15,
-     16
-    ]
-   ],
-   "key": 16,
-   "emoji": "🧊",
-   "from": 129,
-   "to": 159,
-   "keyFrame": 141,
-   "text": [
-    [
-     "mármol",
-     "frío,"
-    ]
-   ]
-  },
-  {
-   "lines": [
-    [
-     17,
      18
     ]
    ],
-   "key": 17,
-   "from": 160,
-   "to": 188,
-   "keyFrame": 160,
+   "key": 18,
+   "emoji": "🧐",
+   "from": 152,
+   "to": 194,
+   "keyFrame": 174,
    "text": [
     [
-     "lanzas",
-     "toscas"
+     "de",
+     "intelectual"
+    ],
+    [
+     "serio."
     ]
    ]
   },
   {
    "lines": [
     [
-     19,
-     20
+     19
     ],
     [
+     20,
      21
     ]
    ],
-   "key": 21,
-   "from": 188,
-   "to": 218,
-   "keyFrame": 198,
+   "key": 19,
+   "from": 216,
+   "to": 254,
+   "keyFrame": 216,
    "text": [
     [
-     "y",
-     "hombres"
+     "Hermano,"
     ],
     [
-     "crueles."
+     "mis",
+     "obras"
     ]
    ]
   },
@@ -250,42 +256,38 @@
    "lines": [
     [
      22,
-     23
+     23,
+     24
     ]
    ],
-   "key": 23,
-   "from": 218,
-   "to": 236,
-   "keyFrame": 222,
+   "key": 24,
+   "from": 254,
+   "to": 281,
+   "keyFrame": 269,
    "text": [
     [
-     "Sus",
-     "legiones"
+     "eran",
+     "los",
+     "chismes"
     ]
    ]
   },
   {
    "lines": [
     [
-     24,
-     25
-    ],
-    [
+     25,
      26
     ]
    ],
    "key": 26,
-   "emoji": "⚔️",
-   "from": 236,
-   "to": 275,
-   "keyFrame": 257,
+   "emoji": "🗞️",
+   "from": 281,
+   "to": 301,
+   "keyFrame": 285,
    "text": [
     [
-     "marchaban",
-     "con"
-    ],
-    [
-     "hierro,"
+     "de",
+     "farándula"
     ]
    ]
   },
@@ -298,14 +300,14 @@
     ]
    ],
    "key": 29,
-   "from": 275,
-   "to": 305,
-   "keyFrame": 292,
+   "from": 301,
+   "to": 328,
+   "keyFrame": 309,
    "text": [
     [
-     "sí,",
-     "pero",
-     "carecían"
+     "de",
+     "la",
+     "época."
     ]
    ]
   },
@@ -314,43 +316,43 @@
     [
      30,
      31
+    ],
+    [
+     32
     ]
    ],
-   "key": 31,
-   "from": 305,
-   "to": 317,
-   "keyFrame": 311,
+   "key": 32,
+   "from": 329,
+   "to": 395,
+   "keyFrame": 347,
    "text": [
     [
-     "del",
-     "alma"
+     "Yo",
+     "escribía"
+    ],
+    [
+     "traiciones,"
     ]
    ]
   },
   {
    "lines": [
     [
-     32,
      33,
-     34
-    ],
-    [
+     34,
      35
     ]
    ],
-   "key": 35,
-   "emoji": "👑",
-   "from": 317,
-   "to": 361,
-   "keyFrame": 338,
+   "key": 33,
+   "emoji": "🧙",
+   "from": 406,
+   "to": 450,
+   "keyFrame": 406,
    "text": [
     [
-     "dorada",
-     "de",
-     "mi"
-    ],
-    [
-     "Alejandría."
+     "brujas",
+     "y",
+     "chistes"
     ]
    ]
   },
@@ -358,98 +360,92 @@
    "lines": [
     [
      36,
-     37
+     37,
+     38
     ]
    ],
-   "key": 37,
-   "from": 361,
-   "to": 380,
-   "keyFrame": 368,
+   "key": 38,
+   "from": 450,
+   "to": 478,
+   "keyFrame": 462,
    "text": [
     [
-     "Roma",
-     "creía"
+     "de",
+     "doble",
+     "sentido"
     ]
    ]
   },
   {
    "lines": [
     [
-     38,
      39,
      40
-    ]
-   ],
-   "key": 40,
-   "from": 380,
-   "to": 407,
-   "keyFrame": 394,
-   "text": [
-    [
-     "que",
-     "podía",
-     "someter"
-    ]
-   ]
-  },
-  {
-   "lines": [
+    ],
     [
      41,
-     42,
-     43
+     42
     ]
    ],
    "key": 42,
-   "emoji": "🌍",
-   "from": 407,
-   "to": 431,
-   "keyFrame": 412,
+   "from": 478,
+   "to": 515,
+   "keyFrame": 505,
    "text": [
     [
-     "al",
-     "mundo",
-     "entero"
+     "para",
+     "que"
+    ],
+    [
+     "la",
+     "gente"
     ]
    ]
   },
   {
    "lines": [
     [
+     43,
      44,
-     45,
-     46
+     45
     ]
    ],
-   "key": 46,
-   "from": 431,
-   "to": 465,
-   "keyFrame": 443,
+   "key": 45,
+   "emoji": "🎭",
+   "from": 515,
+   "to": 547,
+   "keyFrame": 535,
    "text": [
     [
-     "con",
-     "sus",
-     "espadas,"
+     "en",
+     "el",
+     "teatro"
     ]
    ]
   },
   {
    "lines": [
     [
-     47,
+     46,
+     47
+    ],
+    [
      48,
      49
     ]
    ],
    "key": 49,
-   "from": 465,
-   "to": 490,
-   "keyFrame": 474,
+   "from": 547,
+   "to": 594,
+   "keyFrame": 575,
    "text": [
     [
-     "pero",
-     "yo",
-     "supe,"
+     "gritara",
+     "y"
+    ],
+    [
+     "tirara",
+     "cosas."
     ]
    ]
   },
@@ -464,18 +460,18 @@
      53
     ]
    ],
-   "key": 53,
-   "from": 490,
-   "to": 513,
-   "keyFrame": 505,
+   "key": 52,
+   "from": 610,
+   "to": 644,
+   "keyFrame": 618,
    "text": [
     [
-     "al",
-     "mirar"
+     "Si",
+     "yo"
     ],
     [
-     "a",
-     "César"
+     "viviera",
+     "hoy,"
     ]
    ]
   },
@@ -484,57 +480,39 @@
     [
      54,
      55,
-     56
+     58
     ]
    ],
-   "key": 56,
-   "emoji": "👁️",
-   "from": 513,
-   "to": 537,
-   "keyFrame": 521,
+   "key": 58,
+   "from": 644,
+   "to": 667,
+   "keyFrame": 649,
    "text": [
     [
-     "a",
-     "los",
-     "ojos,"
+     "te",
+     "lo",
+     "juro,"
     ]
    ]
   },
   {
    "lines": [
     [
-     57,
-     58,
-     59
-    ]
-   ],
-   "key": 59,
-   "from": 537,
-   "to": 563,
-   "keyFrame": 544,
-   "text": [
-    [
-     "que",
-     "los",
-     "conquistaría"
-    ]
-   ]
-  },
-  {
-   "lines": [
-    [
+     59,
      60,
      61
     ]
    ],
    "key": 61,
-   "from": 563,
-   "to": 575,
-   "keyFrame": 569,
+   "emoji": "👑",
+   "from": 667,
+   "to": 688,
+   "keyFrame": 679,
    "text": [
     [
-     "a",
-     "ellos"
+     "sería",
+     "el",
+     "rey"
     ]
    ]
   },
@@ -542,75 +520,54 @@
    "lines": [
     [
      62,
-     63,
+     63
+    ]
+   ],
+   "key": 62,
+   "from": 688,
+   "to": 716,
+   "keyFrame": 688,
+   "text": [
+    [
+     "indiscutible",
+     "del"
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
      64
+    ],
+    [
+     65,
+     66
     ]
    ],
    "key": 64,
-   "emoji": "🧠",
-   "from": 575,
-   "to": 597,
-   "keyFrame": 586,
+   "emoji": "📱",
+   "from": 716,
+   "to": 763,
+   "keyFrame": 716,
    "text": [
     [
-     "con",
-     "mi",
-     "mente"
-    ]
-   ]
-  },
-  {
-   "lines": [
-    [
-     65,
-     66,
-     67
+     "clickbait"
     ],
     [
-     68
-    ]
-   ],
-   "key": 68,
-   "from": 597,
-   "to": 632,
-   "keyFrame": 613,
-   "text": [
-    [
-     "y",
-     "con",
-     "el"
-    ],
-    [
-     "misticismo"
-    ]
-   ]
-  },
-  {
-   "lines": [
-    [
-     69,
-     70
-    ]
-   ],
-   "key": 70,
-   "from": 632,
-   "to": 653,
-   "keyFrame": 637,
-   "text": [
-    [
-     "de",
-     "Egipto."
+     "en",
+     "internet."
     ]
    ]
   }
  ],
  "emojiFrames": [
-  14,
-  141,
-  257,
-  338,
-  412,
-  521,
-  586
+  62,
+  109,
+  174,
+  285,
+  406,
+  535,
+  679,
+  716
  ]
 }

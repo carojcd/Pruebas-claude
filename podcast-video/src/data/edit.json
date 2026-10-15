@@ -1,630 +1,615 @@
 {
  "fps": 30,
- "sourceDurationS": 30.08,
- "durationInFrames": 653,
- "softPauses": [],
+ "sourceDurationS": 30.0930625,
+ "durationInFrames": 782,
+ "softPauses": [
+  [
+   0.0,
+   0.32
+  ],
+  [
+   0.73,
+   1.52
+  ],
+  [
+   6.59,
+   6.99
+  ],
+  [
+   7.26,
+   8.13
+  ],
+  [
+   8.59,
+   8.87
+  ],
+  [
+   11.71,
+   12.39
+  ],
+  [
+   13.1,
+   13.53
+  ],
+  [
+   14.58,
+   14.87
+  ],
+  [
+   15.58,
+   16.35
+  ],
+  [
+   17.89,
+   18.74
+  ],
+  [
+   22.07,
+   23.29
+  ],
+  [
+   24.22,
+   25.01
+  ],
+  [
+   25.56,
+   26.29
+  ]
+ ],
  "silencesCut": [
   [
    0.0,
-   0.89
+   0.32
   ],
   [
-   2.45,
-   3.13
+   6.64,
+   6.97
   ],
   [
-   4.77,
-   5.78
+   7.5,
+   8.11
   ],
   [
-   7.41,
-   7.78
+   11.74,
+   12.38
   ],
   [
-   8.57,
-   9.01
+   15.83,
+   16.34
   ],
   [
-   9.84,
-   11.01
+   18.05,
+   18.73
   ],
   [
-   12.77,
-   13.13
+   22.52,
+   23.28
   ],
   [
-   13.37,
-   14.0
+   24.29,
+   25.01
   ],
   [
-   16.32,
-   17.85
-  ],
-  [
-   21.17,
-   22.16
-  ],
-  [
-   22.87,
-   23.53
-  ],
-  [
-   24.95,
-   25.43
-  ],
-  [
-   27.49,
-   27.92
-  ],
-  [
-   29.48,
-   30.08
+   25.62,
+   26.27
   ]
  ],
  "segments": [
   {
-   "srcStartFrame": 25,
-   "srcEndFrame": 76,
+   "srcStartFrame": 8,
+   "srcEndFrame": 202,
    "outStartFrame": 0
   },
   {
-   "srcStartFrame": 92,
-   "srcEndFrame": 146,
-   "outStartFrame": 51
+   "srcStartFrame": 207,
+   "srcEndFrame": 227,
+   "outStartFrame": 194
   },
   {
-   "srcStartFrame": 172,
-   "srcEndFrame": 225,
-   "outStartFrame": 105
+   "srcStartFrame": 241,
+   "srcEndFrame": 355,
+   "outStartFrame": 214
   },
   {
-   "srcStartFrame": 232,
-   "srcEndFrame": 260,
-   "outStartFrame": 158
+   "srcStartFrame": 370,
+   "srcEndFrame": 477,
+   "outStartFrame": 328
   },
   {
-   "srcStartFrame": 268,
-   "srcEndFrame": 298,
-   "outStartFrame": 186
+   "srcStartFrame": 488,
+   "srcEndFrame": 544,
+   "outStartFrame": 435
   },
   {
-   "srcStartFrame": 328,
-   "srcEndFrame": 386,
-   "outStartFrame": 216
+   "srcStartFrame": 560,
+   "srcEndFrame": 678,
+   "outStartFrame": 491
   },
   {
-   "srcStartFrame": 392,
-   "srcEndFrame": 404,
-   "outStartFrame": 274
+   "srcStartFrame": 697,
+   "srcEndFrame": 731,
+   "outStartFrame": 609
   },
   {
-   "srcStartFrame": 418,
-   "srcEndFrame": 492,
-   "outStartFrame": 286
+   "srcStartFrame": 749,
+   "srcEndFrame": 771,
+   "outStartFrame": 643
   },
   {
-   "srcStartFrame": 534,
-   "srcEndFrame": 638,
-   "outStartFrame": 360
-  },
-  {
-   "srcStartFrame": 663,
-   "srcEndFrame": 688,
-   "outStartFrame": 464
-  },
-  {
-   "srcStartFrame": 704,
-   "srcEndFrame": 751,
-   "outStartFrame": 489
-  },
-  {
-   "srcStartFrame": 761,
-   "srcEndFrame": 827,
-   "outStartFrame": 536
-  },
-  {
-   "srcStartFrame": 836,
-   "srcEndFrame": 887,
-   "outStartFrame": 602
+   "srcStartFrame": 786,
+   "srcEndFrame": 903,
+   "outStartFrame": 665
   }
  ],
  "words": [
   {
-   "text": " Cuando",
+   "text": " A",
    "srcStartMs": 0,
-   "srcEndMs": 1040,
+   "srcEndMs": 500,
    "startMs": 0,
-   "endMs": 207
+   "endMs": 233
   },
   {
-   "text": " pisé",
-   "srcStartMs": 1040,
-   "srcEndMs": 1300,
-   "startMs": 207,
-   "endMs": 467
+   "text": " ver,",
+   "srcStartMs": 500,
+   "srcEndMs": 720,
+   "startMs": 233,
+   "endMs": 453
   },
   {
-   "text": " Roma",
-   "srcStartMs": 1300,
+   "text": " me",
+   "srcStartMs": 1360,
    "srcEndMs": 1620,
-   "startMs": 467,
-   "endMs": 787
+   "startMs": 1093,
+   "endMs": 1353
   },
   {
-   "text": " por",
+   "text": " da",
    "srcStartMs": 1620,
-   "srcEndMs": 1860,
-   "startMs": 787,
-   "endMs": 1027
+   "srcEndMs": 1740,
+   "startMs": 1353,
+   "endMs": 1473
   },
   {
-   "text": " primera",
-   "srcStartMs": 1860,
-   "srcEndMs": 2140,
-   "startMs": 1027,
-   "endMs": 1307
+   "text": " muchísima",
+   "srcStartMs": 1740,
+   "srcEndMs": 2320,
+   "startMs": 1473,
+   "endMs": 2053
   },
   {
-   "text": " vez,",
-   "srcStartMs": 2140,
-   "srcEndMs": 2470,
-   "startMs": 1307,
-   "endMs": 1637
+   "text": " risa",
+   "srcStartMs": 2320,
+   "srcEndMs": 2760,
+   "startMs": 2053,
+   "endMs": 2493
   },
   {
-   "text": " esperaba",
-   "srcStartMs": 3110,
-   "srcEndMs": 3500,
-   "startMs": 1743,
-   "endMs": 2133
+   "text": " que",
+   "srcStartMs": 2760,
+   "srcEndMs": 2920,
+   "startMs": 2493,
+   "endMs": 2653
   },
   {
-   "text": " ver",
-   "srcStartMs": 3500,
-   "srcEndMs": 3720,
-   "startMs": 2133,
-   "endMs": 2353
+   "text": " hoy",
+   "srcStartMs": 2920,
+   "srcEndMs": 3120,
+   "startMs": 2653,
+   "endMs": 2853
   },
   {
-   "text": " una",
-   "srcStartMs": 3720,
-   "srcEndMs": 3880,
-   "startMs": 2353,
-   "endMs": 2513
+   "text": " me",
+   "srcStartMs": 3120,
+   "srcEndMs": 3280,
+   "startMs": 2853,
+   "endMs": 3013
   },
   {
-   "text": " ciudad",
-   "srcStartMs": 3880,
-   "srcEndMs": 4180,
-   "startMs": 2513,
-   "endMs": 2813
-  },
-  {
-   "text": " de",
-   "srcStartMs": 4180,
-   "srcEndMs": 4360,
-   "startMs": 2813,
-   "endMs": 2993
-  },
-  {
-   "text": " dioses,",
-   "srcStartMs": 4360,
-   "srcEndMs": 4760,
-   "startMs": 2993,
+   "text": " leen",
+   "srcStartMs": 3280,
+   "srcEndMs": 3660,
+   "startMs": 3013,
    "endMs": 3393
   },
   {
-   "text": " pero",
-   "srcStartMs": 5760,
-   "srcEndMs": 5880,
-   "startMs": 3527,
-   "endMs": 3647
+   "text": " en",
+   "srcStartMs": 3660,
+   "srcEndMs": 3760,
+   "startMs": 3393,
+   "endMs": 3493
   },
   {
-   "text": " solo",
-   "srcStartMs": 5880,
-   "srcEndMs": 6060,
-   "startMs": 3647,
-   "endMs": 3827
+   "text": " las",
+   "srcStartMs": 3760,
+   "srcEndMs": 3900,
+   "startMs": 3493,
+   "endMs": 3633
   },
   {
-   "text": " encontré",
-   "srcStartMs": 6060,
-   "srcEndMs": 6540,
-   "startMs": 3827,
-   "endMs": 4307
-  },
-  {
-   "text": " mármol",
-   "srcStartMs": 6540,
-   "srcEndMs": 6920,
-   "startMs": 4307,
-   "endMs": 4687
-  },
-  {
-   "text": " frío,",
-   "srcStartMs": 6920,
-   "srcEndMs": 7280,
-   "startMs": 4687,
-   "endMs": 5047
-  },
-  {
-   "text": " lanzas",
-   "srcStartMs": 7800,
-   "srcEndMs": 8000,
-   "startMs": 5333,
-   "endMs": 5533
-  },
-  {
-   "text": " toscas",
-   "srcStartMs": 8000,
-   "srcEndMs": 8590,
-   "startMs": 5533,
-   "endMs": 6123
-  },
-  {
-   "text": " y",
-   "srcStartMs": 8990,
-   "srcEndMs": 9080,
-   "startMs": 6257,
-   "endMs": 6347
-  },
-  {
-   "text": " hombres",
-   "srcStartMs": 9080,
-   "srcEndMs": 9320,
-   "startMs": 6347,
-   "endMs": 6587
-  },
-  {
-   "text": " crueles.",
-   "srcStartMs": 9320,
-   "srcEndMs": 9840,
-   "startMs": 6587,
-   "endMs": 7107
-  },
-  {
-   "text": " Sus",
-   "srcStartMs": 10990,
-   "srcEndMs": 11120,
-   "startMs": 7257,
-   "endMs": 7387
-  },
-  {
-   "text": " legiones",
-   "srcStartMs": 11120,
-   "srcEndMs": 11600,
-   "startMs": 7387,
-   "endMs": 7867
-  },
-  {
-   "text": " marchaban",
-   "srcStartMs": 11600,
-   "srcEndMs": 12120,
-   "startMs": 7867,
-   "endMs": 8387
+   "text": " universidades",
+   "srcStartMs": 3900,
+   "srcEndMs": 4620,
+   "startMs": 3633,
+   "endMs": 4353
   },
   {
    "text": " con",
-   "srcStartMs": 12120,
-   "srcEndMs": 12300,
-   "startMs": 8387,
-   "endMs": 8567
+   "srcStartMs": 4620,
+   "srcEndMs": 4900,
+   "startMs": 4353,
+   "endMs": 4633
   },
   {
-   "text": " hierro,",
-   "srcStartMs": 12300,
-   "srcEndMs": 12760,
-   "startMs": 8567,
-   "endMs": 9027
+   "text": " esa",
+   "srcStartMs": 4900,
+   "srcEndMs": 5080,
+   "startMs": 4633,
+   "endMs": 4813
   },
   {
-   "text": " sí,",
-   "srcStartMs": 13110,
-   "srcEndMs": 13320,
-   "startMs": 9177,
-   "endMs": 9387
+   "text": " voz",
+   "srcStartMs": 5080,
+   "srcEndMs": 5340,
+   "startMs": 4813,
+   "endMs": 5073
   },
   {
-   "text": " pero",
-   "srcStartMs": 13980,
-   "srcEndMs": 14120,
-   "startMs": 9580,
-   "endMs": 9720
+   "text": " de",
+   "srcStartMs": 5340,
+   "srcEndMs": 5500,
+   "startMs": 5073,
+   "endMs": 5233
   },
   {
-   "text": " carecían",
-   "srcStartMs": 14120,
-   "srcEndMs": 14580,
-   "startMs": 9720,
+   "text": " intelectual",
+   "srcStartMs": 5500,
+   "srcEndMs": 6080,
+   "startMs": 5233,
+   "endMs": 5813
+  },
+  {
+   "text": " serio.",
+   "srcStartMs": 6080,
+   "srcEndMs": 6480,
+   "startMs": 5813,
+   "endMs": 6213
+  },
+  {
+   "text": " Hermano,",
+   "srcStartMs": 8090,
+   "srcEndMs": 8460,
+   "startMs": 7190,
+   "endMs": 7560
+  },
+  {
+   "text": " mis",
+   "srcStartMs": 8900,
+   "srcEndMs": 9020,
+   "startMs": 8000,
+   "endMs": 8120
+  },
+  {
+   "text": " obras",
+   "srcStartMs": 9020,
+   "srcEndMs": 9360,
+   "startMs": 8120,
+   "endMs": 8460
+  },
+  {
+   "text": " eran",
+   "srcStartMs": 9360,
+   "srcEndMs": 9680,
+   "startMs": 8460,
+   "endMs": 8780
+  },
+  {
+   "text": " los",
+   "srcStartMs": 9680,
+   "srcEndMs": 9880,
+   "startMs": 8780,
+   "endMs": 8980
+  },
+  {
+   "text": " chismes",
+   "srcStartMs": 9880,
+   "srcEndMs": 10280,
+   "startMs": 8980,
+   "endMs": 9380
+  },
+  {
+   "text": " de",
+   "srcStartMs": 10280,
+   "srcEndMs": 10400,
+   "startMs": 9380,
+   "endMs": 9500
+  },
+  {
+   "text": " farándula",
+   "srcStartMs": 10400,
+   "srcEndMs": 10920,
+   "startMs": 9500,
+   "endMs": 10020
+  },
+  {
+   "text": " de",
+   "srcStartMs": 10920,
+   "srcEndMs": 11080,
+   "startMs": 10020,
    "endMs": 10180
   },
   {
-   "text": " del",
-   "srcStartMs": 14580,
-   "srcEndMs": 14760,
+   "text": " la",
+   "srcStartMs": 11080,
+   "srcEndMs": 11200,
    "startMs": 10180,
-   "endMs": 10360
+   "endMs": 10300
   },
   {
-   "text": " alma",
-   "srcStartMs": 14760,
-   "srcEndMs": 14960,
-   "startMs": 10360,
-   "endMs": 10560
+   "text": " época.",
+   "srcStartMs": 11200,
+   "srcEndMs": 11580,
+   "startMs": 10300,
+   "endMs": 10680
   },
   {
-   "text": " dorada",
-   "srcStartMs": 14960,
-   "srcEndMs": 15400,
-   "startMs": 10560,
-   "endMs": 11000
+   "text": " Yo",
+   "srcStartMs": 12360,
+   "srcEndMs": 12480,
+   "startMs": 10960,
+   "endMs": 11080
   },
   {
-   "text": " de",
-   "srcStartMs": 15400,
-   "srcEndMs": 15540,
-   "startMs": 11000,
-   "endMs": 11140
+   "text": " escribía",
+   "srcStartMs": 12480,
+   "srcEndMs": 12960,
+   "startMs": 11080,
+   "endMs": 11560
   },
   {
-   "text": " mi",
-   "srcStartMs": 15540,
-   "srcEndMs": 15660,
-   "startMs": 11140,
-   "endMs": 11260
+   "text": " traiciones,",
+   "srcStartMs": 12960,
+   "srcEndMs": 14300,
+   "startMs": 11560,
+   "endMs": 12900
   },
   {
-   "text": " Alejandría.",
-   "srcStartMs": 15660,
-   "srcEndMs": 16260,
-   "startMs": 11260,
-   "endMs": 11860
-  },
-  {
-   "text": " Roma",
-   "srcStartMs": 17830,
-   "srcEndMs": 18060,
-   "startMs": 12030,
-   "endMs": 12260
-  },
-  {
-   "text": " creía",
-   "srcStartMs": 18060,
-   "srcEndMs": 18480,
-   "startMs": 12260,
-   "endMs": 12680
-  },
-  {
-   "text": " que",
-   "srcStartMs": 18480,
-   "srcEndMs": 18640,
-   "startMs": 12680,
-   "endMs": 12840
-  },
-  {
-   "text": " podía",
-   "srcStartMs": 18640,
-   "srcEndMs": 18920,
-   "startMs": 12840,
-   "endMs": 13120
-  },
-  {
-   "text": " someter",
-   "srcStartMs": 18920,
-   "srcEndMs": 19380,
-   "startMs": 13120,
-   "endMs": 13580
-  },
-  {
-   "text": " al",
-   "srcStartMs": 19380,
-   "srcEndMs": 19540,
-   "startMs": 13580,
-   "endMs": 13740
-  },
-  {
-   "text": " mundo",
-   "srcStartMs": 19540,
-   "srcEndMs": 19760,
-   "startMs": 13740,
-   "endMs": 13960
-  },
-  {
-   "text": " entero",
-   "srcStartMs": 19760,
-   "srcEndMs": 20180,
-   "startMs": 13960,
-   "endMs": 14380
-  },
-  {
-   "text": " con",
-   "srcStartMs": 20180,
-   "srcEndMs": 20360,
-   "startMs": 14380,
-   "endMs": 14560
-  },
-  {
-   "text": " sus",
-   "srcStartMs": 20360,
-   "srcEndMs": 20580,
-   "startMs": 14560,
-   "endMs": 14780
-  },
-  {
-   "text": " espadas,",
-   "srcStartMs": 20580,
-   "srcEndMs": 21040,
-   "startMs": 14780,
-   "endMs": 15240
-  },
-  {
-   "text": " pero",
-   "srcStartMs": 22140,
-   "srcEndMs": 22280,
-   "startMs": 15507,
-   "endMs": 15647
-  },
-  {
-   "text": " yo",
-   "srcStartMs": 22280,
-   "srcEndMs": 22440,
-   "startMs": 15647,
-   "endMs": 15807
-  },
-  {
-   "text": " supe,",
-   "srcStartMs": 22440,
-   "srcEndMs": 22890,
-   "startMs": 15807,
-   "endMs": 16257
-  },
-  {
-   "text": " al",
-   "srcStartMs": 23510,
-   "srcEndMs": 23640,
-   "startMs": 16343,
-   "endMs": 16473
-  },
-  {
-   "text": " mirar",
-   "srcStartMs": 23640,
-   "srcEndMs": 23880,
-   "startMs": 16473,
-   "endMs": 16713
-  },
-  {
-   "text": " a",
-   "srcStartMs": 23880,
-   "srcEndMs": 24000,
-   "startMs": 16713,
-   "endMs": 16833
-  },
-  {
-   "text": " César",
-   "srcStartMs": 24000,
-   "srcEndMs": 24260,
-   "startMs": 16833,
-   "endMs": 17093
-  },
-  {
-   "text": " a",
-   "srcStartMs": 24260,
-   "srcEndMs": 24380,
-   "startMs": 17093,
-   "endMs": 17213
-  },
-  {
-   "text": " los",
-   "srcStartMs": 24380,
-   "srcEndMs": 24540,
-   "startMs": 17213,
-   "endMs": 17373
-  },
-  {
-   "text": " ojos,",
-   "srcStartMs": 24540,
-   "srcEndMs": 24860,
-   "startMs": 17373,
-   "endMs": 17693
-  },
-  {
-   "text": " que",
-   "srcStartMs": 25410,
-   "srcEndMs": 25480,
-   "startMs": 17910,
-   "endMs": 17980
-  },
-  {
-   "text": " los",
-   "srcStartMs": 25480,
-   "srcEndMs": 25620,
-   "startMs": 17980,
-   "endMs": 18120
-  },
-  {
-   "text": " conquistaría",
-   "srcStartMs": 25620,
-   "srcEndMs": 26280,
-   "startMs": 18120,
-   "endMs": 18780
-  },
-  {
-   "text": " a",
-   "srcStartMs": 26280,
-   "srcEndMs": 26480,
-   "startMs": 18780,
-   "endMs": 18980
-  },
-  {
-   "text": " ellos",
-   "srcStartMs": 26480,
-   "srcEndMs": 26660,
-   "startMs": 18980,
-   "endMs": 19160
-  },
-  {
-   "text": " con",
-   "srcStartMs": 26660,
-   "srcEndMs": 26900,
-   "startMs": 19160,
-   "endMs": 19400
-  },
-  {
-   "text": " mi",
-   "srcStartMs": 26900,
-   "srcEndMs": 27040,
-   "startMs": 19400,
-   "endMs": 19540
-  },
-  {
-   "text": " mente",
-   "srcStartMs": 27040,
-   "srcEndMs": 27400,
-   "startMs": 19540,
-   "endMs": 19900
+   "text": " brujas",
+   "srcStartMs": 14940,
+   "srcEndMs": 15480,
+   "startMs": 13540,
+   "endMs": 14080
   },
   {
    "text": " y",
-   "srcStartMs": 27400,
-   "srcEndMs": 27510,
-   "startMs": 19900,
-   "endMs": 20010
+   "srcStartMs": 15480,
+   "srcEndMs": 15850,
+   "startMs": 14080,
+   "endMs": 14450
   },
   {
-   "text": " con",
-   "srcStartMs": 28000,
-   "srcEndMs": 28140,
-   "startMs": 20200,
-   "endMs": 20340
-  },
-  {
-   "text": " el",
-   "srcStartMs": 28140,
-   "srcEndMs": 28240,
-   "startMs": 20340,
-   "endMs": 20440
-  },
-  {
-   "text": " misticismo",
-   "srcStartMs": 28240,
-   "srcEndMs": 28880,
-   "startMs": 20440,
-   "endMs": 21080
+   "text": " chistes",
+   "srcStartMs": 16400,
+   "srcEndMs": 16760,
+   "startMs": 14633,
+   "endMs": 14993
   },
   {
    "text": " de",
-   "srcStartMs": 28880,
-   "srcEndMs": 29020,
-   "startMs": 21080,
-   "endMs": 21220
+   "srcStartMs": 16760,
+   "srcEndMs": 16940,
+   "startMs": 14993,
+   "endMs": 15173
   },
   {
-   "text": " Egipto.",
-   "srcStartMs": 29020,
-   "srcEndMs": 29480,
-   "startMs": 21220,
-   "endMs": 21680
+   "text": " doble",
+   "srcStartMs": 16940,
+   "srcEndMs": 17180,
+   "startMs": 15173,
+   "endMs": 15413
+  },
+  {
+   "text": " sentido",
+   "srcStartMs": 17180,
+   "srcEndMs": 17700,
+   "startMs": 15413,
+   "endMs": 15933
+  },
+  {
+   "text": " para",
+   "srcStartMs": 17700,
+   "srcEndMs": 18070,
+   "startMs": 15933,
+   "endMs": 16303
+  },
+  {
+   "text": " que",
+   "srcStartMs": 18860,
+   "srcEndMs": 19000,
+   "startMs": 16560,
+   "endMs": 16700
+  },
+  {
+   "text": " la",
+   "srcStartMs": 19000,
+   "srcEndMs": 19120,
+   "startMs": 16700,
+   "endMs": 16820
+  },
+  {
+   "text": " gente",
+   "srcStartMs": 19120,
+   "srcEndMs": 19480,
+   "startMs": 16820,
+   "endMs": 17180
+  },
+  {
+   "text": " en",
+   "srcStartMs": 19480,
+   "srcEndMs": 20000,
+   "startMs": 17180,
+   "endMs": 17700
+  },
+  {
+   "text": " el",
+   "srcStartMs": 20000,
+   "srcEndMs": 20120,
+   "startMs": 17700,
+   "endMs": 17820
+  },
+  {
+   "text": " teatro",
+   "srcStartMs": 20120,
+   "srcEndMs": 20540,
+   "startMs": 17820,
+   "endMs": 18240
+  },
+  {
+   "text": " gritara",
+   "srcStartMs": 20540,
+   "srcEndMs": 21060,
+   "startMs": 18240,
+   "endMs": 18760
+  },
+  {
+   "text": " y",
+   "srcStartMs": 21060,
+   "srcEndMs": 21220,
+   "startMs": 18760,
+   "endMs": 18920
+  },
+  {
+   "text": " tirara",
+   "srcStartMs": 21220,
+   "srcEndMs": 21460,
+   "startMs": 18920,
+   "endMs": 19160
+  },
+  {
+   "text": " cosas.",
+   "srcStartMs": 21460,
+   "srcEndMs": 21840,
+   "startMs": 19160,
+   "endMs": 19540
+  },
+  {
+   "text": " Si",
+   "srcStartMs": 23260,
+   "srcEndMs": 23400,
+   "startMs": 20327,
+   "endMs": 20467
+  },
+  {
+   "text": " yo",
+   "srcStartMs": 23400,
+   "srcEndMs": 23540,
+   "startMs": 20467,
+   "endMs": 20607
+  },
+  {
+   "text": " viviera",
+   "srcStartMs": 23540,
+   "srcEndMs": 23860,
+   "startMs": 20607,
+   "endMs": 20927
+  },
+  {
+   "text": " hoy,",
+   "srcStartMs": 23860,
+   "srcEndMs": 24180,
+   "startMs": 20927,
+   "endMs": 21247
+  },
+  {
+   "text": " te",
+   "srcStartMs": 24990,
+   "srcEndMs": 25060,
+   "startMs": 21457,
+   "endMs": 21527
+  },
+  {
+   "text": " lo",
+   "srcStartMs": 25060,
+   "srcEndMs": 25180,
+   "startMs": 21527,
+   "endMs": 21647
+  },
+  {
+   "text": " ",
+   "srcStartMs": 25180,
+   "srcEndMs": 25360,
+   "startMs": 21647,
+   "endMs": 21827
+  },
+  {
+   "text": " ",
+   "srcStartMs": 25060,
+   "srcEndMs": 25180,
+   "startMs": 21527,
+   "endMs": 21647
+  },
+  {
+   "text": " juro,",
+   "srcStartMs": 25180,
+   "srcEndMs": 25640,
+   "startMs": 21647,
+   "endMs": 22107
+  },
+  {
+   "text": " sería",
+   "srcStartMs": 26250,
+   "srcEndMs": 26500,
+   "startMs": 22217,
+   "endMs": 22467
+  },
+  {
+   "text": " el",
+   "srcStartMs": 26500,
+   "srcEndMs": 26680,
+   "startMs": 22467,
+   "endMs": 22647
+  },
+  {
+   "text": " rey",
+   "srcStartMs": 26680,
+   "srcEndMs": 26960,
+   "startMs": 22647,
+   "endMs": 22927
+  },
+  {
+   "text": " indiscutible",
+   "srcStartMs": 26960,
+   "srcEndMs": 27680,
+   "startMs": 22927,
+   "endMs": 23647
+  },
+  {
+   "text": " del",
+   "srcStartMs": 27680,
+   "srcEndMs": 27900,
+   "startMs": 23647,
+   "endMs": 23867
+  },
+  {
+   "text": " clickbait",
+   "srcStartMs": 27900,
+   "srcEndMs": 28540,
+   "startMs": 23867,
+   "endMs": 24507
+  },
+  {
+   "text": " en",
+   "srcStartMs": 28540,
+   "srcEndMs": 28740,
+   "startMs": 24507,
+   "endMs": 24707
+  },
+  {
+   "text": " internet.",
+   "srcStartMs": 28740,
+   "srcEndMs": 29200,
+   "startMs": 24707,
+   "endMs": 25167
   }
  ]
 }
