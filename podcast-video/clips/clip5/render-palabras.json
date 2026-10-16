@@ -1,0 +1,520 @@
+[
+  {
+    "text": " Mira,",
+    "startMs": 0,
+    "endMs": 260,
+    "timestampMs": 130,
+    "confidence": null
+  },
+  {
+    "text": " a",
+    "startMs": 480,
+    "endMs": 540,
+    "timestampMs": 510,
+    "confidence": null
+  },
+  {
+    "text": " mi",
+    "startMs": 540,
+    "endMs": 620,
+    "timestampMs": 580,
+    "confidence": null
+  },
+  {
+    "text": " me",
+    "startMs": 620,
+    "endMs": 760,
+    "timestampMs": 690,
+    "confidence": null
+  },
+  {
+    "text": " llaman",
+    "startMs": 760,
+    "endMs": 1000,
+    "timestampMs": 880,
+    "confidence": null
+  },
+  {
+    "text": " el",
+    "startMs": 1000,
+    "endMs": 1180,
+    "timestampMs": 1090,
+    "confidence": null
+  },
+  {
+    "text": " genio",
+    "startMs": 1180,
+    "endMs": 1540,
+    "timestampMs": 1360,
+    "confidence": null
+  },
+  {
+    "text": " del",
+    "startMs": 1540,
+    "endMs": 1720,
+    "timestampMs": 1630,
+    "confidence": null
+  },
+  {
+    "text": " siglo",
+    "startMs": 1720,
+    "endMs": 1980,
+    "timestampMs": 1850,
+    "confidence": null
+  },
+  {
+    "text": " XX,",
+    "startMs": 1980,
+    "endMs": 2380,
+    "timestampMs": 2180,
+    "confidence": null
+  },
+  {
+    "text": " pero",
+    "startMs": 2580,
+    "endMs": 2700,
+    "timestampMs": 2640,
+    "confidence": null
+  },
+  {
+    "text": " la",
+    "startMs": 2700,
+    "endMs": 2840,
+    "timestampMs": 2770,
+    "confidence": null
+  },
+  {
+    "text": " gente",
+    "startMs": 2840,
+    "endMs": 3080,
+    "timestampMs": 2960,
+    "confidence": null
+  },
+  {
+    "text": " sigue",
+    "startMs": 3080,
+    "endMs": 3400,
+    "timestampMs": 3240,
+    "confidence": null
+  },
+  {
+    "text": " amando",
+    "startMs": 3400,
+    "endMs": 3760,
+    "timestampMs": 3580,
+    "confidence": null
+  },
+  {
+    "text": " a",
+    "startMs": 3760,
+    "endMs": 3880,
+    "timestampMs": 3820,
+    "confidence": null
+  },
+  {
+    "text": " Erdison.",
+    "startMs": 3880,
+    "endMs": 4280,
+    "timestampMs": 4080,
+    "confidence": null
+  },
+  {
+    "text": " Ese",
+    "startMs": 4860,
+    "endMs": 5100,
+    "timestampMs": 4980,
+    "confidence": null
+  },
+  {
+    "text": " tipo",
+    "startMs": 5100,
+    "endMs": 5360,
+    "timestampMs": 5230,
+    "confidence": null
+  },
+  {
+    "text": " no",
+    "startMs": 5360,
+    "endMs": 5520,
+    "timestampMs": 5440,
+    "confidence": null
+  },
+  {
+    "text": " era",
+    "startMs": 5520,
+    "endMs": 5640,
+    "timestampMs": 5580,
+    "confidence": null
+  },
+  {
+    "text": " científico,",
+    "startMs": 5640,
+    "endMs": 6420,
+    "timestampMs": 6030,
+    "confidence": null
+  },
+  {
+    "text": " era",
+    "startMs": 6500,
+    "endMs": 6620,
+    "timestampMs": 6560,
+    "confidence": null
+  },
+  {
+    "text": " un",
+    "startMs": 6620,
+    "endMs": 6760,
+    "timestampMs": 6690,
+    "confidence": null
+  },
+  {
+    "text": " hombre",
+    "startMs": 6760,
+    "endMs": 6960,
+    "timestampMs": 6860,
+    "confidence": null
+  },
+  {
+    "text": " de",
+    "startMs": 6960,
+    "endMs": 7120,
+    "timestampMs": 7040,
+    "confidence": null
+  },
+  {
+    "text": " negocios.",
+    "startMs": 7120,
+    "endMs": 7620,
+    "timestampMs": 7370,
+    "confidence": null
+  },
+  {
+    "text": " Yo",
+    "startMs": 7920,
+    "endMs": 8040,
+    "timestampMs": 7980,
+    "confidence": null
+  },
+  {
+    "text": " solo",
+    "startMs": 8040,
+    "endMs": 8220,
+    "timestampMs": 8130,
+    "confidence": null
+  },
+  {
+    "text": " quería",
+    "startMs": 8220,
+    "endMs": 8500,
+    "timestampMs": 8360,
+    "confidence": null
+  },
+  {
+    "text": " darle",
+    "startMs": 8500,
+    "endMs": 8760,
+    "timestampMs": 8630,
+    "confidence": null
+  },
+  {
+    "text": " energía",
+    "startMs": 8760,
+    "endMs": 9160,
+    "timestampMs": 8960,
+    "confidence": null
+  },
+  {
+    "text": " gratis",
+    "startMs": 9160,
+    "endMs": 9720,
+    "timestampMs": 9440,
+    "confidence": null
+  },
+  {
+    "text": " a",
+    "startMs": 9720,
+    "endMs": 9840,
+    "timestampMs": 9780,
+    "confidence": null
+  },
+  {
+    "text": " todo",
+    "startMs": 9840,
+    "endMs": 10020,
+    "timestampMs": 9930,
+    "confidence": null
+  },
+  {
+    "text": " el",
+    "startMs": 10020,
+    "endMs": 10180,
+    "timestampMs": 10100,
+    "confidence": null
+  },
+  {
+    "text": " mundo,",
+    "startMs": 10180,
+    "endMs": 10480,
+    "timestampMs": 10330,
+    "confidence": null
+  },
+  {
+    "text": " y",
+    "startMs": 10660,
+    "endMs": 10740,
+    "timestampMs": 10700,
+    "confidence": null
+  },
+  {
+    "text": " él",
+    "startMs": 10740,
+    "endMs": 10860,
+    "timestampMs": 10800,
+    "confidence": null
+  },
+  {
+    "text": " solo",
+    "startMs": 10860,
+    "endMs": 11000,
+    "timestampMs": 10930,
+    "confidence": null
+  },
+  {
+    "text": " pensaba",
+    "startMs": 11000,
+    "endMs": 11480,
+    "timestampMs": 11240,
+    "confidence": null
+  },
+  {
+    "text": " en",
+    "startMs": 11480,
+    "endMs": 11600,
+    "timestampMs": 11540,
+    "confidence": null
+  },
+  {
+    "text": " cómo",
+    "startMs": 11600,
+    "endMs": 11780,
+    "timestampMs": 11690,
+    "confidence": null
+  },
+  {
+    "text": " facturarla.",
+    "startMs": 11780,
+    "endMs": 12500,
+    "timestampMs": 12140,
+    "confidence": null
+  },
+  {
+    "text": " Me",
+    "startMs": 12640,
+    "endMs": 12740,
+    "timestampMs": 12690,
+    "confidence": null
+  },
+  {
+    "text": " robó",
+    "startMs": 12740,
+    "endMs": 13000,
+    "timestampMs": 12870,
+    "confidence": null
+  },
+  {
+    "text": " ideas",
+    "startMs": 13000,
+    "endMs": 13340,
+    "timestampMs": 13170,
+    "confidence": null
+  },
+  {
+    "text": " y",
+    "startMs": 13340,
+    "endMs": 13660,
+    "timestampMs": 13500,
+    "confidence": null
+  },
+  {
+    "text": " hasta",
+    "startMs": 13660,
+    "endMs": 13880,
+    "timestampMs": 13770,
+    "confidence": null
+  },
+  {
+    "text": " electrocutó",
+    "startMs": 13880,
+    "endMs": 14560,
+    "timestampMs": 14220,
+    "confidence": null
+  },
+  {
+    "text": " animales",
+    "startMs": 14560,
+    "endMs": 15020,
+    "timestampMs": 14790,
+    "confidence": null
+  },
+  {
+    "text": " para",
+    "startMs": 15020,
+    "endMs": 15320,
+    "timestampMs": 15170,
+    "confidence": null
+  },
+  {
+    "text": " asustar",
+    "startMs": 15320,
+    "endMs": 15700,
+    "timestampMs": 15510,
+    "confidence": null
+  },
+  {
+    "text": " a",
+    "startMs": 15700,
+    "endMs": 15780,
+    "timestampMs": 15740,
+    "confidence": null
+  },
+  {
+    "text": " la",
+    "startMs": 15780,
+    "endMs": 15860,
+    "timestampMs": 15820,
+    "confidence": null
+  },
+  {
+    "text": " gente",
+    "startMs": 15860,
+    "endMs": 16160,
+    "timestampMs": 16010,
+    "confidence": null
+  },
+  {
+    "text": " con",
+    "startMs": 16160,
+    "endMs": 16380,
+    "timestampMs": 16270,
+    "confidence": null
+  },
+  {
+    "text": " mi",
+    "startMs": 16380,
+    "endMs": 16500,
+    "timestampMs": 16440,
+    "confidence": null
+  },
+  {
+    "text": " corriente",
+    "startMs": 16500,
+    "endMs": 16840,
+    "timestampMs": 16670,
+    "confidence": null
+  },
+  {
+    "text": " alterna.",
+    "startMs": 16840,
+    "endMs": 17320,
+    "timestampMs": 17080,
+    "confidence": null
+  },
+  {
+    "text": " Al",
+    "startMs": 17700,
+    "endMs": 17820,
+    "timestampMs": 17760,
+    "confidence": null
+  },
+  {
+    "text": " final,",
+    "startMs": 17820,
+    "endMs": 18120,
+    "timestampMs": 17970,
+    "confidence": null
+  },
+  {
+    "text": " la",
+    "startMs": 18440,
+    "endMs": 18480,
+    "timestampMs": 18460,
+    "confidence": null
+  },
+  {
+    "text": " electricidad",
+    "startMs": 18480,
+    "endMs": 19040,
+    "timestampMs": 18760,
+    "confidence": null
+  },
+  {
+    "text": " es",
+    "startMs": 19040,
+    "endMs": 19240,
+    "timestampMs": 19140,
+    "confidence": null
+  },
+  {
+    "text": " mía,",
+    "startMs": 19240,
+    "endMs": 19540,
+    "timestampMs": 19390,
+    "confidence": null
+  },
+  {
+    "text": " pero",
+    "startMs": 19680,
+    "endMs": 19800,
+    "timestampMs": 19740,
+    "confidence": null
+  },
+  {
+    "text": " la",
+    "startMs": 19800,
+    "endMs": 19940,
+    "timestampMs": 19870,
+    "confidence": null
+  },
+  {
+    "text": " fama,",
+    "startMs": 19940,
+    "endMs": 20360,
+    "timestampMs": 20150,
+    "confidence": null
+  },
+  {
+    "text": " esa",
+    "startMs": 20840,
+    "endMs": 21060,
+    "timestampMs": 20950,
+    "confidence": null
+  },
+  {
+    "text": " se",
+    "startMs": 21060,
+    "endMs": 21200,
+    "timestampMs": 21130,
+    "confidence": null
+  },
+  {
+    "text": " la",
+    "startMs": 21200,
+    "endMs": 21340,
+    "timestampMs": 21270,
+    "confidence": null
+  },
+  {
+    "text": " compró",
+    "startMs": 21340,
+    "endMs": 21660,
+    "timestampMs": 21500,
+    "confidence": null
+  },
+  {
+    "text": " él.",
+    "startMs": 21660,
+    "endMs": 21900,
+    "timestampMs": 21780,
+    "confidence": null
+  }
+]

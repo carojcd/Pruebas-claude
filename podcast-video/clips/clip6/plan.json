@@ -1,0 +1,563 @@
+{
+ "fps": 30,
+ "durationInFrames": 701,
+ "punchFrame": 582,
+ "shots": [
+  {
+   "from": 0,
+   "to": 29,
+   "zoom": 1.0
+  },
+  {
+   "from": 29,
+   "to": 82,
+   "zoom": 1.1
+  },
+  {
+   "from": 82,
+   "to": 117,
+   "zoom": 1.0
+  },
+  {
+   "from": 117,
+   "to": 156,
+   "zoom": 1.1
+  },
+  {
+   "from": 156,
+   "to": 208,
+   "zoom": 1.0
+  },
+  {
+   "from": 208,
+   "to": 283,
+   "zoom": 1.1
+  },
+  {
+   "from": 283,
+   "to": 335,
+   "zoom": 1.0
+  },
+  {
+   "from": 335,
+   "to": 401,
+   "zoom": 1.1
+  },
+  {
+   "from": 401,
+   "to": 476,
+   "zoom": 1.0
+  },
+  {
+   "from": 476,
+   "to": 493,
+   "zoom": 1.1
+  },
+  {
+   "from": 493,
+   "to": 510,
+   "zoom": 1.0
+  },
+  {
+   "from": 510,
+   "to": 582,
+   "zoom": 1.1
+  },
+  {
+   "from": 582,
+   "to": 639,
+   "zoom": 1.2
+  },
+  {
+   "from": 639,
+   "to": 701,
+   "zoom": 1.0
+  }
+ ],
+ "blocks": [
+  {
+   "lines": [
+    [
+     0
+    ],
+    [
+     1,
+     2
+    ]
+   ],
+   "key": 0,
+   "from": 0,
+   "to": 45,
+   "keyFrame": 0,
+   "text": [
+    [
+     "Sinceramente,"
+    ],
+    [
+     "cuando",
+     "llegué"
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     3,
+     4
+    ]
+   ],
+   "key": 4,
+   "emoji": "🏛️",
+   "from": 45,
+   "to": 64,
+   "keyFrame": 48,
+   "text": [
+    [
+     "a",
+     "Roma,"
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     5,
+     6,
+     7
+    ]
+   ],
+   "key": 7,
+   "from": 67,
+   "to": 83,
+   "keyFrame": 75,
+   "text": [
+    [
+     "pensé",
+     "que",
+     "vería"
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     8,
+     9
+    ],
+    [
+     10,
+     11
+    ]
+   ],
+   "key": 11,
+   "from": 83,
+   "to": 118,
+   "keyFrame": 101,
+   "text": [
+    [
+     "una",
+     "ciudad"
+    ],
+    [
+     "de",
+     "dioses."
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     12,
+     13,
+     14
+    ]
+   ],
+   "key": 14,
+   "from": 118,
+   "to": 153,
+   "keyFrame": 131,
+   "text": [
+    [
+     "Pero,",
+     "por",
+     "favor,"
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     15,
+     16
+    ],
+    [
+     17,
+     18
+    ]
+   ],
+   "key": 18,
+   "emoji": "🧊",
+   "from": 157,
+   "to": 209,
+   "keyFrame": 194,
+   "text": [
+    [
+     "solo",
+     "había"
+    ],
+    [
+     "mármol",
+     "frío"
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     19,
+     20
+    ]
+   ],
+   "key": 20,
+   "from": 209,
+   "to": 228,
+   "keyFrame": 221,
+   "text": [
+    [
+     "y",
+     "tipos"
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     21,
+     22
+    ],
+    [
+     23
+    ]
+   ],
+   "key": 23,
+   "emoji": "😴",
+   "from": 228,
+   "to": 284,
+   "keyFrame": 259,
+   "text": [
+    [
+     "con túnicas",
+     "súper"
+    ],
+    [
+     "aburridas."
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     24,
+     25
+    ]
+   ],
+   "key": 25,
+   "from": 284,
+   "to": 303,
+   "keyFrame": 291,
+   "text": [
+    [
+     "Ellos",
+     "juraban"
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     26,
+     27
+    ],
+    [
+     28,
+     29
+    ]
+   ],
+   "key": 29,
+   "from": 303,
+   "to": 336,
+   "keyFrame": 327,
+   "text": [
+    [
+     "que",
+     "dominaban"
+    ],
+    [
+     "el",
+     "mundo"
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     30,
+     31,
+     32
+    ]
+   ],
+   "key": 32,
+   "emoji": "🗡️",
+   "from": 336,
+   "to": 369,
+   "keyFrame": 348,
+   "text": [
+    [
+     "con",
+     "sus",
+     "espaditas"
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     33,
+     34,
+     35
+    ]
+   ],
+   "key": 35,
+   "from": 369,
+   "to": 402,
+   "keyFrame": 379,
+   "text": [
+    [
+     "y",
+     "sus",
+     "legiones."
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     36,
+     37,
+     38
+    ]
+   ],
+   "key": 38,
+   "from": 402,
+   "to": 413,
+   "keyFrame": 409,
+   "text": [
+    [
+     "Pero",
+     "en",
+     "cuanto"
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     39,
+     40
+    ],
+    [
+     41,
+     42
+    ]
+   ],
+   "key": 42,
+   "from": 413,
+   "to": 449,
+   "keyFrame": 439,
+   "text": [
+    [
+     "miré",
+     "a"
+    ],
+    [
+     "Julio",
+     "César"
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     43,
+     44,
+     45
+    ]
+   ],
+   "key": 45,
+   "emoji": "👁️",
+   "from": 449,
+   "to": 477,
+   "keyFrame": 458,
+   "text": [
+    [
+     "a",
+     "los",
+     "ojos,"
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     46,
+     47
+    ]
+   ],
+   "key": 47,
+   "from": 477,
+   "to": 511,
+   "keyFrame": 494,
+   "text": [
+    [
+     "pensé,",
+     "Amigo,"
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     48,
+     49,
+     50
+    ]
+   ],
+   "key": 49,
+   "from": 511,
+   "to": 529,
+   "keyFrame": 514,
+   "text": [
+    [
+     "a",
+     "ustedes",
+     "no"
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     51,
+     52
+    ],
+    [
+     53,
+     54
+    ]
+   ],
+   "key": 54,
+   "from": 529,
+   "to": 583,
+   "keyFrame": 556,
+   "text": [
+    [
+     "los",
+     "conquisto"
+    ],
+    [
+     "con",
+     "ejércitos,"
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     55,
+     56,
+     57
+    ]
+   ],
+   "key": 56,
+   "from": 583,
+   "to": 612,
+   "keyFrame": 586,
+   "text": [
+    [
+     "los",
+     "conquisto",
+     "con"
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     58,
+     59,
+     60
+    ]
+   ],
+   "key": 59,
+   "emoji": "🧠",
+   "from": 612,
+   "to": 643,
+   "keyFrame": 616,
+   "text": [
+    [
+     "mi",
+     "mente",
+     "y"
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     61,
+     62,
+     63
+    ]
+   ],
+   "key": 62,
+   "from": 643,
+   "to": 664,
+   "keyFrame": 647,
+   "text": [
+    [
+     "un",
+     "poquito",
+     "de"
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     64,
+     65
+    ]
+   ],
+   "key": 65,
+   "emoji": "🔺",
+   "from": 664,
+   "to": 701,
+   "keyFrame": 679,
+   "text": [
+    [
+     "encanto",
+     "egipcio."
+    ]
+   ]
+  }
+ ],
+ "emojiFrames": [
+  48,
+  194,
+  259,
+  348,
+  458,
+  616,
+  679
+ ]
+}

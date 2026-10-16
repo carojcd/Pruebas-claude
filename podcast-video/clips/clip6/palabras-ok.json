@@ -1,0 +1,464 @@
+[
+ {
+  "text": " Sinceramente,",
+  "startMs": 0,
+  "endMs": 1480,
+  "timestampMs": 740,
+  "confidence": null
+ },
+ {
+  "text": " cuando",
+  "startMs": 1960,
+  "endMs": 2320,
+  "timestampMs": 2140,
+  "confidence": null
+ },
+ {
+  "text": " llegué",
+  "startMs": 2320,
+  "endMs": 2660,
+  "timestampMs": 2490,
+  "confidence": null
+ },
+ {
+  "text": " a",
+  "startMs": 2660,
+  "endMs": 2760,
+  "timestampMs": 2710,
+  "confidence": null
+ },
+ {
+  "text": " Roma,",
+  "startMs": 2760,
+  "endMs": 3040,
+  "timestampMs": 2900,
+  "confidence": null
+ },
+ {
+  "text": " pensé",
+  "startMs": 3400,
+  "endMs": 3600,
+  "timestampMs": 3500,
+  "confidence": null
+ },
+ {
+  "text": " que",
+  "startMs": 3600,
+  "endMs": 3680,
+  "timestampMs": 3640,
+  "confidence": null
+ },
+ {
+  "text": " vería",
+  "startMs": 3680,
+  "endMs": 3920,
+  "timestampMs": 3800,
+  "confidence": null
+ },
+ {
+  "text": " una",
+  "startMs": 3920,
+  "endMs": 4080,
+  "timestampMs": 4000,
+  "confidence": null
+ },
+ {
+  "text": " ciudad",
+  "startMs": 4080,
+  "endMs": 4380,
+  "timestampMs": 4230,
+  "confidence": null
+ },
+ {
+  "text": " de",
+  "startMs": 4380,
+  "endMs": 4540,
+  "timestampMs": 4460,
+  "confidence": null
+ },
+ {
+  "text": " dioses.",
+  "startMs": 4540,
+  "endMs": 4960,
+  "timestampMs": 4750,
+  "confidence": null
+ },
+ {
+  "text": " Pero,",
+  "startMs": 5400,
+  "endMs": 5960,
+  "timestampMs": 5680,
+  "confidence": null
+ },
+ {
+  "text": " por",
+  "startMs": 6060,
+  "endMs": 6240,
+  "timestampMs": 6150,
+  "confidence": null
+ },
+ {
+  "text": " favor,",
+  "startMs": 6240,
+  "endMs": 6700,
+  "timestampMs": 6470,
+  "confidence": null
+ },
+ {
+  "text": " solo",
+  "startMs": 7420,
+  "endMs": 7700,
+  "timestampMs": 7560,
+  "confidence": null
+ },
+ {
+  "text": " había",
+  "startMs": 7700,
+  "endMs": 8040,
+  "timestampMs": 7870,
+  "confidence": null
+ },
+ {
+  "text": " mármol",
+  "startMs": 8040,
+  "endMs": 8740,
+  "timestampMs": 8390,
+  "confidence": null
+ },
+ {
+  "text": " frío",
+  "startMs": 8740,
+  "endMs": 9220,
+  "timestampMs": 8980,
+  "confidence": null
+ },
+ {
+  "text": " y",
+  "startMs": 9220,
+  "endMs": 9640,
+  "timestampMs": 9430,
+  "confidence": null
+ },
+ {
+  "text": " tipos",
+  "startMs": 9640,
+  "endMs": 9860,
+  "timestampMs": 9750,
+  "confidence": null
+ },
+ {
+  "text": " con túnicas",
+  "startMs": 9860,
+  "endMs": 10540,
+  "timestampMs": 10200,
+  "confidence": null
+ },
+ {
+  "text": " súper",
+  "startMs": 10540,
+  "endMs": 10900,
+  "timestampMs": 10720,
+  "confidence": null
+ },
+ {
+  "text": " aburridas.",
+  "startMs": 10900,
+  "endMs": 11680,
+  "timestampMs": 11290,
+  "confidence": null
+ },
+ {
+  "text": " Ellos",
+  "startMs": 12200,
+  "endMs": 12480,
+  "timestampMs": 12340,
+  "confidence": null
+ },
+ {
+  "text": " juraban",
+  "startMs": 12480,
+  "endMs": 12860,
+  "timestampMs": 12670,
+  "confidence": null
+ },
+ {
+  "text": " que",
+  "startMs": 12860,
+  "endMs": 13020,
+  "timestampMs": 12940,
+  "confidence": null
+ },
+ {
+  "text": " dominaban",
+  "startMs": 13020,
+  "endMs": 13460,
+  "timestampMs": 13240,
+  "confidence": null
+ },
+ {
+  "text": " el",
+  "startMs": 13460,
+  "endMs": 13660,
+  "timestampMs": 13560,
+  "confidence": null
+ },
+ {
+  "text": " mundo",
+  "startMs": 13660,
+  "endMs": 13960,
+  "timestampMs": 13810,
+  "confidence": null
+ },
+ {
+  "text": " con",
+  "startMs": 13960,
+  "endMs": 14200,
+  "timestampMs": 14080,
+  "confidence": null
+ },
+ {
+  "text": " sus",
+  "startMs": 14200,
+  "endMs": 14380,
+  "timestampMs": 14290,
+  "confidence": null
+ },
+ {
+  "text": " espaditas",
+  "startMs": 14380,
+  "endMs": 15060,
+  "timestampMs": 14720,
+  "confidence": null
+ },
+ {
+  "text": " y",
+  "startMs": 15060,
+  "endMs": 15220,
+  "timestampMs": 15140,
+  "confidence": null
+ },
+ {
+  "text": " sus",
+  "startMs": 15220,
+  "endMs": 15400,
+  "timestampMs": 15310,
+  "confidence": null
+ },
+ {
+  "text": " legiones.",
+  "startMs": 15400,
+  "endMs": 15940,
+  "timestampMs": 15670,
+  "confidence": null
+ },
+ {
+  "text": " Pero",
+  "startMs": 16920,
+  "endMs": 17220,
+  "timestampMs": 17070,
+  "confidence": null
+ },
+ {
+  "text": " en",
+  "startMs": 17220,
+  "endMs": 17340,
+  "timestampMs": 17280,
+  "confidence": null
+ },
+ {
+  "text": " cuanto",
+  "startMs": 17340,
+  "endMs": 17480,
+  "timestampMs": 17410,
+  "confidence": null
+ },
+ {
+  "text": " miré",
+  "startMs": 17480,
+  "endMs": 17940,
+  "timestampMs": 17710,
+  "confidence": null
+ },
+ {
+  "text": " a",
+  "startMs": 17940,
+  "endMs": 18020,
+  "timestampMs": 17980,
+  "confidence": null
+ },
+ {
+  "text": " Julio",
+  "startMs": 18020,
+  "endMs": 18320,
+  "timestampMs": 18170,
+  "confidence": null
+ },
+ {
+  "text": " César",
+  "startMs": 18320,
+  "endMs": 18680,
+  "timestampMs": 18500,
+  "confidence": null
+ },
+ {
+  "text": " a",
+  "startMs": 18680,
+  "endMs": 18800,
+  "timestampMs": 18740,
+  "confidence": null
+ },
+ {
+  "text": " los",
+  "startMs": 18800,
+  "endMs": 18960,
+  "timestampMs": 18880,
+  "confidence": null
+ },
+ {
+  "text": " ojos,",
+  "startMs": 18960,
+  "endMs": 19340,
+  "timestampMs": 19150,
+  "confidence": null
+ },
+ {
+  "text": " pensé,",
+  "startMs": 19920,
+  "endMs": 20400,
+  "timestampMs": 20160,
+  "confidence": null
+ },
+ {
+  "text": " Amigo,",
+  "startMs": 21360,
+  "endMs": 21740,
+  "timestampMs": 21550,
+  "confidence": null
+ },
+ {
+  "text": " a",
+  "startMs": 22480,
+  "endMs": 22560,
+  "timestampMs": 22520,
+  "confidence": null
+ },
+ {
+  "text": " ustedes",
+  "startMs": 22560,
+  "endMs": 22840,
+  "timestampMs": 22700,
+  "confidence": null
+ },
+ {
+  "text": " no",
+  "startMs": 22840,
+  "endMs": 23080,
+  "timestampMs": 22960,
+  "confidence": null
+ },
+ {
+  "text": " los",
+  "startMs": 23080,
+  "endMs": 23240,
+  "timestampMs": 23160,
+  "confidence": null
+ },
+ {
+  "text": " conquisto",
+  "startMs": 23240,
+  "endMs": 23740,
+  "timestampMs": 23490,
+  "confidence": null
+ },
+ {
+  "text": " con",
+  "startMs": 23740,
+  "endMs": 23960,
+  "timestampMs": 23850,
+  "confidence": null
+ },
+ {
+  "text": " ejércitos,",
+  "startMs": 23960,
+  "endMs": 24640,
+  "timestampMs": 24300,
+  "confidence": null
+ },
+ {
+  "text": " los",
+  "startMs": 25100,
+  "endMs": 25280,
+  "timestampMs": 25190,
+  "confidence": null
+ },
+ {
+  "text": " conquisto",
+  "startMs": 25280,
+  "endMs": 25800,
+  "timestampMs": 25540,
+  "confidence": null
+ },
+ {
+  "text": " con",
+  "startMs": 25800,
+  "endMs": 26120,
+  "timestampMs": 25960,
+  "confidence": null
+ },
+ {
+  "text": " mi",
+  "startMs": 26120,
+  "endMs": 26280,
+  "timestampMs": 26200,
+  "confidence": null
+ },
+ {
+  "text": " mente",
+  "startMs": 26280,
+  "endMs": 26840,
+  "timestampMs": 26560,
+  "confidence": null
+ },
+ {
+  "text": " y",
+  "startMs": 26840,
+  "endMs": 27740,
+  "timestampMs": 27290,
+  "confidence": null
+ },
+ {
+  "text": " un",
+  "startMs": 27740,
+  "endMs": 27880,
+  "timestampMs": 27810,
+  "confidence": null
+ },
+ {
+  "text": " poquito",
+  "startMs": 27880,
+  "endMs": 28160,
+  "timestampMs": 28020,
+  "confidence": null
+ },
+ {
+  "text": " de",
+  "startMs": 28160,
+  "endMs": 28420,
+  "timestampMs": 28290,
+  "confidence": null
+ },
+ {
+  "text": " encanto",
+  "startMs": 28420,
+  "endMs": 28920,
+  "timestampMs": 28670,
+  "confidence": null
+ },
+ {
+  "text": " egipcio.",
+  "startMs": 28920,
+  "endMs": 29520,
+  "timestampMs": 29220,
+  "confidence": null
+ }
+]

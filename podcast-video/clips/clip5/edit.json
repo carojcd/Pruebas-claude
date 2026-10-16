@@ -1,0 +1,682 @@
+{
+ "fps": 30,
+ "sourceDurationS": 30.08,
+ "durationInFrames": 662,
+ "softPauses": [
+  [
+   0.22,
+   0.53
+  ],
+  [
+   0.81,
+   1.48
+  ],
+  [
+   3.76,
+   4.12
+  ],
+  [
+   26.25,
+   26.52
+  ]
+ ],
+ "silencesCut": [
+  [
+   0.0,
+   0.53
+  ],
+  [
+   0.8,
+   1.48
+  ],
+  [
+   3.5,
+   4.12
+  ],
+  [
+   6.33,
+   6.96
+  ],
+  [
+   8.43,
+   8.83
+  ],
+  [
+   10.05,
+   10.84
+  ],
+  [
+   13.44,
+   13.98
+  ],
+  [
+   15.82,
+   16.9
+  ],
+  [
+   21.57,
+   22.72
+  ],
+  [
+   22.84,
+   23.35
+  ],
+  [
+   23.9,
+   24.48
+  ],
+  [
+   25.66,
+   26.52
+  ],
+  [
+   27.17,
+   27.75
+  ],
+  [
+   28.01,
+   28.54
+  ],
+  [
+   29.48,
+   29.99
+  ]
+ ],
+ "segments": [
+  {
+   "srcStartFrame": 14,
+   "srcEndFrame": 26,
+   "outStartFrame": 0
+  },
+  {
+   "srcStartFrame": 43,
+   "srcEndFrame": 107,
+   "outStartFrame": 12
+  },
+  {
+   "srcStartFrame": 122,
+   "srcEndFrame": 192,
+   "outStartFrame": 76
+  },
+  {
+   "srcStartFrame": 207,
+   "srcEndFrame": 255,
+   "outStartFrame": 146
+  },
+  {
+   "srcStartFrame": 263,
+   "srcEndFrame": 304,
+   "outStartFrame": 194
+  },
+  {
+   "srcStartFrame": 323,
+   "srcEndFrame": 406,
+   "outStartFrame": 235
+  },
+  {
+   "srcStartFrame": 418,
+   "srcEndFrame": 477,
+   "outStartFrame": 318
+  },
+  {
+   "srcStartFrame": 505,
+   "srcEndFrame": 650,
+   "outStartFrame": 377
+  },
+  {
+   "srcStartFrame": 680,
+   "srcEndFrame": 688,
+   "outStartFrame": 522
+  },
+  {
+   "srcStartFrame": 699,
+   "srcEndFrame": 719,
+   "outStartFrame": 530
+  },
+  {
+   "srcStartFrame": 733,
+   "srcEndFrame": 772,
+   "outStartFrame": 550
+  },
+  {
+   "srcStartFrame": 794,
+   "srcEndFrame": 818,
+   "outStartFrame": 589
+  },
+  {
+   "srcStartFrame": 831,
+   "srcEndFrame": 843,
+   "outStartFrame": 613
+  },
+  {
+   "srcStartFrame": 854,
+   "srcEndFrame": 887,
+   "outStartFrame": 625
+  },
+  {
+   "srcStartFrame": 898,
+   "srcEndFrame": 902,
+   "outStartFrame": 658
+  }
+ ],
+ "words": [
+  {
+   "text": " Mira,",
+   "srcStartMs": 0,
+   "srcEndMs": 700,
+   "startMs": 0,
+   "endMs": 233
+  },
+  {
+   "text": " a",
+   "srcStartMs": 1460,
+   "srcEndMs": 1540,
+   "startMs": 427,
+   "endMs": 507
+  },
+  {
+   "text": " mí",
+   "srcStartMs": 1540,
+   "srcEndMs": 1640,
+   "startMs": 507,
+   "endMs": 607
+  },
+  {
+   "text": " me",
+   "srcStartMs": 1640,
+   "srcEndMs": 1760,
+   "startMs": 607,
+   "endMs": 727
+  },
+  {
+   "text": " llaman",
+   "srcStartMs": 1760,
+   "srcEndMs": 2020,
+   "startMs": 727,
+   "endMs": 987
+  },
+  {
+   "text": " el",
+   "srcStartMs": 2020,
+   "srcEndMs": 2220,
+   "startMs": 987,
+   "endMs": 1187
+  },
+  {
+   "text": " genio",
+   "srcStartMs": 2220,
+   "srcEndMs": 2560,
+   "startMs": 1187,
+   "endMs": 1527
+  },
+  {
+   "text": " del",
+   "srcStartMs": 2560,
+   "srcEndMs": 2740,
+   "startMs": 1527,
+   "endMs": 1707
+  },
+  {
+   "text": " siglo",
+   "srcStartMs": 2740,
+   "srcEndMs": 3000,
+   "startMs": 1707,
+   "endMs": 1967
+  },
+  {
+   "text": " XX,",
+   "srcStartMs": 3000,
+   "srcEndMs": 3380,
+   "startMs": 1967,
+   "endMs": 2347
+  },
+  {
+   "text": " pero",
+   "srcStartMs": 4100,
+   "srcEndMs": 4220,
+   "startMs": 2567,
+   "endMs": 2687
+  },
+  {
+   "text": " la",
+   "srcStartMs": 4220,
+   "srcEndMs": 4380,
+   "startMs": 2687,
+   "endMs": 2847
+  },
+  {
+   "text": " gente",
+   "srcStartMs": 4380,
+   "srcEndMs": 4600,
+   "startMs": 2847,
+   "endMs": 3067
+  },
+  {
+   "text": " sigue",
+   "srcStartMs": 4600,
+   "srcEndMs": 4900,
+   "startMs": 3067,
+   "endMs": 3367
+  },
+  {
+   "text": " amando",
+   "srcStartMs": 4900,
+   "srcEndMs": 5280,
+   "startMs": 3367,
+   "endMs": 3747
+  },
+  {
+   "text": " a",
+   "srcStartMs": 5280,
+   "srcEndMs": 5400,
+   "startMs": 3747,
+   "endMs": 3867
+  },
+  {
+   "text": " Edison.",
+   "srcStartMs": 5400,
+   "srcEndMs": 5800,
+   "startMs": 3867,
+   "endMs": 4267
+  },
+  {
+   "text": " Ese",
+   "srcStartMs": 6940,
+   "srcEndMs": 7120,
+   "startMs": 4907,
+   "endMs": 5087
+  },
+  {
+   "text": " tipo",
+   "srcStartMs": 7120,
+   "srcEndMs": 7400,
+   "startMs": 5087,
+   "endMs": 5367
+  },
+  {
+   "text": " no",
+   "srcStartMs": 7400,
+   "srcEndMs": 7540,
+   "startMs": 5367,
+   "endMs": 5507
+  },
+  {
+   "text": " era",
+   "srcStartMs": 7540,
+   "srcEndMs": 7660,
+   "startMs": 5507,
+   "endMs": 5627
+  },
+  {
+   "text": " científico,",
+   "srcStartMs": 7660,
+   "srcEndMs": 8450,
+   "startMs": 5627,
+   "endMs": 6417
+  },
+  {
+   "text": " era",
+   "srcStartMs": 8810,
+   "srcEndMs": 8920,
+   "startMs": 6510,
+   "endMs": 6620
+  },
+  {
+   "text": " un",
+   "srcStartMs": 8920,
+   "srcEndMs": 9040,
+   "startMs": 6620,
+   "endMs": 6740
+  },
+  {
+   "text": " hombre",
+   "srcStartMs": 9040,
+   "srcEndMs": 9260,
+   "startMs": 6740,
+   "endMs": 6960
+  },
+  {
+   "text": " de",
+   "srcStartMs": 9260,
+   "srcEndMs": 9420,
+   "startMs": 6960,
+   "endMs": 7120
+  },
+  {
+   "text": " negocios.",
+   "srcStartMs": 9420,
+   "srcEndMs": 9900,
+   "startMs": 7120,
+   "endMs": 7600
+  },
+  {
+   "text": " Yo",
+   "srcStartMs": 10820,
+   "srcEndMs": 10960,
+   "startMs": 7887,
+   "endMs": 8027
+  },
+  {
+   "text": " solo",
+   "srcStartMs": 10960,
+   "srcEndMs": 11160,
+   "startMs": 8027,
+   "endMs": 8227
+  },
+  {
+   "text": " quería",
+   "srcStartMs": 11160,
+   "srcEndMs": 11420,
+   "startMs": 8227,
+   "endMs": 8487
+  },
+  {
+   "text": " darle",
+   "srcStartMs": 11420,
+   "srcEndMs": 11700,
+   "startMs": 8487,
+   "endMs": 8767
+  },
+  {
+   "text": " energía",
+   "srcStartMs": 11700,
+   "srcEndMs": 12080,
+   "startMs": 8767,
+   "endMs": 9147
+  },
+  {
+   "text": " gratis",
+   "srcStartMs": 12080,
+   "srcEndMs": 12660,
+   "startMs": 9147,
+   "endMs": 9727
+  },
+  {
+   "text": " a",
+   "srcStartMs": 12660,
+   "srcEndMs": 12760,
+   "startMs": 9727,
+   "endMs": 9827
+  },
+  {
+   "text": " todo",
+   "srcStartMs": 12760,
+   "srcEndMs": 12940,
+   "startMs": 9827,
+   "endMs": 10007
+  },
+  {
+   "text": " el",
+   "srcStartMs": 12940,
+   "srcEndMs": 13100,
+   "startMs": 10007,
+   "endMs": 10167
+  },
+  {
+   "text": " mundo,",
+   "srcStartMs": 13100,
+   "srcEndMs": 13400,
+   "startMs": 10167,
+   "endMs": 10467
+  },
+  {
+   "text": " y",
+   "srcStartMs": 13960,
+   "srcEndMs": 14060,
+   "startMs": 10627,
+   "endMs": 10727
+  },
+  {
+   "text": " él",
+   "srcStartMs": 14060,
+   "srcEndMs": 14180,
+   "startMs": 10727,
+   "endMs": 10847
+  },
+  {
+   "text": " solo",
+   "srcStartMs": 14180,
+   "srcEndMs": 14320,
+   "startMs": 10847,
+   "endMs": 10987
+  },
+  {
+   "text": " pensaba",
+   "srcStartMs": 14320,
+   "srcEndMs": 14800,
+   "startMs": 10987,
+   "endMs": 11467
+  },
+  {
+   "text": " en",
+   "srcStartMs": 14800,
+   "srcEndMs": 14920,
+   "startMs": 11467,
+   "endMs": 11587
+  },
+  {
+   "text": " cómo",
+   "srcStartMs": 14920,
+   "srcEndMs": 15100,
+   "startMs": 11587,
+   "endMs": 11767
+  },
+  {
+   "text": " facturarla.",
+   "srcStartMs": 15100,
+   "srcEndMs": 15840,
+   "startMs": 11767,
+   "endMs": 12507
+  },
+  {
+   "text": " Me",
+   "srcStartMs": 16880,
+   "srcEndMs": 17000,
+   "startMs": 12613,
+   "endMs": 12733
+  },
+  {
+   "text": " robó",
+   "srcStartMs": 17000,
+   "srcEndMs": 17260,
+   "startMs": 12733,
+   "endMs": 12993
+  },
+  {
+   "text": " ideas",
+   "srcStartMs": 17260,
+   "srcEndMs": 17620,
+   "startMs": 12993,
+   "endMs": 13353
+  },
+  {
+   "text": " y",
+   "srcStartMs": 17620,
+   "srcEndMs": 17920,
+   "startMs": 13353,
+   "endMs": 13653
+  },
+  {
+   "text": " hasta",
+   "srcStartMs": 17920,
+   "srcEndMs": 18120,
+   "startMs": 13653,
+   "endMs": 13853
+  },
+  {
+   "text": " electrocutó",
+   "srcStartMs": 18120,
+   "srcEndMs": 18820,
+   "startMs": 13853,
+   "endMs": 14553
+  },
+  {
+   "text": " animales",
+   "srcStartMs": 18820,
+   "srcEndMs": 19280,
+   "startMs": 14553,
+   "endMs": 15013
+  },
+  {
+   "text": " para",
+   "srcStartMs": 19280,
+   "srcEndMs": 19580,
+   "startMs": 15013,
+   "endMs": 15313
+  },
+  {
+   "text": " asustar",
+   "srcStartMs": 19580,
+   "srcEndMs": 19960,
+   "startMs": 15313,
+   "endMs": 15693
+  },
+  {
+   "text": " a",
+   "srcStartMs": 19960,
+   "srcEndMs": 20040,
+   "startMs": 15693,
+   "endMs": 15773
+  },
+  {
+   "text": " la",
+   "srcStartMs": 20040,
+   "srcEndMs": 20120,
+   "startMs": 15773,
+   "endMs": 15853
+  },
+  {
+   "text": " gente",
+   "srcStartMs": 20120,
+   "srcEndMs": 20420,
+   "startMs": 15853,
+   "endMs": 16153
+  },
+  {
+   "text": " con",
+   "srcStartMs": 20420,
+   "srcEndMs": 20620,
+   "startMs": 16153,
+   "endMs": 16353
+  },
+  {
+   "text": " mi",
+   "srcStartMs": 20620,
+   "srcEndMs": 20760,
+   "startMs": 16353,
+   "endMs": 16493
+  },
+  {
+   "text": " corriente",
+   "srcStartMs": 20760,
+   "srcEndMs": 21100,
+   "startMs": 16493,
+   "endMs": 16833
+  },
+  {
+   "text": " alterna.",
+   "srcStartMs": 21100,
+   "srcEndMs": 21590,
+   "startMs": 16833,
+   "endMs": 17323
+  },
+  {
+   "text": " Al",
+   "srcStartMs": 23330,
+   "srcEndMs": 23440,
+   "startMs": 17697,
+   "endMs": 17807
+  },
+  {
+   "text": " final,",
+   "srcStartMs": 23440,
+   "srcEndMs": 23760,
+   "startMs": 17807,
+   "endMs": 18127
+  },
+  {
+   "text": " la",
+   "srcStartMs": 24460,
+   "srcEndMs": 24560,
+   "startMs": 18360,
+   "endMs": 18460
+  },
+  {
+   "text": " electricidad",
+   "srcStartMs": 24560,
+   "srcEndMs": 25120,
+   "startMs": 18460,
+   "endMs": 19020
+  },
+  {
+   "text": " es",
+   "srcStartMs": 25140,
+   "srcEndMs": 25340,
+   "startMs": 19040,
+   "endMs": 19240
+  },
+  {
+   "text": " mía,",
+   "srcStartMs": 25340,
+   "srcEndMs": 25660,
+   "startMs": 19240,
+   "endMs": 19560
+  },
+  {
+   "text": " pero",
+   "srcStartMs": 26500,
+   "srcEndMs": 26620,
+   "startMs": 19667,
+   "endMs": 19787
+  },
+  {
+   "text": " la",
+   "srcStartMs": 26620,
+   "srcEndMs": 26780,
+   "startMs": 19787,
+   "endMs": 19947
+  },
+  {
+   "text": " fama,",
+   "srcStartMs": 26780,
+   "srcEndMs": 27190,
+   "startMs": 19947,
+   "endMs": 20357
+  },
+  {
+   "text": " esa",
+   "srcStartMs": 28520,
+   "srcEndMs": 28700,
+   "startMs": 20887,
+   "endMs": 21067
+  },
+  {
+   "text": " se",
+   "srcStartMs": 28700,
+   "srcEndMs": 28820,
+   "startMs": 21067,
+   "endMs": 21187
+  },
+  {
+   "text": " la",
+   "srcStartMs": 28820,
+   "srcEndMs": 28960,
+   "startMs": 21187,
+   "endMs": 21327
+  },
+  {
+   "text": " compró",
+   "srcStartMs": 28960,
+   "srcEndMs": 29280,
+   "startMs": 21327,
+   "endMs": 21647
+  },
+  {
+   "text": " él.",
+   "srcStartMs": 29280,
+   "srcEndMs": 29500,
+   "startMs": 21647,
+   "endMs": 21867
+  }
+ ]
+}
