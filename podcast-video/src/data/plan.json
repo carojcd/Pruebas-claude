@@ -1,87 +1,97 @@
 {
  "fps": 30,
- "durationInFrames": 765,
- "punchFrame": 666,
+ "durationInFrames": 665,
+ "punchFrame": 567,
  "shots": [
   {
    "from": 0,
-   "to": 61,
+   "to": 11,
    "zoom": 1.0
   },
   {
-   "from": 61,
-   "to": 130,
+   "from": 11,
+   "to": 60,
    "zoom": 1.1
   },
   {
-   "from": 130,
-   "to": 194,
+   "from": 60,
+   "to": 105,
    "zoom": 1.0
   },
   {
-   "from": 194,
-   "to": 214,
+   "from": 105,
+   "to": 167,
    "zoom": 1.1
   },
   {
-   "from": 214,
-   "to": 280,
+   "from": 167,
+   "to": 174,
+   "zoom": 1.1
+  },
+  {
+   "from": 174,
+   "to": 191,
    "zoom": 1.0
   },
   {
-   "from": 280,
-   "to": 328,
+   "from": 191,
+   "to": 279,
    "zoom": 1.1
   },
   {
-   "from": 328,
-   "to": 405,
+   "from": 279,
+   "to": 304,
    "zoom": 1.0
   },
   {
-   "from": 405,
-   "to": 435,
+   "from": 304,
+   "to": 340,
    "zoom": 1.1
   },
   {
-   "from": 435,
-   "to": 491,
+   "from": 340,
+   "to": 364,
    "zoom": 1.0
   },
   {
-   "from": 491,
-   "to": 546,
+   "from": 364,
+   "to": 414,
    "zoom": 1.1
   },
   {
-   "from": 546,
-   "to": 609,
+   "from": 414,
+   "to": 469,
    "zoom": 1.0
   },
   {
-   "from": 609,
-   "to": 643,
+   "from": 469,
+   "to": 518,
    "zoom": 1.1
   },
   {
-   "from": 643,
-   "to": 665,
+   "from": 518,
+   "to": 548,
    "zoom": 1.0
   },
   {
-   "from": 665,
-   "to": 666,
+   "from": 548,
+   "to": 567,
    "zoom": 1.1
   },
   {
-   "from": 666,
-   "to": 715,
+   "from": 567,
+   "to": 615,
    "zoom": 1.2
   },
   {
-   "from": 715,
-   "to": 765,
-   "zoom": 1.1
+   "from": 615,
+   "to": 658,
+   "zoom": 1.0
+  },
+  {
+   "from": 658,
+   "to": 665,
+   "zoom": 1.0
   }
  ],
  "blocks": [
@@ -94,8 +104,8 @@
    ],
    "key": 1,
    "from": 0,
-   "to": 22,
-   "keyFrame": 7,
+   "to": 12,
+   "keyFrame": 4,
    "text": [
     [
      "A",
@@ -112,9 +122,9 @@
     ]
    ],
    "key": 4,
-   "from": 33,
-   "to": 62,
-   "keyFrame": 44,
+   "from": 12,
+   "to": 37,
+   "keyFrame": 19,
    "text": [
     [
      "me",
@@ -133,9 +143,9 @@
    ],
    "key": 5,
    "emoji": "😂",
-   "from": 62,
-   "to": 86,
-   "keyFrame": 62,
+   "from": 37,
+   "to": 61,
+   "keyFrame": 37,
    "text": [
     [
      "risa",
@@ -153,9 +163,9 @@
     ]
    ],
    "key": 9,
-   "from": 86,
-   "to": 105,
-   "keyFrame": 90,
+   "from": 61,
+   "to": 80,
+   "keyFrame": 65,
    "text": [
     [
      "me",
@@ -173,9 +183,9 @@
    ],
    "key": 12,
    "emoji": "🎓",
-   "from": 105,
-   "to": 131,
-   "keyFrame": 109,
+   "from": 80,
+   "to": 106,
+   "keyFrame": 83,
    "text": [
     [
      "las",
@@ -192,9 +202,9 @@
     ]
    ],
    "key": 15,
-   "from": 131,
-   "to": 152,
-   "keyFrame": 144,
+   "from": 106,
+   "to": 127,
+   "keyFrame": 120,
    "text": [
     [
      "con",
@@ -215,9 +225,9 @@
    ],
    "key": 18,
    "emoji": "🧐",
-   "from": 152,
-   "to": 194,
-   "keyFrame": 174,
+   "from": 127,
+   "to": 169,
+   "keyFrame": 149,
    "text": [
     [
      "de",
@@ -239,9 +249,9 @@
     ]
    ],
    "key": 19,
-   "from": 216,
-   "to": 254,
-   "keyFrame": 216,
+   "from": 175,
+   "to": 206,
+   "keyFrame": 175,
    "text": [
     [
      "Hermano,"
@@ -261,9 +271,9 @@
     ]
    ],
    "key": 24,
-   "from": 254,
-   "to": 281,
-   "keyFrame": 269,
+   "from": 206,
+   "to": 234,
+   "keyFrame": 222,
    "text": [
     [
      "eran",
@@ -281,9 +291,9 @@
    ],
    "key": 26,
    "emoji": "🗞️",
-   "from": 281,
-   "to": 301,
-   "keyFrame": 285,
+   "from": 234,
+   "to": 254,
+   "keyFrame": 238,
    "text": [
     [
      "de",
@@ -300,9 +310,9 @@
     ]
    ],
    "key": 29,
-   "from": 301,
-   "to": 328,
-   "keyFrame": 309,
+   "from": 254,
+   "to": 280,
+   "keyFrame": 262,
    "text": [
     [
      "de",
@@ -322,9 +332,9 @@
     ]
    ],
    "key": 32,
-   "from": 329,
-   "to": 395,
-   "keyFrame": 347,
+   "from": 280,
+   "to": 338,
+   "keyFrame": 305,
    "text": [
     [
      "Yo",
@@ -345,9 +355,9 @@
    ],
    "key": 33,
    "emoji": "🧙",
-   "from": 406,
-   "to": 450,
-   "keyFrame": 406,
+   "from": 343,
+   "to": 378,
+   "keyFrame": 343,
    "text": [
     [
      "brujas",
@@ -365,9 +375,9 @@
     ]
    ],
    "key": 38,
-   "from": 450,
-   "to": 478,
-   "keyFrame": 462,
+   "from": 378,
+   "to": 407,
+   "keyFrame": 390,
    "text": [
     [
      "de",
@@ -388,9 +398,9 @@
     ]
    ],
    "key": 42,
-   "from": 478,
-   "to": 515,
-   "keyFrame": 505,
+   "from": 407,
+   "to": 438,
+   "keyFrame": 428,
    "text": [
     [
      "para",
@@ -412,9 +422,9 @@
    ],
    "key": 45,
    "emoji": "🎭",
-   "from": 515,
-   "to": 547,
-   "keyFrame": 535,
+   "from": 438,
+   "to": 470,
+   "keyFrame": 458,
    "text": [
     [
      "en",
@@ -435,9 +445,9 @@
     ]
    ],
    "key": 49,
-   "from": 547,
-   "to": 594,
-   "keyFrame": 575,
+   "from": 470,
+   "to": 517,
+   "keyFrame": 498,
    "text": [
     [
      "gritara",
@@ -461,9 +471,9 @@
     ]
    ],
    "key": 52,
-   "from": 610,
-   "to": 644,
-   "keyFrame": 618,
+   "from": 519,
+   "to": 549,
+   "keyFrame": 526,
    "text": [
     [
      "Si",
@@ -484,9 +494,9 @@
     ]
    ],
    "key": 58,
-   "from": 644,
-   "to": 667,
-   "keyFrame": 649,
+   "from": 549,
+   "to": 568,
+   "keyFrame": 554,
    "text": [
     [
      "te",
@@ -505,9 +515,9 @@
    ],
    "key": 61,
    "emoji": "👑",
-   "from": 667,
-   "to": 688,
-   "keyFrame": 679,
+   "from": 568,
+   "to": 588,
+   "keyFrame": 579,
    "text": [
     [
      "sería",
@@ -524,9 +534,9 @@
     ]
    ],
    "key": 62,
-   "from": 688,
-   "to": 716,
-   "keyFrame": 688,
+   "from": 588,
+   "to": 616,
+   "keyFrame": 588,
    "text": [
     [
      "indiscutible",
@@ -546,9 +556,9 @@
    ],
    "key": 64,
    "emoji": "📱",
-   "from": 716,
-   "to": 763,
-   "keyFrame": 716,
+   "from": 616,
+   "to": 663,
+   "keyFrame": 616,
    "text": [
     [
      "clickbait"
@@ -561,13 +571,13 @@
   }
  ],
  "emojiFrames": [
-  62,
-  109,
-  174,
-  285,
-  406,
-  535,
-  679,
-  716
+  37,
+  83,
+  149,
+  238,
+  343,
+  458,
+  579,
+  616
  ]
 }

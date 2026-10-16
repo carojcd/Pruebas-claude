@@ -22,7 +22,8 @@ Si solo cambia texto/emoji: no hace falta repetir la verificación de sincronía
 - El pipeline original está en la rama `claude/great-franklin-220loc` (congresos-video/); no se modifica.
 
 ## Datos clave
-- Silencio: no es digital (ruido de sala −44…−35 dB). Umbral = percentil 10 del nivel + 9,5 dB (automático; clip 1 → −34 dB).
+- Silencio: no es digital (ruido de sala −44…−35 dB; en el clip 4 el suelo era bimodal). Umbral automático = percentil 90 del nivel − 22 dB (clips 1–4: −34/−33/−31/−34 dB). Comprobar tras `build` que no quedan pausas > 0,3 s a −45 dB.
+- Planos < 0,5 s (los crea el corte de silencios) heredan el zoom del anterior: sin parpadeo de escala.
 - El detector ignora «voz» de < 30 ms (aliento/clics): sin eso un pico aislado impedía cortar una pausa y el subtítulo salía ~300 ms antes (clip 3).
 - Texto corregido sin tocar tiempos: `scripts/fix_words.py` (los índices de palabra no cambian).
 - Verificación: `scripts/verify.sh` (formato, LUFS/pico, silencios, sincronía). Whisper confunde palabras pegadas a un corte (±200 ms): comprobar con energía de voz antes de «arreglar» subtítulos.

@@ -35,8 +35,9 @@ dur = len(audio) / SR
 n = int(len(audio) / (SR * WIN))
 frames = audio[: n * int(SR * WIN)].reshape(n, -1)
 db = 20 * np.log10(np.sqrt((frames ** 2).mean(1)) + 1e-9)
-# umbral automático: ruido de sala (percentil 10) + 9,5 dB (calibrado con 2 clips); THR_DB en el entorno lo fija a mano
-THR_DB = float(os.environ.get("THR_DB", np.percentile(db, 10) + 9.5))
+# umbral automático relativo a la voz: percentil 90 − 22 dB (≥ ruido de sala + 6 dB). Calibrado con 4 clips: −34/−33/−31/−34 dB.
+# (el criterio «ruido de sala + 9,5 dB» fallaba con suelos bimodales: silencio casi digital + ruido de sala a −45 dB)
+THR_DB = float(os.environ.get("THR_DB", max(np.percentile(db, 90) - 22, np.percentile(db, 10) + 6)))
 print(f"umbral de voz {THR_DB:.1f} dB"); open(os.path.join(os.path.dirname(os.path.abspath(out_path)), "thr.txt"), "w").write(f"{THR_DB:.1f}")
 voiced = db > THR_DB
 # ignora picos de «voz» de < 30 ms (clics, aliento) que partían un silencio largo

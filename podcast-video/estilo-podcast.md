@@ -11,9 +11,10 @@ Lo que decido yo va marcado **[SUPOSICIÓN]**. Tiempos en fotogramas a 30 fps (1
 ## 2. Cortes y planos
 | Parámetro | Valor |
 |---|---|
-| Silencios | se elimina todo silencio **> 0,30 s**, ventanas RMS de 10 ms; se deja 0,06 s de aire antes y 0,08 s después de la voz. **Umbral automático [SUPOSICIÓN, calibrado con 2 clips]: percentil 10 del nivel + 9,5 dB** (clip 1: −34 dB, clip 2: −33 dB). El ruido de sala está entre −44 y −35 dB, así que −55 dB no detecta nada |
+| Silencios | se elimina todo silencio **> 0,30 s**, ventanas RMS de 10 ms; se deja 0,06 s de aire antes y 0,08 s después de la voz. **Umbral automático [SUPOSICIÓN, calibrado con 4 clips]: percentil 90 del nivel de voz − 22 dB** (≈ −31…−34 dB). El ruido de sala está entre −44 y −35 dB, así que −55 dB no detecta nada |
 | Jump cut | corte seco **al inicio de frase/cláusula** (primera palabra tras una pausa, o cada 1,5–2,5 s si no hay pausa: se busca el inicio de palabra más cercano) |
 | Duración de plano | objetivo **1,5–2,5 s** (45–75 f). Cada silencio eliminado es un corte obligatorio, así que pueden salir planos de 0,87–1,0 s; no se añaden cortes propios en planos < 45 f |
+| Planos < 0,5 s | heredan el zoom del plano anterior (se mantiene el corte, sin salto de escala) |
 | Zoom alterno | planos pares **100 %**, impares **110 %** (escala instantánea en el corte, sin zoom animado) |
 | Punch-in | **120 %** en la frase más potente (elegida por el editor: remate o afirmación clave, ≈ 1–2 s) |
 | Origen del zoom | por clip en `face.json`: x sobre la cara (50–55 %); y fija sobre la cara (clip 1: 24 %) o, si la boca se mueve, **a la altura de la boca** para que el zoom no la baje [SUPOSICIÓN: medido en fotogramas] |

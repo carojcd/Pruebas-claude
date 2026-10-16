@@ -1,0 +1,583 @@
+{
+ "fps": 30,
+ "durationInFrames": 665,
+ "punchFrame": 567,
+ "shots": [
+  {
+   "from": 0,
+   "to": 11,
+   "zoom": 1.0
+  },
+  {
+   "from": 11,
+   "to": 60,
+   "zoom": 1.1
+  },
+  {
+   "from": 60,
+   "to": 105,
+   "zoom": 1.0
+  },
+  {
+   "from": 105,
+   "to": 167,
+   "zoom": 1.1
+  },
+  {
+   "from": 167,
+   "to": 174,
+   "zoom": 1.1
+  },
+  {
+   "from": 174,
+   "to": 191,
+   "zoom": 1.0
+  },
+  {
+   "from": 191,
+   "to": 279,
+   "zoom": 1.1
+  },
+  {
+   "from": 279,
+   "to": 304,
+   "zoom": 1.0
+  },
+  {
+   "from": 304,
+   "to": 340,
+   "zoom": 1.1
+  },
+  {
+   "from": 340,
+   "to": 364,
+   "zoom": 1.0
+  },
+  {
+   "from": 364,
+   "to": 414,
+   "zoom": 1.1
+  },
+  {
+   "from": 414,
+   "to": 469,
+   "zoom": 1.0
+  },
+  {
+   "from": 469,
+   "to": 518,
+   "zoom": 1.1
+  },
+  {
+   "from": 518,
+   "to": 548,
+   "zoom": 1.0
+  },
+  {
+   "from": 548,
+   "to": 567,
+   "zoom": 1.1
+  },
+  {
+   "from": 567,
+   "to": 615,
+   "zoom": 1.2
+  },
+  {
+   "from": 615,
+   "to": 658,
+   "zoom": 1.0
+  },
+  {
+   "from": 658,
+   "to": 665,
+   "zoom": 1.0
+  }
+ ],
+ "blocks": [
+  {
+   "lines": [
+    [
+     0,
+     1
+    ]
+   ],
+   "key": 1,
+   "from": 0,
+   "to": 12,
+   "keyFrame": 4,
+   "text": [
+    [
+     "A",
+     "ver,"
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     2,
+     3,
+     4
+    ]
+   ],
+   "key": 4,
+   "from": 12,
+   "to": 37,
+   "keyFrame": 19,
+   "text": [
+    [
+     "me",
+     "da",
+     "muchísima"
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     5,
+     6,
+     7
+    ]
+   ],
+   "key": 5,
+   "emoji": "😂",
+   "from": 37,
+   "to": 61,
+   "keyFrame": 37,
+   "text": [
+    [
+     "risa",
+     "que",
+     "hoy"
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     8,
+     9,
+     10
+    ]
+   ],
+   "key": 9,
+   "from": 61,
+   "to": 80,
+   "keyFrame": 65,
+   "text": [
+    [
+     "me",
+     "leen",
+     "en"
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     11,
+     12
+    ]
+   ],
+   "key": 12,
+   "emoji": "🎓",
+   "from": 80,
+   "to": 106,
+   "keyFrame": 83,
+   "text": [
+    [
+     "las",
+     "universidades"
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     13,
+     14,
+     15
+    ]
+   ],
+   "key": 15,
+   "from": 106,
+   "to": 127,
+   "keyFrame": 120,
+   "text": [
+    [
+     "con",
+     "esa",
+     "voz"
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     16,
+     17
+    ],
+    [
+     18
+    ]
+   ],
+   "key": 18,
+   "emoji": "🧐",
+   "from": 127,
+   "to": 169,
+   "keyFrame": 149,
+   "text": [
+    [
+     "de",
+     "intelectual"
+    ],
+    [
+     "serio."
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     19
+    ],
+    [
+     20,
+     21
+    ]
+   ],
+   "key": 19,
+   "from": 175,
+   "to": 206,
+   "keyFrame": 175,
+   "text": [
+    [
+     "Hermano,"
+    ],
+    [
+     "mis",
+     "obras"
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     22,
+     23,
+     24
+    ]
+   ],
+   "key": 24,
+   "from": 206,
+   "to": 234,
+   "keyFrame": 222,
+   "text": [
+    [
+     "eran",
+     "los",
+     "chismes"
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     25,
+     26
+    ]
+   ],
+   "key": 26,
+   "emoji": "🗞️",
+   "from": 234,
+   "to": 254,
+   "keyFrame": 238,
+   "text": [
+    [
+     "de",
+     "farándula"
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     27,
+     28,
+     29
+    ]
+   ],
+   "key": 29,
+   "from": 254,
+   "to": 280,
+   "keyFrame": 262,
+   "text": [
+    [
+     "de",
+     "la",
+     "época."
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     30,
+     31
+    ],
+    [
+     32
+    ]
+   ],
+   "key": 32,
+   "from": 280,
+   "to": 338,
+   "keyFrame": 305,
+   "text": [
+    [
+     "Yo",
+     "escribía"
+    ],
+    [
+     "traiciones,"
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     33,
+     34,
+     35
+    ]
+   ],
+   "key": 33,
+   "emoji": "🧙",
+   "from": 343,
+   "to": 378,
+   "keyFrame": 343,
+   "text": [
+    [
+     "brujas",
+     "y",
+     "chistes"
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     36,
+     37,
+     38
+    ]
+   ],
+   "key": 38,
+   "from": 378,
+   "to": 407,
+   "keyFrame": 390,
+   "text": [
+    [
+     "de",
+     "doble",
+     "sentido"
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     39,
+     40
+    ],
+    [
+     41,
+     42
+    ]
+   ],
+   "key": 42,
+   "from": 407,
+   "to": 438,
+   "keyFrame": 428,
+   "text": [
+    [
+     "para",
+     "que"
+    ],
+    [
+     "la",
+     "gente"
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     43,
+     44,
+     45
+    ]
+   ],
+   "key": 45,
+   "emoji": "🎭",
+   "from": 438,
+   "to": 470,
+   "keyFrame": 458,
+   "text": [
+    [
+     "en",
+     "el",
+     "teatro"
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     46,
+     47
+    ],
+    [
+     48,
+     49
+    ]
+   ],
+   "key": 49,
+   "from": 470,
+   "to": 517,
+   "keyFrame": 498,
+   "text": [
+    [
+     "gritara",
+     "y"
+    ],
+    [
+     "tirara",
+     "cosas."
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     50,
+     51
+    ],
+    [
+     52,
+     53
+    ]
+   ],
+   "key": 52,
+   "from": 519,
+   "to": 549,
+   "keyFrame": 526,
+   "text": [
+    [
+     "Si",
+     "yo"
+    ],
+    [
+     "viviera",
+     "hoy,"
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     54,
+     55,
+     58
+    ]
+   ],
+   "key": 58,
+   "from": 549,
+   "to": 568,
+   "keyFrame": 554,
+   "text": [
+    [
+     "te",
+     "lo",
+     "juro,"
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     59,
+     60,
+     61
+    ]
+   ],
+   "key": 61,
+   "emoji": "👑",
+   "from": 568,
+   "to": 588,
+   "keyFrame": 579,
+   "text": [
+    [
+     "sería",
+     "el",
+     "rey"
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     62,
+     63
+    ]
+   ],
+   "key": 62,
+   "from": 588,
+   "to": 616,
+   "keyFrame": 588,
+   "text": [
+    [
+     "indiscutible",
+     "del"
+    ]
+   ]
+  },
+  {
+   "lines": [
+    [
+     64
+    ],
+    [
+     65,
+     66
+    ]
+   ],
+   "key": 64,
+   "emoji": "📱",
+   "from": 616,
+   "to": 663,
+   "keyFrame": 616,
+   "text": [
+    [
+     "clickbait"
+    ],
+    [
+     "en",
+     "internet."
+    ]
+   ]
+  }
+ ],
+ "emojiFrames": [
+  37,
+  83,
+  149,
+  238,
+  343,
+  458,
+  579,
+  616
+ ]
+}

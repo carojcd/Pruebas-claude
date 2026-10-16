@@ -1,0 +1,471 @@
+[
+  {
+    "text": " A",
+    "startMs": 0,
+    "endMs": 500,
+    "timestampMs": 250,
+    "confidence": null
+  },
+  {
+    "text": " ver,",
+    "startMs": 500,
+    "endMs": 720,
+    "timestampMs": 610,
+    "confidence": null
+  },
+  {
+    "text": " me",
+    "startMs": 1380,
+    "endMs": 1620,
+    "timestampMs": 1500,
+    "confidence": null
+  },
+  {
+    "text": " da",
+    "startMs": 1620,
+    "endMs": 1740,
+    "timestampMs": 1680,
+    "confidence": null
+  },
+  {
+    "text": " muchísima",
+    "startMs": 1740,
+    "endMs": 2320,
+    "timestampMs": 2030,
+    "confidence": null
+  },
+  {
+    "text": " risa",
+    "startMs": 2320,
+    "endMs": 2760,
+    "timestampMs": 2540,
+    "confidence": null
+  },
+  {
+    "text": " que",
+    "startMs": 2760,
+    "endMs": 2920,
+    "timestampMs": 2840,
+    "confidence": null
+  },
+  {
+    "text": " hoy",
+    "startMs": 2920,
+    "endMs": 3120,
+    "timestampMs": 3020,
+    "confidence": null
+  },
+  {
+    "text": " me",
+    "startMs": 3120,
+    "endMs": 3280,
+    "timestampMs": 3200,
+    "confidence": null
+  },
+  {
+    "text": " leen",
+    "startMs": 3280,
+    "endMs": 3660,
+    "timestampMs": 3470,
+    "confidence": null
+  },
+  {
+    "text": " en",
+    "startMs": 3660,
+    "endMs": 3760,
+    "timestampMs": 3710,
+    "confidence": null
+  },
+  {
+    "text": " las",
+    "startMs": 3760,
+    "endMs": 3880,
+    "timestampMs": 3820,
+    "confidence": null
+  },
+  {
+    "text": " universidades",
+    "startMs": 3880,
+    "endMs": 4640,
+    "timestampMs": 4260,
+    "confidence": null
+  },
+  {
+    "text": " con",
+    "startMs": 4640,
+    "endMs": 4920,
+    "timestampMs": 4780,
+    "confidence": null
+  },
+  {
+    "text": " esa",
+    "startMs": 4920,
+    "endMs": 5100,
+    "timestampMs": 5010,
+    "confidence": null
+  },
+  {
+    "text": " voz",
+    "startMs": 5100,
+    "endMs": 5340,
+    "timestampMs": 5220,
+    "confidence": null
+  },
+  {
+    "text": " de",
+    "startMs": 5340,
+    "endMs": 5500,
+    "timestampMs": 5420,
+    "confidence": null
+  },
+  {
+    "text": " intelectual",
+    "startMs": 5500,
+    "endMs": 6080,
+    "timestampMs": 5790,
+    "confidence": null
+  },
+  {
+    "text": " serio.",
+    "startMs": 6080,
+    "endMs": 6480,
+    "timestampMs": 6280,
+    "confidence": null
+  },
+  {
+    "text": " Hermano,",
+    "startMs": 7520,
+    "endMs": 8460,
+    "timestampMs": 7990,
+    "confidence": null
+  },
+  {
+    "text": " mis",
+    "startMs": 8900,
+    "endMs": 9020,
+    "timestampMs": 8960,
+    "confidence": null
+  },
+  {
+    "text": " obras",
+    "startMs": 9020,
+    "endMs": 9340,
+    "timestampMs": 9180,
+    "confidence": null
+  },
+  {
+    "text": " eran",
+    "startMs": 9340,
+    "endMs": 9680,
+    "timestampMs": 9510,
+    "confidence": null
+  },
+  {
+    "text": " los",
+    "startMs": 9680,
+    "endMs": 9880,
+    "timestampMs": 9780,
+    "confidence": null
+  },
+  {
+    "text": " chismes",
+    "startMs": 9880,
+    "endMs": 10280,
+    "timestampMs": 10080,
+    "confidence": null
+  },
+  {
+    "text": " de",
+    "startMs": 10280,
+    "endMs": 10400,
+    "timestampMs": 10340,
+    "confidence": null
+  },
+  {
+    "text": " farándiga",
+    "startMs": 10400,
+    "endMs": 10920,
+    "timestampMs": 10660,
+    "confidence": null
+  },
+  {
+    "text": " de",
+    "startMs": 10920,
+    "endMs": 11080,
+    "timestampMs": 11000,
+    "confidence": null
+  },
+  {
+    "text": " la",
+    "startMs": 11080,
+    "endMs": 11200,
+    "timestampMs": 11140,
+    "confidence": null
+  },
+  {
+    "text": " época.",
+    "startMs": 11200,
+    "endMs": 11580,
+    "timestampMs": 11390,
+    "confidence": null
+  },
+  {
+    "text": " Yo",
+    "startMs": 12360,
+    "endMs": 12480,
+    "timestampMs": 12420,
+    "confidence": null
+  },
+  {
+    "text": " escribía",
+    "startMs": 12480,
+    "endMs": 12960,
+    "timestampMs": 12720,
+    "confidence": null
+  },
+  {
+    "text": " detraiciones,",
+    "startMs": 12960,
+    "endMs": 14320,
+    "timestampMs": 13640,
+    "confidence": null
+  },
+  {
+    "text": " brujas",
+    "startMs": 14940,
+    "endMs": 15460,
+    "timestampMs": 15200,
+    "confidence": null
+  },
+  {
+    "text": " y",
+    "startMs": 15460,
+    "endMs": 16400,
+    "timestampMs": 15930,
+    "confidence": null
+  },
+  {
+    "text": " chistes",
+    "startMs": 16400,
+    "endMs": 16760,
+    "timestampMs": 16580,
+    "confidence": null
+  },
+  {
+    "text": " de",
+    "startMs": 16760,
+    "endMs": 16940,
+    "timestampMs": 16850,
+    "confidence": null
+  },
+  {
+    "text": " doble",
+    "startMs": 16940,
+    "endMs": 17180,
+    "timestampMs": 17060,
+    "confidence": null
+  },
+  {
+    "text": " sentido",
+    "startMs": 17180,
+    "endMs": 17720,
+    "timestampMs": 17450,
+    "confidence": null
+  },
+  {
+    "text": " para",
+    "startMs": 17720,
+    "endMs": 18860,
+    "timestampMs": 18290,
+    "confidence": null
+  },
+  {
+    "text": " que",
+    "startMs": 18860,
+    "endMs": 19000,
+    "timestampMs": 18930,
+    "confidence": null
+  },
+  {
+    "text": " la",
+    "startMs": 19000,
+    "endMs": 19120,
+    "timestampMs": 19060,
+    "confidence": null
+  },
+  {
+    "text": " gente",
+    "startMs": 19120,
+    "endMs": 19480,
+    "timestampMs": 19300,
+    "confidence": null
+  },
+  {
+    "text": " en",
+    "startMs": 19480,
+    "endMs": 20000,
+    "timestampMs": 19740,
+    "confidence": null
+  },
+  {
+    "text": " el",
+    "startMs": 20000,
+    "endMs": 20120,
+    "timestampMs": 20060,
+    "confidence": null
+  },
+  {
+    "text": " teatro",
+    "startMs": 20120,
+    "endMs": 20540,
+    "timestampMs": 20330,
+    "confidence": null
+  },
+  {
+    "text": " gritara",
+    "startMs": 20540,
+    "endMs": 21060,
+    "timestampMs": 20800,
+    "confidence": null
+  },
+  {
+    "text": " y",
+    "startMs": 21060,
+    "endMs": 21220,
+    "timestampMs": 21140,
+    "confidence": null
+  },
+  {
+    "text": " tirara",
+    "startMs": 21220,
+    "endMs": 21460,
+    "timestampMs": 21340,
+    "confidence": null
+  },
+  {
+    "text": " cosas.",
+    "startMs": 21460,
+    "endMs": 21840,
+    "timestampMs": 21650,
+    "confidence": null
+  },
+  {
+    "text": " Si",
+    "startMs": 23000,
+    "endMs": 23400,
+    "timestampMs": 23200,
+    "confidence": null
+  },
+  {
+    "text": " yo",
+    "startMs": 23400,
+    "endMs": 23540,
+    "timestampMs": 23470,
+    "confidence": null
+  },
+  {
+    "text": " viviera",
+    "startMs": 23540,
+    "endMs": 23860,
+    "timestampMs": 23700,
+    "confidence": null
+  },
+  {
+    "text": " hoy,",
+    "startMs": 23860,
+    "endMs": 24160,
+    "timestampMs": 24010,
+    "confidence": null
+  },
+  {
+    "text": " te",
+    "startMs": 24880,
+    "endMs": 25060,
+    "timestampMs": 24970,
+    "confidence": null
+  },
+  {
+    "text": " lo",
+    "startMs": 25060,
+    "endMs": 25180,
+    "timestampMs": 25120,
+    "confidence": null
+  },
+  {
+    "text": " ju",
+    "startMs": 25180,
+    "endMs": 25360,
+    "timestampMs": 25270,
+    "confidence": null
+  },
+  {
+    "text": " lo",
+    "startMs": 25060,
+    "endMs": 25180,
+    "timestampMs": 25120,
+    "confidence": null
+  },
+  {
+    "text": " juro",
+    "startMs": 25180,
+    "endMs": 25920,
+    "timestampMs": 25550,
+    "confidence": null
+  },
+  {
+    "text": " sería",
+    "startMs": 25920,
+    "endMs": 26500,
+    "timestampMs": 26210,
+    "confidence": null
+  },
+  {
+    "text": " el",
+    "startMs": 26500,
+    "endMs": 26680,
+    "timestampMs": 26590,
+    "confidence": null
+  },
+  {
+    "text": " rey",
+    "startMs": 26680,
+    "endMs": 26960,
+    "timestampMs": 26820,
+    "confidence": null
+  },
+  {
+    "text": " indiscutible",
+    "startMs": 26960,
+    "endMs": 27680,
+    "timestampMs": 27320,
+    "confidence": null
+  },
+  {
+    "text": " del",
+    "startMs": 27680,
+    "endMs": 27900,
+    "timestampMs": 27790,
+    "confidence": null
+  },
+  {
+    "text": " clickbait",
+    "startMs": 27900,
+    "endMs": 28540,
+    "timestampMs": 28220,
+    "confidence": null
+  },
+  {
+    "text": " en",
+    "startMs": 28540,
+    "endMs": 28740,
+    "timestampMs": 28640,
+    "confidence": null
+  },
+  {
+    "text": " internet.",
+    "startMs": 28740,
+    "endMs": 29200,
+    "timestampMs": 28970,
+    "confidence": null
+  }
+]

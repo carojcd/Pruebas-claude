@@ -25,10 +25,14 @@ for k, b in enumerate(blocks):
     cuts.add(c)
 cuts = sorted(cuts)
 shots = []
+flip = 0  # contador de alternancia: los planos muy cortos (< SHORT f) heredan el zoom del anterior
+SHORT = 15
 for i, f in enumerate(cuts):
     to = cuts[i + 1] if i + 1 < len(cuts) else end
-    zoom = 1.0 if i % 2 == 0 else 1.10
     if f == punch: zoom = 1.20
+    elif i > 0 and to - f < SHORT: zoom = shots[-1]["zoom"]
+    else:
+        zoom = 1.0 if flip % 2 == 0 else 1.10; flip += 1
     shots.append({"from": f, "to": to, "zoom": zoom})
 # alternancia estricta: si el plano anterior al punch ya es 110, se queda; sin dos iguales seguidos salvo punch
 out_blocks = []
