@@ -155,8 +155,11 @@ export const shotB = (ctx: Ctx, f: number) => {
   const s = 520;
   const p = 0.1 + f / 26;
   rainLayers(ctx, f + 30, 0.8, 2);
-  mirrored(ctx, gy, 0.22, () => sideWalker(ctx, x, gy, s, p, 7 * I));
-  sideWalker(ctx, x, gy, s, p, 7 * I);
+  ctx.save();
+  ctx.filter = "blur(5px)";
+  mirrored(ctx, gy, 0.16, () => sideWalker(ctx, x, gy, s, p, I));
+  ctx.restore();
+  sideWalker(ctx, x, gy, s, p, I);
   // salpicaduras en cada paso (local 4, 17, 30)
   for (const sf of [4, 17, 30]) {
     const tt = f - sf;
@@ -195,170 +198,241 @@ export const shotB = (ctx: Ctx, f: number) => {
 // ───────────────────────── C · Zapato en el charco ─────────────────────────
 export const shotC = (ctx: Ctx, f: number, n: number) => {
   const contact = 6;
-  const T = Math.max(0, (f - contact) * 0.75); // cámara lenta tras el impacto
-  const shake = f >= contact ? Math.sin(T * 2.6) * 7 * Math.exp(-T * 0.35) : 0;
-  const gyLine = 1150;
-  const cy = 1330; // apoyo de la suela
+  const T = Math.max(0, (f - contact) * 0.7); // cámara lenta tras el impacto
+  const shake = f >= contact ? Math.sin(T * 2.6) * 8 * Math.exp(-T * 0.35) : 0;
+  const gyLine = 1080;
+  const cy = 1360; // apoyo de la suela
+  const I = flicker(f + 63, 2);
   ctx.save();
-  cam(ctx, lerp(1.04, 1.0, f / n), 540, 1200, 0, shake);
-  // fondo con bokeh
+  cam(ctx, lerp(1.05, 1.0, f / n), 540, 1250, 0, shake);
+  // fondo con bokeh de neón y ventanas
   const bg = ctx.createLinearGradient(0, 0, 0, gyLine);
-  bg.addColorStop(0, "#05090b");
-  bg.addColorStop(1, "#0c191e");
+  bg.addColorStop(0, "#04080a");
+  bg.addColorStop(1, "#0d1c22");
   ctx.fillStyle = bg;
   ctx.fillRect(0, 0, W, H);
   const rb = rng(31);
   const bokeh: { x: number; y: number; r: number; c: string; a: number }[] = [];
-  for (let i = 0; i < 16; i++) {
-    bokeh.push({
-      x: rb() * W + f * 1.5,
-      y: 650 + rb() * 520,
-      r: 30 + rb() * 70,
-      c: rb() < 0.7 ? PAL.neon : "#5aa0b0",
-      a: 0.25 + rb() * 0.35,
-    });
+  for (let i = 0; i < 18; i++) {
+    bokeh.push({ x: rb() * W + f * 1.2, y: 620 + rb() * 480, r: 26 + rb() * 80, c: rb() < 0.72 ? PAL.neon : "#5aa0b0", a: 0.22 + rb() * 0.35 });
   }
   bokeh.forEach((b) => {
-    glow(ctx, b.x, b.y, b.r * 1.6, b.c, b.a);
-    ctx.strokeStyle = mix(b.c, b.c, 0, b.a * 0.5);
+    glow(ctx, b.x, b.y, b.r * 1.7, b.c, b.a * (b.c === PAL.neon ? I : 1));
+    ctx.strokeStyle = mix(b.c, b.c, 0, b.a * 0.45);
     ctx.lineWidth = 2;
     ctx.beginPath();
-    ctx.arc(b.x, b.y, b.r * 0.6, 0, Math.PI * 2);
+    ctx.arc(b.x, b.y, b.r * 0.62, 0, Math.PI * 2);
     ctx.stroke();
   });
-  // suelo / agua
+  // agua: horizonte claro y reflejos alargados del bokeh
   const fg = ctx.createLinearGradient(0, gyLine, 0, H);
-  fg.addColorStop(0, "#132a31");
-  fg.addColorStop(0.15, "#070e11");
-  fg.addColorStop(1, "#030506");
+  fg.addColorStop(0, "#1a3640");
+  fg.addColorStop(0.12, "#08121a");
+  fg.addColorStop(1, "#020405");
   ctx.fillStyle = fg;
   ctx.fillRect(0, gyLine, W, H - gyLine);
   bokeh.forEach((b, i) =>
-    reflection(ctx, f + 63, { x: b.x, y: gyLine + (b.y - 640) * 0.3, w: b.r * 1.3, len: 520, color: b.c, alpha: b.a * 0.9, seed: i * 2.7, step: 9 }),
+    reflection(ctx, f + 63, { x: b.x, y: gyLine + (b.y - 620) * 0.25, w: b.r * 1.4, len: 640, color: b.c, alpha: b.a, seed: i * 2.7, step: 8 }),
   );
-  groundSplashes(ctx, f + 63, { seed: 21, count: 60, y0: gyLine + 20, y1: H, size: 40, alpha: 0.5 });
+  groundSplashes(ctx, f + 63, { seed: 21, count: 70, y0: gyLine + 20, y1: H, size: 44, alpha: 0.55 });
 
-  // dobladillo de la gabardina (arriba)
+  // la otra pierna, desenfocada al fondo (derecha)
+  ctx.save();
+  ctx.filter = "blur(10px)";
+  ctx.fillStyle = "#0a0809";
+  ctx.beginPath();
+  curve(ctx, [[860, -40], [1040, -40], [1010, 1000], [930, 1060], [840, 1000]], true, 0.3);
+  ctx.fill();
+  ctx.fillStyle = "#050405";
+  ctx.beginPath();
+  ctx.ellipse(940, 1070, 150, 45, 0, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.restore();
+
+  // faldón de la gabardina (arriba), ondeando
+  const wv = (k: number) => Math.sin(f * 0.35 + k) * 12;
   const hem: Pt[] = [
-    [330, -50],
-    [1130, -50],
-    [1130, 330],
-    [980, 400 + Math.sin(f * 0.3) * 8],
-    [820, 360],
-    [640, 420 + Math.sin(f * 0.3 + 1) * 10],
-    [460, 360],
-    [330, 300],
+    [180, -60],
+    [1140, -60],
+    [1140, 280],
+    [1000, 360 + wv(0)],
+    [840, 330],
+    [700, 400 + wv(1)],
+    [520, 350],
+    [360, 420 + wv(2)],
+    [180, 330],
   ];
-  rimFill(ctx, () => curve(ctx, hem, true, 0.3), PAL.coat, PAL.rim, 10, -6);
-  // zapato
-  const sy = f < contact ? cy - 300 * (1 - easeIn(f / contact)) : cy;
+  const hg = ctx.createLinearGradient(180, 0, 1140, 0);
+  hg.addColorStop(0, "#1a0a06");
+  hg.addColorStop(0.6, PAL.coat);
+  hg.addColorStop(1, "#4d2316");
+  rimFill(ctx, () => curve(ctx, hem, true, 0.3), hg, mix(PAL.coat, PAL.rim, I), 0, -9);
+  ctx.strokeStyle = "rgba(8,3,1,0.6)";
+  ctx.lineWidth = 6;
+  ctx.beginPath();
+  for (const [x0, x1] of [[420, 360], [610, 700], [880, 840]]) {
+    ctx.moveTo(x0, 0);
+    ctx.quadraticCurveTo((x0 + x1) / 2 + 20, 200, x1, 360);
+  }
+  ctx.stroke();
+
+  // pie que baja: inclinado (punta arriba) hasta el contacto
+  const down = f < contact ? 1 - easeIn(f / contact) : 0;
   const sx = 560;
-  // pernera
+  const sy = cy - 320 * down;
+  const tilt = -0.22 * down;
+  // pernera con quiebre sobre el zapato
+  const ankle: Pt = [sx + 90, sy - 170];
   ctx.fillStyle = "#0e0c0e";
   ctx.beginPath();
-  curve(ctx, [
-    [470, 300],
-    [700, 300],
-    [690, sy - 150],
-    [600, sy - 120],
-    [470, sy - 150],
-  ], true, 0.2);
+  curve(ctx, [[430, 300], [700, 300], [ankle[0] + 150, ankle[1] - 40], [ankle[0] + 120, ankle[1] + 20], [ankle[0] - 120, ankle[1] + 30], [ankle[0] - 150, ankle[1] - 30]], true, 0.25);
   ctx.fill();
-  ctx.strokeStyle = "rgba(255,140,70,0.35)";
-  ctx.lineWidth = 3;
+  ctx.strokeStyle = `rgba(255,150,80,${0.35 * I})`;
+  ctx.lineWidth = 4;
   ctx.beginPath();
   ctx.moveTo(690, 320);
-  ctx.lineTo(684, sy - 160);
+  ctx.quadraticCurveTo(ankle[0] + 160, (320 + ankle[1]) / 2, ankle[0] + 140, ankle[1] - 30);
   ctx.stroke();
-  const shoe: Pt[] = [
-    [sx + 175, sy - 8],
-    [sx + 185, sy - 150],
-    [sx + 100, sy - 190],
-    [sx - 40, sy - 160],
-    [sx - 220, sy - 100],
-    [sx - 300, sy - 45],
-    [sx - 280, sy],
-    [sx + 60, sy + 4],
-  ];
-  // reflejo del zapato
+  ctx.strokeStyle = "rgba(0,0,0,0.6)";
+  ctx.lineWidth = 7;
+  ctx.beginPath();
+  for (const k of [0, 1, 2]) {
+    const yy = ankle[1] - 60 - k * 70;
+    ctx.moveTo(ankle[0] - 120 + k * 10, yy);
+    ctx.quadraticCurveTo(ankle[0], yy + 30, ankle[0] + 120 - k * 10, yy - 6);
+  }
+  ctx.stroke();
+
+  // zapato oxford de charol, 3/4 con la punta hacia la cámara-izquierda
   ctx.save();
-  ctx.globalAlpha = f < contact ? 0.35 : 0.18;
-  ctx.translate(0, cy * 2 + 8);
-  ctx.scale(1, -0.8);
-  ctx.fillStyle = "#1a1012";
+  ctx.translate(sx, sy);
+  ctx.rotate(tilt);
+  const shoe: Pt[] = [
+    [330, -10],
+    [345, -150],
+    [250, -205],
+    [120, -215],
+    [-40, -175],
+    [-200, -125],
+    [-320, -75],
+    [-370, -20],
+    [-340, 10],
+    [-120, 22],
+    [150, 18],
+  ];
+  // reflejo del zapato en el agua
+  ctx.save();
+  ctx.globalAlpha = down > 0 ? 0.3 : 0.16;
+  ctx.translate(0, 30 + 2 * 320 * down);
+  ctx.scale(1, -0.85);
+  ctx.fillStyle = "#1b1214";
   ctx.beginPath();
   curve(ctx, shoe, true, 0.35);
   ctx.fill();
   ctx.restore();
-  rimFill(ctx, () => curve(ctx, shoe, true, 0.35), "#08090b", PAL.rim, 7, 6);
-  // brillos del charol
-  ctx.save();
-  ctx.lineCap = "round";
-  ctx.strokeStyle = "rgba(235,240,245,0.75)";
-  ctx.lineWidth = 6;
+  rimFill(ctx, () => curve(ctx, shoe, true, 0.35), "#07080a", mix("#07080a", PAL.rim, I), 8, 7);
+  // suela y tacón
+  ctx.fillStyle = "#1d1412";
   ctx.beginPath();
-  ctx.moveTo(sx - 230, sy - 85);
-  ctx.quadraticCurveTo(sx - 120, sy - 150, sx + 10, sy - 158);
+  curve(ctx, [[-360, -8], [-120, 14], [150, 12], [335, -6], [335, 18], [150, 34], [-120, 36], [-350, 14]], true, 0.3);
+  ctx.fill();
+  // pala y cordones
+  ctx.strokeStyle = "rgba(40,40,46,0.9)";
+  ctx.lineWidth = 5;
+  ctx.beginPath();
+  ctx.moveTo(-60, -170);
+  ctx.quadraticCurveTo(40, -150, 120, -205);
   ctx.stroke();
-  ctx.strokeStyle = "rgba(255,150,80,0.8)";
+  ctx.strokeStyle = "rgba(10,10,12,1)";
+  ctx.lineWidth = 7;
+  ctx.beginPath();
+  for (let k = 0; k < 4; k++) {
+    ctx.moveTo(20 + k * 30, -200 + k * 6);
+    ctx.lineTo(70 + k * 30, -168 + k * 6);
+  }
+  ctx.stroke();
+  // puntera (costura) y brillos especulares
+  ctx.strokeStyle = "rgba(30,30,36,0.9)";
   ctx.lineWidth = 4;
   ctx.beginPath();
-  ctx.moveTo(sx - 285, sy - 20);
-  ctx.quadraticCurveTo(sx - 100, sy - 6, sx + 150, sy - 10);
+  ctx.moveTo(-250, -105);
+  ctx.quadraticCurveTo(-200, -60, -235, -12);
   ctx.stroke();
-  ctx.fillStyle = "rgba(255,170,100,0.55)";
+  ctx.lineCap = "round";
+  ctx.strokeStyle = "rgba(240,244,248,0.85)";
+  ctx.lineWidth = 7;
   ctx.beginPath();
-  ctx.ellipse(sx - 160, sy - 110, 40, 12, -0.35, 0, Math.PI * 2);
+  ctx.moveTo(-330, -60);
+  ctx.quadraticCurveTo(-230, -135, -60, -165);
+  ctx.stroke();
+  ctx.strokeStyle = "rgba(240,244,248,0.5)";
+  ctx.lineWidth = 4;
+  ctx.beginPath();
+  ctx.moveTo(200, -195);
+  ctx.quadraticCurveTo(300, -170, 330, -120);
+  ctx.stroke();
+  ctx.fillStyle = `rgba(255,160,90,${0.75 * I})`;
+  ctx.beginPath();
+  ctx.ellipse(-250, -80, 55, 15, -0.45, 0, Math.PI * 2);
   ctx.fill();
+  ctx.strokeStyle = `rgba(255,150,80,${0.9 * I})`;
+  ctx.lineWidth = 4;
+  ctx.beginPath();
+  ctx.moveTo(-360, -14);
+  ctx.quadraticCurveTo(-120, 4, 320, -12);
+  ctx.stroke();
   ctx.restore();
 
   // salpicadura
   if (f >= contact) {
     const r = rng(99);
+    const cx0 = sx - 80;
     ctx.save();
     ctx.lineCap = "round";
+    // neblina del impacto
+    glow(ctx, cx0, cy - 60, 260 + T * 30, "#cfe6ee", clamp(0.35 - T * 0.03));
     // ondas
-    for (let k = 0; k < 3; k++) {
-      const tt = T - k * 2.5;
+    for (let k = 0; k < 4; k++) {
+      const tt = T - k * 2.2;
       if (tt <= 0) continue;
-      const rx = 120 + tt * 55;
-      ctx.strokeStyle = `rgba(190,220,230,${clamp(0.55 - tt * 0.04)})`;
-      ctx.lineWidth = 3;
+      const rx = 200 + tt * 60;
+      ctx.strokeStyle = `rgba(190,220,230,${clamp(0.6 - tt * 0.045)})`;
+      ctx.lineWidth = 3.5;
       ctx.beginPath();
-      ctx.ellipse(sx - 60, cy + 12, rx, rx * 0.14, 0, 0, Math.PI * 2);
+      ctx.ellipse(cx0, cy + 18, rx, rx * 0.13, 0, 0, Math.PI * 2);
       ctx.stroke();
     }
-    // corona
-    for (let k = 0; k < 34; k++) {
-      const a = (k / 34) * Math.PI * 2;
-      const rx = 160 + T * 26;
-      const lift = Math.sin(Math.min(Math.PI, T / 5)) * (50 + 50 * hash(k));
-      const px = sx - 60 + Math.cos(a) * rx;
-      const py = cy + Math.sin(a) * rx * 0.16 - lift;
-      if (Math.sin(a) < -0.2 && px > sx - 280 && px < sx + 170) continue; // tapado por el zapato
-      ctx.fillStyle = `rgba(215,234,240,${clamp(0.85 - T * 0.06)})`;
+    // corona de agua
+    for (let k = 0; k < 46; k++) {
+      const a = (k / 46) * Math.PI * 2;
+      const rx = 260 + T * 30;
+      const lift = Math.sin(Math.min(Math.PI, T / 5.5)) * (80 + 90 * hash(k));
+      const px = cx0 + Math.cos(a) * rx;
+      const py = cy + Math.sin(a) * rx * 0.13 - lift;
+      if (Math.sin(a) < 0 && px > sx - 370 && px < sx + 330) continue; // detrás del zapato
+      ctx.fillStyle = `rgba(218,236,242,${clamp(0.9 - T * 0.06)})`;
       ctx.beginPath();
-      ctx.ellipse(px, py, 4 + 3 * hash(k + 9), 9 + 6 * hash(k + 3), 0, 0, Math.PI * 2);
+      ctx.ellipse(px, py, 5 + 4 * hash(k + 9), 12 + 10 * hash(k + 3), 0, 0, Math.PI * 2);
       ctx.fill();
     }
     // gotas proyectadas
-    for (let k = 0; k < 110; k++) {
-      const a = -Math.PI * (0.06 + 0.88 * r());
-      const v = 10 + r() * 30;
-      const ox = sx - 60 + (r() - 0.5) * 420;
-      const orange = r() < 0.28;
-      const w = 2 + r() * 5;
+    for (let k = 0; k < 170; k++) {
+      const a = -Math.PI * (0.05 + 0.9 * r());
+      const v = 12 + r() * 36;
+      const ox = cx0 + (r() - 0.5) * 640;
+      const orange = r() < 0.3;
+      const w = 2 + r() * 6;
       const vx = Math.cos(a) * v;
       const vy = Math.sin(a) * v;
       const px = ox + vx * T;
-      const py = cy + vy * T + 1.1 * T * T;
-      if (py > cy + 40) continue;
-      const al = clamp(1 - T / 13);
-      ctx.strokeStyle = orange ? `rgba(255,150,70,${al})` : `rgba(220,236,242,${al})`;
+      const py = cy + vy * T + 1.15 * T * T;
+      if (py > cy + 50) continue;
+      const al = clamp(1 - T / 14);
+      ctx.strokeStyle = orange ? `rgba(255,150,70,${al})` : `rgba(222,238,244,${al})`;
       ctx.lineWidth = w;
       ctx.beginPath();
       ctx.moveTo(px, py);
-      ctx.lineTo(px - vx * 0.6, py - (vy + 2.2 * T) * 0.6);
+      ctx.lineTo(px - vx * 0.65, py - (vy + 2.3 * T) * 0.65);
       ctx.stroke();
     }
     ctx.restore();
@@ -447,8 +521,8 @@ export const shotE = (ctx: Ctx, f: number, n: number) => {
   ];
   const fgd = ctx.createLinearGradient(220, 0, 910, 0);
   fgd.addColorStop(0, "#0b0605");
-  fgd.addColorStop(0.65, "#22120d");
-  fgd.addColorStop(1, "#3c1d12");
+  fgd.addColorStop(0.55, "#2a150e");
+  fgd.addColorStop(1, "#5a2c1a");
   rimFill(ctx, () => curve(ctx, face, true, 0.45), fgd, PAL.rim, -16, 0);
   // sombra del ala sobre la frente
   const sh = ctx.createLinearGradient(0, 560, 0, 1000);

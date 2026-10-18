@@ -42,7 +42,8 @@ export const Noir: React.FC = () => {
   const ready = useSignFont();
   useLayoutEffect(() => {
     const ctx = ref.current?.getContext("2d");
-    if (ready && ctx) drawFrame(ctx, frame);
+    // la línea de tiempo está en ticks de 1/30 s; se muestrea a renderFps (20 fps)
+    if (ready && ctx) drawFrame(ctx, (frame * timeline.fps) / timeline.renderFps);
   }, [frame, ready]);
   return (
     <AbsoluteFill style={{ backgroundColor: "#000" }}>

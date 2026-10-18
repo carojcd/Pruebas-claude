@@ -2,22 +2,74 @@
   "fps": 30,
   "duration": 150,
   "shots": [
-    { "id": "A", "name": "Callejón desde arriba", "from": 0, "to": 30 },
-    { "id": "B", "name": "Paso lateral", "from": 30, "to": 63 },
-    { "id": "C", "name": "Zapato en el charco", "from": 63, "to": 84 },
-    { "id": "D", "name": "Espalda frente al neón", "from": 84, "to": 105 },
-    { "id": "E", "name": "Mirada bajo el ala", "from": 105, "to": 124 },
-    { "id": "F", "name": "Relámpago", "from": 124, "to": 150 }
+    {
+      "id": "A",
+      "name": "Callejón desde arriba",
+      "from": 0,
+      "to": 30
+    },
+    {
+      "id": "B",
+      "name": "Paso lateral",
+      "from": 30,
+      "to": 63
+    },
+    {
+      "id": "C",
+      "name": "Zapato en el charco",
+      "from": 63,
+      "to": 84
+    },
+    {
+      "id": "D",
+      "name": "Espalda frente al neón",
+      "from": 84,
+      "to": 105
+    },
+    {
+      "id": "E",
+      "name": "Mirada bajo el ala",
+      "from": 105,
+      "to": 124
+    },
+    {
+      "id": "F",
+      "name": "Relámpago",
+      "from": 124,
+      "to": 150
+    }
   ],
   "steps": [
-    { "f": 6, "v": 0.18 },
-    { "f": 21, "v": 0.18 },
-    { "f": 34, "v": 0.6 },
-    { "f": 47, "v": 0.6 },
-    { "f": 60, "v": 0.6 }
+    {
+      "f": 6,
+      "v": 0.18
+    },
+    {
+      "f": 21,
+      "v": 0.18
+    },
+    {
+      "f": 34,
+      "v": 0.6
+    },
+    {
+      "f": 47,
+      "v": 0.6
+    },
+    {
+      "f": 60,
+      "v": 0.6
+    }
   ],
   "splash": 69,
-  "neonBuzz": [84, 105],
+  "neonBuzz": [
+    84,
+    105
+  ],
   "glint": 111,
-  "lightning": [131, 136]
+  "lightning": [
+    131,
+    136
+  ],
+  "renderFps": 20
 }
