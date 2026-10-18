@@ -1,0 +1,126 @@
+<!doctype html><html><head><meta charset="utf-8"><style>*{margin:0}html,body{width:890px;height:1600px;background:#050f12;overflow:hidden}canvas{display:block}</style></head><body>
+<canvas id="c" width="890" height="1600"></canvas>
+<script>
+const W=890,H=1600,FPS=24,DUR=157/24;
+const cv=document.getElementById('c'),g=cv.getContext('2d');
+const IMG={base:'__BASE__',arm:'__ARM__',neon:'__NEON__'};
+const cl=(v,a=0,b=1)=>Math.min(b,Math.max(a,v)),L=(a,b,p)=>a+(b-a)*p;
+const ss=p=>{p=cl(p);return p*p*(3-2*p)};
+const seg=(t,a,b)=>ss((t-a)/(b-a));
+const load=s=>new Promise(r=>{const i=new Image();i.onload=()=>r(i);i.src=s});
+let base,armImg,glow,armData,tmp,tctx,grain;
+const X0=90,Y0=540,RW=480,RH=580;         // región donde se deforma el brazo
+const PV=[230,985];                       // pivote (muñeca/puño)
+const TIP0=[172,664],MOUTH=[428,708];
+
+// ---- pose del brazo en el tiempo t (s)
+function pose(t){
+  // 0.6–2.2 sube a la boca · 2.2–3.9 fuma · 3.9–5.4 baja · reposo
+  const r=seg(t,0.6,2.2)-0.88*seg(t,3.9,5.4);
+  const drag=seg(t,2.35,2.75)*(1-seg(t,3.2,3.7));            // se acerca un poco más al dar la calada
+  const m=r+0.05*drag;
+  return {th:(16.5*m+0.6*Math.sin(t*1.3))*Math.PI/180, tx:11*m, ty:-34*m+1.2*Math.sin(t*1.7), sc:1+0.02*m};
+}
+function disp(px,py,P){
+  const w=ss((985-py)/230); if(w<=0)return [0,0];
+  const dx=px-PV[0],dy=py-PV[1],c=Math.cos(P.th),s=Math.sin(P.th);
+  return [((dx*c-dy*s)*P.sc+PV[0]+P.tx-px)*w,((dx*s+dy*c)*P.sc+PV[1]+P.ty-py)*w];
+}
+const fwd=(p,P)=>{const d=disp(p[0],p[1],P);return [p[0]+d[0],p[1]+d[1]]};
+function warpArm(P){
+  const out=tmp.data,src=armData.data,sw=armData.width;
+  for(let y=0;y<RH;y++)for(let x=0;x<RW;x++){
+    const qx=X0+x,qy=Y0+y;let px=qx,py=qy;
+    for(let k=0;k<5;k++){const d=disp(px,py,P);px=qx-d[0];py=qy-d[1]}
+    const o=(y*RW+x)*4,fx=px-X0,fy=py-Y0;
+    if(fx<0||fy<0||fx>=sw-1||fy>=armData.height-1){out[o+3]=0;continue}
+    const ix=fx|0,iy=fy|0,ax=fx-ix,ay=fy-iy;
+    let r=0,gg=0,b=0,a=0;
+    for(let j=0;j<4;j++){const xx=ix+(j&1),yy=iy+(j>>1),wt=(j&1?ax:1-ax)*(j>>1?ay:1-ay),i=(yy*sw+xx)*4,al=src[i+3]*wt;
+      r+=src[i]*al;gg+=src[i+1]*al;b+=src[i+2]*al;a+=al}
+    if(a<=0.5){out[o+3]=0;continue}
+    out[o]=r/a;out[o+1]=gg/a;out[o+2]=b/a;out[o+3]=a;
+  }
+  tctx.putImageData(tmp,0,0);g.drawImage(tmp.cv,X0,Y0);
+}
+
+// ---- humo: estela de la punta con ondulación que viaja hacia arriba
+let SM,smc;
+function trail(srcAt,t,o){
+  const N=90,pts=[];
+  for(let i=0;i<=N;i++){
+    const tau=o.maxAge*i/N,te=t-tau,sp=srcAt(Math.max(te,0));
+    const A=o.a0+o.a1*(tau/o.maxAge);
+    const x=sp[0]+A*Math.sin(-o.w*tau+o.phase)+o.wind*tau*tau*0.5+A*0.35*Math.sin(-2.3*o.w*tau+1.3+t*0.6)-o.drift*tau;
+    const y=sp[1]-o.v*tau-o.v*0.25*tau*tau/o.maxAge;
+    const wd=(o.w0+(o.w1-o.w0)*(tau/o.maxAge))*Math.pow(1-tau/o.maxAge,o.fade)*cl(tau/0.3);
+    pts.push([x,y,wd]);
+  }
+  smc.setTransform(1,0,0,1,0,0);smc.clearRect(0,0,W,H);smc.setTransform(g.getTransform());
+  smc.fillStyle=smc.strokeStyle=`rgb(${o.col})`;smc.lineWidth=.8;smc.lineJoin='round';
+  const Lft=[],Rgt=[];
+  for(let i=0;i<=N;i++){const a=pts[Math.max(i-1,0)],b=pts[Math.min(i+1,N)],dx=b[0]-a[0],dy=b[1]-a[1],l=Math.hypot(dx,dy)||1,nx=-dy/l,ny=dx/l,h=pts[i][2]/2;
+    Lft.push([pts[i][0]+nx*h,pts[i][1]+ny*h]);Rgt.push([pts[i][0]-nx*h,pts[i][1]-ny*h])}
+  smc.beginPath();Lft.forEach((p,i)=>i?smc.lineTo(p[0],p[1]):smc.moveTo(p[0],p[1]));Rgt.reverse().forEach(p=>smc.lineTo(p[0],p[1]));smc.closePath();smc.fill();smc.stroke();
+  g.save();g.setTransform(1,0,0,1,0,0);g.globalAlpha=o.alpha;g.drawImage(SM,0,0);g.restore();
+}
+// bocanadas suaves de la exhalación
+function puffs(t){
+  const mo=[MOUTH[0]-12,MOUTH[1]-4];
+  for(let j=0;j<34;j++){
+    const te=3.55+j*0.034,age=t-te;if(age<0||age>2.8)continue;
+    const u=age/2.8,r=12+70*Math.sqrt(u),x=mo[0]-70*age-18*Math.sin(j*1.7)+24*Math.sin(age*2.2+j),y=mo[1]-38*age-52*age*age*0.18+10*Math.cos(j);
+    const al=.13*Math.pow(1-u,1.6)*seg(age,0,.15)*(1-0.4*Math.abs(j-17)/17);
+    const rg=g.createRadialGradient(x,y,0,x,y,r);rg.addColorStop(0,`rgba(150,128,70,${al})`);rg.addColorStop(1,'rgba(150,128,70,0)');
+    g.fillStyle=rg;g.fillRect(x-r,y-r,2*r,2*r);
+  }
+}
+
+function frame(f){
+  const t=f/FPS,P=pose(t);
+  g.setTransform(1,0,0,1,0,0);g.clearRect(0,0,W,H);
+  // cámara: empuje lento + respiración
+  const cam=1+0.022*seg(t,0,DUR)+0.002*Math.sin(t*1.6);
+  g.setTransform(cam,0,0,cam,445*(1-cam)-3*seg(t,0,DUR),700*(1-cam));
+  g.drawImage(base,0,0);
+  // neón: resplandor con parpadeo
+  const flick=1-0.5*(Math.abs(Math.sin(t*37))>.93&&t>2.7&&t<2.95?1:0)-0.35*((f>=96&&f<=98)||f==101?1:0)+0.03*Math.sin(t*9)+0.02*Math.sin(t*53);
+  g.save();g.globalCompositeOperation='lighter';g.globalAlpha=cl(0.55*flick);g.drawImage(glow,0,0);g.restore();
+  if(flick<.8){g.save();g.fillStyle=`rgba(0,0,0,${(1-flick)*.35})`;g.fillRect(200,0,680,290);g.restore()}
+  warpArm(P);
+  // posiciones de la punta (con historial para el humo)
+  const tipAt=tt=>fwd(TIP0,pose(tt)),tip=tipAt(t);
+  trail(tipAt,t,{maxAge:3.9,v:98,a0:8,a1:30,w:4.4,phase:0.8,wind:-2.2,drift:9,w0:13,w1:4.5,alpha:.88,fade:.45,col:'168,138,56'});
+  puffs(t);
+  // brasa
+  const E=seg(t,1.2,2.0)*(0.62+0.48*seg(t,2.2,2.6)*(1-seg(t,3.4,3.9)))*(1-0.55*seg(t,5.6,6.5));
+  if(E>0){
+    const fl=0.88+0.12*Math.sin(t*17)+0.05*Math.sin(t*41);
+    g.save();g.globalCompositeOperation='lighter';
+    let rg=g.createRadialGradient(tip[0],tip[1],0,tip[0],tip[1],40*fl);
+    rg.addColorStop(0,`rgba(255,235,170,${E})`);rg.addColorStop(.12,`rgba(255,160,60,${.8*E})`);rg.addColorStop(.4,`rgba(255,110,30,${.25*E})`);rg.addColorStop(1,'rgba(255,80,10,0)');
+    g.fillStyle=rg;g.fillRect(tip[0]-50,tip[1]-50,100,100);
+    // reflejo cálido en el rostro cuando el cigarro está cerca
+    const near=cl(1-Math.hypot(tip[0]-MOUTH[0],tip[1]-MOUTH[1])/260)*E;
+    rg=g.createRadialGradient(tip[0]+30,tip[1]+10,0,tip[0]+30,tip[1]+10,230);
+    rg.addColorStop(0,`rgba(255,110,30,${.07*near})`);rg.addColorStop(1,'rgba(255,110,30,0)');
+    g.fillStyle=rg;g.fillRect(tip[0]-200,tip[1]-220,520,440);g.restore();
+  }
+  // grano de película
+  g.setTransform(1,0,0,1,0,0);g.globalAlpha=.9;g.fillStyle=g.createPattern(grain,'repeat');
+  g.save();g.translate((f*97)%256|0,(f*61)%256|0);g.fillRect(-256,-256,W+512,H+512);g.restore();g.globalAlpha=1;
+}
+window.renderFrame=frame;
+window.__ready=(async()=>{
+  base=await load(IMG.base);armImg=await load(IMG.arm);const ne=await load(IMG.neon);
+  const ac=document.createElement('canvas');ac.width=RW;ac.height=RH;ac.getContext('2d').drawImage(armImg,-X0,-Y0);
+  armData=ac.getContext('2d').getImageData(0,0,RW,RH);
+  tmp=new ImageData(RW,RH);const t2=document.createElement('canvas');t2.width=RW;t2.height=RH;tctx=t2.getContext('2d');tmp.cv=t2;
+  glow=document.createElement('canvas');glow.width=W;glow.height=H;const gc=glow.getContext('2d');
+  gc.filter='blur(16px)';gc.drawImage(ne,0,0);gc.filter='blur(5px)';gc.globalAlpha=.7;gc.drawImage(ne,0,0);
+  SM=document.createElement('canvas');SM.width=W;SM.height=H;smc=SM.getContext('2d');
+  grain=document.createElement('canvas');grain.width=grain.height=256;const x=grain.getContext('2d'),d=x.createImageData(256,256);
+  let s=5;for(let i=0;i<d.data.length;i+=4){s=(s*16807)%2147483647;const v=s%255;d.data[i]=d.data[i+1]=d.data[i+2]=v;d.data[i+3]=14}
+  x.putImageData(d,0,0);frame(0);return true;
+})();
+</script></body></html>
