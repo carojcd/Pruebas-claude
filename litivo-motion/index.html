@@ -1,55 +1,233 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=1920, height=1080" />
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <link rel="stylesheet" href="assets/fonts.css" />
+    <script src="assets/vendor/gsap.min.js"></script>
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
+      @font-face{font-family:"Inter Tight";font-weight:400;font-style:normal;src:url("assets/fonts/inter-tight-latin-400-normal.woff2") format("woff2")}
+      @font-face{font-family:"Inter Tight";font-weight:500;font-style:normal;src:url("assets/fonts/inter-tight-latin-500-normal.woff2") format("woff2")}
+      @font-face{font-family:"Inter Tight";font-weight:600;font-style:normal;src:url("assets/fonts/inter-tight-latin-600-normal.woff2") format("woff2")}
+      @font-face{font-family:"Inter Tight";font-weight:700;font-style:normal;src:url("assets/fonts/inter-tight-latin-700-normal.woff2") format("woff2")}
+      :root {
+        --aqua: #63c2c8;
+        --teal: #3e9891;
+        --dark: #19292c;
+        --white: #ffffff;
+        --aqua-light: #dcf6f3;
+        --teal-light: #78beb7;
+        --off: #f5fafa;
+        --gray: #dde2e5;
       }
-      html,
-      body {
-        margin: 0;
-        width: 1920px;
-        height: 1080px;
-        overflow: hidden;
-        background: #0a0a0a;
-      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1920px; height: 1080px; overflow: hidden; background: var(--dark); }
       #root {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+        position: relative; width: 100%; height: 100%; overflow: hidden;
+        background: var(--dark); font-family: "Inter Tight", sans-serif; color: var(--dark);
       }
-      #title {
-        color: #f4f4f5;
-        font-size: 72px;
-        font-weight: 600;
-        letter-spacing: -0.03em;
-      }
+      /* ── fondo ── */
+      #bg { position: absolute; inset: 0;
+        background:
+          radial-gradient(1100px 700px at 18% 12%, rgba(62,152,145,.28), transparent 70%),
+          radial-gradient(1000px 800px at 88% 95%, rgba(62,152,145,.24), transparent 70%),
+          var(--dark); }
+      #arcs { position: absolute; inset: 0; width: 1920px; height: 1080px; }
+      #vignette { position: absolute; inset: 0; pointer-events: none;
+        background: radial-gradient(ellipse at 50% 50%, transparent 55%, rgba(10,20,22,.55) 100%); }
+
+      /* ── escena 3D ── */
+      #stage { position: absolute; inset: 0; perspective: 1500px; perspective-origin: 50% 50%; }
+      #tilt, #fly { position: absolute; inset: 0; transform-style: preserve-3d; }
+      #halo { position: absolute; left: 50%; top: 50%; width: 1700px; height: 1000px; margin: -500px 0 0 -850px;
+        background: radial-gradient(closest-side, rgba(99,194,200,.50), rgba(99,194,200,.16) 55%, transparent 100%); }
+      #card { position: absolute; left: 50%; top: 50%; width: 1280px; height: 660px; margin: -330px 0 0 -640px;
+        transform-style: preserve-3d; }
+      .L { position: absolute; }                        /* capas con profundidad propia */
+      #surface { inset: 0; background: var(--white); border-radius: 28px; border: 2px solid var(--aqua);
+        box-shadow: 0 0 0 1px rgba(99,194,200,.35), 0 0 46px rgba(99,194,200,.38), 0 40px 120px rgba(62,152,145,.40); }
+      #ring { opacity: 0; inset: -5px; border-radius: 33px; padding: 4px; --a: 0deg;
+        background: conic-gradient(from var(--a), rgba(99,194,200,0) 0deg, rgba(99,194,200,0) 250deg, rgba(99,194,200,.9) 320deg, #dcf6f3 358deg, rgba(99,194,200,0) 360deg);
+        -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+        -webkit-mask-composite: xor; mask-composite: exclude; }
+      #shine { inset: 0; border-radius: 28px; overflow: hidden; }
+      #shine i { position: absolute; top: -20%; bottom: -20%; left: 0; width: 320px;
+        background: linear-gradient(100deg, transparent, rgba(99,194,200,.28) 45%, rgba(220,246,243,.55) 50%, rgba(99,194,200,.28) 55%, transparent); }
+
+      #header { left: 0; top: 0; width: 1280px; height: 92px; background: var(--teal); border-radius: 26px 26px 0 0; }
+      #header .t { position: absolute; left: 56px; top: 0; height: 92px; display: flex; align-items: center; gap: 16px;
+        color: #fff; font-size: 28px; font-weight: 600; }
+      #header .t svg { width: 32px; height: 32px; }
+      #header .b { position: absolute; right: 44px; top: 24px; height: 44px; padding: 0 22px; border-radius: 999px;
+        background: var(--aqua-light); color: var(--dark); font-size: 18px; font-weight: 600; display: flex; align-items: center; }
+
+      #title { left: 56px; top: 134px; width: 480px; font-size: 48px; font-weight: 700; line-height: 1.05; letter-spacing: -0.02em; }
+      #title em { font-style: normal; color: var(--teal); }
+      #body { left: 56px; top: 276px; width: 470px; font-size: 22px; font-weight: 400; line-height: 1.4; color: rgba(25,41,44,.78); }
+      #rule { left: 56px; top: 484px; width: 470px; height: 2px; background: var(--teal); transform-origin: 0 50%; }
+      .stat { top: 504px; width: 150px; }
+      .stat b { display: block; font-size: 38px; font-weight: 700; color: var(--teal); line-height: 1.1; }
+      .stat span { display: block; margin-top: 6px; font-size: 14px; font-weight: 500; letter-spacing: .1em; color: rgba(25,41,44,.7); }
+
+      .pill { width: 316px; height: 64px; border-radius: 999px; background: var(--aqua-light);
+        display: flex; align-items: center; gap: 12px; padding: 0 20px 0 18px; font-size: 18px; font-weight: 500; line-height: 1.15; }
+      .pill svg { flex: none; width: 26px; height: 26px; fill: none; stroke: var(--dark); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+      .pill .arrow { margin-left: auto; width: 22px; height: 22px; opacity: 0; }
+      #logo { position: absolute; left: 72px; top: 60px; width: 220px; }
+      #tag { position: absolute; left: 0; right: 0; bottom: 52px; text-align: center; font-size: 34px; font-weight: 500; color: #fff; }
+      #tag em { font-style: normal; font-weight: 600; color: var(--aqua); }
     </style>
   </head>
   <body>
-    <div
-      id="root"
-      data-composition-id="main"
-      data-start="0"
-      data-duration="10"
-      data-width="1920"
-      data-height="1080"
-    >
-      <h1 id="title" class="clip" data-start="0" data-duration="10" data-track-index="0">Title</h1>
+    <div id="root" data-composition-id="litivo-capacidades" data-start="0" data-duration="10" data-width="1920" data-height="1080">
+      <div id="bg"></div>
+      <svg id="arcs" data-layout-allow-overflow viewBox="0 0 1920 1080" fill="none">
+        <g stroke="#63C2C8" stroke-linecap="round">
+          <circle id="arcA" cx="1780" cy="190" r="470" stroke-width="70" opacity=".07" />
+          <circle cx="1780" cy="190" r="590" stroke-width="2" opacity=".14" />
+          <circle cx="1780" cy="190" r="700" stroke-width="2" opacity=".09" />
+          <circle cx="150" cy="960" r="430" stroke-width="2" opacity=".14" />
+          <circle cx="150" cy="960" r="540" stroke-width="2" opacity=".09" />
+          <path d="M1590 -40 A 560 560 0 0 1 1990 70" stroke-width="22" opacity=".16" />
+          <path d="M-60 780 A 420 420 0 0 0 130 1130" stroke-width="22" opacity=".14" />
+        </g>
+      </svg>
+      <div id="vignette"></div>
+      <img id="logo" src="assets/brand/litivo-logo-white.svg" alt="LITIVO" />
+
+      <div id="stage">
+        <div id="tilt"><div id="fly">
+          <div id="halo" class="L"></div>
+          <div id="card">
+            <div id="surface" class="L"></div>
+            <div id="shine" class="L"><i data-layout-allow-overflow></i></div>
+            <div id="ring" class="L"></div>
+
+            <div id="header" class="L">
+              <div class="t">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="6.5"/><path d="M8.5 3.6a9 9 0 0 1 7 0M8.5 20.4a9 9 0 0 0 7 0"/></svg>
+                Plataforma LITIVO
+              </div>
+              <div class="b">Conciliación e insolvencia</div>
+            </div>
+
+            <div id="title" class="L">Tecnología que <em>simplifica</em> la justicia</div>
+            <div id="body" class="L">Conecta personas, empresas, profesionales, conciliadores y centros de conciliación en un solo ecosistema.</div>
+            <div id="rule" class="L"></div>
+            <div class="stat s1 L" style="left:56px"><b id="n1">+0</b><span>USUARIOS</span></div>
+            <div class="stat s2 L" style="left:224px"><b id="n2">+0</b><span>PROCESOS</span></div>
+            <div class="stat s3 L" style="left:392px"><b id="n3">2016</b><span>DESDE</span></div>
+
+            <div id="grid"></div>
+          </div>
+        </div></div>
+      </div>
+      <div id="tag">Donde la justicia <em>evoluciona.</em></div>
     </div>
+
     <script>
+      const ICONS = {
+        monitor: '<rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/>',
+        folder: '<path d="M4 7a2 2 0 0 1 2-2h4l2 2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/><path d="M9 13h6"/>',
+        doc: '<path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/>',
+        cal: '<rect x="3" y="5" width="18" height="16" rx="3"/><path d="M8 3v4M16 3v4M3 10h18"/><circle cx="12" cy="15" r="1.5"/>',
+        shield: '<path d="M12 3l7 3v5c0 5-3 8-7 10-4-2-7-5-7-10V6z"/><path d="M9 12l2 2 4-4"/>',
+        bell: '<path d="M6 16v-5a6 6 0 0 1 12 0v5l2 2H4z"/><path d="M10 21h4"/>',
+        chart: '<path d="M4 4v16h16"/><path d="M7 15l4-4 3 3 5-6"/>',
+        globe: '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/>',
+        clip: '<rect x="5" y="4" width="14" height="17" rx="2"/><rect x="9" y="2.5" width="6" height="3" rx="1"/><path d="M9 13l2 2 4-4"/>',
+        mail: '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/>',
+        receipt: '<path d="M6 3h12v18l-3-2-3 2-3-2-3 2z"/><path d="M9 8h6M9 12h6"/>',
+        link: '<path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/>',
+      };
+      const ITEMS = [
+        ['monitor', 'Gestión 100 % digital'], ['folder', 'Expedientes electrónicos'],
+        ['doc', 'Automatización documental'], ['cal', 'Agenda inteligente'],
+        ['shield', 'Firmas digitales certificadas'], ['bell', 'Notificaciones automáticas'],
+        ['chart', 'Seguimiento y control'], ['globe', 'Ecosistema nacional'],
+        ['clip', 'Reporte SICAAC'], ['mail', 'Mensajería certificada'],
+        ['receipt', 'Facturación electrónica'], ['link', 'Integraciones'],
+      ];
+      const grid = document.getElementById("grid");
+      ITEMS.forEach(([k, label], i) => {
+        const col = i % 2, row = Math.floor(i / 2);
+        const d = document.createElement("div");
+        d.className = "pill L"; d.id = "pill" + i;
+        d.style.left = 590 + col * 330 + "px"; d.style.top = 134 + row * 78 + "px";
+        const icon = ICONS[k].replace(/<(path|rect|circle)/g, '<$1 pathLength="1"');
+        d.innerHTML = '<svg viewBox="0 0 24 24">' + icon + '</svg><span>' + label + '</span>' +
+          '<svg class="arrow" viewBox="0 0 24 24"><path pathLength="1" d="M5 12h14M13 6l6 6-6 6"/></svg>';
+        grid.appendChild(d);
+      });
+
+      const S = 0.92;                                    // escala para 16:9 (nada se recorta)
+      const fmt = (n) => "+" + Math.round(n).toLocaleString("de-DE");
       const tl = gsap.timeline({ paused: true });
-      // Example: tl.fromTo("#title", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.6 }, 0);
-      window.__timelines["main"] = tl;
-      tl.seek(0);
+
+      // fondo y logo
+      tl.fromTo("#bg", { opacity: 0 }, { opacity: 1, duration: 0.6, ease: "power2.out" }, 0);
+      tl.fromTo("#arcs", { opacity: 0, x: 40 }, { opacity: 1, x: 0, duration: 1.6, ease: "power3.out" }, 0);
+      tl.fromTo("#logo", { opacity: 0, y: -12 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 0.25);
+      tl.fromTo("#halo", { opacity: 0 }, { opacity: 0.55, duration: 1.4, ease: "power2.out" }, 0.2);
+
+      // cámara fija: tarjeta llega desde la profundidad y deriva lentamente
+      tl.fromTo("#fly", { z: -1700, scale: S }, { z: 0, scale: S, duration: 1.8, ease: "power4.out" }, 0);
+      tl.fromTo("#tilt", { rotationX: 15, rotationY: 20, rotationZ: -2.2 },
+                         { rotationX: 13.2, rotationY: 17.4, rotationZ: -0.6, duration: 10, ease: "none" }, 0);
+      tl.fromTo("#surface", { opacity: 0 }, { opacity: 1, duration: 0.7, ease: "power2.out" }, 0.1);
+
+      // brillo que recorre el contorno al entrar y al cerrar
+      const sweep = (t, first) => {
+        const ir = { immediateRender: false };
+        tl.fromTo("#ring", { opacity: 0 }, { opacity: 1, duration: 0.25, ease: "power2.out", ...ir }, t);
+        tl.fromTo("#ring", { "--a": "0deg" }, { "--a": "360deg", duration: 1.7, ease: "sine.inOut", immediateRender: false }, t);
+        tl.to("#ring", { opacity: 0, duration: 0.35, ease: "power2.in" }, t + 1.4);
+      };
+      sweep(0.9, true);
+
+      // coreografía por capas (cada una con su propia profundidad)
+      const enter = (sel, t, z, y = 18, d = 0.4) =>
+        tl.fromTo(sel, { opacity: 0, y: y, z: z }, { opacity: 1, y: 0, z: z, duration: d, ease: "power3.out" }, t);
+      enter("#header", 0.9, 60, -16, 0.35);
+      enter("#title", 1.25, 90, 22, 0.45);
+      enter("#body", 1.6, 70, 18, 0.4);
+      tl.fromTo("#rule", { scaleX: 0, opacity: 1, z: 40 }, { scaleX: 1, z: 40, duration: 0.7, ease: "power3.out" }, 2.0);
+      ["s1", "s2", "s3"].forEach((s, i) => enter("." + s, 2.15 + i * 0.16, 55, 14, 0.35));
+      const c1 = { v: 0 }, c2 = { v: 0 };
+      tl.to(c1, { v: 35000, duration: 1.4, ease: "power3.out", onUpdate: () => (n1.textContent = fmt(c1.v)) }, 2.2);
+      tl.to(c2, { v: 45000, duration: 1.4, ease: "power3.out", onUpdate: () => (n2.textContent = fmt(c2.v)) }, 2.35);
+
+      // píldoras: entrada escalonada, icono dibujado + pop
+      ITEMS.forEach((_, i) => {
+        const t = 2.4 + i * 0.2, z = 35 + (i % 3) * 25;
+        const p = "#pill" + i;
+        tl.fromTo(p, { opacity: 0, x: 24, z: z }, { opacity: 1, x: 0, z: z, duration: 0.4, ease: "power3.out" }, t);
+        tl.fromTo(p + " > svg:first-child", { scale: 0.55, transformOrigin: "50% 50%" }, { scale: 1, duration: 0.4, ease: "power3.out" }, t + 0.1);
+        tl.fromTo(p + " > svg:first-child *", { strokeDasharray: 1, strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.55, ease: "power2.out" }, t + 0.1);
+      });
+
+      // ≈65 %: todas las capas se reúnen en una tarjeta plana con pulso de luz
+      const T = 6.5;
+      const layers = ["#header", "#title", "#body", "#rule", ".s1", ".s2", ".s3", ...ITEMS.map((_, i) => "#pill" + i)];
+      layers.forEach((sel) => tl.to(sel, { z: 2, duration: 0.7, ease: "sine.inOut" }, T));
+      tl.fromTo("#shine i", { x: -340, opacity: 1 }, { x: 1300, duration: 1.0, ease: "power2.inOut" }, T + 0.15);
+      tl.set("#shine", { opacity: 1 }, 0);
+      tl.to("#halo", { opacity: 0.95, duration: 0.45, ease: "sine.inOut" }, T);
+      tl.to("#halo", { opacity: 0.6, duration: 0.8, ease: "sine.inOut" }, T + 0.45);
+      sweep(T + 0.1);
+
+      // ≈83 %: micro-acción de cierre — se resalta «Ecosistema nacional» y avanza la flecha
+      const M = 8.3, hp = "#pill7";
+      tl.to(hp, { backgroundColor: "#3E9891", duration: 0.35, ease: "power2.out" }, M);
+      tl.to(hp, { color: "#FFFFFF", fontWeight: 700, duration: 0.35, ease: "power2.out" }, M);
+      tl.to(hp + " > svg:first-child", { stroke: "#FFFFFF", duration: 0.35 }, M);
+      tl.fromTo(hp + " .arrow", { opacity: 0, x: -8, stroke: "#FFFFFF" }, { opacity: 1, x: 0, stroke: "#FFFFFF", duration: 0.45, ease: "power3.out" }, M + 0.15);
+      tl.to(hp + " .arrow", { x: 6, duration: 0.5, ease: "sine.inOut" }, M + 0.7);
+
+      // pie de marca (sin fundido a negro)
+      tl.fromTo("#tag", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 7.3);
+
+      window.__timelines["litivo-capacidades"] = tl;
     </script>
   </body>
 </html>
