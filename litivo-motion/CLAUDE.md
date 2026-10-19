@@ -107,3 +107,13 @@ Fix all errors before presenting the result. Warnings should be reviewed before 
 4. A video with sound keeps it on the `<video>` (`data-has-audio="true"`, no `muted`). Use a separate `<audio>` for music, voiceover, replacement audio, J/L cuts, or audio detached in Studio. Silent footage and b-roll: `muted`.
 5. Sub-compositions use `data-composition-src="compositions/file.html"` to reference other HTML files
 6. Only deterministic logic — no `Date.now()`, no `Math.random()`, no network fetches
+
+## Reglas de audio LITIVO (obligatorias en todos los videos)
+
+La voz en off manda: debe entenderse con claridad por encima de cualquier efecto (el primer video salió con efectos que tapaban la voz).
+
+- Normaliza la voz a ≈ −16 LUFS con pico real ≤ −1.5 dBTP (`ffmpeg -af loudnorm=I=-16:TP=-1.5:LRA=7`) y conserva el original como `vo_raw.wav`.
+- Los efectos van al menos 12–14 dB por debajo de la voz mientras ella habla, con techo de pico ≈ −7 dBFS.
+- Atenúa (ducking) los efectos con la envolvente de la voz: ataque rápido, soltado ~0.35 s. `tools/make_sfx.py` ya incluye esta mezcla.
+- Sonidos sutiles (toques, campanas suaves, tics); sin graves fuertes ni transitorios agudos que compitan con la voz.
+- Tras renderizar, mide con `ebur128`: mezcla ≈ −16 LUFS y pico ≤ −1 dBFS.

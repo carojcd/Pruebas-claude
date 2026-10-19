@@ -80,7 +80,25 @@ bell(15.8, 523.25, 0.1, 3.0)
 t = t_(DUR); pad = (np.sin(2*np.pi*110*t) + 0.6*np.sin(2*np.pi*164.8*t) + 0.4*np.sin(2*np.pi*220.5*t))
 pad *= 0.022 * np.minimum(t / 2, 1) * np.minimum((DUR - t) / 1.5, 1)
 out[:, 0] += pad; out[:, 1] += pad
-out /= max(np.abs(out).max(), 1e-9) / 0.9
+# ── mezcla: efectos muy por debajo de la voz y atenuados automáticamente mientras ella habla
+import subprocess
+VO_OFFSET = 0.5
+raw = subprocess.run(["ffmpeg", "-v", "error", "-i", "assets/audio/vo.wav", "-f", "f32le", "-ac", "1", "-ar", str(SR), "-"],
+                     capture_output=True, check=True).stdout
+vo = np.frombuffer(raw, dtype="<f4")
+env_v = np.zeros(len(out)); i0 = int(VO_OFFSET * SR); env_v[i0:i0 + len(vo)] = np.abs(vo)[: len(out) - i0]
+win = int(0.05 * SR); env_v = np.sqrt(np.convolve(env_v ** 2, np.ones(win) / win, mode="same"))
+active = (env_v > 0.02).astype(float)
+# entre palabras la voz «respira»: se mantiene el hueco cerrado ~0.35 s y se suaviza (ataque rápido, soltado lento)
+hold = np.convolve(active, np.ones(int(0.35 * SR)) / int(0.35 * SR), mode="same") > 0.05
+g = np.zeros(len(out)); cur = 0.0
+a_att, a_rel = 1 - np.exp(-1 / (0.03 * SR)), 1 - np.exp(-1 / (0.35 * SR))
+for n in range(len(out)):
+    tgt = 1.0 if hold[n] else 0.0
+    cur += (a_att if tgt > cur else a_rel) * (tgt - cur); g[n] = cur
+DUCK = 10 ** (-14 / 20)                      # −14 dB bajo la voz
+out *= (1 - g * (1 - DUCK))[:, None]
+out /= max(np.abs(out).max(), 1e-9) / 0.45   # techo de los efectos: −7 dBFS (la voz va en −1.5 dBTP)
 with wave.open("assets/audio/sfx.wav", "wb") as w:
     w.setnchannels(2); w.setsampwidth(2); w.setframerate(SR)
     w.writeframes((out * 32767).astype("<i2").tobytes())
