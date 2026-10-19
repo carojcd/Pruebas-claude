@@ -36,7 +36,9 @@ export const outToSrc = (f: number) => {
 };
 
 // --- Planos ---
-// El original cambia de plano general a plano medio en el fotograma de origen 188 (6,27 s).
+// Fotograma de ORIGEN donde la cámara cambia de plano general a plano medio (detectado con
+// ffmpeg «select='gt(scene,0.2)'»). Si el vídeo nuevo no tiene cambio de cámara, poner -1.
+export const CAMERA_CUT_SRC = 188;
 export type Framing = "general" | "medio";
 export type ShotDef = {
   from: number;
@@ -48,7 +50,7 @@ export type ShotDef = {
 
 const CAMERA_CUT_OUT = (() => {
   for (const s of SEGMENTS) {
-    if (s.srcStartFrame <= 188 && 188 < s.srcEndFrame) return s.outStartFrame + 188 - s.srcStartFrame;
+    if (s.srcStartFrame <= CAMERA_CUT_SRC && CAMERA_CUT_SRC < s.srcEndFrame) return s.outStartFrame + CAMERA_CUT_SRC - s.srcStartFrame;
   }
   return 0;
 })();

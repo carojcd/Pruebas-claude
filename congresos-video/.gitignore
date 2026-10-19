@@ -10,3 +10,4 @@ out
 analisis/**/*.wav
 analisis/ref/scores.txt
 out/
+.venv/
