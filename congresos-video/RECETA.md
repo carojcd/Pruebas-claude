@@ -3,6 +3,9 @@
 Proceso probado y cerrado. Síguelo tal cual: **no re-investigues** nada de lo marcado como resuelto.
 Estilo y marca ya están en `estilo.md` (§A referencia medida, §B adaptación a marca, §C correcciones aprobadas, que mandan).
 
+**Desde el kit (`kit-congresos-video.zip`):** descomprímelo en la carpeta de trabajo, que crea `congresos-video/`, y trabaja dentro de ella. El kit no trae vídeos, `node_modules` ni el modelo de Whisper: `npm run setup` los instala. El manual de marca lo adjunta el usuario: guárdalo en `fuentes/` solo como consulta.
+**En un ordenador local (no en la nube):** hacen falta Node ≥ 20, Python 3 y ffmpeg (instálalos si faltan); en Windows, usar WSL o Git Bash para los `.sh`. Si no existe `/opt/pw-browsers`, Remotion descarga su propio Chrome automáticamente; no hay que hacer nada más.
+
 ## Resuelto (no volver a comprobar ni buscar alternativas)
 | Tema | Solución fija |
 |---|---|
@@ -37,7 +40,7 @@ Estilo y marca ya están en `estilo.md` (§A referencia medida, §B adaptación 
    - `ebur128`: ≈ −14/−15 LUFS, pico < −1 dBFS.
    - `silencedetect=n=-55dB:d=0.3`: sin silencios dentro del montaje.
    - Sincronía: `node scripts/transcribe.mjs out/borrador.mp4 <tmp>.json <modelos> spanish` y comparar inicios de palabra con `edit.json` (objetivo: media < 50 ms; revisar las de > 150 ms).
-9. Entregar como `BORRADOR_vN.mp4` (copiar desde `out/`) con la lista de decisiones; commit + push.
+9. Entregar como `BORRADOR_vN.mp4` (copiar desde `out/`) con la lista de decisiones. Commit + push solo si se trabaja en un repositorio.
 10. Correcciones aprobadas por el usuario → `estilo.md §C` (numeradas). Mandan sobre §A/§B.
 
 ## Valores fijos de este estilo (no cambiar sin corrección aprobada)
@@ -51,4 +54,11 @@ Estilo y marca ya están en `estilo.md` (§A referencia medida, §B adaptación 
 - Sonido: riser al inicio, whoosh en las tarjetas, golpe en el glitch, cama musical desde el glitch, golpe de cierre.
 
 ## Reproducir exactamente BORRADOR_v2
-Con `public/mi-video.mp4` original: `npm run setup && npm run transcribir && npm run editar && npm run normalizar && npm run render`.
+`src/montaje.ts` y `src/data/edit.json` del kit son los de BORRADOR_v2: sirven de **ejemplo resuelto** de cómo se adaptó un vídeo.
+Con el `mi-video.mp4` original: `npm run setup && npm run transcribir && npm run editar && npm run normalizar && npm run render` da un render idéntico fotograma a fotograma (verificado con PSNR = ∞).
+Decisiones de ese vídeo, como ejemplo de adaptación:
+- Cambio de cámara (general → medio) en el fotograma de origen 188.
+- Bloques de subtítulos en `BLOCKS`.
+- Énfasis en «letra muerta».
+- Tarjetas en «eficacia simbólica» / «pero no una eficacia real».
+- Remate en «la práctica.».

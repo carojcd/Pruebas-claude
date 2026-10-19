@@ -22,6 +22,6 @@ fi
 
 # 4) Herramientas del sistema
 command -v ffmpeg >/dev/null || { echo "Falta ffmpeg"; exit 1; }
-node -e 'import("./scripts/browser.mjs").then(m=>{const b=m.findBrowser(); if(!b){console.error("No hay Chromium headless en /opt/pw-browsers"); process.exit(1)} console.log("Chromium:", b)})'
+node -e 'import("./scripts/browser.mjs").then(m=>{const b=m.findBrowser(); console.log("Chromium:", b ?? "el de Remotion (se descarga solo en el primer render)")})'
 echo "Whisper: $MODELS"
 echo "LISTO"
