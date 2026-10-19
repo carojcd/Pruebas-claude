@@ -61,6 +61,12 @@
       #header .b { position: absolute; right: 44px; top: 24px; height: 44px; padding: 0 22px; border-radius: 999px;
         background: var(--aqua-light); color: var(--dark); font-size: 18px; font-weight: 600; display: flex; align-items: center; }
 
+      #header { overflow: hidden; }
+      #header .ws { display: flex; gap: .26em; }
+      #header .w { display: inline-block; overflow: hidden; line-height: 1.3; padding-bottom: 3px; }
+      #header .w b { display: inline-block; font-weight: 600; }
+      #header .hs { position: absolute; top: 0; bottom: 0; left: 0; width: 240px;
+        background: linear-gradient(100deg, transparent, rgba(255,255,255,.22) 50%, transparent); }
       #title { left: 56px; top: 134px; width: 480px; font-size: 48px; font-weight: 700; line-height: 1.05; letter-spacing: -0.02em; }
       #title em { font-style: normal; color: var(--teal); }
       #body { left: 56px; top: 276px; width: 470px; font-size: 22px; font-weight: 400; line-height: 1.4; color: rgba(25,41,44,.78); }
@@ -105,9 +111,10 @@
 
             <div id="header" class="L">
               <div class="t">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="6.5"/><path d="M8.5 3.6a9 9 0 0 1 7 0M8.5 20.4a9 9 0 0 0 7 0"/></svg>
-                Plataforma LITIVO
+                <svg id="hIcon" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle pathLength="1" cx="12" cy="12" r="6.5"/><path pathLength="1" d="M8.5 3.6a9 9 0 0 1 7 0M8.5 20.4a9 9 0 0 0 7 0"/></svg>
+                <span class="ws"><span class="w"><b>Plataforma</b></span><span class="w"><b>LITIVO</b></span></span>
               </div>
+              <i class="hs" data-layout-allow-overflow></i>
               <div class="b">Conciliación e insolvencia</div>
             </div>
 
@@ -188,7 +195,14 @@
       // coreografía por capas (cada una con su propia profundidad)
       const enter = (sel, t, z, y = 18, d = 0.4) =>
         tl.fromTo(sel, { opacity: 0, y: y, z: z }, { opacity: 1, y: 0, z: z, duration: d, ease: "power3.out" }, t);
-      enter("#header", 0.9, 60, -16, 0.35);
+      const CL = (r) => "inset(0% " + r + "% 0% 0% round 26px 26px 0px 0px)";
+      tl.fromTo("#header", { opacity: 0, y: -14, z: 60, clipPath: CL(100) },
+                           { opacity: 1, y: 0, z: 60, clipPath: CL(0), duration: 1.1, ease: "power3.inOut" }, 0.9);
+      tl.fromTo("#hIcon", { scale: 0.6, transformOrigin: "50% 50%" }, { scale: 1, duration: 0.8, ease: "power3.out" }, 1.15);
+      tl.fromTo("#hIcon *", { strokeDasharray: 1, strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.9, ease: "power2.out" }, 1.15);
+      tl.fromTo("#header .w b", { yPercent: 115 }, { yPercent: 0, duration: 0.75, ease: "power3.out", stagger: 0.14 }, 1.35);
+      tl.fromTo("#header .b", { opacity: 0, x: 40, scale: 0.92, transformOrigin: "100% 50%" }, { opacity: 1, x: 0, scale: 1, duration: 0.8, ease: "power3.out" }, 1.6);
+      tl.fromTo("#header .hs", { x: -260 }, { x: 1300, duration: 1.2, ease: "power2.inOut" }, 1.45);
       enter("#title", 1.25, 90, 22, 0.45);
       enter("#body", 1.6, 70, 18, 0.4);
       tl.fromTo("#rule", { scaleX: 0, opacity: 1, z: 40 }, { scaleX: 1, z: 40, duration: 0.7, ease: "power3.out" }, 2.0);
