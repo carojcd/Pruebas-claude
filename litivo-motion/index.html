@@ -80,12 +80,16 @@
       .pill svg { flex: none; width: 26px; height: 26px; fill: none; stroke: var(--dark); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
       .pill .arrow { margin-left: auto; width: 22px; height: 22px; opacity: 0; }
       #logo { position: absolute; left: 72px; top: 60px; width: 220px; }
-      #tag { position: absolute; left: 0; right: 0; bottom: 52px; text-align: center; font-size: 34px; font-weight: 500; color: #fff; }
+      #halo2 { position: absolute; left: 50%; top: 50%; width: 1500px; height: 900px; margin: -450px 0 0 -750px; opacity: 0;
+        background: radial-gradient(closest-side, rgba(99,194,200,.34), rgba(62,152,145,.12) 55%, transparent 100%); }
+      #outro { position: absolute; left: 600px; top: 372px; width: 720px; height: 215px; }
+      #outro svg { width: 720px; height: 215px; overflow: visible; }
+      #tag { position: absolute; left: 0; right: 0; top: 650px; text-align: center; font-size: 46px; font-weight: 500; color: #fff; }
       #tag em { font-style: normal; font-weight: 600; color: var(--aqua); }
     </style>
   </head>
   <body>
-    <div id="root" data-composition-id="litivo-capacidades" data-start="0" data-duration="10" data-width="1920" data-height="1080">
+    <div id="root" data-composition-id="litivo-capacidades" data-start="0" data-duration="20" data-width="1920" data-height="1080">
       <div id="bg"></div>
       <svg id="arcs" data-layout-allow-overflow viewBox="0 0 1920 1080" fill="none">
         <g stroke="#63C2C8" stroke-linecap="round">
@@ -101,6 +105,9 @@
       <div id="vignette"></div>
       <img id="logo" src="assets/brand/litivo-logo-white.svg" alt="LITIVO" />
 
+      <audio id="vo" src="assets/audio/vo.wav" data-start="0.5" data-duration="16.5" data-track-index="1" data-volume="1"></audio>
+      <audio id="sfx" src="assets/audio/sfx.wav" data-start="0" data-duration="20" data-track-index="2" data-volume="0.6"></audio>
+      <div id="halo2"></div>
       <div id="stage">
         <div id="tilt"><div id="fly">
           <div id="halo" class="L"></div>
@@ -129,6 +136,7 @@
           </div>
         </div></div>
       </div>
+      <div id="outro"><svg viewBox="0 0 214 64" fill="none" xmlns="http://www.w3.org/2000/svg"><path id="oi1" d="M53.9743 12.6754H49.4765C48.7832 12.6754 48.1076 13.2265 48.1076 13.9198V49.9909C48.1076 50.6665 48.7654 51.1998 49.4765 51.1998H53.9743C54.6498 51.1998 55.1832 50.6665 55.1832 49.9909V13.9198C55.1832 13.2087 54.6498 12.6754 53.9743 12.6754Z" fill="white"/><path id="oi2" d="M102.259 12.6754H97.7609C97.0676 12.6754 96.3743 13.2265 96.3743 13.9198V49.9909C96.3743 50.6665 97.0498 51.1998 97.7609 51.1998H102.259C102.934 51.1998 103.45 50.6665 103.45 49.9909V13.9198C103.45 13.2087 102.934 12.6754 102.259 12.6754Z" fill="white"/><path id="ot" d="M84.9432 17.7065H72.3209V6.89759C72.3209 6.20425 71.7165 5.59981 71.0232 5.59981H66.5254C65.832 5.59981 65.2454 6.22203 65.2454 6.89759V38.2398C65.2454 42.5954 66.1343 45.9554 67.9298 48.2131C70.0098 50.7554 73.2454 52.0531 77.5476 52.0531C80.2498 52.0531 82.8809 51.5554 85.192 50.6309C85.4765 50.5065 86.1876 50.222 86.1876 49.2265V45.422C86.1876 44.7643 85.6543 44.2309 84.9787 44.2309C84.7476 44.2309 84.5343 44.2843 84.3209 44.4087C82.5787 45.3687 80.9076 45.8309 79.0587 45.8309C76.3209 45.8309 74.5787 45.0309 73.5654 43.3243H73.5476C72.7654 42.0976 72.3565 40.1954 72.3565 37.5109V23.5376H84.9787C85.6898 23.5376 86.3476 22.9154 86.3476 22.2576V19.0043C86.3476 18.3109 85.6543 17.7243 84.9787 17.7243L84.9432 17.7065Z" fill="white"/><path id="oL" d="M36.6054 44.2487C36.3743 44.2487 36.1254 44.302 35.912 44.4265C34.1698 45.3865 32.4809 45.8487 30.632 45.8487C27.8943 45.8487 26.1343 45.0487 25.1387 43.342H25.1743C24.392 42.1154 24.0365 40.2131 24.0365 37.5287V6.86203C24.0365 6.1687 23.3254 5.58203 22.632 5.58203H18.1343C17.4409 5.58203 16.9609 6.1687 16.9609 6.86203V38.2398C16.9609 42.5954 17.7965 45.9554 19.592 48.2131C21.672 50.7554 24.872 52.0531 29.1743 52.0531C31.8765 52.0531 34.5076 51.5554 36.8009 50.6309H36.8365C37.1209 50.5065 37.8676 50.222 37.8676 49.2265V45.422C37.8676 44.7643 37.2809 44.2309 36.6054 44.2309V44.2487Z" fill="white"/><path id="ov" d="M148.428 12.6754H143.681C142.632 12.6754 142.205 13.3331 141.992 13.8487L131.628 41.2976C131.396 41.902 131.148 42.4176 130.703 42.4176C130.259 42.4176 129.956 41.7954 129.761 41.2976L119.325 13.8843C119.094 13.0843 118.472 12.6754 117.619 12.6754H112.783C112.161 12.6754 111.876 12.9598 111.752 13.1554C111.521 13.5109 111.521 14.0087 111.752 14.4709L126.063 50.2754C126.401 51.3065 126.988 51.5198 127.77 51.5198H133.014C133.956 51.5198 134.383 51.2176 134.792 50.2931V50.2754L149.441 14.4531C149.672 13.9731 149.69 13.4931 149.476 13.1376C149.334 12.9065 149.032 12.6576 148.428 12.6576V12.6754Z" fill="white"/><path id="oring" d="M174.668 11.8398C163.592 11.8398 154.596 20.8176 154.596 31.9109C154.596 43.0043 163.574 51.982 174.668 51.982C185.761 51.982 194.739 43.0043 194.739 31.9109C194.739 20.8176 185.761 11.8398 174.668 11.8398ZM174.668 46.0976C166.828 46.0976 160.481 39.7509 160.481 31.9109C160.481 24.0709 166.828 17.7243 174.668 17.7243C182.508 17.7243 188.854 24.0709 188.854 31.9109C188.854 39.7509 182.508 46.0976 174.668 46.0976Z" fill="white"/><path id="oarcB" d="M183.111 54.0446C180.409 55.0224 177.564 55.538 174.667 55.538C171.769 55.538 168.889 55.0402 166.169 54.0268C165.315 53.7068 164.355 54.1513 164.053 55.0046C163.733 55.858 164.178 56.818 165.031 57.1202C168.107 58.258 171.36 58.8268 174.667 58.8268C177.973 58.8268 181.191 58.258 184.249 57.138C185.102 56.818 185.547 55.8757 185.227 55.0224C184.907 54.1691 183.964 53.7246 183.111 54.0446Z" fill="white"/><path id="oarcT" d="M166.204 9.77734C168.906 8.79956 171.751 8.28401 174.648 8.28401C177.546 8.28401 180.426 8.78178 183.146 9.79512C183.342 9.86623 183.519 9.90178 183.715 9.90178C184.391 9.90178 185.013 9.4929 185.262 8.81734C185.582 7.96401 185.137 7.00401 184.284 6.70178C181.208 5.56401 177.955 4.99512 174.648 4.99512C171.342 4.99512 168.124 5.56401 165.066 6.68401C164.213 7.00401 163.768 7.94623 164.088 8.79956C164.408 9.65289 165.351 10.0973 166.204 9.77734Z" fill="white"/></svg></div>
       <div id="tag">Donde la justicia <em>evoluciona.</em></div>
     </div>
 
@@ -171,30 +179,33 @@
       const fmt = (n) => "+" + Math.round(n).toLocaleString("de-DE");
       const tl = gsap.timeline({ paused: true });
 
-      // fondo y logo
+      // ── fondo y logo
       tl.fromTo("#bg", { opacity: 0 }, { opacity: 1, duration: 0.6, ease: "power2.out" }, 0);
       tl.fromTo("#arcs", { opacity: 0, x: 40 }, { opacity: 1, x: 0, duration: 1.6, ease: "power3.out" }, 0);
       tl.fromTo("#logo", { opacity: 0, y: -12 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 0.25);
+      tl.to("#logo", { opacity: 0, duration: 0.4, ease: "power2.in" }, 14.3);
       tl.fromTo("#halo", { opacity: 0 }, { opacity: 0.55, duration: 1.4, ease: "power2.out" }, 0.2);
 
-      // cámara fija: tarjeta llega desde la profundidad y deriva lentamente
+      // ── cámara fija: la tarjeta llega desde la profundidad y deriva lentamente
       tl.fromTo("#fly", { z: -1700, scale: S }, { z: 0, scale: S, duration: 1.8, ease: "power4.out" }, 0);
       tl.fromTo("#tilt", { rotationX: 15, rotationY: 20, rotationZ: -2.2 },
-                         { rotationX: 13.2, rotationY: 17.4, rotationZ: -0.6, duration: 10, ease: "none" }, 0);
+                         { rotationX: 12.4, rotationY: 16.4, rotationZ: 0, duration: 15, ease: "none" }, 0);
       tl.fromTo("#surface", { opacity: 0 }, { opacity: 1, duration: 0.7, ease: "power2.out" }, 0.1);
 
       // brillo que recorre el contorno al entrar y al cerrar
-      const sweep = (t, first) => {
+      const sweep = (t) => {
         const ir = { immediateRender: false };
         tl.fromTo("#ring", { opacity: 0 }, { opacity: 1, duration: 0.25, ease: "power2.out", ...ir }, t);
         tl.fromTo("#ring", { "--a": "0deg" }, { "--a": "360deg", duration: 1.7, ease: "sine.inOut", immediateRender: false }, t);
         tl.to("#ring", { opacity: 0, duration: 0.35, ease: "power2.in" }, t + 1.4);
       };
-      sweep(0.9, true);
+      sweep(0.9);
 
-      // coreografía por capas (cada una con su propia profundidad)
+      // ── coreografía por capas (cada una con su propia profundidad), sincronizada con la voz
       const enter = (sel, t, z, y = 18, d = 0.4) =>
         tl.fromTo(sel, { opacity: 0, y: y, z: z }, { opacity: 1, y: 0, z: z, duration: d, ease: "power3.out" }, t);
+
+      // «LITIVO reúne en un solo lugar la gestión digital de conciliación e insolvencia»
       const CL = (r) => "inset(0% " + r + "% 0% 0% round 26px 26px 0px 0px)";
       tl.fromTo("#header", { opacity: 0, y: -14, z: 60, clipPath: CL(100) },
                            { opacity: 1, y: 0, z: 60, clipPath: CL(0), duration: 1.1, ease: "power3.inOut" }, 0.9);
@@ -203,43 +214,54 @@
       tl.fromTo("#header .w b", { yPercent: 115 }, { yPercent: 0, duration: 0.75, ease: "power3.out", stagger: 0.14 }, 1.35);
       tl.fromTo("#header .b", { opacity: 0, x: 40, scale: 0.92, transformOrigin: "100% 50%" }, { opacity: 1, x: 0, scale: 1, duration: 0.8, ease: "power3.out" }, 1.6);
       tl.fromTo("#header .hs", { x: -260 }, { x: 1300, duration: 1.2, ease: "power2.inOut" }, 1.45);
-      enter("#title", 1.25, 90, 22, 0.45);
-      enter("#body", 1.6, 70, 18, 0.4);
-      tl.fromTo("#rule", { scaleX: 0, opacity: 1, z: 40 }, { scaleX: 1, z: 40, duration: 0.7, ease: "power3.out" }, 2.0);
-      ["s1", "s2", "s3"].forEach((s, i) => enter("." + s, 2.15 + i * 0.16, 55, 14, 0.35));
-      const c1 = { v: 0 }, c2 = { v: 0 };
-      tl.to(c1, { v: 35000, duration: 1.4, ease: "power3.out", onUpdate: () => (n1.textContent = fmt(c1.v)) }, 2.2);
-      tl.to(c2, { v: 45000, duration: 1.4, ease: "power3.out", onUpdate: () => (n2.textContent = fmt(c2.v)) }, 2.35);
+      enter("#title", 1.6, 90, 22, 0.5);
+      enter("#body", 2.4, 70, 18, 0.45);
+      tl.fromTo("#rule", { scaleX: 0, opacity: 1, z: 40 }, { scaleX: 1, z: 40, duration: 0.8, ease: "power3.out" }, 3.2);
 
-      // píldoras: entrada escalonada, icono dibujado + pop
+      // «Expedientes electrónicos, agenda inteligente, firmas certificadas y notificaciones automáticas»
+      const PT = [4.3, 4.6, 5.15, 5.7, 6.8, 7.9, 8.3, 8.45, 8.6, 8.75, 8.9, 9.05];
       ITEMS.forEach((_, i) => {
-        const t = 2.4 + i * 0.2, z = 35 + (i % 3) * 25;
-        const p = "#pill" + i;
-        tl.fromTo(p, { opacity: 0, x: 24, z: z }, { opacity: 1, x: 0, z: z, duration: 0.4, ease: "power3.out" }, t);
-        tl.fromTo(p + " > svg:first-child", { scale: 0.55, transformOrigin: "50% 50%" }, { scale: 1, duration: 0.4, ease: "power3.out" }, t + 0.1);
-        tl.fromTo(p + " > svg:first-child *", { strokeDasharray: 1, strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.55, ease: "power2.out" }, t + 0.1);
+        const t = PT[i], z = 35 + (i % 3) * 25, p = "#pill" + i;
+        tl.fromTo(p, { opacity: 0, x: 24, z: z }, { opacity: 1, x: 0, z: z, duration: 0.45, ease: "power3.out" }, t);
+        tl.fromTo(p + " > svg:first-child", { scale: 0.55, transformOrigin: "50% 50%" }, { scale: 1, duration: 0.45, ease: "power3.out" }, t + 0.1);
+        tl.fromTo(p + " > svg:first-child *", { strokeDasharray: 1, strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.6, ease: "power2.out" }, t + 0.1);
       });
 
-      // ≈65 %: todas las capas se reúnen en una tarjeta plana con pulso de luz
-      const T = 6.5;
+      // «Más de treinta y cinco mil usuarios y cuarenta y cinco mil procesos»
+      ["s1", "s2", "s3"].forEach((s_, i) => enter("." + s_, [9.6, 10.6, 11.9][i], 55, 14, 0.4));
+      const c1 = { v: 0 }, c2 = { v: 0 };
+      tl.to(c1, { v: 35000, duration: 1.0, ease: "power3.out", onUpdate: () => (n1.textContent = fmt(c1.v)) }, 9.75);
+      tl.to(c2, { v: 45000, duration: 1.0, ease: "power3.out", onUpdate: () => (n2.textContent = fmt(c2.v)) }, 10.85);
+
+      // «Un ecosistema nacional conectado» ─ las capas se reúnen en una tarjeta plana con pulso de luz
+      const T = 12.8;
       const layers = ["#header", "#title", "#body", "#rule", ".s1", ".s2", ".s3", ...ITEMS.map((_, i) => "#pill" + i)];
       layers.forEach((sel) => tl.to(sel, { z: 2, duration: 0.7, ease: "sine.inOut" }, T));
       tl.fromTo("#shine i", { x: -340, opacity: 1 }, { x: 1300, duration: 1.0, ease: "power2.inOut" }, T + 0.15);
-      tl.set("#shine", { opacity: 1 }, 0);
       tl.to("#halo", { opacity: 0.95, duration: 0.45, ease: "sine.inOut" }, T);
       tl.to("#halo", { opacity: 0.6, duration: 0.8, ease: "sine.inOut" }, T + 0.45);
       sweep(T + 0.1);
 
-      // ≈83 %: micro-acción de cierre — se resalta «Ecosistema nacional» y avanza la flecha
-      const M = 8.3, hp = "#pill7";
+      // micro-acción de cierre: se resalta «Ecosistema nacional» y avanza la flecha
+      const M = 13.3, hp = "#pill7";
       tl.to(hp, { backgroundColor: "#3E9891", duration: 0.35, ease: "power2.out" }, M);
       tl.to(hp, { color: "#FFFFFF", fontWeight: 700, duration: 0.35, ease: "power2.out" }, M);
       tl.to(hp + " > svg:first-child", { stroke: "#FFFFFF", duration: 0.35 }, M);
       tl.fromTo(hp + " .arrow", { opacity: 0, x: -8, stroke: "#FFFFFF" }, { opacity: 1, x: 0, stroke: "#FFFFFF", duration: 0.45, ease: "power3.out" }, M + 0.15);
       tl.to(hp + " .arrow", { x: 6, duration: 0.5, ease: "sine.inOut" }, M + 0.7);
 
-      // pie de marca (sin fundido a negro)
-      tl.fromTo("#tag", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 7.3);
+      // ── OUTRO: la tarjeta retrocede y el logo se construye letra por letra
+      tl.to("#fly", { z: -900, duration: 0.75, ease: "power3.in" }, 14.2);
+      tl.to("#stage", { opacity: 0, duration: 0.5, ease: "power2.in" }, 14.35);
+      tl.fromTo("#halo2", { opacity: 0 }, { opacity: 1, duration: 1.2, ease: "power2.out" }, 14.6);
+      tl.to("#arcs", { scale: 1.05, transformOrigin: "50% 50%", duration: 5.4, ease: "sine.inOut" }, 14.6);
+      const LET = ["#oL", "#oi1", "#ot", "#oi2", "#ov", "#oring"];
+      LET.forEach((id, i) =>
+        tl.fromTo(id, { opacity: 0, y: 26, scale: 0.86, transformOrigin: "50% 100%" },
+                      { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: "power3.out" }, 14.9 + i * 0.1));
+      tl.fromTo(["#oarcB", "#oarcT"], { opacity: 0, scale: 0.7, transformOrigin: "50% 50%" },
+                      { opacity: 1, scale: 1, duration: 0.55, ease: "power3.out", stagger: 0.12 }, 15.55);
+      tl.fromTo("#tag", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }, 15.75);
 
       window.__timelines["litivo-capacidades"] = tl;
     </script>
