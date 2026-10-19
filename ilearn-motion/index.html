@@ -121,7 +121,7 @@
 
       /* outro */
       #outro { position: absolute; inset: 0; z-index: 4; }
-      #logo { position: absolute; left: 480px; top: 330px; width: 960px; height: 281px; }
+      #logo { position: absolute; left: 480px; top: 250px; width: 960px; height: 282px; }
       .lp { position: absolute; inset: 0; }
       .lp img { position: absolute; left: 0; top: 0; width: 100%; height: 100%; display: block; }
       #pi { clip-path: polygon(0 0, 8.25% 0, 8.25% 100%, 0 100%); transform-origin: 4% 100%; }
@@ -130,7 +130,7 @@
       #pn { clip-path: polygon(81% 0, 100% 0, 100% 100%, 80.4% 100%, 80.4% 46.9%, 81% 46.9%); transform-origin: 90% 100%; }
       #pea { clip-path: polygon(16.5% 0, 68.4% 0, 68.4% 100%, 16.5% 100%); }
       #peaI { position: absolute; inset: 0; }
-      #slogan { position: absolute; left: 0; right: 0; top: 650px; text-align: center; font-size: 46px; font-weight: 500; letter-spacing: -.01em; color: #2a3550; }
+      #slogan { position: absolute; left: 0; right: 0; top: 572px; text-align: center; font-size: 46px; white-space: nowrap; font-weight: 500; letter-spacing: -.01em; color: #2a3550; }
 
       /* ---------- v2: tipografía cinética, fx ---------- */
       #parts i { position: absolute; border-radius: 50%; display: block; }
@@ -158,7 +158,7 @@
       #tile5 { position: absolute; left: 290px; top: 452px; width: 170px; height: 170px; border-radius: 46px; }
       #tile5 svg { width: 50%; height: 50%; stroke-width: 2; }
       #k8bar { position: absolute; left: 1165px; top: 612px; width: 600px; height: 8px; border-radius: 4px; background: linear-gradient(90deg, #0b9b93, #2a7de8, #6a4cff); transform-origin: left center; }
-      #shine { position: absolute; inset: 0; -webkit-mask: url(assets/brand/ilearn.svg) 0 0 / 100% 100% no-repeat; mask: url(assets/brand/ilearn.svg) 0 0 / 100% 100% no-repeat;
+      #shine { position: absolute; inset: 0; -webkit-mask: url(assets/brand/ilearn.png) 0 0 / 100% 100% no-repeat; mask: url(assets/brand/ilearn.png) 0 0 / 100% 100% no-repeat;
         background: linear-gradient(105deg, transparent 42%, rgba(255,255,255,.9) 50%, transparent 58%); background-size: 300% 100%; background-position: 100% 0; opacity: 0; }
     </style>
   </head>
@@ -195,13 +195,11 @@
       </defs>
     </svg>
 
-    <div id="root" data-composition-id="ilearn" data-start="0" data-duration="28" data-width="1920" data-height="1080">
+    <div id="root" data-composition-id="ilearn" data-start="0" data-duration="32" data-width="1920" data-height="1080">
       <!-- fondo (por detrás de tarjetas y logo) -->
       <div id="bg" data-layout-allow-overflow>
         <div id="halo"></div>
         <div class="blob" id="b1"></div><div class="blob" id="b2"></div><div class="blob" id="b3"></div><div class="blob" id="b4"></div>
-        <div class="arc" id="arcA"><div class="lp" style="clip-path: polygon(16.5% 0, 68.4% 0, 68.4% 100%, 16.5% 100%)"><img src="assets/brand/ilearn.svg" alt="" /></div></div>
-        <div class="arc" id="arcB"><div class="lp" style="clip-path: polygon(16.5% 0, 68.4% 0, 68.4% 100%, 16.5% 100%)"><img src="assets/brand/ilearn.svg" alt="" /></div></div>
         <div id="parts"></div>
         <div id="vig"></div>
         <div id="pulse"></div>
@@ -209,16 +207,21 @@
 
       <!-- tipografía cinética (detrás de las tarjetas) -->
       <div id="type" data-layout-ignore>
+        <div id="sc0">
+          <img id="flm0" src="assets/brand/academia-flm.png" alt="Academia FLM" style="position:absolute;left:680px;top:110px;width:560px;height:560px" />
+          <div class="kt c kick" id="k0a" style="top:700px;font-size:66px" data-split="words">presenta</div>
+          <img id="il0" src="assets/brand/ilearn.png" alt="iLEARN" style="position:absolute;left:510px;top:408px;width:900px;height:264px;opacity:0" />
+        </div>
         <div id="sc1">
-          <div class="kt c" id="k1a" style="top:300px;font-size:210px" data-split="grad">Imagina</div>
-          <div class="kt c kick" id="k1b" style="top:590px;font-size:78px" data-split="words">una forma de aprender</div>
+          <div class="kt c kick" id="k1b" style="top:370px;font-size:66px" data-split="words">una nueva metodología de</div>
+          <div class="kt c" id="k1a" style="top:455px;font-size:132px" data-split="grad">aprendizaje continuo</div>
         </div>
         <div id="sc2">
-          <div id="rib" data-layout-allow-overflow><div id="ribI"><div class="lp" style="clip-path: polygon(16.5% 0, 68.4% 0, 68.4% 100%, 16.5% 100%)"><img src="assets/brand/ilearn.svg" alt="" /></div></div></div>
-          <div class="kt c" id="k2a" style="top:770px;font-size:104px" data-split="words">que nunca se detiene</div>
+          <div class="kt c kick" id="k2b" style="top:360px;font-size:66px" data-split="words">donde el conocimiento</div>
+          <div class="kt c" id="k2a" style="top:445px;font-size:150px" data-split="grad">nunca se detiene</div>
         </div>
         <div id="sc3">
-          <div class="kt c kick" id="k3a" style="top:150px;font-size:60px" data-split="words">Con nuestra</div>
+          <div class="kt c kick" id="k3a" style="top:150px;font-size:60px" data-split="words">A través de una</div>
           <div class="kt c" id="k3b" style="top:240px;font-size:190px" data-split="grad">TRIMESTRAL</div>
         </div>
         <div id="k4a">
@@ -241,15 +244,15 @@
           <div class="kt" id="k5b" style="left:496px;top:440px;font-size:150px" data-split="roll">actualización</div>
         </div>
         <div id="k6">
-          <div class="kt c kick" id="k6a" style="top:58px;font-size:50px" data-split="words">Todo en una plataforma</div>
-          <div class="kt c" id="k6b" style="top:120px;font-size:108px" data-split="grad">digital innovadora</div>
+          <div class="kt c kick" id="k6a" style="top:58px;font-size:50px" data-split="words">Todo desde una plataforma</div>
+          <div class="kt c" id="k6b" style="top:120px;font-size:108px" data-split="grad">e-learning avanzada</div>
         </div>
         <div id="k7">
           <div class="kt kick" id="k7a" style="left:150px;top:350px;font-size:58px" data-split="words">aprendas a tu</div>
           <div class="kt" id="k7b" style="left:136px;top:410px;font-size:240px" data-split="grad">ritmo</div>
         </div>
         <div id="k8">
-          <div class="kt kick" id="k8a" style="left:1162px;top:375px;font-size:60px" data-split="words">nuevas habilidades</div>
+          <div class="kt kick" id="k8a" style="left:1162px;top:375px;font-size:60px" data-split="words">siempre a la</div>
           <div class="kt" id="k8b" style="left:1158px;top:455px;font-size:124px" data-split="grad">vanguardia</div>
           <div id="k8bar"></div>
         </div>
@@ -387,20 +390,7 @@
         </div></div></div>
       </div>
 
-      <!-- tipografía al frente y efectos -->
-      <div id="type2" data-layout-ignore>
-        <div id="k9">
-          <div id="glow9"></div>
-          <div class="kt c kick" id="k9a" style="top:360px;font-size:58px" data-split="words">nunca deja de</div>
-          <div class="kt c" id="k9b" style="top:430px;font-size:180px" data-split="grad">evolucionar</div>
-        </div>
-        <div id="k10">
-          <div class="kt" id="k10a" style="left:360px;top:290px;font-size:230px" data-split="ink">y</div>
-          <div class="kt" id="k10b" style="left:520px;top:290px;font-size:230px" data-split="grad">tú</div>
-          <div class="kt" id="k10c" style="left:370px;top:590px;font-size:70px" data-split="words">tampoco deberías hacerlo.</div>
-          <div id="go"><div id="goA"><svg class="i"><use href="#i-chev"/></svg></div></div>
-        </div>
-      </div>
+      <!-- efectos -->
       <div id="fx" data-layout-ignore>
         <div class="streak" style="top:300px;width:900px"></div>
         <div class="streak" style="top:420px;width:620px"></div>
@@ -413,18 +403,19 @@
       <!-- outro -->
       <div id="outro">
         <div id="logo" data-layout-ignore>
-          <div class="lp" id="pi"><img src="assets/brand/ilearn.svg" alt="" /></div>
-          <div class="lp" id="pl"><img src="assets/brand/ilearn.svg" alt="" /></div>
-          <div class="lp" id="pr"><img src="assets/brand/ilearn.svg" alt="" /></div>
-          <div class="lp" id="pn"><img src="assets/brand/ilearn.svg" alt="" /></div>
-          <div class="lp" id="pea"><div id="peaI"><img src="assets/brand/ilearn.svg" alt="" style="position:absolute;inset:0;width:100%;height:100%" /></div></div>
+          <div class="lp" id="pi"><img src="assets/brand/ilearn.png" alt="" /></div>
+          <div class="lp" id="pl"><img src="assets/brand/ilearn.png" alt="" /></div>
+          <div class="lp" id="pr"><img src="assets/brand/ilearn.png" alt="" /></div>
+          <div class="lp" id="pn"><img src="assets/brand/ilearn.png" alt="" /></div>
+          <div class="lp" id="pea"><div id="peaI"><img src="assets/brand/ilearn.png" alt="" style="position:absolute;inset:0;width:100%;height:100%" /></div></div>
           <div id="shine" data-layout-ignore></div>
         </div>
-        <div id="slogan">Tu conocimiento, sin límites.</div>
+        <div id="slogan" data-split="words">una nueva forma de aprender con</div>
+        <img id="flmEnd" src="assets/brand/academia-flm.png" alt="Academia FLM" style="position:absolute;left:800px;top:640px;width:320px;height:320px" />
       </div>
 
-      <audio id="vo" src="assets/audio/vo.wav" data-start="0.5" data-duration="25.38" data-track-index="2" data-volume="1"></audio>
-      <audio id="sfx" src="assets/audio/sfx.wav" data-start="0" data-duration="28" data-track-index="3" data-volume="1"></audio>
+      <audio id="vo" src="assets/audio/vo.wav" data-start="0.5" data-duration="30.12" data-track-index="2" data-volume="1"></audio>
+      <audio id="sfx" src="assets/audio/sfx.wav" data-start="0" data-duration="32" data-track-index="3" data-volume="1"></audio>
     </div>
 
     <script>
@@ -518,173 +509,153 @@
       /* ---------- fondo vivo ---------- */
       tl.fromTo("#halo", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 2, ease: E3 }, 0);
       tl.fromTo(".blob", { opacity: 0 }, { opacity: 1, duration: 1.6, ease: S, stagger: 0.1 }, 0);
-      tl.fromTo("#arcA", { opacity: 0, rotation: -22, x: -60 }, { opacity: 0.13, rotation: -12, x: 60, duration: 28, ease: "none" }, 0);
-      tl.fromTo("#arcB", { opacity: 0, rotation: 156, x: 60 }, { opacity: 0.13, rotation: 166, x: -60, duration: 28, ease: "none" }, 0);
-      tl.fromTo("#parts i", { y: 0 }, { y: -170, duration: 28, ease: "none", stagger: { each: 0.0, from: "start" } }, 0);
+      tl.fromTo("#parts i", { y: 0 }, { y: -190, duration: 32, ease: "none", stagger: { each: 0.0, from: "start" } }, 0);
       tl.fromTo("#parts", { opacity: 0 }, { opacity: 1, duration: 2, ease: S }, 0.3);
       tl.set("#tilt", { scale: 1, rotationX: 0, rotationY: 0, rotationZ: 0, transformOrigin: "50% 50%" }, 0);
 
-      /* S1 · “Imagina una forma de aprender” (0.87–3.1) */
-      lIn("#k1a", 0.72, 0.055, 0.85);
-      tl.fromTo("#k1a", { scale: 1.14 }, { scale: 1, duration: 2.3, ease: "power2.out" }, 0.72);
-      tl.fromTo("#k1a .m", { x: (i, e, a) => (i - (a.length - 1) / 2) * 34 }, { x: 0, duration: 2.0, ease: "power2.out" }, 0.72);
-      wIn("#k1b", 1.5, 0.12);
-      lOut("#k1a", 2.95, 0.03); wOut("#k1b", 3.0);
-      streak(3.0, 1);
+      /* S0 · “Academia FLM presenta iLEARN” (0.58–3.7) */
+      tl.fromTo("#flm0", { opacity: 0, scale: 0.7, filter: "blur(12px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.9, ease: E4 }, 0.35);
+      wIn("#k0a", 2.4);
+      tl.to("#flm0", { scale: 0.85, y: -60, opacity: 0, duration: 0.4, ease: IN }, 3.0);
+      wOut("#k0a", 3.0);
+      tl.fromTo("#il0", { opacity: 0, scale: 1.25, filter: "blur(16px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.6, ease: E4 }, 3.15);
+      tl.to("#il0", { opacity: 0, scale: 0.9, duration: 0.35, ease: IN }, 3.95);
+      streak(3.95, 1);
 
-      /* S2 · “que nunca se detiene” (3.3–4.9): el lazo infinito del isotipo */
-      tl.fromTo("#ribI", { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", duration: 0.95, ease: E3 }, 3.15);
-      tl.fromTo("#rib", { scale: 0.86, rotation: -5, opacity: 0 }, { scale: 1, rotation: 0, opacity: 1, duration: 1.0, ease: E3 }, 3.15);
-      tl.to("#rib", { scale: 1.05, rotation: 1.5, duration: 0.75, ease: "none" }, 4.15);
-      tl.fromTo("#k2a .w > span", { x: 160, opacity: 0, filter: "blur(14px)" }, { x: 0, opacity: 1, filter: "blur(0px)", duration: 0.6, ease: E3, stagger: 0.16 }, 3.3);
-      tl.fromTo("#k2a", { x: 40 }, { x: -40, duration: 1.7, ease: "none" }, 3.3);
-      tl.to("#rib", { scale: 1.8, opacity: 0, duration: 0.42, ease: "power2.in" }, 4.9);
-      tl.to("#k2a .w > span", { y: 40, opacity: 0, duration: 0.3, ease: IN, stagger: 0.03 }, 4.88);
+      /* S1 · “una nueva metodología de aprendizaje continuo” (4.04–6.65) */
+      wIn("#k1b", 4.05, 0.1);
+      lIn("#k1a", 5.45, 0.035, 0.75);
+      tl.fromTo("#k1a .m", { x: (i, e, a) => (i - (a.length - 1) / 2) * 22 }, { x: 0, duration: 1.4, ease: "power2.out" }, 5.45);
+      lOut("#k1a", 6.62, 0.012); wOut("#k1b", 6.6);
 
-      /* S3 · “Con nuestra suscripción trimestral” (5.07–6.22) */
-      const pPill = enter("pill", 4.95, { x: 960, y: 740, s: 1.6, rx: 16, ry: 0, d: 1.0, hold: 0.3, dry: 0 });
-      wIn("#k3a", 5.05);
-      tl.fromTo("#k3b .m", { x: (i, e, a) => (i - (a.length - 1) / 2) * 70 }, { x: 0, duration: 1.0, ease: E4 }, 5.1);
-      tl.fromTo("#k3b .ch", { opacity: 0, yPercent: 50 }, { opacity: 1, yPercent: 0, duration: 0.55, ease: E3, stagger: 0.04 }, 5.1);
-      rise("#pilltxt", 5.3);
-      ["#pd1", "#pd2", "#pd3"].forEach((s, i) => popIcon(s, 5.55 + i * 0.25));
-      leave("pill", 6.25, pPill, { ey: -1100, erx: 40, ez: 200 });
-      tl.to("#k3b", { x: -900, duration: 0.45, ease: IN }, 6.25);
-      tl.to("#k3b .ch", { opacity: 0, duration: 0.3, ease: S, stagger: 0.015 }, 6.3);
-      wOut("#k3a", 6.2);
-      streak(6.3, -1);
+      /* S2 · “donde el conocimiento nunca se detiene” — solo tipografía (6.91–8.96) */
+      wIn("#k2b", 6.9, 0.1);
+      lIn("#k2a", 7.75, 0.035, 0.6);
+      tl.fromTo("#k2a", { x: 60 }, { x: -60, duration: 1.9, ease: "none" }, 7.75);
+      tl.to("#k2a .ch", { y: -18, duration: 0.25, ease: S, yoyo: true, repeat: 1, stagger: 0.04 }, 8.45);
+      lOut("#k2a", 9.15, 0.012); wOut("#k2b", 9.15);
+      streak(9.2, -1);
 
-      /* S4a · “accede a diplomados” (6.4–7.5) */
-      const pDip = enter("dip", 6.3, { x: 1290, y: 560, s: 1.3, rx: 10, ry: -22, fx: 900, fry: -40, fz: -600, d: 0.95, hold: 0.25 });
-      wIn("#k4a1", 6.35); lIn("#k4a2", 6.45, 0.035);
-      rise("#diptitle", 6.6); popIcon("#dipbtn", 6.85); lay("#dipall", 6.95, 8);
-      ["#cs1", "#cs2", "#cs3"].forEach((s, i) => lay(s, 6.6 + i * 0.15, 22));
-      tl.fromTo("#cs1 .bar b, #cs2 .bar b, #cs3 .bar b", { scaleX: 0 }, { scaleX: 1, duration: 0.7, ease: E3, stagger: 0.12 }, 7.0);
-      leave("dip", 7.45, pDip, { ex: -2500, ery: -30 });
-      lOut("#k4a2", 7.42); wOut("#k4a1", 7.4);
-      streak(7.5, -1);
+      /* S3 · “A través de una suscripción trimestral” (9.52–11.43) */
+      const pPill = enter("pill", 9.85, { x: 960, y: 740, s: 1.6, rx: 16, ry: 0, d: 1.0, hold: 0.55, dry: 0 });
+      wIn("#k3a", 9.5);
+      tl.fromTo("#k3b .m", { x: (i, e, a) => (i - (a.length - 1) / 2) * 70 }, { x: 0, duration: 1.0, ease: E4 }, 10.3);
+      tl.fromTo("#k3b .ch", { opacity: 0, yPercent: 50 }, { opacity: 1, yPercent: 0, duration: 0.55, ease: E3, stagger: 0.04 }, 10.3);
+      rise("#pilltxt", 10.2);
+      ["#pd1", "#pd2", "#pd3"].forEach((s, i) => popIcon(s, 10.45 + i * 0.25));
+      leave("pill", 11.4, pPill, { ey: -1100, erx: 40, ez: 200 });
+      tl.to("#k3b", { x: -900, duration: 0.45, ease: IN }, 11.4);
+      tl.to("#k3b .ch", { opacity: 0, duration: 0.3, ease: S, stagger: 0.015 }, 11.45);
+      wOut("#k3a", 11.35);
+      streak(11.45, -1);
 
-      /* S4b · “cursos especializados” (7.5–8.7) */
-      const pList = enter("list", 7.5, { x: 640, y: 560, s: 1.22, rx: 10, ry: 22, fx: -900, fry: 40, fz: -600, d: 0.9, hold: 0.3, dry: -4 });
-      lIn("#k4b1", 7.55, 0.045); lIn("#k4b2", 7.75, 0.025);
-      ["#r1", "#r2", "#r3", "#r4"].forEach((s, i) => lay(s, 7.75 + i * 0.1, 20, 16));
-      tl.to("#r1", { scale: 1.05, duration: 0.3, ease: S, yoyo: true, repeat: 1 }, 8.1);
-      leave("list", 8.6, pList, { ey: 1300, erx: -35 });
-      lOut("#k4b1", 8.55); lOut("#k4b2", 8.58, 0.01);
+      /* S4a · “accede a diplomados” (11.53–12.81) */
+      const pDip = enter("dip", 11.45, { x: 1290, y: 560, s: 1.3, rx: 10, ry: -22, fx: 900, fry: -40, fz: -600, d: 0.95, hold: 0.45 });
+      wIn("#k4a1", 11.5); lIn("#k4a2", 11.95, 0.035);
+      rise("#diptitle", 11.75); popIcon("#dipbtn", 12.0); lay("#dipall", 12.1, 8);
+      ["#cs1", "#cs2", "#cs3"].forEach((s, i) => lay(s, 11.75 + i * 0.15, 22));
+      tl.fromTo("#cs1 .bar b, #cs2 .bar b, #cs3 .bar b", { scaleX: 0 }, { scaleX: 1, duration: 0.7, ease: E3, stagger: 0.12 }, 12.15);
+      leave("dip", 12.85, pDip, { ex: -2500, ery: -30 });
+      lOut("#k4a2", 12.82); wOut("#k4a1", 12.8);
+      streak(12.9, -1);
 
-      /* S4c · “clases en vivo con expertos” (8.7–10.9) */
-      const pDash = enter("dash", 8.62, { x: 1200, y: 590, s: 1.12, rx: 10, ry: -20, d: 1.0, hold: 1.33 });
-      const pLive = enter("live", 8.85, { x: 880, y: 270, s: 1.15, rx: 12, ry: -14, z: 260, fx: -500, fz: -900, d: 0.9, hold: 1.2 });
-      lIn("#k4c1", 8.7, 0.04); lIn("#k4c2", 8.9, 0.04);
-      tl.fromTo("#livedot", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.45, ease: E3 }, 9.3);
-      tl.to("#livedot", { scale: 1.22, duration: 0.28, ease: S, yoyo: true, repeat: 3 }, 9.75);
-      wIn("#k4c3", 10.1);
-      sweep("#glowA", 9.0, 1.6);
-      ["#d1", "#d2", "#d3"].forEach((s, i) => popIcon(s, 8.9 + i * 0.06));
-      tl.fromTo("#dash .side", { opacity: 0, x: -18, z: -20 }, { opacity: 1, x: 0, z: 12, duration: 0.6, ease: E3, stagger: 0.06 }, 8.95);
-      wipe("#search", 9.05, 0.7); popIcon("#bellw", 9.25); popIcon("#avw", 9.3);
-      tl.fromTo("#video", { opacity: 0, clipPath: "inset(0 100% 0 0)", z: -30 }, { opacity: 1, clipPath: "inset(0 0% 0 0)", z: 14, duration: 0.85, ease: E3 }, 9.1);
-      tl.fromTo("#video .live", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.45, ease: E3 }, 9.55);
-      rise("#dtitle", 9.6); lay("#dsub", 9.8, 10);
-      tl.fromTo("#vfill", { scaleX: 0 }, { scaleX: 0.7, duration: 5.6, ease: "none" }, 9.6);
-      tl.fromTo("#vthumb", { x: 0, opacity: 0 }, { x: 175, opacity: 1, duration: 5.6, ease: "none" }, 9.6);
-      tl.fromTo(["#pt1", "#pt2", "#pt3"], { opacity: 0, scale: 0.7, x: 20, z: -20 }, { opacity: 1, scale: 1, x: 0, z: 14, duration: 0.6, ease: E3, stagger: 0.25 }, 10.05);
-      popIcon("#livei", 9.05); rise("#livet", 9.1); lay("#lives", 9.3, 8); lay("#livew", 9.4, 8); popIcon("#livebtn", 9.55);
-      leave("dash", 10.95, pDash, { ex: 1900, ez: 300, ery: -25 });
-      leave("live", 10.95, pLive, { ex: -1800, ez: 300 });
-      lOut("#k4c1", 10.9); lOut("#k4c2", 10.94); wOut("#k4c3", 10.92);
-      tl.to("#livedot", { scale: 0, duration: 0.3, ease: IN }, 10.95);
-      streak(11.0, 1);
+      /* S4b · “cursos especializados” (12.92–14.22) */
+      const pList = enter("list", 12.9, { x: 640, y: 560, s: 1.22, rx: 10, ry: 22, fx: -900, fry: 40, fz: -600, d: 0.9, hold: 0.35, dry: -4 });
+      lIn("#k4b1", 12.95, 0.045); lIn("#k4b2", 13.15, 0.025);
+      ["#r1", "#r2", "#r3", "#r4"].forEach((s, i) => lay(s, 13.15 + i * 0.1, 20, 16));
+      tl.to("#r1", { scale: 1.05, duration: 0.3, ease: S, yoyo: true, repeat: 1 }, 13.5);
+      leave("list", 14.15, pList, { ey: 1300, erx: -35 });
+      lOut("#k4b1", 14.1); lOut("#k4b2", 14.13, 0.01);
 
-      /* S5 · “contenidos en constante actualización” (11.18–13.16) */
-      tl.fromTo("#k5", { opacity: 0 }, { opacity: 1, duration: 0.2, ease: S }, 11.05);
-      tl.fromTo("#tile5", { scale: 0.4, rotation: -90 }, { scale: 1, rotation: 0, duration: 0.8, ease: E4 }, 11.1);
-      tl.fromTo("#ref5", { rotation: 0, transformOrigin: "50% 50%" }, { rotation: 540, duration: 1.8, ease: S }, 11.4);
-      wIn("#k5a", 11.15);
-      tl.fromTo("#k5b .col", { yPercent: 0 }, { yPercent: -75, duration: 0.8, ease: E3, stagger: 0.035 }, 11.35);
-      tl.to("#k5", { scale: 1.25, opacity: 0, filter: "blur(10px)", duration: 0.4, ease: "power2.in", transformOrigin: "50% 50%" }, 13.15);
+      /* S4c · “clases en vivo con expertos” (14.53–16.16) */
+      const pDash = enter("dash", 14.2, { x: 1200, y: 590, s: 1.12, rx: 10, ry: -20, d: 1.0, hold: 1.0 });
+      const pLive = enter("live", 14.4, { x: 880, y: 270, s: 1.15, rx: 12, ry: -14, z: 260, fx: -500, fz: -900, d: 0.9, hold: 0.9 });
+      lIn("#k4c1", 14.5, 0.04); lIn("#k4c2", 14.75, 0.04);
+      tl.fromTo("#livedot", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.45, ease: E3 }, 15.1);
+      tl.to("#livedot", { scale: 1.22, duration: 0.28, ease: S, yoyo: true, repeat: 1 }, 15.5);
+      wIn("#k4c3", 15.55);
+      sweep("#glowA", 14.6, 1.5);
+      ["#d1", "#d2", "#d3"].forEach((s, i) => popIcon(s, 14.48 + i * 0.06));
+      tl.fromTo("#dash .side", { opacity: 0, x: -18, z: -20 }, { opacity: 1, x: 0, z: 12, duration: 0.6, ease: E3, stagger: 0.06 }, 14.53);
+      wipe("#search", 14.63, 0.7); popIcon("#bellw", 14.83); popIcon("#avw", 14.88);
+      tl.fromTo("#video", { opacity: 0, clipPath: "inset(0 100% 0 0)", z: -30 }, { opacity: 1, clipPath: "inset(0 0% 0 0)", z: 14, duration: 0.85, ease: E3 }, 14.68);
+      tl.fromTo("#video .live", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.45, ease: E3 }, 15.13);
+      rise("#dtitle", 15.18); lay("#dsub", 15.38, 10);
+      tl.fromTo("#vfill", { scaleX: 0 }, { scaleX: 0.7, duration: 6.3, ease: "none" }, 15.18);
+      tl.fromTo("#vthumb", { x: 0, opacity: 0 }, { x: 175, opacity: 1, duration: 6.3, ease: "none" }, 15.18);
+      tl.fromTo(["#pt1", "#pt2", "#pt3"], { opacity: 0, scale: 0.7, x: 20, z: -20 }, { opacity: 1, scale: 1, x: 0, z: 14, duration: 0.6, ease: E3, stagger: 0.22 }, 15.4);
+      popIcon("#livei", 14.6); rise("#livet", 14.65); lay("#lives", 14.85, 8); lay("#livew", 14.95, 8); popIcon("#livebtn", 15.1);
+      leave("dash", 16.2, pDash, { ex: 1900, ez: 300, ery: -25 });
+      leave("live", 16.2, pLive, { ex: -1800, ez: 300 });
+      lOut("#k4c1", 16.15); lOut("#k4c2", 16.18); wOut("#k4c3", 16.17);
+      tl.to("#livedot", { scale: 0, duration: 0.3, ease: IN }, 16.2);
+      streak(16.25, 1);
 
-      /* S6 · “Todo en una plataforma digital innovadora” (13.56–15.28) */
+      /* S5 · “y contenidos en constante actualización” (16.24–18.14) */
+      tl.fromTo("#k5", { opacity: 0 }, { opacity: 1, duration: 0.2, ease: S }, 16.25);
+      tl.fromTo("#tile5", { scale: 0.4, rotation: -90 }, { scale: 1, rotation: 0, duration: 0.8, ease: E4 }, 16.3);
+      tl.fromTo("#ref5", { rotation: 0, transformOrigin: "50% 50%" }, { rotation: 540, duration: 1.8, ease: S }, 16.6);
+      wIn("#k5a", 16.35);
+      tl.fromTo("#k5b .col", { yPercent: 0 }, { yPercent: -75, duration: 0.8, ease: E3, stagger: 0.035 }, 16.85);
+      tl.to("#k5", { scale: 1.25, opacity: 0, filter: "blur(10px)", duration: 0.4, ease: "power2.in", transformOrigin: "50% 50%" }, 18.4);
+
+      /* S6 · “Todo desde una plataforma e-learning avanzada” (18.75–21.43) */
       const pDash2 = pose("dash", { x: 830, y: 650, s: 1.02, rx: 10, ry: 16 });
-      tl.to("#dash", { ...pDash2, duration: 0.9, ease: E4 }, 13.45);
-      tl.to("#dash", { rotationY: 20, z: 50, duration: 1.0, ease: "none" }, 14.35);
-      const pPhone = enter("phone", 13.65, { x: 1440, y: 655, s: 1.12, rx: 8, ry: -16, z: 180, fy: 900, fz: -300, frx: 30, d: 0.95, hold: 0.6 });
-      wIn("#k6a", 13.5); lIn("#k6b", 13.7, 0.03);
-      rise("#ph1", 14.0); popIcon("#ph2", 14.05); lay("#ph3", 14.1, 10);
-      ["#ph4", "#ph5", "#ph6"].forEach((s, i) => lay(s, 14.2 + i * 0.08, 8));
-      lay("#pi1", 14.35, 14); lay("#pi2", 14.5, 14); lay("#ph7", 14.65, 8);
-      leave("dash", 15.3, { ...pDash2, rotationY: 20, z: 50 }, { ex: -2100 });
-      leave("phone", 15.3, pPhone, { ex: 1500 });
-      lOut("#k6b", 15.25); wOut("#k6a", 15.25);
-      streak(15.32, -1);
+      tl.to("#dash", { ...pDash2, duration: 0.9, ease: E4 }, 18.55);
+      tl.to("#dash", { rotationY: 20, z: 50, duration: 2.0, ease: "none" }, 19.45);
+      const pPhone = enter("phone", 18.75, { x: 1440, y: 655, s: 1.12, rx: 8, ry: -16, z: 180, fy: 900, fz: -300, frx: 30, d: 0.95, hold: 1.75 });
+      wIn("#k6a", 18.75); lIn("#k6b", 20.2, 0.03);
+      rise("#ph1", 19.1); popIcon("#ph2", 19.15); lay("#ph3", 19.2, 10);
+      ["#ph4", "#ph5", "#ph6"].forEach((s, i) => lay(s, 19.3 + i * 0.08, 8));
+      lay("#pi1", 19.45, 14); lay("#pi2", 19.6, 14); lay("#ph7", 19.75, 8);
+      leave("dash", 21.5, { ...pDash2, rotationY: 20, z: 50 }, { ex: -2100 });
+      leave("phone", 21.5, pPhone, { ex: 1500 });
+      lOut("#k6b", 21.45); wOut("#k6a", 21.45);
+      streak(21.52, -1);
 
-      /* S7 · “diseñada para que aprendas a tu ritmo” (15.47–16.87) */
-      const pProg = enter("prog", 15.4, { x: 1270, y: 560, s: 1.6, rx: 10, ry: -20, d: 0.95, hold: 0.5 });
-      wIn("#k7a", 15.45); lIn("#k7b", 15.55, 0.06, 0.75);
-      tl.to("#k7b .ch", { y: -26, duration: 0.3, ease: S, yoyo: true, repeat: 1, stagger: 0.07 }, 16.2);
-      rise("#progt", 15.6);
-      tl.fromTo("#ring", { opacity: 0, scale: 0.6, z: -20 }, { opacity: 1, scale: 1, z: 18, duration: 0.6, ease: E3 }, 15.65);
-      tl.fromTo("#ringarc", { strokeDashoffset: 1 }, { strokeDashoffset: 0.25, duration: 1.0, ease: S }, 15.8);
+      /* S7 · “diseñada para que aprendas a tu ritmo” (21.8–23.82) */
+      const pProg = enter("prog", 21.6, { x: 1270, y: 560, s: 1.6, rx: 10, ry: -20, d: 0.95, hold: 1.3 });
+      wIn("#k7a", 22.45); lIn("#k7b", 23.0, 0.06, 0.75);
+      tl.to("#k7b .ch", { y: -26, duration: 0.25, ease: S, yoyo: true, repeat: 1, stagger: 0.05 }, 23.45);
+      rise("#progt", 21.8);
+      tl.fromTo("#ring", { opacity: 0, scale: 0.6, z: -20 }, { opacity: 1, scale: 1, z: 18, duration: 0.6, ease: E3 }, 21.85);
+      tl.fromTo("#ringarc", { strokeDashoffset: 1 }, { strokeDashoffset: 0.25, duration: 1.0, ease: S }, 22.0);
       const cnt = { v: 0 };
-      tl.fromTo(cnt, { v: 0 }, { v: 75, duration: 1.0, ease: S, onUpdate: () => { document.getElementById("pct").textContent = Math.round(cnt.v) + "%"; } }, 15.8);
-      lay("#chkbox", 15.8, 6); lay("#k1", 16.0, 10); lay("#k2", 16.15, 10); lay("#k3", 16.3, 10);
-      leave("prog", 16.9, pProg, { ey: -1200, erx: 40 });
-      lOut("#k7b", 16.85, 0.025); wOut("#k7a", 16.85);
+      tl.fromTo(cnt, { v: 0 }, { v: 75, duration: 1.0, ease: S, onUpdate: () => { document.getElementById("pct").textContent = Math.round(cnt.v) + "%"; } }, 22.0);
+      lay("#chkbox", 22.0, 6); lay("#k1", 22.2, 10); lay("#k2", 22.35, 10); lay("#k3", 22.5, 10);
+      leave("prog", 23.9, pProg, { ey: -1200, erx: 40 });
+      lOut("#k7b", 23.95, 0.025); wOut("#k7a", 23.88);
 
-      /* S8 · “desarrolles nuevas habilidades … vanguardia” (17.08–18.63) */
-      const pChart = enter("chart", 17.0, { x: 720, y: 430, s: 1.4, rx: 10, ry: 18, fx: -1200, fry: 30, fz: -500, d: 0.9, hold: 0.75, dry: -4 });
-      const pBot = enter("bot", 17.2, { x: 740, y: 790, s: 1.0, rx: 12, ry: 18, z: 60, fy: 800, fz: -400, d: 0.9, hold: 0.55, dry: -4 });
-      wIn("#k8a", 17.05); lIn("#k8b", 17.7, 0.035);
-      tl.fromTo("#k8bar", { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: E3 }, 18.05);
-      popIcon("#chi", 17.2); rise("#cht", 17.25); lay("#chs", 17.45, 8); popIcon("#chbtn", 17.55);
-      tl.fromTo("#wavep", { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 1.1, ease: S }, 17.3);
-      ["#wd1", "#wd2", "#wd3"].forEach((s, i) => tl.fromTo(s, { opacity: 0, scale: 0.4, transformOrigin: "50% 50%" }, { opacity: 1, scale: 1, duration: 0.4, ease: E3 }, 17.6 + i * 0.25));
-      ["#bc1", "#bc2", "#bc3", "#bc4"].forEach((s, i) => lay(s, 17.4 + i * 0.1, 22));
-      tl.fromTo("#bot .sep", { opacity: 0, scaleY: 0 }, { opacity: 1, scaleY: 1, duration: 0.6, ease: E3, stagger: 0.1 }, 17.45);
-      leave("chart", 18.65, pChart, { ex: -2200 });
-      leave("bot", 18.65, pBot, { ey: 1000 });
-      lOut("#k8b", 18.6); wOut("#k8a", 18.6);
-      tl.to("#k8bar", { scaleX: 0, transformOrigin: "right center", duration: 0.35, ease: IN }, 18.66);
+      /* S8 · “y te mantengas siempre a la vanguardia” + micro-acción (23.91–25.52) */
+      const pChart = enter("chart", 23.85, { x: 720, y: 430, s: 1.4, rx: 10, ry: 18, fx: -1200, fry: 30, fz: -500, d: 0.9, hold: 0.9, dry: -4 });
+      const pBot = enter("bot", 24.05, { x: 740, y: 790, s: 1.0, rx: 12, ry: 18, z: 60, fy: 800, fz: -400, d: 0.9, hold: 0.65, dry: -4 });
+      wIn("#k8a", 24.4); lIn("#k8b", 24.75, 0.035);
+      tl.fromTo("#k8bar", { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: E3 }, 25.1);
+      popIcon("#chi", 24.05); rise("#cht", 24.1); lay("#chs", 24.3, 8); popIcon("#chbtn", 24.4);
+      tl.fromTo("#wavep", { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 1.0, ease: S }, 24.15);
+      ["#wd1", "#wd2", "#wd3"].forEach((s, i) => tl.fromTo(s, { opacity: 0, scale: 0.4, transformOrigin: "50% 50%" }, { opacity: 1, scale: 1, duration: 0.4, ease: E3 }, 24.45 + i * 0.22));
+      ["#bc1", "#bc2", "#bc3", "#bc4"].forEach((s, i) => lay(s, 24.25 + i * 0.1, 22));
+      tl.fromTo("#bot .sep", { opacity: 0, scaleY: 0 }, { opacity: 1, scaleY: 1, duration: 0.6, ease: E3, stagger: 0.1 }, 24.3);
+      tl.to("#chbtn", { scale: 1.18, duration: 0.25, ease: S, yoyo: true, repeat: 1 }, 25.1);
+      tl.to("#chev", { x: 6, duration: 0.15, ease: S, yoyo: true, repeat: 1 }, 25.15);
+      leave("chart", 25.65, pChart, { ex: -2200 });
+      leave("bot", 25.65, pBot, { ey: 1000 });
+      lOut("#k8b", 25.6); wOut("#k8a", 25.6);
+      tl.to("#k8bar", { scaleX: 0, transformOrigin: "right center", duration: 0.3, ease: IN }, 25.62);
+      streak(25.7, 1);
 
-      /* S9 · “Porque el conocimiento nunca deja de evolucionar” — todo se reúne en una tarjeta plana */
-      tl.set("#tilt", { scale: 0.8, rotationX: 12, rotationY: -14, rotationZ: -1.2 }, 19.1);
-      ["dash", "dip", "list", "live", "prog", "phone", "bot", "chart"].forEach((id, i) =>
-        tl.to("#" + id, { x: 0, y: 0, z: ZH[id], scale: 1, rotationX: 0, rotationY: 0, rotationZ: 0, duration: 0.85, ease: E3 }, 19.1 + i * 0.06));
-      tl.to("#tilt", { rotationY: -10, rotationX: 9, duration: 2.2, ease: S }, 19.2);
-      tl.to(["#dash", "#dip", "#list", "#live", "#prog", "#phone", "#bot", "#chart"], { z: 2, duration: 0.9, ease: S }, 19.95);
-      tl.to(".lay", { z: 2, duration: 0.9, ease: S }, 19.95);
-      tl.fromTo("#pulse", { opacity: 0, scale: 0.2 }, { opacity: 0.75, scale: 4.2, duration: 1.4, ease: E3 }, 20.15);
-      tl.to("#pulse", { opacity: 0, duration: 0.5, ease: S, overwrite: "auto" }, 20.95);
-      sweep("#glowA", 20.0, 1.5);
-      tl.to("#fly", { z: -350, duration: 1.1, ease: S }, 20.3);
-      tl.fromTo("#glow9", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.6, ease: E3 }, 20.2);
-      wIn("#k9a", 20.2);
-      tl.fromTo("#k9b .ch", { yPercent: 70, scale: 0.4, opacity: 0 }, { yPercent: 0, scale: 1, opacity: 1, duration: 0.6, ease: E4, stagger: 0.04 }, 20.55);
-      tl.to("#fly", { z: -1200, duration: 0.8, ease: IN }, 21.41);
-      tl.to("#cam", { opacity: 0, duration: 0.55, ease: S }, 21.4);
-      lOut("#k9b", 21.45, 0.015); wOut("#k9a", 21.45);
-      tl.to("#glow9", { opacity: 0, duration: 0.4, ease: S }, 21.6);
-
-      /* S10 · “y tú tampoco deberías hacerlo” + micro-acción (flecha que avanza) */
-      lIn("#k10a", 22.0, 0.04, 0.6); lIn("#k10b", 22.12, 0.06, 0.65);
-      wIn("#k10c", 22.45, 0.09);
-      tl.fromTo("#go", { scale: 0.5, opacity: 0, rotation: -40 }, { scale: 1, opacity: 1, rotation: 0, duration: 0.6, ease: E4 }, 22.3);
-      tl.to("#goA", { x: 16, duration: 0.18, ease: S, yoyo: true, repeat: 1 }, 22.75);
-      tl.to("#go", { scale: 1.08, duration: 0.2, ease: S }, 22.95);
-      tl.to("#goA", { x: 700, opacity: 0, duration: 0.35, ease: IN }, 23.15);
-      tl.to("#go", { scale: 0, opacity: 0, duration: 0.3, ease: IN }, 23.25);
-      streak(23.18, 1);
-      lOut("#k10a", 23.2); lOut("#k10b", 23.22); wOut("#k10c", 23.2);
-
-      /* S11 · logo letra por letra; los arcos al final */
+      /* S9 · “iLEARN, una nueva forma de aprender con Academia FLM” */
       const L = (id, t) => tl.fromTo(id, { opacity: 0, y: 40, scale: 0.86 }, { opacity: 1, y: 0, scale: 1, duration: 0.6, ease: E4 }, t);
-      L("#pi", 23.6); L("#pl", 23.76); L("#pr", 23.92); L("#pn", 24.08);
-      tl.fromTo("#pea", { opacity: 0 }, { opacity: 1, duration: 0.25, ease: S }, 24.25);
-      tl.fromTo("#peaI", { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", duration: 0.85, ease: E3 }, 24.25);
-      tl.fromTo("#slogan", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.6, ease: E3 }, 24.45);
-      tl.fromTo("#shine", { opacity: 1, backgroundPosition: "100% 0" }, { opacity: 1, backgroundPosition: "0% 0", duration: 0.9, ease: S }, 25.35);
-      tl.to("#shine", { opacity: 0, duration: 0.1 }, 26.3);
-      tl.to("#vig", { opacity: 0.5, duration: 1.0, ease: S }, 23.2);
+      L("#pi", 25.95); L("#pl", 26.08); L("#pr", 26.21); L("#pn", 26.34);
+      tl.fromTo("#pea", { opacity: 0 }, { opacity: 1, duration: 0.25, ease: S }, 26.45);
+      tl.fromTo("#peaI", { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", duration: 0.8, ease: E3 }, 26.45);
+      tl.fromTo("#pulse", { opacity: 0, scale: 0.2 }, { opacity: 0.6, scale: 4, duration: 1.3, ease: E3 }, 26.55);
+      tl.to("#pulse", { opacity: 0, duration: 0.5, ease: S, overwrite: "auto" }, 27.4);
+      wIn("#slogan", 26.85, 0.09);
+      tl.fromTo("#flmEnd", { opacity: 0, scale: 0.6, y: 20 }, { opacity: 1, scale: 1, y: 0, duration: 0.7, ease: E4 }, 28.4);
+      tl.fromTo("#shine", { opacity: 1, backgroundPosition: "100% 0" }, { opacity: 1, backgroundPosition: "0% 0", duration: 0.9, ease: S }, 29.7);
+      tl.to("#shine", { opacity: 0, duration: 0.1 }, 30.65);
+      tl.to("#vig", { opacity: 0.5, duration: 1.0, ease: S }, 25.7);
 
       window.__timelines["ilearn"] = tl;
       tl.seek(0);
