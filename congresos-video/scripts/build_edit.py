@@ -8,6 +8,7 @@
 Uso: python3 scripts/build_edit.py public/mi-video.mp4 analisis/mi-video-palabras.json src/data/edit.json
 """
 import json
+import os
 import subprocess
 import sys
 
@@ -145,6 +146,7 @@ for k, w in enumerate(words):
     if w["oe"] <= w["os"]:
         w["oe"] = w["os"] + 0.12
 
+os.makedirs(os.path.dirname(out_path) or ".", exist_ok=True)
 json.dump(
     {
         "fps": FPS,

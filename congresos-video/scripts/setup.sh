@@ -5,6 +5,8 @@ set -euo pipefail
 cd "$(dirname "$0")/.."
 MODELS="${WHISPER_MODELS:-$HOME/.cache/whisper-models}"
 
+mkdir -p analisis/mio out public
+
 # 1) Dependencias de Node (Remotion, transformers.js, DM Sans)
 [ -d node_modules ] || npm ci --no-audit --no-fund
 

@@ -5,7 +5,8 @@
 // El modelo se carga en local (Hugging Face no es accesible desde este entorno):
 // modelDir debe contener Xenova/whisper-small/… (paquete npm "sts-whisper-small").
 import { execFileSync } from "node:child_process";
-import { writeFileSync } from "node:fs";
+import { mkdirSync, writeFileSync } from "node:fs";
+import { dirname } from "node:path";
 import { env, pipeline } from "@huggingface/transformers";
 
 const [input, output, modelDir, language = "spanish"] = process.argv.slice(2);
@@ -54,5 +55,6 @@ const captions = result.chunks.map((c) => {
     confidence: null,
   };
 });
+mkdirSync(dirname(output), { recursive: true });
 writeFileSync(output, JSON.stringify(captions, null, 2));
 console.log(`${captions.length} palabras → ${output}`);
