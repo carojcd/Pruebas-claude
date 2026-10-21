@@ -29,6 +29,11 @@
       .arc .lp { inset: 0; }
       #arcA { left: -760px; bottom: -150px; }
       #arcB { right: -820px; top: -120px; }
+      .bgc { position: absolute; inset: 0; opacity: 0; }
+      #bgA { background: linear-gradient(160deg, #e6fff8 0%, #d6f2ff 55%, #eef0ff 100%); }
+      #bgB { background: linear-gradient(160deg, #eef3ff 0%, #d9e5ff 55%, #ece6ff 100%); }
+      #bgC { background: linear-gradient(160deg, #f5edff 0%, #e6e0ff 50%, #ffe8f2 100%); }
+      #bgD { background: linear-gradient(160deg, #e6fbff 0%, #d5f6ee 55%, #e6efff 100%); }
       #vig { background: radial-gradient(ellipse at 50% 50%, transparent 52%, rgba(90,120,190,.2) 100%); }
       #pulse { position: absolute; left: 540px; top: 960px; width: 600px; height: 600px; margin: -300px 0 0 -300px; border-radius: 50%; background: radial-gradient(circle, rgba(255,255,255,0) 52%, rgba(255,255,255,.95) 60%, rgba(37,207,255,.55) 64%, rgba(255,255,255,0) 72%); opacity: 0; }
 
@@ -157,15 +162,15 @@
       #go { position: absolute; left: 1330px; top: 330px; width: 190px; height: 190px; border-radius: 50%; background: linear-gradient(145deg, #3cf0d0, #25a9ff 50%, #7b5cff); display: flex; align-items: center; justify-content: center; color: #fff; box-shadow: 0 30px 60px -18px rgba(60,120,255,.6); }
       #goA { width: 76px; height: 76px; }
       #goA svg { stroke-width: 2.8; }
-      #livedot { position: absolute; left: 905px; top: 545px; width: 36px; height: 36px; border-radius: 50%; background: #ff4d6d; box-shadow: 0 0 0 10px rgba(255,77,109,.18); }
+      #livedot { position: absolute; left: 905px; top: 635px; width: 36px; height: 36px; border-radius: 50%; background: #ff4d6d; box-shadow: 0 0 0 10px rgba(255,77,109,.18); }
       #tile5 svg { width: 50%; height: 50%; stroke-width: 2; }
       #k8bar { position: absolute; left: 1165px; top: 612px; width: 600px; height: 8px; border-radius: 4px; background: linear-gradient(90deg, #0b9b93, #2a7de8, #6a4cff); transform-origin: left center; }
       #shine { position: absolute; inset: 0; -webkit-mask: url(assets/brand/academia-flm.png) 0 0 / 100% 100% no-repeat; mask: url(assets/brand/academia-flm.png) 0 0 / 100% 100% no-repeat;
         background: linear-gradient(105deg, transparent 42%, rgba(255,255,255,.9) 50%, transparent 58%); background-size: 300% 100%; background-position: 100% 0; opacity: 0; }
       /* ---------- 9:16 ---------- */
       #k24 { left: 0; right: 0; text-align: center; letter-spacing: -.05em; background: linear-gradient(90deg, #0b9b93, #2a7de8, #6a4cff); -webkit-background-clip: text; background-clip: text; color: transparent; }
-      #tile5 { position: absolute; left: 460px; top: 960px; width: 160px; height: 160px; border-radius: 46px; }
-      #capt { position: absolute; left: 440px; top: 1130px; width: 200px; height: 200px; border-radius: 58px; }
+      #tile5 { position: absolute; left: 460px; top: 890px; width: 160px; height: 160px; border-radius: 46px; }
+      #capt { position: absolute; left: 440px; top: 900px; width: 200px; height: 200px; border-radius: 58px; }
       #capt svg { width: 52%; height: 52%; stroke-width: 1.8; }
       #web { left: 520px; top: 190px; width: 760px; height: 440px; }
       #flmLogo { position: absolute; left: 90px; top: 480px; width: 900px; height: 900px; }
@@ -217,6 +222,7 @@
     <div id="root" data-composition-id="flm" data-start="0" data-duration="35" data-width="1080" data-height="1920">
       <!-- fondo (por detrás de tarjetas y logo) -->
       <div id="bg" data-layout-allow-overflow>
+        <div class="bgc" id="bgA"></div><div class="bgc" id="bgB"></div><div class="bgc" id="bgC"></div><div class="bgc" id="bgD"></div>
         <div id="halo"></div>
         <div class="blob" id="b1"></div><div class="blob" id="b2"></div><div class="blob" id="b3"></div><div class="blob" id="b4"></div>
         <div id="parts"></div>
@@ -227,54 +233,54 @@
       <!-- tipografía cinética (detrás de las tarjetas) -->
       <div id="type" data-layout-ignore>
         <div id="sc0">
-          <img id="flm0" src="assets/brand/academia-flm.png" alt="Academia FLM" style="position:absolute;left:250px;top:290px;width:580px;height:580px" />
-          <div class="kt c kick" id="k0a" style="top:800px;font-size:70px" data-split="words">te presenta</div>
-          <div class="kt c" id="k0b" style="top:890px;font-size:104px" data-split="grad">una nueva forma</div>
-          <div class="kt c" id="k0c" style="top:1020px;font-size:104px" data-split="ink">de aprender</div>
-          <div class="kt c kick" id="k0d" style="top:800px;font-size:70px" data-split="words">donde el conocimiento</div>
-          <div class="kt c" id="k0e" style="top:890px;font-size:170px" data-split="grad">nunca se</div>
-          <div class="kt c" id="k0f" style="top:1080px;font-size:170px" data-split="grad">detiene</div>
+          <img id="flm0" src="assets/brand/academia-flm.png" alt="Academia FLM" style="position:absolute;left:280px;top:330px;width:520px;height:520px" />
+          <div class="kt c kick" id="k0a" style="top:720px;font-size:70px" data-split="words">te presenta</div>
+          <div class="kt c" id="k0b" style="top:800px;font-size:104px" data-split="grad">una nueva forma</div>
+          <div class="kt c" id="k0c" style="top:930px;font-size:104px" data-split="ink">de aprender</div>
+          <div class="kt c kick" id="k0d" style="top:720px;font-size:70px" data-split="words">donde el conocimiento</div>
+          <div class="kt c" id="k0e" style="top:800px;font-size:170px" data-split="grad">nunca se</div>
+          <div class="kt c" id="k0f" style="top:990px;font-size:170px" data-split="grad">detiene</div>
         </div>
         <div id="sc1">
-          <div class="kt c kick" id="k1a" style="top:250px;font-size:74px" data-split="words">Estudia a tu ritmo</div>
-          <div class="kt c" id="k24" style="top:330px;font-size:440px;line-height:1">24</div>
-          <div class="kt c" id="k1b" style="top:800px;font-size:96px" data-split="ink">horas del día</div>
-          <div class="kt c" id="k1c" style="top:1700px;font-size:84px" data-split="grad">plataforma e-learning</div>
+          <div class="kt c kick" id="k1a" style="top:330px;font-size:74px" data-split="words">Estudia a tu ritmo</div>
+          <div class="kt c" id="k24" style="top:400px;font-size:380px;line-height:1">24</div>
+          <div class="kt c" id="k1b" style="top:790px;font-size:96px" data-split="ink">horas del día</div>
+          <div class="kt c" id="k1c" style="top:1520px;font-size:84px" data-split="grad">plataforma e-learning</div>
         </div>
         <div id="sc2">
-          <div class="kt c kick" id="k2a" style="top:210px;font-size:74px" data-split="words">Participa en</div>
-          <div class="kt c" id="k2b" style="top:290px;font-size:170px" data-split="ink">clases</div>
-          <div class="kt c" id="k2c" style="top:470px;font-size:170px" data-split="grad">en vivo</div>
+          <div class="kt c kick" id="k2a" style="top:320px;font-size:74px" data-split="words">Participa en</div>
+          <div class="kt c" id="k2b" style="top:390px;font-size:170px" data-split="ink">clases</div>
+          <div class="kt c" id="k2c" style="top:560px;font-size:170px" data-split="grad">en vivo</div>
           <div id="livedot"></div>
-          <div class="kt c" id="k2d" style="top:1650px;font-size:120px" data-split="grad">cada semana</div>
+          <div class="kt c" id="k2d" style="top:1490px;font-size:120px" data-split="grad">cada semana</div>
         </div>
         <div id="sc3r">
-          <div class="kt c kick" id="k3a" style="top:640px;font-size:74px" data-split="words">accede a nuevos</div>
-          <div class="kt c" id="k3b" style="top:720px;font-size:150px" data-split="roll">contenidos</div>
+          <div class="kt c kick" id="k3a" style="top:600px;font-size:74px" data-split="words">accede a nuevos</div>
+          <div class="kt c" id="k3b" style="top:680px;font-size:150px" data-split="roll">contenidos</div>
           <div class="tile g-teal" id="tile5"><svg class="i" id="ref5"><use href="#i-refresh"/></svg></div>
-          <div class="kt c kick" id="k3c" style="top:1240px;font-size:74px" data-split="words">cada</div>
-          <div class="kt c" id="k3d" style="top:1320px;font-size:230px" data-split="grad">3 meses</div>
+          <div class="kt c kick" id="k3c" style="top:1110px;font-size:74px" data-split="words">cada</div>
+          <div class="kt c" id="k3d" style="top:1190px;font-size:230px" data-split="grad">3 meses</div>
         </div>
         <div id="sc4">
-          <div class="kt c kick" id="k4a" style="top:150px;font-size:74px" data-split="words">Toma</div>
-          <div class="kt c" id="k4b" style="top:230px;font-size:150px" data-split="grad">Diplomados</div>
-          <div class="kt c" id="k4c" style="top:400px;font-size:110px" data-split="ink">y cursos</div>
-          <div class="kt c kick" id="k4d" style="top:1330px;font-size:74px" data-split="words">aprende con</div>
-          <div class="kt c" id="k4e" style="top:1410px;font-size:130px" data-split="ink">docentes</div>
-          <div class="kt c" id="k4f" style="top:1560px;font-size:120px" data-split="grad">especializados</div>
+          <div class="kt c kick" id="k4a" style="top:320px;font-size:74px" data-split="words">Toma</div>
+          <div class="kt c" id="k4b" style="top:390px;font-size:150px" data-split="grad">Diplomados</div>
+          <div class="kt c" id="k4c" style="top:550px;font-size:110px" data-split="ink">y cursos</div>
+          <div class="kt c kick" id="k4d" style="top:1200px;font-size:74px" data-split="words">aprende con</div>
+          <div class="kt c" id="k4e" style="top:1270px;font-size:130px" data-split="ink">docentes</div>
+          <div class="kt c" id="k4f" style="top:1410px;font-size:120px" data-split="grad">especializados</div>
         </div>
         <div id="sc5">
-          <div class="kt c kick" id="k5a" style="top:250px;font-size:74px" data-split="words">Disfruta de</div>
-          <div class="kt c" id="k5b" style="top:330px;font-size:180px" data-split="grad">webinars</div>
-          <div class="kt c" id="k5c" style="top:1430px;font-size:120px" data-split="ink">material</div>
-          <div class="kt c" id="k5d" style="top:1570px;font-size:150px" data-split="grad">exclusivo</div>
+          <div class="kt c kick" id="k5a" style="top:320px;font-size:74px" data-split="words">Disfruta de</div>
+          <div class="kt c" id="k5b" style="top:390px;font-size:180px" data-split="grad">webinars</div>
+          <div class="kt c" id="k5c" style="top:1140px;font-size:120px" data-split="ink">material</div>
+          <div class="kt c" id="k5d" style="top:1270px;font-size:150px" data-split="grad">exclusivo</div>
         </div>
         <div id="sc6">
-          <div class="kt c kick" id="k6a" style="top:250px;font-size:74px" data-split="words">Y sigue</div>
-          <div class="kt c" id="k6b" style="top:330px;font-size:118px" data-split="grad">actualizándote</div>
+          <div class="kt c kick" id="k6a" style="top:320px;font-size:74px" data-split="words">Y sigue</div>
+          <div class="kt c" id="k6b" style="top:390px;font-size:118px" data-split="grad">actualizándote</div>
           <div class="tile g-violet" id="capt"><svg class="i"><use href="#i-cap"/></svg></div>
-          <div class="kt c kick" id="k6c" style="top:1420px;font-size:74px" data-split="words">incluso después de</div>
-          <div class="kt c" id="k6d" style="top:1500px;font-size:170px" data-split="grad">graduarte</div>
+          <div class="kt c kick" id="k6c" style="top:1150px;font-size:74px" data-split="words">incluso después de</div>
+          <div class="kt c" id="k6d" style="top:1230px;font-size:170px" data-split="grad">graduarte</div>
         </div>
       </div>
 
@@ -498,9 +504,24 @@
       tl.fromTo("#parts", { opacity: 0 }, { opacity: 1, duration: 2, ease: S }, 0.3);
       tl.set("#tilt", { scale: 1, rotationX: 0, rotationY: 0, rotationZ: 0, transformOrigin: "50% 50%" }, 0);
 
+
+      /* fondos dinámicos: el color cambia por escena y todo deriva despacio */
+      const BG = [["#bgA", 0], ["#bgB", 6.75], ["#bgC", 12.0], ["#bgD", 14.7], ["#bgB", 19.1], ["#bgC", 23.0], ["#bgD", 25.9], ["#bgA", 29.0]];
+      ["#bgA", "#bgB", "#bgC", "#bgD"].forEach((id) => tl.set(id, { opacity: 0 }, 0));
+      BG.forEach(([id, t], i) => {
+        tl.to(id, { opacity: 1, duration: i ? 0.9 : 1.2, ease: S }, t);
+        const nx = BG[i + 1];
+        if (nx && nx[0] !== id) tl.to(id, { opacity: 0, duration: 0.9, ease: S }, nx[1] + 0.3);
+      });
+      tl.to("#b1", { x: 160, y: 140, duration: 7, ease: S, yoyo: true, repeat: 4 }, 0);
+      tl.to("#b2", { x: -180, y: 220, duration: 8.5, ease: S, yoyo: true, repeat: 3 }, 0);
+      tl.to("#b3", { x: -140, y: -200, duration: 6.5, ease: S, yoyo: true, repeat: 4 }, 0);
+      tl.to("#b4", { x: 200, y: -160, duration: 9, ease: S, yoyo: true, repeat: 3 }, 0);
+      tl.to("#halo", { x: 120, y: -90, duration: 8, ease: S, yoyo: true, repeat: 3 }, 0);
+
       /* S0 · “Academia FLM te presenta una nueva forma de aprender, donde el conocimiento nunca se detiene” (0.5–6.56) */
       tl.fromTo("#flm0", { opacity: 0, scale: 0.7, filter: "blur(14px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 1.0, ease: E4 }, 0.3);
-      tl.to("#flm0", { y: -200, scale: 0.6, duration: 0.9, ease: "power3.inOut" }, 1.75);
+      tl.to("#flm0", { y: -150, scale: 0.55, duration: 0.9, ease: "power3.inOut" }, 1.75);
       wIn("#k0a", 2.0);
       lIn("#k0b", 2.6, 0.035); lIn("#k0c", 3.15, 0.04);
       lOut("#k0b", 4.2); lOut("#k0c", 4.22); wOut("#k0a", 4.2);
@@ -518,7 +539,7 @@
       const c24 = { v: 0 }, k24 = document.getElementById("k24");
       tl.fromTo(c24, { v: 0 }, { v: 24, duration: 1.0, ease: "power2.out", onUpdate: () => { k24.textContent = Math.round(c24.v); } }, 7.9);
       lIn("#k1b", 8.55, 0.03);
-      const pPhone = enter("phone", 9.8, { x: 540, y: 1330, s: 1.4, rx: 8, ry: -12, z: 120, fy: 900, fz: -300, frx: 30, d: 0.95, hold: 1.1 });
+      const pPhone = enter("phone", 9.8, { x: 540, y: 1230, s: 1.2, rx: 8, ry: -12, z: 120, fy: 900, fz: -300, frx: 30, d: 0.95, hold: 1.1 });
       lay("#ph0", 10.0, 6); rise("#ph1", 10.1); popIcon("#ph2", 10.15); lay("#ph3", 10.2, 10);
       ["#ph4", "#ph5", "#ph6"].forEach((s, i) => lay(s, 10.3 + i * 0.08, 8));
       lay("#pi1", 10.45, 14); lay("#pi2", 10.6, 14); lay("#ph7", 10.75, 8);
@@ -528,11 +549,11 @@
       lOut("#k1b", 11.85); lOut("#k1c", 11.88);
 
       /* S2 · “Participa en clases en vivo cada semana” (12.22–14.52) */
-      const pDash = enter("dash", 12.15, { x: 540, y: 1320, s: 1.15, rx: 10, ry: -16, d: 1.0, hold: 1.5 });
-      const pLive = enter("live", 12.4, { x: 600, y: 900, s: 1.25, rx: 12, ry: -12, z: 220, fx: -500, fz: -900, d: 0.9, hold: 1.35 });
+      const pDash = enter("dash", 12.15, { x: 540, y: 1230, s: 1.05, rx: 10, ry: -16, d: 1.0, hold: 1.5 });
+      const pLive = enter("live", 12.4, { x: 600, y: 860, s: 1.2, rx: 12, ry: -12, z: 220, fx: -500, fz: -900, d: 0.9, hold: 1.35 });
       wIn("#k2a", 12.15); lIn("#k2b", 12.3, 0.04); lIn("#k2c", 12.55, 0.04);
       tl.fromTo("#livedot", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.45, ease: E3 }, 13.0);
-      tl.to("#livedot", { scale: 1.22, duration: 0.28, ease: S, yoyo: true, repeat: 1 }, 13.35);
+      tl.to("#livedot", { scale: 1.22, duration: 0.25, ease: S, yoyo: true, repeat: 1 }, 13.46);
       lIn("#k2d", 13.8, 0.035);
       sweep("#glowA", 12.5, 1.4);
       ["#d1", "#d2", "#d3"].forEach((s, i) => popIcon(s, 12.43 + i * 0.06));
@@ -551,7 +572,7 @@
       tl.to("#livedot", { scale: 0, duration: 0.3, ease: IN }, 14.7);
 
       /* S3 · “Con tu suscripción trimestral, accede a nuevos contenidos cada 3 meses” (14.89–18.84) */
-      const pPill = enter("pill", 14.8, { x: 540, y: 420, s: 1.6, rx: 16, ry: 0, d: 1.0, hold: 2.95, dry: 0 });
+      const pPill = enter("pill", 14.8, { x: 540, y: 400, s: 1.6, rx: 16, ry: 0, d: 1.0, hold: 2.95, dry: 0 });
       rise("#pilltxt", 15.05);
       ["#pd1", "#pd2", "#pd3"].forEach((s, i) => popIcon(s, 15.3 + i * 0.25));
       tl.fromTo("#sc3r", { opacity: 0 }, { opacity: 1, duration: 0.2, ease: S }, 16.1);
@@ -565,7 +586,7 @@
 
       /* S4 · “Toma diplomados y cursos, y aprende con docentes especializados” (19.33–22.78) */
       wIn("#k4a", 19.25); lIn("#k4b", 19.4, 0.035); lIn("#k4c", 19.9, 0.04);
-      const pDip = enter("dip", 19.35, { x: 540, y: 935, s: 1.5, rx: 12, ry: -14, fy: 900, fz: -600, frx: 30, d: 0.95, hold: 2.5, dry: 6 });
+      const pDip = enter("dip", 19.35, { x: 540, y: 930, s: 1.3, rx: 12, ry: -14, fy: 900, fz: -600, frx: 30, d: 0.95, hold: 2.5, dry: 6 });
       rise("#diptitle", 19.6); popIcon("#dipbtn", 19.85); lay("#dipall", 19.95, 8);
       ["#cs1", "#cs2", "#cs3"].forEach((s, i) => lay(s, 19.6 + i * 0.15, 22));
       tl.fromTo("#cs1 .bar b, #cs2 .bar b, #cs3 .bar b", { scaleX: 0 }, { scaleX: 1, duration: 0.7, ease: E3, stagger: 0.12 }, 20.0);
@@ -575,7 +596,7 @@
 
       /* S5 · “Disfruta de webinars y material exclusivo” (23.24–25.73) */
       wIn("#k5a", 23.2); lIn("#k5b", 23.35, 0.04);
-      const pWeb = enter("web", 23.3, { x: 540, y: 1060, s: 1.15, rx: 10, ry: 14, fx: 900, fry: 40, fz: -600, d: 0.95, hold: 1.65, dry: -4 });
+      const pWeb = enter("web", 23.3, { x: 540, y: 860, s: 1.05, rx: 10, ry: 14, fx: 900, fry: 40, fz: -600, d: 0.95, hold: 1.65, dry: -4 });
       tl.fromTo("#wv", { opacity: 0, clipPath: "inset(0 100% 0 0)", z: -30 }, { opacity: 1, clipPath: "inset(0 0% 0 0)", z: 14, duration: 0.8, ease: E3 }, 23.5);
       popIcon("#wbadge", 23.9); popIcon("#wplay", 24.0); lay("#wmat", 24.55, 16);
       lIn("#k5c", 24.4, 0.035); lIn("#k5d", 24.7, 0.035);
@@ -584,7 +605,7 @@
 
       /* S6 · “Y sigue actualizándote, incluso después de graduarte” (26.02–28.94) */
       wIn("#k6a", 26.0); lIn("#k6b", 26.15, 0.025);
-      const pProg = enter("prog", 26.1, { x: 540, y: 870, s: 1.6, rx: 10, ry: -14, d: 0.95, hold: 1.9 });
+      const pProg = enter("prog", 26.1, { x: 540, y: 720, s: 1.5, rx: 10, ry: -14, d: 0.95, hold: 1.9 });
       rise("#progt", 26.3);
       tl.fromTo("#ring", { opacity: 0, scale: 0.6, z: -20 }, { opacity: 1, scale: 1, z: 18, duration: 0.6, ease: E3 }, 26.35);
       tl.fromTo("#ringarc", { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 1.2, ease: S }, 26.5);
