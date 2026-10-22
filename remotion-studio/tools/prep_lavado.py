@@ -15,18 +15,21 @@ def mux(n, vid):
     wav = f'{OUT}/a{n}.wav'
     subprocess.run(['ffmpeg','-v','error','-y','-i',vid,'-i',wav,'-c:v','copy','-c:a','aac','-b:a','192k','-shortest','-movflags','+faststart',f'{OUT}/p{n}.mp4'],check=True); os.remove(vid)
 
+ONLY = [int(x) for x in os.environ.get('ONLY', '').split(',') if x]   # p. ej. ONLY=2 para rehacer solo el video 2
 for n in (1, 3):
+    if ONLY and n not in ONLY: continue
     a, b = CUTS[n]; audio(n)
     subprocess.run(['ffmpeg','-v','error','-y','-ss',str(a),'-t',str(b-a),'-i',f'{SRC}/v{n}.mp4','-an',
         '-vf',f'fps={FPS},scale={W}:{H}:flags=lanczos,unsharp=5:5:0.7:5:5:0.0','-c:v','libx264','-preset','medium','-crf','12','-pix_fmt','yuv420p',f'{OUT}/_v{n}.mp4'],check=True)
     mux(n, f'{OUT}/_v{n}.mp4')
 
 # --- video 2: recorte 9:16 con seguimiento
+if ONLY and 2 not in ONLY: sys.exit(0)
 audio(2); a, b = CUTS[2]
 track = json.load(open(os.path.join(os.path.dirname(__file__), 'track_v2.json')))
 cap = cv2.VideoCapture(f'{SRC}/v2.mp4'); sw, sh = int(cap.get(3)), int(cap.get(4)); sfps = cap.get(5)
 cw = sh * 9 / 16; sc = H / sh                       # 324 px de ancho -> 1080
-BIAS = -28                                           # deja más aire hacia las manos (lado izquierdo)
+BIAS = 0                                           # deja más aire hacia las manos (lado izquierdo)
 enc = subprocess.Popen(['ffmpeg','-v','error','-y','-f','rawvideo','-pix_fmt','bgr24','-s',f'{W}x{H}','-r',str(FPS),'-i','-',
     '-vf','unsharp=5:5:0.8:5:5:0.0','-c:v','libx264','-preset','medium','-crf','12','-pix_fmt','yuv420p',f'{OUT}/_v2.mp4'], stdin=subprocess.PIPE)
 nout = int((b - a) * FPS)
