@@ -34,6 +34,11 @@
       #bgB { background: linear-gradient(160deg, #eef3ff 0%, #d9e5ff 55%, #ece6ff 100%); }
       #bgC { background: linear-gradient(160deg, #f5edff 0%, #e6e0ff 50%, #ffe8f2 100%); }
       #bgD { background: linear-gradient(160deg, #e6fbff 0%, #d5f6ee 55%, #e6efff 100%); }
+      #bgN1 { background: linear-gradient(160deg, #0a1433 0%, #141c52 55%, #22104a 100%); }
+      #bgN2 { background: linear-gradient(160deg, #04202e 0%, #0b2852 55%, #1a1450 100%); }
+      .dk .kt { color: #fff; }
+      .dk .kick { color: rgba(226,236,255,.82); }
+      .dk #k24 { background: linear-gradient(90deg, #3cf0d0, #5cc8ff, #a58bff); -webkit-background-clip: text; background-clip: text; }
       #vig { background: radial-gradient(ellipse at 50% 50%, transparent 52%, rgba(90,120,190,.2) 100%); }
       #pulse { position: absolute; left: 540px; top: 960px; width: 600px; height: 600px; margin: -300px 0 0 -300px; border-radius: 50%; background: radial-gradient(circle, rgba(255,255,255,0) 52%, rgba(255,255,255,.95) 60%, rgba(37,207,255,.55) 64%, rgba(255,255,255,0) 72%); opacity: 0; }
 
@@ -222,7 +227,7 @@
     <div id="root" data-composition-id="flm" data-start="0" data-duration="35" data-width="1080" data-height="1920">
       <!-- fondo (por detrás de tarjetas y logo) -->
       <div id="bg" data-layout-allow-overflow>
-        <div class="bgc" id="bgA"></div><div class="bgc" id="bgB"></div><div class="bgc" id="bgC"></div><div class="bgc" id="bgD"></div>
+        <div class="bgc" id="bgA"></div><div class="bgc" id="bgB"></div><div class="bgc" id="bgC"></div><div class="bgc" id="bgD"></div><div class="bgc" id="bgN1"></div><div class="bgc" id="bgN2"></div>
         <div id="halo"></div>
         <div class="blob" id="b1"></div><div class="blob" id="b2"></div><div class="blob" id="b3"></div><div class="blob" id="b4"></div>
         <div id="parts"></div>
@@ -241,7 +246,7 @@
           <div class="kt c" id="k0e" style="top:800px;font-size:170px" data-split="grad">nunca se</div>
           <div class="kt c" id="k0f" style="top:990px;font-size:170px" data-split="grad">detiene</div>
         </div>
-        <div id="sc1">
+        <div id="sc1" class="dk">
           <div class="kt c kick" id="k1a" style="top:330px;font-size:74px" data-split="words">Estudia a tu ritmo</div>
           <div class="kt c" id="k24" style="top:400px;font-size:380px;line-height:1">24</div>
           <div class="kt c" id="k1b" style="top:790px;font-size:96px" data-split="ink">horas del día</div>
@@ -254,12 +259,12 @@
           <div id="livedot"></div>
           <div class="kt c" id="k2d" style="top:1490px;font-size:120px" data-split="grad">cada semana</div>
         </div>
-        <div id="sc3r">
+        <div id="sc3r" class="dk">
           <div class="kt c kick" id="k3a" style="top:600px;font-size:74px" data-split="words">accede a nuevos</div>
           <div class="kt c" id="k3b" style="top:680px;font-size:150px" data-split="roll">contenidos</div>
           <div class="tile g-teal" id="tile5"><svg class="i" id="ref5"><use href="#i-refresh"/></svg></div>
-          <div class="kt c kick" id="k3c" style="top:1110px;font-size:74px" data-split="words">cada</div>
-          <div class="kt c" id="k3d" style="top:1190px;font-size:230px" data-split="grad">3 meses</div>
+          <div class="kt c kick" id="k3c" style="top:1110px;font-size:74px" data-split="words">todos los</div>
+          <div class="kt c" id="k3d" style="top:1190px;font-size:230px" data-split="grad">meses</div>
         </div>
         <div id="sc4">
           <div class="kt c kick" id="k4a" style="top:320px;font-size:74px" data-split="words">Toma</div>
@@ -269,7 +274,7 @@
           <div class="kt c" id="k4e" style="top:1270px;font-size:130px" data-split="ink">docentes</div>
           <div class="kt c" id="k4f" style="top:1410px;font-size:120px" data-split="grad">especializados</div>
         </div>
-        <div id="sc5">
+        <div id="sc5" class="dk">
           <div class="kt c kick" id="k5a" style="top:320px;font-size:74px" data-split="words">Disfruta de</div>
           <div class="kt c" id="k5b" style="top:390px;font-size:180px" data-split="grad">webinars</div>
           <div class="kt c" id="k5c" style="top:1140px;font-size:120px" data-split="ink">material</div>
@@ -322,7 +327,7 @@
           <!-- suscripción trimestral -->
           <div class="card" id="pill">
             <div class="face"></div>
-            <div class="lay t" id="pilltxt" style="left:28px;top:15px;font-size:20px"><span class="rise">Suscripción trimestral</span></div>
+            <div class="lay t" id="pilltxt" style="left:28px;top:15px;font-size:20px"><span class="rise">Plan de suscripción</span></div>
             <div class="lay" id="pd1" style="left:302px;top:20px;width:16px;height:16px;border-radius:50%;background:linear-gradient(145deg,#00f0c0,#25cfff)"></div>
             <div class="lay" id="pd2" style="left:330px;top:20px;width:16px;height:16px;border-radius:50%;background:linear-gradient(145deg,#25cfff,#4f8bff)"></div>
             <div class="lay" id="pd3" style="left:358px;top:20px;width:16px;height:16px;border-radius:50%;background:linear-gradient(145deg,#6e8bff,#7b5cff)"></div>
@@ -412,7 +417,7 @@
         </div>
       </div>
 
-      <audio id="vo" src="assets/audio/vo.wav" data-start="0.5" data-duration="33.15" data-track-index="2" data-volume="1"></audio>
+      <audio id="vo" src="assets/audio/vo.wav" data-start="0.5" data-duration="33.23" data-track-index="2" data-volume="1"></audio>
       <audio id="sfx" src="assets/audio/sfx.wav" data-start="0" data-duration="35" data-track-index="3" data-volume="1"></audio>
     </div>
 
@@ -426,6 +431,11 @@
         const s = u < 0.5 ? 0 : 1, k = u < 0.5 ? u * 2 : (u - 0.5) * 2, a = GC[s], b = GC[s + 1];
         return "rgb(" + a.map((v, i) => Math.round(v + (b[i] - v) * k)).join(",") + ")";
       };
+      const GL = [[60, 240, 208], [92, 200, 255], [165, 139, 255]];
+      const gcl = (u) => {
+        const s = u < 0.5 ? 0 : 1, k = u < 0.5 ? u * 2 : (u - 0.5) * 2, a = GL[s], b = GL[s + 1];
+        return "rgb(" + a.map((v, i) => Math.round(v + (b[i] - v) * k)).join(",") + ")";
+      };
       const AB = "abcdefghijklmnopqrstuvwxyz";
       document.querySelectorAll("[data-split]").forEach((el) => {
         const mode = el.dataset.split, txt = el.textContent;
@@ -434,12 +444,12 @@
           return;
         }
         el.textContent = "";
-        const n = [...txt].filter((c) => c !== " ").length;
+        const n = [...txt].filter((c) => c !== " ").length, dk = !!el.closest(".dk");
         let k = 0;
         for (const c of txt) {
           if (c === " ") { el.appendChild(document.createTextNode(" ")); continue; }
           const m = document.createElement("span");
-          const col = mode !== "ink" ? gc(k / Math.max(n - 1, 1)) : "";
+          const col = mode !== "ink" ? (dk ? gcl : gc)(k / Math.max(n - 1, 1)) : "";
           if (mode === "roll") {
             m.className = "m roll";
             const f = [AB[(k * 7 + 3) % 26], AB[(k * 11 + 5) % 26], AB[(k * 5 + 17) % 26], c];
@@ -506,8 +516,9 @@
 
 
       /* fondos dinámicos: el color cambia por escena y todo deriva despacio */
-      const BG = [["#bgA", 0], ["#bgB", 6.75], ["#bgC", 12.0], ["#bgD", 14.7], ["#bgB", 19.1], ["#bgC", 23.0], ["#bgD", 25.9], ["#bgA", 29.0]];
-      ["#bgA", "#bgB", "#bgC", "#bgD"].forEach((id) => tl.set(id, { opacity: 0 }, 0));
+      const BG = [["#bgA", 0], ["#bgN1", 6.75], ["#bgC", 12.0], ["#bgN2", 14.7], ["#bgB", 19.1], ["#bgN1", 23.0], ["#bgD", 25.9], ["#bgN2", 29.0]];
+      [[6.75, 0.08], [12.0, 1], [14.7, 0.08], [19.1, 1], [23.0, 0.08], [25.9, 1], [29.0, 0.12]].forEach(([t, o]) => tl.to("#halo", { opacity: o, duration: 0.9, ease: S }, t));
+      ["#bgA", "#bgB", "#bgC", "#bgD", "#bgN1", "#bgN2"].forEach((id) => tl.set(id, { opacity: 0 }, 0));
       BG.forEach(([id, t], i) => {
         tl.to(id, { opacity: 1, duration: i ? 0.9 : 1.2, ease: S }, t);
         const nx = BG[i + 1];
@@ -572,7 +583,7 @@
       tl.to("#livedot", { scale: 0, duration: 0.3, ease: IN }, 14.7);
 
       /* S3 · “Con tu suscripción trimestral, accede a nuevos contenidos cada 3 meses” (14.89–18.84) */
-      const pPill = enter("pill", 14.8, { x: 540, y: 400, s: 1.6, rx: 16, ry: 0, d: 1.0, hold: 2.95, dry: 0 });
+      const pPill = enter("pill", 14.8, { x: 540, y: 400, s: 1.6, rx: 16, ry: 0, d: 1.0, hold: 3.3, dry: 0 });
       rise("#pilltxt", 15.05);
       ["#pd1", "#pd2", "#pd3"].forEach((s, i) => popIcon(s, 15.3 + i * 0.25));
       tl.fromTo("#sc3r", { opacity: 0 }, { opacity: 1, duration: 0.2, ease: S }, 16.1);
@@ -580,9 +591,9 @@
       tl.fromTo("#k3b .col", { yPercent: 0 }, { yPercent: -75, duration: 0.8, ease: E3, stagger: 0.035 }, 16.35);
       tl.fromTo("#tile5", { scale: 0.4, rotation: -90 }, { scale: 1, rotation: 0, duration: 0.8, ease: E4 }, 16.4);
       tl.fromTo("#ref5", { rotation: 0, transformOrigin: "50% 50%" }, { rotation: 540, duration: 1.8, ease: S }, 16.7);
-      wIn("#k3c", 17.55); lIn("#k3d", 17.75, 0.05, 0.75);
-      leave("pill", 18.75, pPill, { ey: -1100, erx: 40, ez: 200 });
-      tl.to("#sc3r", { scale: 1.2, opacity: 0, filter: "blur(10px)", duration: 0.4, ease: "power2.in", transformOrigin: "50% 60%" }, 18.75);
+      wIn("#k3c", 18.15); lIn("#k3d", 18.4, 0.05, 0.7);
+      leave("pill", 19.1, pPill, { ey: -1100, erx: 40, ez: 200 });
+      tl.to("#sc3r", { scale: 1.2, opacity: 0, filter: "blur(10px)", duration: 0.4, ease: "power2.in", transformOrigin: "50% 60%" }, 19.1);
 
       /* S4 · “Toma diplomados y cursos, y aprende con docentes especializados” (19.33–22.78) */
       wIn("#k4a", 19.25); lIn("#k4b", 19.4, 0.035); lIn("#k4c", 19.9, 0.04);
