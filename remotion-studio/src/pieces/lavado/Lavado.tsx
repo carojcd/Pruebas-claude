@@ -28,7 +28,6 @@ export const Lavado: React.FC = () => {
       <Sequence from={0} durationInFrames={INTRO + 10}><Audio src={staticFile('lavado/sfx_intro.wav')} volume={0.9} /></Sequence>
       <Sequence from={START.outro - 4} durationInFrames={OUTRO + 4}><Audio src={staticFile('lavado/sfx_outro.wav')} volume={0.9} /></Sequence>
       {CUTS.slice(0, 3).map((c) => <Sequence key={c} from={c - 8} durationInFrames={30}><Audio src={staticFile('lavado/sfx_whoosh.wav')} volume={0.5} /></Sequence>)}
-      {CARDS.map((s, i) => <Sequence key={`p${i}`} from={s.f0} durationInFrames={30}><Audio src={staticFile('lavado/sfx_pop.wav')} volume={0.7} /></Sequence>)}
     </AbsoluteFill>
   );
 };
