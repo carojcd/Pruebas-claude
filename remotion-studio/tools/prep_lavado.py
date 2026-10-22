@@ -5,7 +5,7 @@ import sys, json, subprocess, numpy as np, cv2, os
 SRC, OUT = sys.argv[1], sys.argv[2]
 os.makedirs(OUT, exist_ok=True)
 AF = 'highpass=f=90,afftdn=nr=10:nf=-45,loudnorm=I=-16:TP=-1.5:LRA=9'
-CUTS = {1: (0.2, 19.8), 2: (0.0, 58.3), 3: (1.8, 53.8)}      # segundos de cada original que se conservan
+CUTS = {1: (0.2, 19.8), 2: (0.0, 58.3), 3: (1.8, 58.3)}      # segundos de cada original que se conservan
 W, H, FPS = 1080, 1920, 30
 
 def audio(n):
