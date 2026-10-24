@@ -2,3 +2,6 @@ node_modules
 out
 public/lavado/*.mp4
 public/lavado/*.wav
+assets_src/
+public/halloween/*.mp4
+public/halloween/*.wav
