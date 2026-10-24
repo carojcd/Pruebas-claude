@@ -1,3 +1,4 @@
+import { Captions } from './Captions';
 import React, { useEffect, useState } from 'react';
 import { AbsoluteFill, Audio, Easing, Img, OffthreadVideo, Sequence, continueRender, delayRender, getStaticFiles, interpolate, random, spring, staticFile, useCurrentFrame, useVideoConfig } from 'remotion';
 
@@ -5,7 +6,7 @@ export const FPS = 30, TOTAL = 529;
 const CUTS = [0, 51, 103, 154, 206, 257, 309, 360, 411, 463, TOTAL];   // cortes cada 4 tiempos (140 BPM)
 const OR = '#FF7A00', YL = '#FFC21A', LIME = '#9BFF3D', PU = '#6B2FA0', BK = '#120A1A';
 const CREEP = "'Creepster', 'Montserrat', cursive", MONT = "'Montserrat', system-ui, sans-serif";
-const HAS_LOGO = getStaticFiles().some((f) => f.name === 'halloween/logo.png');
+const HAS_LOGO = getStaticFiles().some((f) => f.name === 'halloween/logo.svg');
 
 const useFonts = () => {
   const [h] = useState(() => delayRender('fuentes'));
@@ -122,15 +123,11 @@ const Closing: React.FC<{ dur: number }> = ({ dur }) => {
       <AbsoluteFill style={{ background: `radial-gradient(900px 900px at 50% 46%, rgba(255,122,0,.55), rgba(107,47,160,.35) 55%, rgba(18,10,26,.85) 100%)` }} />
       <AbsoluteFill style={{ opacity: .35, mixBlendMode: 'screen', background: `repeating-conic-gradient(from ${f * 1.2}deg at 50% 46%, rgba(255,194,26,.55) 0 6deg, transparent 6deg 18deg)`, WebkitMaskImage: 'radial-gradient(circle at 50% 46%, #000 0, transparent 62%)' }} />
       <Sparks seed="c" /><Bats n={5} seed="cb" dur={dur} /><Spider x={110} dur={dur} len={430} /><Spider x={830} dur={dur} len={300} />
-      <AbsoluteFill style={{ alignItems: 'center', justifyContent: 'center', top: -90 }}>
+      <AbsoluteFill style={{ alignItems: 'center', justifyContent: 'center', top: -260 }}>
         <div style={{ transform: `scale(${pop}) rotate(${(1 - pop) * -8}deg)`, filter: `drop-shadow(0 0 40px rgba(255,122,0,.8)) drop-shadow(0 20px 30px rgba(0,0,0,.6))` }}>
-          {HAS_LOGO ? <Img src={staticFile('halloween/logo.png')} style={{ width: 900 }} />
+          {HAS_LOGO ? <Img src={staticFile('halloween/logo.svg')} style={{ width: 960 }} />
             : <div style={{ font: `800 150px ${MONT}`, color: '#fff', WebkitTextStroke: '22px #D32B2B', paintOrder: 'stroke fill', fontStyle: 'italic', letterSpacing: -4 }}>Don Vitto</div>}
         </div>
-      </AbsoluteFill>
-      <AbsoluteFill style={{ alignItems: 'center', top: 1130, height: 'auto', transform: `scale(${t2})`, opacity: Math.min(1, t2 * 1.5) }}>
-        <div style={{ font: `400 150px/1 ${CREEP}`, color: YL, WebkitTextStroke: `12px ${BK}`, paintOrder: 'stroke fill', textShadow: `0 8px 0 ${PU}, 0 0 40px rgba(255,122,0,.7)` }}>¡Feliz</div>
-        <div style={{ font: `400 190px/1 ${CREEP}`, color: LIME, WebkitTextStroke: `14px ${BK}`, paintOrder: 'stroke fill', textShadow: `0 8px 0 ${PU}, 0 0 40px rgba(155,255,61,.5)` }}>Halloween!</div>
       </AbsoluteFill>
     </AbsoluteFill>
   );
@@ -148,18 +145,19 @@ export const Halloween: React.FC = () => {
   const S = (i: number, children: React.ReactNode) => <Sequence key={i} from={CUTS[i]} durationInFrames={D(i)}>{children}</Sequence>;
   return (
     <AbsoluteFill style={{ background: BK }}>
-      {S(0, <><VideoShot from={0} dur={D(0)} /><Kinetic lines={['¿DULCE', 'O TRUCO?']} top={170} dur={D(0)} /><Spider x={70} dur={D(0)} len={380} /></>)}
-      {S(1, <><VideoShot from={51} dur={D(1)} dir={-1} /><Kinetic lines={['¡HALLOWEEN!']} top={1380} dur={D(1)} size={190} colors={[YL]} /><Sparks seed="a" /></>)}
-      {S(2, <><VideoShot from={103} dur={D(2)} /><Kinetic lines={['¡NOCHE', 'DE SUSTOS!']} top={1260} dur={D(2)} /><Bats dur={D(2)} seed="x" /></>)}
-      {S(3, <><VideoShot from={154} dur={D(3)} dir={-1} /><Kinetic lines={['¡SABOR', 'QUE ASUSTA!']} top={190} dur={D(3)} /><Spider x={810} dur={D(3)} len={330} /></>)}
-      {S(4, <><VideoShot from={206} dur={D(4)} rate={0.8} /><Kinetic lines={['¡DEDOS', 'DE TERROR!']} top={170} dur={D(4)} /><Sparks seed="b" /></>)}
-      {S(5, <><PhotoShot src="foto4.jpg" dur={D(5)} px={[4, -4]} zoom={[1.0, 1.14]} /><Kinetic lines={['SALCHICHAS', 'MACABRAS']} top={1330} dur={D(5)} size={140} /><Bats dur={D(5)} seed="y" n={3} /></>)}
-      {S(6, <><PhotoShot src="foto6.jpg" dur={D(6)} px={[-3, 3]} zoom={[1.02, 1.14]} dir={-1} /><Kinetic lines={['¡NADIE SE', 'RESISTE!']} top={170} dur={D(6)} /><Spider x={60} dur={D(6)} len={300} /></>)}
-      {S(7, <><PolaroidShot src="foto5.jpg" dur={D(7)} /><Kinetic lines={['¡MESA DE', 'TERROR!']} top={1370} dur={D(7)} /><Sparks seed="d" /></>)}
-      {S(8, <><PhotoShot src="foto3.jpg" dur={D(8)} px={[3, -3]} zoom={[1.0, 1.15]} /><Kinetic lines={['¡A', 'DISFRUTAR!']} top={1300} dur={D(8)} size={170} /><Bats dur={D(8)} seed="z" /></>)}
+      {S(0, <><VideoShot from={0} dur={D(0)} /><Spider x={70} dur={D(0)} len={380} /></>)}
+      {S(1, <><VideoShot from={51} dur={D(1)} dir={-1} /><Sparks seed="a" /></>)}
+      {S(2, <><VideoShot from={103} dur={D(2)} /><Bats dur={D(2)} seed="x" /></>)}
+      {S(3, <><VideoShot from={154} dur={D(3)} dir={-1} /><Spider x={810} dur={D(3)} len={330} /></>)}
+      {S(4, <><VideoShot from={206} dur={D(4)} rate={0.8} /><Sparks seed="b" /></>)}
+      {S(5, <><PhotoShot src="foto4.jpg" dur={D(5)} px={[4, -4]} zoom={[1.0, 1.14]} /><Bats dur={D(5)} seed="y" n={3} /></>)}
+      {S(6, <><PhotoShot src="foto6.jpg" dur={D(6)} px={[-3, 3]} zoom={[1.02, 1.14]} dir={-1} /><Spider x={60} dur={D(6)} len={300} /></>)}
+      {S(7, <><PolaroidShot src="foto5.jpg" dur={D(7)} /><Sparks seed="d" /></>)}
+      {S(8, <><PhotoShot src="foto3.jpg" dur={D(8)} px={[3, -3]} zoom={[1.0, 1.15]} /><Bats dur={D(8)} seed="z" /></>)}
       {S(9, <Closing dur={D(9)} />)}
       {CUTS.slice(1, 10).map((c) => <Flash key={c} at={c} />)}
       <AbsoluteFill style={{ pointerEvents: 'none', background: 'radial-gradient(ellipse 80% 70% at 50% 45%, transparent 55%, rgba(18,10,26,.5) 100%)' }} />
+      <Captions />
       <Audio src={staticFile('halloween/mix.wav')} />
     </AbsoluteFill>
   );
