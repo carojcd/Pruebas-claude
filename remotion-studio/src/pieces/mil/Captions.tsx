@@ -3,7 +3,7 @@ import { AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig } fr
 import { CHUNKS } from './captions';
 
 const MONT = "'Montserrat', system-ui, sans-serif";
-// Subtítulo dinámico: cada palabra salta cuando se dice; blanco / rojo de marca; "1.000" a gran tamaño.
+// Subtítulo dinámico: cada palabra salta cuando se dice; blanco / rojo de marca; "1.000" más grande. Posición: borde inferior al 35 % de la altura (672 px desde abajo).
 export const Captions: React.FC = () => {
   const f = useCurrentFrame(); const { fps } = useVideoConfig(); const t = f / fps;
   const i = CHUNKS.findIndex((c, k) => t >= c.start - 0.04 && t < (CHUNKS[k + 1]?.start ?? 99) - 0.04);
@@ -13,9 +13,9 @@ export const Captions: React.FC = () => {
   const inn = spring({ frame: local, fps, config: { damping: 14, stiffness: 190, mass: .6 } });
   const out = gap ? interpolate(t, [hold - 0.1, hold], [1, 0], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' }) : 1;
   const hero = c.words.length === 1 && c.words[0].text === '1.000';
-  const size = hero ? 210 : c.words.length >= 3 ? 88 : c.words.length === 2 ? 102 : 118;
+  const size = hero ? 150 : c.words.length >= 3 ? 62 : c.words.length === 2 ? 72 : 84;
   return (
-    <AbsoluteFill style={{ alignItems: 'center', justifyContent: 'flex-end', paddingBottom: hero ? 250 : 300, opacity: out }}>
+    <AbsoluteFill style={{ alignItems: 'center', justifyContent: 'flex-end', paddingBottom: 672, opacity: out }}>
       <div style={{ width: 980, display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: `0 ${size * 0.24}px`, textAlign: 'center', transform: `translateY(${(1 - inn) * 40}px) scale(${hero ? 0.9 + 0.1 * inn : 1})` }}>
         {c.words.map((w, k) => {
           const p = spring({ frame: f - Math.round(w.start * fps), fps, config: { damping: 9, stiffness: 210, mass: .55 } });
