@@ -1,9 +1,10 @@
 import { Captions } from './Captions';
+import { BgNight, BgPumpkins, BgWeb } from './Backgrounds';
 import React, { useEffect, useState } from 'react';
-import { AbsoluteFill, Audio, Easing, Img, OffthreadVideo, Sequence, continueRender, delayRender, getStaticFiles, interpolate, random, spring, staticFile, useCurrentFrame, useVideoConfig } from 'remotion';
+import { AbsoluteFill, Audio, Easing, Img, Sequence, continueRender, delayRender, getStaticFiles, interpolate, random, spring, staticFile, useCurrentFrame, useVideoConfig } from 'remotion';
 
 export const FPS = 30, TOTAL = 529;
-const CUTS = [0, 51, 103, 154, 206, 257, 309, 360, 411, 463, TOTAL];   // cortes cada 4 tiempos (140 BPM)
+import { CUTS } from './cuts';
 const OR = '#FF7A00', YL = '#FFC21A', LIME = '#9BFF3D', PU = '#6B2FA0', BK = '#120A1A';
 const CREEP = "'Creepster', 'Montserrat', cursive", MONT = "'Montserrat', system-ui, sans-serif";
 const HAS_LOGO = getStaticFiles().some((f) => f.name === 'halloween/logo.svg');
@@ -27,10 +28,6 @@ const useShot = (dur: number, dir = 1) => {
   return { f, style: { transform: `translateX(${whip}px) scale(${punch * push})`, filter: `blur(${blur}px)` } as React.CSSProperties };
 };
 
-const VideoShot: React.FC<{ from: number; dur: number; rate?: number; dir?: number }> = ({ from, dur, rate = 1, dir = 1 }) => {
-  const { style } = useShot(dur, dir);
-  return <AbsoluteFill style={style}><OffthreadVideo src={staticFile('halloween/rec.mp4')} startFrom={from} playbackRate={rate} muted style={{ width: '100%', height: '100%', objectFit: 'cover' }} /></AbsoluteFill>;
-};
 // Foto vertical: cubre el cuadro con paneo suave entre dos puntos
 const PhotoShot: React.FC<{ src: string; dur: number; px?: [number, number]; zoom?: [number, number]; dir?: number }> = ({ src, dur, px = [0, 0], zoom = [1, 1.12], dir = 1 }) => {
   const { f, style } = useShot(dur, dir); const p = f / dur;
@@ -145,15 +142,15 @@ export const Halloween: React.FC = () => {
   const S = (i: number, children: React.ReactNode) => <Sequence key={i} from={CUTS[i]} durationInFrames={D(i)}>{children}</Sequence>;
   return (
     <AbsoluteFill style={{ background: BK }}>
-      {S(0, <><VideoShot from={0} dur={D(0)} /><Spider x={70} dur={D(0)} len={380} /></>)}
-      {S(1, <><VideoShot from={51} dur={D(1)} dir={-1} /><Sparks seed="a" /></>)}
-      {S(2, <><VideoShot from={103} dur={D(2)} /><Bats dur={D(2)} seed="x" /></>)}
-      {S(3, <><VideoShot from={154} dur={D(3)} dir={-1} /><Spider x={810} dur={D(3)} len={330} /></>)}
-      {S(4, <><VideoShot from={206} dur={D(4)} rate={0.8} /><Sparks seed="b" /></>)}
-      {S(5, <><PhotoShot src="foto4.jpg" dur={D(5)} px={[4, -4]} zoom={[1.0, 1.14]} /><Bats dur={D(5)} seed="y" n={3} /></>)}
-      {S(6, <><PhotoShot src="foto6.jpg" dur={D(6)} px={[-3, 3]} zoom={[1.02, 1.14]} dir={-1} /><Spider x={60} dur={D(6)} len={300} /></>)}
-      {S(7, <><PolaroidShot src="foto5.jpg" dur={D(7)} /><Sparks seed="d" /></>)}
-      {S(8, <><PhotoShot src="foto3.jpg" dur={D(8)} px={[3, -3]} zoom={[1.0, 1.15]} /><Bats dur={D(8)} seed="z" /></>)}
+      {S(0, <BgNight dur={D(0)} />)}
+      {S(1, <><PhotoShot src="foto3.jpg" dur={D(1)} px={[3, -3]} zoom={[1.0, 1.14]} dir={-1} /><Sparks seed="a" /></>)}
+      {S(2, <><PhotoShot src="foto4.jpg" dur={D(2)} px={[4, -4]} zoom={[1.0, 1.14]} /><Bats dur={D(2)} seed="y" n={3} /></>)}
+      {S(3, <BgWeb dur={D(3)} />)}
+      {S(4, <><PolaroidShot src="foto5.jpg" dur={D(4)} /><Sparks seed="d" /></>)}
+      {S(5, <><PhotoShot src="foto6.jpg" dur={D(5)} px={[-3, 3]} zoom={[1.02, 1.14]} dir={-1} /><Spider x={60} dur={D(5)} len={300} /></>)}
+      {S(6, <BgPumpkins dur={D(6)} />)}
+      {S(7, <><PhotoShot src="foto7.jpg" dur={D(7)} px={[-3, 3]} zoom={[1.0, 1.14]} /><Bats dur={D(7)} seed="z" /></>)}
+      {S(8, <><PhotoShot src="foto3.jpg" dur={D(8)} px={[-14, -22]} zoom={[1.3, 1.42]} dir={-1} /><Sparks seed="e" /></>)}
       {S(9, <Closing dur={D(9)} />)}
       {CUTS.slice(1, 10).map((c) => <Flash key={c} at={c} />)}
       <AbsoluteFill style={{ pointerEvents: 'none', background: 'radial-gradient(ellipse 80% 70% at 50% 45%, transparent 55%, rgba(18,10,26,.5) 100%)' }} />

@@ -1,6 +1,9 @@
 import React from 'react';
 import { AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig } from 'remotion';
 import { CHUNKS } from './captions';
+import { CUTS } from './cuts';
+// Planos de fondo (sin foto): ahí el subtítulo es el protagonista, grande y centrado
+const BG_SHOTS = [0, 3, 6].map((i) => [CUTS[i], CUTS[i + 1]]);
 
 const MONT = "'Montserrat', system-ui, sans-serif";
 // Subtítulo dinámico: cada palabra salta al decirse; blanco / naranja; el bloque se cambia sin parpadeo.
@@ -12,9 +15,10 @@ export const Captions: React.FC = () => {
   const gap = nextStart - c.end > 0.5, hold = gap ? c.end + 0.35 : nextStart - 0.04, local = f - Math.round((c.start - 0.04) * fps);
   const inn = spring({ frame: local, fps, config: { damping: 14, stiffness: 190, mass: .6 } });
   const out = gap ? interpolate(t, [hold - 0.08, hold], [1, 0], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' }) : 1;
-  const size = c.words.length >= 4 ? 84 : c.words.length === 3 ? 96 : 112;
+  const bg = BG_SHOTS.some(([a, b]) => f >= a && f < b);
+  const size = (c.words.length >= 4 ? 84 : c.words.length === 3 ? 96 : 112) * (bg ? 1.3 : 1);
   return (
-    <AbsoluteFill style={{ alignItems: 'center', justifyContent: 'flex-end', paddingBottom: 330, opacity: out }}>
+    <AbsoluteFill style={{ alignItems: 'center', justifyContent: bg ? 'center' : 'flex-end', paddingBottom: bg ? 0 : 330, opacity: out }}>
       <div style={{ width: 980, display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: `0 ${size * 0.26}px`, textAlign: 'center', transform: `translateY(${(1 - inn) * 40}px)` }}>
         {c.words.map((w, k) => {
           const p = spring({ frame: f - Math.round(w.start * fps), fps, config: { damping: 9, stiffness: 210, mass: .55 } });
