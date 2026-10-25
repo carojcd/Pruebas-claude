@@ -77,6 +77,28 @@ const icons = {
 };
 const valores = [['confianza', 'Confianza'], ['equipo', 'Trabajo en equipo'], ['responsabilidad', 'Responsabilidad'], ['confidencialidad', 'Confidencialidad'], ['servicio', 'Actitud de servicio'], ['integridad', 'Integridad']];
 
+
+const I = {
+  target: '<circle cx="32" cy="32" r="22"/><circle cx="32" cy="32" r="13"/><circle cx="32" cy="32" r="4" fill="currentColor"/><path d="M32 32 L52 12 M44 10 L54 10 L54 20"/>',
+  eye: '<path d="M4 32 C14 16 24 10 32 10 C40 10 50 16 60 32 C50 48 40 54 32 54 C24 54 14 48 4 32Z"/><circle cx="32" cy="32" r="9"/><circle cx="32" cy="32" r="3" fill="currentColor"/>',
+  heart: '<path d="M32 54 C10 40 8 22 20 16 C27 13 32 19 32 22 C32 19 37 13 44 16 C56 22 54 40 32 54Z"/>',
+  growth: '<path d="M8 52 H56"/><path d="M12 42 L26 28 L36 36 L54 14"/><path d="M44 14 H54 V24"/>',
+  star: '<path d="M32 8 L38 24 L56 26 L42 38 L47 56 L32 46 L17 56 L22 38 L8 26 L26 24Z"/>',
+  globe: '<circle cx="32" cy="32" r="23"/><path d="M9 32 H55 M32 9 C22 20 22 44 32 55 C42 44 42 20 32 9Z"/>',
+  people: '<circle cx="32" cy="22" r="8"/><circle cx="14" cy="28" r="6"/><circle cx="50" cy="28" r="6"/><path d="M18 52 C18 40 24 34 32 34 C40 34 46 40 46 52"/><path d="M4 50 C4 42 8 38 14 38 M60 50 C60 42 56 38 50 38"/>',
+  leaf: '<path d="M10 54 C10 28 26 12 54 10 C54 38 40 54 14 54"/><path d="M10 54 C20 40 30 32 42 24"/>',
+  bulb: '<path d="M22 44 C14 38 12 26 20 18 C27 11 40 12 45 21 C50 30 46 39 40 44 V50 H22Z"/><path d="M24 56 H38 M27 50 V56"/>',
+  flag: '<path d="M14 58 V8"/><path d="M14 10 H50 L42 22 L50 34 H14"/>',
+  trophy: '<path d="M20 8 H44 V24 C44 33 38 38 32 38 C26 38 20 33 20 24Z"/><path d="M20 12 H10 C10 24 14 28 20 28 M44 12 H54 C54 24 50 28 44 28"/><path d="M32 38 V48 M22 56 H42 M26 48 H38"/>',
+  chip: '<rect x="18" y="18" width="28" height="28" rx="5"/><rect x="26" y="26" width="12" height="12" rx="2"/><path d="M26 8 V18 M38 8 V18 M26 46 V56 M38 46 V56 M8 26 H18 M8 38 H18 M46 26 H56 M46 38 H56"/>',
+  shield: '<path d="M32 8 L52 16 V32 C52 44 44 52 32 58 C20 52 12 44 12 32 V16Z"/><path d="M22 32 L30 40 L43 24"/>',
+  medal: '<circle cx="32" cy="38" r="15"/><path d="M22 6 L28 26 M42 6 L36 26"/><path d="M32 30 L34.5 36 L41 36.5 L36 41 L37.5 47 L32 43.5 L26.5 47 L28 41 L23 36.5 L29.5 36Z" fill="currentColor"/>',
+  route: '<circle cx="14" cy="48" r="6"/><circle cx="50" cy="16" r="6"/><path d="M20 48 H38 C46 48 46 32 38 32 H26 C18 32 18 16 26 16 H44"/>',
+  hand: '<path d="M6 40 L18 32 L30 38 L44 30 C48 28 52 32 48 36 L34 48 L18 52 L6 46Z"/>',
+};
+const svgi = (k) => `<svg viewBox="0 0 64 64" class="ic">${I[k]}</svg>`;
+const tile = (k, t) => `<div class="tl"><div class="ico">${svgi(k)}</div><span>${t}</span></div>`;
+
 const css = `
 @font-face{font-family:'Montserrat';font-weight:500;src:url(${A('fonts/montserrat-latin-500-normal.woff2')})}
 @font-face{font-family:'Montserrat';font-weight:600;src:url(${A('fonts/montserrat-latin-600-normal.woff2')})}
@@ -99,16 +121,24 @@ body{font-family:'Montserrat',sans-serif;color:var(--ink);-webkit-print-color-ad
 .cover .bar{position:absolute;left:0;right:0;bottom:0;height:92px;background:linear-gradient(90deg,var(--wine2),var(--wine) 50%,var(--wine2));display:flex;align-items:center;justify-content:space-between;padding:0 56px;color:#fff}
 .cover .bar b{font-weight:800;letter-spacing:7px;font-size:13px}.cover .bar span{font-weight:700;color:var(--yellow);letter-spacing:1px;font-size:15px}
 .cover .yl{position:absolute;left:0;right:0;bottom:92px;height:7px;background:var(--yellow)}
-/* quienes somos */
-.about .txt{position:absolute;left:56px;top:72px;width:430px}
+/* quienes somos (infografía) */
+.about{padding:40px 48px}
 .about .kick{font-weight:800;letter-spacing:6px;font-size:11px;color:var(--red);display:flex;gap:12px;align-items:center}
 .about .kick:after{content:'';height:2px;width:46px;background:var(--red)}
-.about h2{font:700 66px/1.02 'Playfair Display',serif;color:var(--wine);margin:14px 0 18px}
-.about p{font-size:13.6px;line-height:1.7;color:#3b2d30;margin-bottom:12px}
-.about .sep{height:1px;background:var(--line);margin:38px 0 34px}
-.about .pic{position:absolute;right:0;top:0;width:290px;height:1056px;background:url(${A('fotos/Salchichón tradicional.jpg')}) 50% center/cover;border-radius:46px 0 0 46px;box-shadow:-18px 0 50px rgba(142,19,40,.18)}
-.about .pic:after{content:'';position:absolute;inset:0;border-radius:46px 0 0 46px;background:linear-gradient(180deg,rgba(142,19,40,.0) 55%,rgba(91,10,25,.75))}
-.about .pic img{position:absolute;left:36px;bottom:44px;width:210px;z-index:2;filter:drop-shadow(0 4px 14px rgba(0,0,0,.4))}
+.sec{margin-top:14px}
+.sec h2{font:700 42px/1 'Playfair Display',serif;color:var(--wine);display:flex;align-items:center;gap:16px;margin-bottom:12px}
+.sec h2:after{content:'';flex:1;height:1.5px;background:var(--line)}
+.hero2{border-radius:28px;padding:24px 30px;display:flex;gap:24px;align-items:center;color:#fff;box-shadow:0 14px 34px rgba(142,19,40,.22)}
+.hero2.mi{background:linear-gradient(120deg,var(--wine2),var(--wine) 60%,#B8212F)}.hero2.vi{background:linear-gradient(120deg,#B8212F,var(--red) 60%,#E2483A)}
+.hero2 .big{width:78px;height:78px;flex:none;border-radius:50%;background:rgba(255,242,0,.16);border:2px solid rgba(255,242,0,.55);display:grid;place-items:center;color:var(--yellow)}
+.hero2 .big svg{width:46px;height:46px;fill:none;stroke:currentColor;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.hero2 p{font-size:13px;line-height:1.55;font-weight:500}.hero2 b{color:var(--yellow);font-weight:700}
+.lead{font-size:12px;line-height:1.4;color:#4b3b3e;margin:15px 0 10px;font-weight:600}
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.tl{background:#fff;border-radius:22px;padding:17px 10px 18px;text-align:center;box-shadow:0 8px 20px rgba(142,19,40,.11);display:flex;flex-direction:column;align-items:center;gap:8px}
+.ico{width:56px;height:56px;border-radius:50%;background:linear-gradient(150deg,#E3483F,var(--wine));display:grid;place-items:center;color:#fff;box-shadow:0 6px 14px rgba(142,19,40,.3)}
+.ico svg{width:31px;height:31px;fill:none;stroke:currentColor;stroke-width:3.2;stroke-linecap:round;stroke-linejoin:round}
+.tl span{font-size:11.5px;line-height:1.35;font-weight:700;color:var(--ink)}
 /* indice */
 .index{padding:56px 56px}
 .index h2{font:700 52px/1.02 'Playfair Display',serif;color:var(--wine);margin:10px 0 8px}
@@ -159,20 +189,23 @@ body{font-family:'Montserrat',sans-serif;color:var(--ink);-webkit-print-color-ad
 
 const pages = [];
 pages.push(`<section class="page cover"><img class="logo" src="${A('logo.svg')}"><div class="tag">${TAG}</div><div class="hero"></div><div class="yl"></div><div class="bar"><b>CATÁLOGO DE PRODUCTOS</b><span>${WEB}</span></div></section>`);
-pages.push(`<section class="page about"><div class="txt">
-  <div class="kick">QUIÉNES SOMOS</div><h2>Misión</h2>
-  <p>Proveer a todo el mercado y a la población en general, mediante una adecuada asesoría profesional, productos alimenticios fabricados y comercializados con los más altos estándares de calidad, con el propósito de que contribuyan al bienestar y cumplan con las necesidades y expectativas de nuestros clientes.</p>
-  <p>En nuestros negocios de alimentos buscamos siempre mejorar la calidad de vida del consumidor, con un crecimiento rentable, con marcas líderes, servicio superior y una excelente distribución nacional e internacional.</p>
-  <p>Gestionamos nuestras actividades comprometidos con el Desarrollo Sostenible; con el mejor talento humano; innovación sobresaliente y un comportamiento corporativo ejemplar.</p>
-  <div class="sep"></div>
-  <h2>Visión</h2>
-  <p>Continuar siendo reconocidos a nivel nacional como industria de productos cárnicos y alimenticios líder en productos innovadores, competitivos y de calidad; así mismo, posicionarnos en el mercado internacional y ser la primera opción de nuestros clientes como una compañía comprometida con la aplicación de nuevas tecnologías, valores y normatividad nacional.</p>
-  </div><div class="pic"><img src="${A('logo.svg')}"></div></section>`);
+pages.push(`<section class="page about"><div class="kick">QUIÉNES SOMOS</div>
+  <div class="sec"><h2>Misión</h2>
+    <div class="hero2 mi"><div class="big">${svgi('target')}</div><p>Proveer a todo el mercado y a la población en general, mediante una <b>adecuada asesoría profesional</b>, productos alimenticios fabricados y comercializados con los <b>más altos estándares de calidad</b>, con el propósito de que contribuyan al bienestar y cumplan con las necesidades y expectativas de nuestros clientes.</p></div>
+    <div class="lead">En nuestros negocios de alimentos buscamos siempre mejorar la calidad de vida del consumidor, con:</div>
+    <div class="tiles">${tile('heart', 'Calidad de vida del consumidor')}${tile('growth', 'Crecimiento rentable')}${tile('star', 'Marcas líderes y servicio superior')}${tile('route', 'Excelente distribución nacional e internacional')}</div>
+    <div class="lead">Gestionamos nuestras actividades comprometidos con:</div>
+    <div class="tiles">${tile('leaf', 'El Desarrollo Sostenible')}${tile('people', 'El mejor talento humano')}${tile('bulb', 'Innovación sobresaliente')}${tile('medal', 'Un comportamiento corporativo ejemplar')}</div></div>
+  <div class="sec" style="margin-top:30px"><h2>Visión</h2>
+    <div class="hero2 vi"><div class="big">${svgi('eye')}</div><p>Continuar siendo <b>reconocidos a nivel nacional</b> como industria de productos cárnicos y alimenticios <b>líder en productos innovadores, competitivos y de calidad</b>.</p></div>
+    <div class="lead">Así mismo, buscamos:</div>
+    <div class="tiles">${tile('globe', 'Posicionarnos en el mercado internacional')}${tile('trophy', 'Ser la primera opción de nuestros clientes')}${tile('chip', 'Aplicar nuevas tecnologías')}${tile('shield', 'Cumplir valores y normatividad nacional')}</div></div>
+  </section>`);
 pages.push(`<section class="page vals"><div class="kick">NUESTRA ESENCIA</div><h2>Valores<br>corporativos</h2><p>Nuestro deber, la credibilidad y la calidad de nuestros productos, constituye un pilar fundamental en nuestros valores.</p>
   <div class="vg">${valores.map(([k, t]) => `<div class="v"><svg viewBox="0 0 64 64">${icons[k]}</svg><b>${t}</b></div>`).join('')}</div><div class="yl"></div></section>`);
 prodPages.forEach((items, i) => {
   const n = FIRST_PROD_PAGE + i, last = i === prodPages.length - 1;
-  pages.push(`<section class="page prod">${header('PORTAFOLIO DE PRODUCTOS')}<div class="grid">${items.map(card).join('')}${last && items.length === 2 ? `<div class="banner"><img src="${A('logo.svg')}"><div class="t">${TAG}</div><div class="w">${WEB.toUpperCase()}</div></div>` : ''}</div>${footer(n)}</section>`);
+  pages.push(`<section class="page prod">${header('PORTAFOLIO DE PRODUCTOS')}<div class="grid">${items.map(card).join('')}${last && items.length === 2 ? `<div class="banner" style="background:url(${A('banner.jpg')}) center/cover"></div>` : ''}</div>${footer(n)}</section>`);
 });
 pages.push(`<section class="page back"><img src="${A('logo.svg')}"><div class="t">${TAG}</div><div class="w">${WEB}</div><div class="yl"></div></section>`);
 
