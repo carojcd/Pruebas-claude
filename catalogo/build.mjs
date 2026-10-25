@@ -168,15 +168,12 @@ pages.push(`<section class="page about"><div class="txt">
   <h2>Visión</h2>
   <p>Continuar siendo reconocidos a nivel nacional como industria de productos cárnicos y alimenticios líder en productos innovadores, competitivos y de calidad; así mismo, posicionarnos en el mercado internacional y ser la primera opción de nuestros clientes como una compañía comprometida con la aplicación de nuevas tecnologías, valores y normatividad nacional.</p>
   </div><div class="pic"><img src="${A('logo.svg')}"></div></section>`);
-pages.push(`<section class="page index"><div class="kick" style="font-weight:800;letter-spacing:6px;font-size:11px;color:var(--red)">PORTAFOLIO</div><h2>Todo el sabor,<br>en un solo lugar</h2><div class="sub">${P.length} productos · ${CATS.length} categorías</div>
-  ${catPages.map((c) => `<div class="row"><div class="th"><img src="${A('fotos/' + c.items[0].file + '.jpg')}"></div><div><h3>${c.name}</h3><div class="n">${c.items.length} ${c.items.length === 1 ? 'PRODUCTO' : 'PRODUCTOS'}</div><p>${c.items.map((p) => p.name).filter((v, i, a) => a.indexOf(v) === i).join(' · ')}</p></div><div class="pg"><small>PÁG.</small>${pn(c.from)}${c.to !== c.from ? '–' + pn(c.to) : ''}</div></div>`).join('')}
-  ${footer(3).replace('left:48px;right:48px', '')}</section>`);
+pages.push(`<section class="page vals"><div class="kick">NUESTRA ESENCIA</div><h2>Valores<br>corporativos</h2><p>Nuestro deber, la credibilidad y la calidad de nuestros productos, constituye un pilar fundamental en nuestros valores.</p>
+  <div class="vg">${valores.map(([k, t]) => `<div class="v"><svg viewBox="0 0 64 64">${icons[k]}</svg><b>${t}</b></div>`).join('')}</div><div class="yl"></div></section>`);
 prodPages.forEach((items, i) => {
   const n = FIRST_PROD_PAGE + i, last = i === prodPages.length - 1;
   pages.push(`<section class="page prod">${header('PORTAFOLIO DE PRODUCTOS')}<div class="grid">${items.map(card).join('')}${last && items.length === 2 ? `<div class="banner"><img src="${A('logo.svg')}"><div class="t">${TAG}</div><div class="w">${WEB.toUpperCase()}</div></div>` : ''}</div>${footer(n)}</section>`);
 });
-pages.push(`<section class="page vals"><div class="kick">NUESTRA ESENCIA</div><h2>Valores<br>corporativos</h2><p>Nuestro deber, la credibilidad y la calidad de nuestros productos, constituye un pilar fundamental en nuestros valores.</p>
-  <div class="vg">${valores.map(([k, t]) => `<div class="v"><svg viewBox="0 0 64 64">${icons[k]}</svg><b>${t}</b></div>`).join('')}</div><div class="yl"></div></section>`);
 pages.push(`<section class="page back"><img src="${A('logo.svg')}"><div class="t">${TAG}</div><div class="w">${WEB}</div><div class="yl"></div></section>`);
 
 const html = `<!doctype html><html lang="es"><head><meta charset="utf-8"><title>Catálogo Don Vitto</title><style>${css}</style></head><body>${pages.join('\n')}</body></html>`;
