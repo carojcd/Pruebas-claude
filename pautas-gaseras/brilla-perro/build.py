@@ -51,10 +51,15 @@ CHUNKS = [
       [("Y", 1.32, 1.66), ("CÓMPRAME", 1.66, 1.88), ("EL", 1.88, 2.08), ("SEGURO", 2.08, 2.24)],
       [("DE", 2.24, 2.46), ("MASCOTAS!", 2.46, 3.18)]]),
 ]
-STACK_END = 23.40          # la lista "Hospitalización / Medicamentos / Traslado" se queda hasta aquí
+SHIFT = 1.60              # la voz arranca en el segundo 0 del video
+STACK_END = 23.40 - SHIFT          # la lista "Hospitalización / Medicamentos / Traslado" se queda hasta aquí
 YELLOW, WHITE = "&H000EC2FF&", "&H00FFFFFF&"   # BGR de #FFC20E y blanco
 
+for _c in CHUNKS:
+    _c["at"] = round(_c["at"] - SHIFT, 3)
+
 def ts(t):
+    t = max(0.0, t)
     h, m = int(t // 3600), int(t % 3600 // 60); s = t % 60
     return f"{h}:{m:02d}:{s:05.2f}"
 
