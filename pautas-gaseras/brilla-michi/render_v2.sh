@@ -29,9 +29,9 @@ TXT+=$(line $M7 "que estaba asegurado con el"   white    50 214)
 TXT+=$(line $M8 "seguro para mascotas de Brilla" 0xFFC20E 52 284)
 TXT=${TXT%,}
 
-# Badge de precio: entra con rebote a los 11.6 s, encima del footer
-PRICE_W=640
-PRICE_Y=$((H - FOOT_H - 210))
+# Tarjeta de precio: entra con rebote a los 11.6 s, debajo del texto fijo
+PRICE_W=560
+PRICE_Y=372   # justo debajo del texto fijo
 
 VF="[0:v]scale=${W}:${H}:flags=lanczos,setsar=1[v00];
 color=black:s=${W}x520:d=${DUR},format=rgba,geq=r=0:g=0:b=0:a='150*pow(1-Y/520\\,1.6)'[grad];
@@ -40,7 +40,7 @@ ${TXT}[v1];
 [1:v]scale=${W}:-1[foot];
 [v1][foot]overlay=0:H-h[v2];
 [2:v]scale=${PRICE_W}:-1,format=rgba,fade=in:st=11.6:d=0.15:alpha=1[pr];
-[v2][pr]overlay=x=(W-w)/2:y='${PRICE_Y}+60*exp(-(t-11.6)*7)*cos((t-11.6)*22)':enable='gte(t,11.6)'[vout]"
+[v2][pr]overlay=x=(W-w)/2:y='${PRICE_Y}+30*exp(-(t-11.6)*7)*cos((t-11.6)*22)':enable='gte(t,11.6)'[vout]"
 
 if ls voz/l1.wav >/dev/null 2>&1; then
   INPUTS=(); AF=""; MIX=""
@@ -60,7 +60,7 @@ else
   INPUTS=(); AF="[0:a]anull[aout]"
 fi
 
-ffmpeg -y -v error -i $A/video.mp4 -loop 1 -i $A/footer.png -loop 1 -i $A/precio.png "${INPUTS[@]}" \
+ffmpeg -y -v error -i $A/video.mp4 -loop 1 -i $A/footer.png -loop 1 -i $A/precio_17640.png "${INPUTS[@]}" \
   -filter_complex "$VF;$AF" -map "[vout]" -map "[aout]" -t $DUR \
   -c:v libx264 -preset slow -crf 18 -pix_fmt yuv420p -r 24 -c:a aac -b:a 192k -movflags +faststart "$OUT"
 echo "OK -> $OUT"
