@@ -20,46 +20,42 @@ VO = 0.60                                # la voz entra a los 0.6 s → cada fra
 MUSIC_SS = 3.22                          # el drop de la canción (9.00 s) cae en la mitad de la 1.ª transición
 ZONE_TOP, ZONE_BOT = 285, 1635           # zona 4:5 centrada en el 9:16
 PRICE_W = 448                            # mismo tamaño que en el gato v3 (560 × 0.8)
-PRICE_Y = ZONE_TOP + 70
-SUB_Y = ZONE_BOT - 40                    # base de los subtítulos, dentro de la zona 4:5
 YELLOW, WHITE = "&H000EC2FF&", "&H00FFFFFF&"
 
-# Frases (palabra, inicio, fin) en segundos del audio de la voz (transcripción con marcas de tiempo)
-PH = [
-  [("NO", 0.00, 0.42), ("PUEDES", 0.42, 0.74), ("EVITAR", 0.74, 1.28)],
-  [("TODAS", 1.28, 1.66), ("SUS", 1.66, 1.92), ("AVENTURAS,", 1.92, 2.70)],
-  [("PERO", 2.98, 3.06), ("SÍ", 3.06, 3.36), ("PUEDES", 3.36, 3.76)],
-  [("PROTEGERLOS.", 3.76, 4.70)],
-  [("CON", 4.80, 5.00), ("EL", 5.00, 5.20), ("SEGURO", 5.20, 5.48), ("PARA", 5.48, 5.64)],
-  [("MASCOTAS", 5.64, 6.14), ("DE", 6.14, 6.34), ("BRILLA,", 6.34, 6.85)],
-  [("CUIDA", 7.00, 7.10), ("A", 7.10, 7.32), ("QUIENES", 7.32, 7.50)],
-  [("LLENAN", 7.50, 7.92), ("TU", 7.92, 8.16), ("VIDA", 8.16, 8.38)],
-  [("DE", 8.38, 8.68), ("ALEGRÍA.", 8.68, 9.30)],
-  [("PROTÉGELOS", 9.50, 9.94), ("HOY", 9.94, 10.16)],
-  [("DESDE", 10.16, 10.48), ("SOLO", 10.48, 10.76), ("$17.640", 10.76, 12.60)],
+# Bloques de subtítulo (2 líneas), palabra, inicio, fin en segundos del audio de la voz.
+# Cada bloque aparece una sola vez con fundido y el amarillo «se llena» palabra a palabra (karaoke \\kf),
+# así no parpadea y se lee al ritmo de la voz. El precio no se subtitula: lo muestra la tarjeta.
+BLOCKS = [
+  [[("NO", 0.00), ("PUEDES", 0.42), ("EVITAR", 0.74)], [("TODAS", 1.28), ("SUS", 1.66), ("AVENTURAS,", 1.92)], 2.70],
+  [[("PERO", 2.98), ("SÍ", 3.06), ("PUEDES", 3.36)], [("PROTEGERLOS.", 3.76)], 4.60],
+  [[("CON", 4.80), ("EL", 5.00), ("SEGURO", 5.20), ("PARA", 5.48)], [("MASCOTAS", 5.64), ("DE", 6.14), ("BRILLA,", 6.34)], 6.75],
+  [[("CUIDA", 7.00), ("A", 7.10), ("QUIENES", 7.32), ("LLENAN", 7.50)], [("TU", 7.92), ("VIDA", 8.16), ("DE", 8.38), ("ALEGRÍA.", 8.68)], 9.15],
+  [[("PROTÉGELOS", 9.50), ("HOY", 9.94)], [("DESDE", 10.16), ("SOLO", 10.48)], 10.76],
 ]
-PRICE_AT = VO + 10.76                    # la tarjeta entra cuando la voz dice «$17.640»
-
-POP = r"\fscx112\fscy112\t(0,120,\fscx100\fscy100)"
+PRICE_AT = VO + 10.76                    # la tarjeta entra cuando la voz dice «17.640», donde van los subtítulos
+SUB_SIZE = 69                            # 20 % más pequeño que antes (86)
+SUB_Y = 1480                             # base de los subtítulos (más arriba; la zona 4:5 termina en 1635)
+PRICE_Y = SUB_Y - 122                    # tarjeta centrada en el lugar del subtítulo
 
 def ts(t):
     t = max(0.0, t); return f"0:{int(t // 60):02d}:{t % 60:05.2f}"
 
 def build_ass():
     ev = []
-    for ph in PH:
-        words = [w for w, _, _ in ph]; st = [s + VO for _, s, _ in ph]
-        end = ph[-1][2] + VO + 0.15
-        for i in range(len(ph)):
-            t0 = st[i] if i else st[0] - 0.05
-            t1 = st[i + 1] if i + 1 < len(ph) else end
-            txt = " ".join("{\\1c%s%s}%s" % (YELLOW if j == i else WHITE, POP if j == i else "", w)
-                           for j, w in enumerate(words))
-            ev.append([t0, t1, r"{\an2\pos(540,%d)\fad(%d,90)}" % (SUB_Y, 70 if i == 0 else 0) + txt])
-    ev.sort()
-    for k in range(len(ev) - 1):
-        if ev[k][1] > ev[k + 1][0] - 0.02:
-            ev[k][1] = max(ev[k][0] + 0.1, ev[k + 1][0] - 0.02)
+    for n, (l1, l2, end) in enumerate(BLOCKS):
+        words = [(w, s + VO) for w, s in l1 + l2]
+        t0 = words[0][1] - 0.15
+        t1 = end + VO + 0.25
+        if n + 1 < len(BLOCKS):
+            t1 = min(t1, BLOCKS[n + 1][0][0][1] + VO - 0.17)
+        else:
+            t1 = PRICE_AT
+        parts = ["{\\k%d}" % round((words[0][1] - t0) * 100)]
+        for k, (w, st) in enumerate(words):
+            nxt = words[k + 1][1] if k + 1 < len(words) else end + VO
+            sep = "\\N" if k == len(l1) - 1 else " "
+            parts.append("{\\kf%d}%s%s" % (max(1, round((nxt - st) * 100)), w, sep if k + 1 < len(words) else ""))
+        ev.append((t0, t1, r"{\an2\pos(540,%d)\fad(180,180)}" % SUB_Y + "".join(parts)))
     head = textwrap.dedent(f"""\
         [Script Info]
         ScriptType: v4.00+
@@ -69,7 +65,7 @@ def build_ass():
 
         [V4+ Styles]
         Format: Name,Fontname,Fontsize,PrimaryColour,SecondaryColour,OutlineColour,BackColour,Bold,Italic,Underline,StrikeOut,ScaleX,ScaleY,Spacing,Angle,BorderStyle,Outline,Shadow,Alignment,MarginL,MarginR,MarginV,Encoding
-        Style: Din,Source Sans Pro,86,&H00FFFFFF,&H00FFFFFF,&H00000000,&H80000000,-1,0,0,0,100,100,0,0,1,6,4,2,40,40,40,1
+        Style: Din,Source Sans Pro,{SUB_SIZE},{YELLOW.rstrip("&")},{WHITE.rstrip("&")},&H00000000,&H80000000,-1,0,0,0,100,100,0,0,1,5,3,2,40,40,40,1
 
         [Events]
         Format: Layer,Start,End,Style,Name,MarginL,MarginR,MarginV,Effect,Text
