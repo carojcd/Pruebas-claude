@@ -6,7 +6,7 @@
 - Subtítulo dinámico palabra a palabra en Source Sans Pro Bold.
 - Tarjeta «DESDE $ 17.640» cuando la voz dice el precio.
 - Footer a sangre en el borde inferior; subtítulos y tarjeta dentro de la zona 4:5 (1080×1350, y 285–1635).
-Salida: salida/brilla_montaje_9x16.mp4
+Salidas: salida/brilla_montaje_9x16.mp4 y salida/brilla_montaje_1x1.mp4
 """
 import os, subprocess, textwrap
 
@@ -19,7 +19,6 @@ DUR = 3 * CLIP - 2 * XF                  # 17.04 s
 VO = 0.60                                # la voz entra a los 0.6 s → cada frase cae en su clip
 MUSIC_SS = 3.22                          # el drop de la canción (9.00 s) cae en la mitad de la 1.ª transición
 ZONE_TOP, ZONE_BOT = 285, 1635           # zona 4:5 centrada en el 9:16
-PRICE_W = 448                            # mismo tamaño que en el gato v3 (560 × 0.8)
 YELLOW, WHITE = "&H000EC2FF&", "&H00FFFFFF&"
 
 # Bloques de subtítulo (2 líneas), palabra, inicio, fin en segundos del audio de la voz.
@@ -33,14 +32,25 @@ BLOCKS = [
   [[("PROTÉGELOS", 9.50), ("HOY", 9.94)], [("DESDE", 10.16), ("SOLO", 10.48)], 10.76],
 ]
 PRICE_AT = VO + 10.76                    # la tarjeta entra cuando la voz dice «17.640», donde van los subtítulos
-SUB_SIZE = 69                            # 20 % más pequeño que antes (86)
-SUB_Y = 1480                             # base de los subtítulos (más arriba; la zona 4:5 termina en 1635)
-PRICE_Y = SUB_Y - 122                    # tarjeta centrada en el lugar del subtítulo
+
+# Formatos. sub_y = base del bloque de subtítulos; la tarjeta se centra en el mismo lugar del bloque.
+FORMATS = {
+    "9x16": dict(h=1920, sub_size=69, sub_y=1384,          # 1480 − 5 % de la altura (96 px)
+                 price_w=538,                               # 448 × 1.2
+                 crops=None),
+    # 1:1 – cada clip se recorta por separado para que lo importante quede arriba de los subtítulos;
+    # el clip 2 hace un paneo vertical que sigue al gato del salto a la hamaca y el clip 3
+    # sube de los perritos dormidos a la nube del sueño mientras se dibuja.
+    "1x1": dict(h=1080, sub_size=52, sub_y=770,            # base con aire sobre el footer (empieza en 819)
+                price_w=430,
+                crops=["330", "300+300*min(1\\,max(0\\,(t-1)/3.5))", "600-200*min(1\\,max(0\\,(t-0.5)/4.5))"]),
+}
 
 def ts(t):
     t = max(0.0, t); return f"0:{int(t // 60):02d}:{t % 60:05.2f}"
 
-def build_ass():
+def build_ass(fmt, name):
+    f = FORMATS[fmt]; SUB_Y = f["sub_y"]
     ev = []
     for n, (l1, l2, end) in enumerate(BLOCKS):
         words = [(w, s + VO) for w, s in l1 + l2]
@@ -60,27 +70,34 @@ def build_ass():
         [Script Info]
         ScriptType: v4.00+
         PlayResX: {W}
-        PlayResY: {H}
+        PlayResY: {f["h"]}
         WrapStyle: 2
 
         [V4+ Styles]
         Format: Name,Fontname,Fontsize,PrimaryColour,SecondaryColour,OutlineColour,BackColour,Bold,Italic,Underline,StrikeOut,ScaleX,ScaleY,Spacing,Angle,BorderStyle,Outline,Shadow,Alignment,MarginL,MarginR,MarginV,Encoding
-        Style: Din,Source Sans Pro,{SUB_SIZE},{YELLOW.rstrip("&")},{WHITE.rstrip("&")},&H00000000,&H80000000,-1,0,0,0,100,100,0,0,1,5,3,2,40,40,40,1
+        Style: Din,Source Sans Pro,{f["sub_size"]},{YELLOW.rstrip("&")},{WHITE.rstrip("&")},&H00000000,&H80000000,-1,0,0,0,100,100,0,0,1,5,3,2,40,40,40,1
 
         [Events]
         Format: Layer,Start,End,Style,Name,MarginL,MarginR,MarginV,Effect,Text
         """)
-    open("subs.ass", "w", encoding="utf-8").write(
+    open(name, "w", encoding="utf-8").write(
         head + "".join(f"Dialogue: 0,{ts(a)},{ts(b)},Din,,0,0,0,,{t}\n" for a, b, t in ev))
 
-def render():
+def render(fmt):
+    f = FORMATS[fmt]; ass = f"subs_{fmt}.ass"; build_ass(fmt, ass); out = f"salida/brilla_montaje_{fmt}.mp4"
     os.makedirs("salida", exist_ok=True)
-    norm = f"scale={W}:{H}:flags=lanczos,setsar=1,fps=24,format=yuv420p"
+    block_h = 2 * f["sub_size"] * 1.2
+    price_h = f["price_w"] * 130 / 700
+    PRICE_Y = round(f["sub_y"] - block_h / 2 - price_h / 2)   # centro de la tarjeta = centro del bloque de subtítulos
+    PRICE_W = f["price_w"]
+    def norm(k):
+        base = f"scale={W}:{H}:flags=lanczos,setsar=1,fps=24,format=yuv420p"
+        return base if not f["crops"] else base + f",crop={W}:{f['h']}:0:'{f['crops'][k]}'"
     blur = f"between(t,{T1 + 0.1:.2f},{T1 + XF - 0.1:.2f})+between(t,{T2 + 0.1:.2f},{T2 + XF - 0.1:.2f})"
-    vf = (f"[0:v]{norm}[a];[1:v]{norm}[b];[2:v]{norm}[c];"
+    vf = (f"[0:v]{norm(0)}[a];[1:v]{norm(1)}[b];[2:v]{norm(2)}[c];"
           f"[a][b]xfade=transition=smoothleft:duration={XF}:offset={T1}[ab];"
           f"[ab][c]xfade=transition=smoothleft:duration={XF}:offset={T2}[abc];"
-          f"[abc]avgblur=sizeX=40:sizeY=1:enable='{blur}',ass=subs.ass:fontsdir={A}[v1];"
+          f"[abc]avgblur=sizeX=40:sizeY=1:enable='{blur}',ass={ass}:fontsdir={A}[v1];"
           f"[4:v]scale={W}:-1[foot];[v1][foot]overlay=0:H-h:shortest=1[v2];"
           f"[5:v]scale={PRICE_W}:-1,format=rgba,fade=in:st={PRICE_AT:.2f}:d=0.15:alpha=1[pr];"
           f"[v2][pr]overlay=x=(W-w)/2:y='{PRICE_Y}+24*exp(-(t-{PRICE_AT:.2f})*7)*cos((t-{PRICE_AT:.2f})*22)'"
@@ -97,8 +114,8 @@ def render():
         "-ss", str(MUSIC_SS), "-i", f"{A}/musica.mp3",
         "-filter_complex", vf + af, "-map", "[vout]", "-map", "[aout]", "-t", f"{DUR:.2f}",
         "-c:v", "libx264", "-preset", "slow", "-crf", "18", "-pix_fmt", "yuv420p", "-r", "24",
-        "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", "salida/brilla_montaje_9x16.mp4"], check=True)
-    print("OK salida/brilla_montaje_9x16.mp4")
+        "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", out], check=True)
+    print("OK", out)
 
 if __name__ == "__main__":
-    build_ass(); render()
+    render("9x16"); render("1x1")
