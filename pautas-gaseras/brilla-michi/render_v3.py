@@ -14,7 +14,7 @@ from PIL import Image, ImageDraw, ImageFilter, ImageFont
 HERE = os.path.dirname(os.path.abspath(__file__))
 os.chdir(HERE)
 A, W, DUR = "assets", 1080, 14.04
-FOOT_H = round(265 * W / 1097)                       # 261 px (footer recortado, sin margen transparente)
+FOOT_H = 300   # footer «Brilla Seguros y asistencias» (../comun), 1080×300 con velo
 YELLOW, WHITE = (255, 194, 14), (255, 255, 255)
 
 # (fragmentos de la línea con su color y peso) – "seguro para mascotas de Brilla." resaltado
@@ -79,7 +79,7 @@ def render_full(out, text_y, price_y, crop_off=0):
     subprocess.run([
         "ffmpeg", "-y", "-v", "error", "-i", f"{A}/video.mp4",
         "-loop", "1", "-i", f"{A}/grad_full.png", "-loop", "1", "-i", f"{A}/texto_v3.png",
-        "-loop", "1", "-i", f"{A}/footer_fit.png", "-loop", "1", "-i", f"{A}/precio_17640.png",
+        "-loop", "1", "-i", "../comun/footer_brilla_seguros_1080.png", "-loop", "1", "-i", f"{A}/precio_17640.png",
         "-filter_complex", vf, "-map", "[vout]", "-map", "0:a", "-t", str(DUR),
         "-c:v", "libx264", "-preset", "slow", "-crf", "18", "-pix_fmt", "yuv420p", "-r", "24",
         "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", out], check=True)
@@ -105,7 +105,7 @@ def render(out, canvas_h, box_h, box_y, crop_off, text_y, price_y):
     subprocess.run([
         "ffmpeg", "-y", "-v", "error", "-i", f"{A}/video.mp4",
         "-loop", "1", "-i", f"{A}/grad.png", "-loop", "1", "-i", f"{A}/texto_v3.png",
-        "-loop", "1", "-i", f"{A}/footer_fit.png", "-loop", "1", "-i", f"{A}/precio_17640.png",
+        "-loop", "1", "-i", "../comun/footer_brilla_seguros_1080.png", "-loop", "1", "-i", f"{A}/precio_17640.png",
         "-filter_complex", vf, "-map", "[vout]", "-map", "0:a", "-t", str(DUR),
         "-c:v", "libx264", "-preset", "slow", "-crf", "18", "-pix_fmt", "yuv420p", "-r", "24",
         "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", out], check=True)

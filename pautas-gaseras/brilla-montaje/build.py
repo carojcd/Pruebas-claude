@@ -110,7 +110,7 @@ def render(fmt):
     subprocess.run([
         "ffmpeg", "-y", "-v", "error",
         "-i", f"{A}/v1.mp4", "-i", f"{A}/v2.mp4", "-i", f"{A}/v3.mp4", "-i", f"{A}/voz.mp3",
-        "-loop", "1", "-i", f"{A}/footer_fit.png", "-loop", "1", "-i", f"{A}/precio_17640.png",
+        "-loop", "1", "-i", "../comun/footer_brilla_seguros_1080.png", "-loop", "1", "-i", f"{A}/precio_17640.png",
         "-ss", str(MUSIC_SS), "-i", f"{A}/musica.mp3",
         "-filter_complex", vf + af, "-map", "[vout]", "-map", "[aout]", "-t", f"{DUR:.2f}",
         "-c:v", "libx264", "-preset", "slow", "-crf", "18", "-pix_fmt", "yuv420p", "-r", "24",

@@ -12,7 +12,7 @@ import os, subprocess, textwrap
 HERE = os.path.dirname(os.path.abspath(__file__))
 os.chdir(HERE)
 W = 1080
-FOOT_H = round(265 * W / 1097)                      # 261 px
+FOOT_H = 300   # footer «Brilla Seguros y asistencias» (../comun), 1080×300 con velo
 YELLOW, WHITE = "&H000EC2FF&", "&H00FFFFFF&"         # #FFC20E y blanco (BGR)
 
 # Frases: lista de (palabra, inicio, fin) en segundos del video
@@ -98,7 +98,7 @@ def write_ass(name, h, pos, size):
 def render(out, h, vf_video, ass):
     vf = (f"[0:v]{vf_video},setsar=1,ass={ass}:fontsdir=assets[v1];"
           f"[1:v]scale={W}:-1[foot];[v1][foot]overlay=0:H-h:shortest=1[vout]")
-    subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", "assets/video.mp4", "-loop", "1", "-i", "assets/footer_fit.png",
+    subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", "assets/video.mp4", "-loop", "1", "-i", "../comun/footer_brilla_seguros_1080.png",
                     "-filter_complex", vf, "-map", "[vout]", "-map", "0:a", "-t", str(END), "-c:v", "libx264",
                     "-preset", "slow", "-crf", "18", "-pix_fmt", "yuv420p", "-r", "30", "-c:a", "aac", "-b:a", "192k",
                     "-movflags", "+faststart", out], check=True)
