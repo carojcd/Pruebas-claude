@@ -1,0 +1,5 @@
+.hyperframes/
+out/render.log
+out/.*
+out/work-*
+assets/video/abogados_src.mp4

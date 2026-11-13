@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="vendor/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "IBM Plex Sans"; font-weight: 600; src: url("assets/fonts/ibm-plex-sans-latin-600-normal.woff2") format("woff2"); }
+      @font-face { font-family: "IBM Plex Sans"; font-weight: 700; src: url("assets/fonts/ibm-plex-sans-latin-700-normal.woff2") format("woff2"); }
+      @font-face { font-family: "DM Sans"; font-weight: 400; src: url("assets/fonts/dm-sans-latin-400-normal.woff2") format("woff2"); }
+      @font-face { font-family: "DM Sans"; font-weight: 500; src: url("assets/fonts/dm-sans-latin-500-normal.woff2") format("woff2"); }
+      :root {
+        --white: #ffffff; --gray: #f7f7f7; --ink: #333333;
+        --cian: #32bce5; --menta: #00d9b5; --violeta: #6c5ce7;
+        --grad: linear-gradient(100deg, #00d9b5 0%, #32bce5 50%, #6c5ce7 100%);
+        --glass: linear-gradient(rgba(255,255,255,.80), rgba(255,255,255,.80)) padding-box, linear-gradient(135deg, #00d9b5, #32bce5 50%, #6c5ce7) border-box;
+      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: #fff; }
+      #root { position: relative; width: 100%; height: 100%; overflow: hidden; background: linear-gradient(180deg, #ffffff 0%, #f7f7f7 100%); color: var(--ink); font-family: "DM Sans", sans-serif; }
+      .layer { position: absolute; inset: 0; }
+
+      /* ---------- componente: fondo degradado orgánico ---------- */
+      .orb { position: absolute; filter: blur(70px); opacity: .55; border-radius: 42% 58% 63% 37% / 41% 44% 56% 59%; }
+      #o1 { left: -260px; top: -200px; width: 760px; height: 700px; background: radial-gradient(circle at 40% 40%, #00d9b5, rgba(50,188,229,.5) 60%, transparent 75%); }
+      #o2 { right: -300px; top: 520px; width: 780px; height: 820px; background: radial-gradient(circle at 50% 50%, #6c5ce7, rgba(108,92,231,.35) 60%, transparent 75%); opacity: .38; }
+      #o3 { left: -200px; bottom: -260px; width: 820px; height: 720px; background: radial-gradient(circle at 50% 50%, #32bce5, rgba(50,188,229,.3) 60%, transparent 75%); opacity: .4; }
+
+      /* ---------- componente: video footage ---------- */
+      .vwrap { position: absolute; overflow: hidden; }
+      .vz { position: absolute; inset: 0; }
+      .vid { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+      #v1w { inset: 0; }
+      #v1shade { position: absolute; inset: 0; opacity: 0; background: linear-gradient(180deg, rgba(10,16,40,0) 45%, rgba(10,16,40,.62) 100%); }
+      #v2w { inset: 0; clip-path: inset(50% 0% 50% 0%); }
+      #v2z { top: -150px; bottom: auto; height: 1920px; width: 1080px; }
+      #v3w { left: 330px; top: 930px; width: 680px; height: 720px; border-radius: 46% 54% 38% 62% / 52% 40% 60% 48%; box-shadow: 0 40px 90px -30px rgba(60,70,140,.45); }
+      #v3z { inset: -60px; }
+      #v4w { left: 0; top: 0; width: 1080px; height: 1180px; -webkit-mask-image: linear-gradient(180deg, #000 62%, transparent 100%); mask-image: linear-gradient(180deg, #000 62%, transparent 100%); }
+      #v6w { left: 230px; top: 150px; width: 850px; height: 1150px; border-radius: 240px 0 0 70px;
+        -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 20%), linear-gradient(0deg, transparent 0%, #000 16%); -webkit-mask-composite: source-in; mask-image: linear-gradient(90deg, transparent 0%, #000 20%), linear-gradient(0deg, transparent 0%, #000 16%); mask-composite: intersect; }
+
+      /* ---------- componente: tipografía animada ---------- */
+      .t { position: absolute; white-space: nowrap; line-height: 1.02; }
+      .h { font-family: "IBM Plex Sans", sans-serif; font-weight: 700; letter-spacing: -.02em; }
+      .hs { font-family: "IBM Plex Sans", sans-serif; font-weight: 600; letter-spacing: -.01em; }
+      .b { font-family: "DM Sans", sans-serif; font-weight: 500; letter-spacing: -.01em; }
+      .w { display: inline-block; overflow: hidden; vertical-align: top; padding: .08em 0 .14em; margin: -.08em 0 -.14em; }
+      .w > span { display: inline-block; }
+      .m { display: inline-block; overflow: hidden; vertical-align: top; padding: .1em .01em .16em; margin: -.1em -.01em -.16em; }
+      .ch { display: inline-block; }
+      .white { color: #fff; text-shadow: 0 6px 30px rgba(0,0,0,.25); }
+      .gtext { background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+      /* ---------- componente: tarjetas de información (glassmorphism) ---------- */
+      .glass { position: absolute; border-radius: 44px; border: 2px solid transparent; background: var(--glass);
+        -webkit-backdrop-filter: blur(18px) saturate(140%); backdrop-filter: blur(18px) saturate(140%);
+        box-shadow: 0 40px 90px -36px rgba(50,60,130,.38), inset 0 1px 0 #fff; }
+      .pill { position: absolute; height: 72px; padding: 0 36px; border-radius: 36px; display: flex; align-items: center; color: #fff; font-family: "IBM Plex Sans"; font-weight: 700; font-size: 40px; letter-spacing: .04em; }
+      .tile { position: absolute; border-radius: 34px; display: flex; align-items: center; justify-content: center; color: #fff; background: var(--grad); box-shadow: 0 18px 40px -16px rgba(50,120,200,.55); }
+      svg.i { width: 56%; height: 56%; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; overflow: visible; }
+      .row { position: absolute; left: 90px; width: 900px; height: 150px; }
+      .row .tile { left: 0; top: 10px; width: 130px; height: 130px; }
+      .row .t { left: 170px; top: 44px; font-size: 56px; }
+      .skel { position: absolute; left: 70px; height: 18px; border-radius: 9px; background: linear-gradient(90deg, rgba(0,217,181,.55), rgba(50,188,229,.55), rgba(108,92,231,.5)); transform-origin: left center; }
+
+      /* escena A / split */
+      #cardA { left: 130px; top: 576px; width: 820px; height: 768px; }
+      #divLine { position: absolute; left: 0; top: 0; width: 1080px; height: 8px; background: var(--grad); box-shadow: 0 0 24px rgba(50,188,229,.6); }
+      /* escena C (formación) */
+      #calC { left: 80px; top: 300px; width: 920px; height: 520px; }
+      #calTile { left: 40px; top: 150px; width: 220px; height: 220px; flex-direction: column; }
+      #calDay { position: absolute; left: 0; right: 0; top: 78px; text-align: center; font-family: "IBM Plex Sans"; font-weight: 700; font-size: 96px; color: #fff; }
+      #clockSvg { position: absolute; left: 90px; top: 990px; width: 300px; height: 300px; overflow: visible; }
+      #k20 { left: 430px; top: 940px; font-size: 290px; }
+      #liveC { left: 80px; top: 990px; width: 920px; height: 600px; }
+      .ldot { position: absolute; width: 30px; height: 30px; border-radius: 50%; background: #ff4d6d; box-shadow: 0 0 0 10px rgba(255,77,109,.18); }
+      /* escena D (beneficios) */
+      #insD { left: 90px; top: 250px; width: 900px; height: 660px; }
+      #insV { position: absolute; left: 18px; top: 18px; right: 18px; bottom: 18px; border-radius: 30px; overflow: hidden; }
+      /* escena E y F (paquetes) */
+      #svgE { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; overflow: visible; }
+      #svgE path { fill: none; stroke-width: 6; stroke-linecap: round; }
+      #cardE { left: 60px; top: 520px; width: 960px; height: 760px; }
+      #cardF { left: 60px; top: 470px; width: 960px; height: 900px; }
+      .price { position: absolute; left: 60px; white-space: nowrap; font-family: "IBM Plex Sans"; font-weight: 700; letter-spacing: -.03em; color: var(--ink); line-height: 1; }
+      .price small { font-size: .4em; font-weight: 600; letter-spacing: .02em; margin-left: 18px; }
+      .div { position: absolute; left: 60px; width: 840px; height: 3px; border-radius: 2px; background: linear-gradient(90deg, rgba(0,217,181,.6), rgba(108,92,231,.25)); transform-origin: left center; }
+      .item { position: absolute; left: 60px; display: flex; align-items: flex-start; gap: 28px; font-size: 50px; line-height: 1.12; }
+      .chk { width: 62px; height: 62px; border-radius: 50%; flex: none; display: flex; align-items: center; justify-content: center; color: #fff; }
+      .chk svg { width: 34px; height: 34px; fill: none; stroke: #fff; stroke-width: 3.4; stroke-linecap: round; stroke-linejoin: round; }
+      #burstF { position: absolute; left: 540px; top: 960px; width: 2600px; height: 2600px; margin: -1300px 0 0 -1300px; border-radius: 50%; background: radial-gradient(circle, #8f82f0 0%, #6c5ce7 45%, #5847d6 70%); }
+      .mini { top: 760px; width: 465px; height: 430px; }
+      /* escena G (cierre) */
+      .cpill { position: absolute; left: 90px; width: 900px; height: 130px; border-radius: 65px; }
+      .cpill .tile { left: 18px; top: 15px; width: 100px; height: 100px; border-radius: 50%; }
+      .cpill .t { left: 150px; top: 36px; }
+    </style>
+  </head>
+  <body>
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+      <defs>
+        <linearGradient id="gl" x1="0" x2="1"><stop offset="0" stop-color="#00d9b5"/><stop offset=".5" stop-color="#32bce5"/><stop offset="1" stop-color="#6c5ce7"/></linearGradient>
+        <linearGradient id="glE" x1="0" x2="1"><stop offset="0" stop-color="#32bce5"/><stop offset="1" stop-color="#00d9b5"/></linearGradient>
+        <!-- componente: iconos SVG -->
+        <symbol id="i-cal" viewBox="0 0 24 24"><path pathLength="1" d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v14H4z M4 10h16 M8 2v4 M16 2v4"/></symbol>
+        <symbol id="i-wifi" viewBox="0 0 24 24"><path pathLength="1" d="M2 9a15 15 0 0 1 20 0 M5.5 12.5a10 10 0 0 1 13 0 M9 16a5 5 0 0 1 6 0 M12 19.5h.01"/></symbol>
+        <symbol id="i-layers" viewBox="0 0 24 24"><path pathLength="1" d="M12 3l9 5-9 5-9-5z M3 13l9 5 9-5 M3 17l9 5 9-5"/></symbol>
+        <symbol id="i-users" viewBox="0 0 24 24"><path pathLength="1" d="M9 11a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z M2 20c0-3.5 3-6 7-6s7 2.5 7 6 M17 11a3 3 0 1 0 0-6 M18 14.5c2.5.5 4 2.5 4 5.5"/></symbol>
+        <symbol id="i-doc" viewBox="0 0 24 24"><path pathLength="1" d="M6 3h9l4 4v14H6z M15 3v4h4 M9 12h7 M9 16h7"/></symbol>
+        <symbol id="i-scale" viewBox="0 0 24 24"><path pathLength="1" d="M12 3v18 M7 21h10 M4 7h16 M4 7l-2.5 6a3 3 0 0 0 5 0z M20 7l-2.5 6a3 3 0 0 0 5 0z"/></symbol>
+        <symbol id="i-wa" viewBox="0 0 24 24"><path d="M4 20l1.2-3.6A8 8 0 1 1 8 19z M9 8.5c0 3.5 3 6.5 6.5 6.5l1-1.6-2-1-1 .9c-1-.4-2-1.4-2.4-2.4l.9-1-1-2z"/></symbol>
+        <symbol id="i-mail" viewBox="0 0 24 24"><path d="M3 6h18v12H3z M3 6l9 7 9-7"/></symbol>
+        <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+      </defs>
+    </svg>
+
+    <div id="root" data-composition-id="seminario" data-start="0" data-duration="42" data-width="1080" data-height="1920">
+      <!-- componente: fondo degradado -->
+      <div id="bg" class="layer" data-layout-allow-overflow>
+        <div class="orb" id="o1"></div><div class="orb" id="o2"></div><div class="orb" id="o3"></div>
+      </div>
+
+      <!-- A · apertura cinematográfica -->
+      <div class="vwrap" id="v1w" data-layout-allow-overflow>
+        <div class="vz" id="v1z">
+          <video id="v1a" class="clip vid" src="assets/video/abogados.mp4" muted playsinline data-start="0" data-duration="2.2" data-media-start="0" data-playback-rate="0.85" data-track-index="1"></video>
+          <video id="v1b" class="clip vid" src="assets/video/abogados.mp4" muted playsinline data-start="2.2" data-duration="1.5" data-media-start="1.9" data-playback-rate="0.85" data-track-index="1"></video>
+        </div>
+        <div id="v1shade"></div>
+      </div>
+      <div data-layout-allow-overlap data-layout-allow-overflow class="t h white" id="tA1a" style="left:80px;top:1180px;font-size:132px" data-split="chars">LOS CASOS</div>
+      <div data-layout-allow-overlap data-layout-allow-overflow class="t h white" id="tA1b" style="left:80px;top:1310px;font-size:132px" data-split="chars">CAMBIAN</div>
+      <div data-layout-allow-overlap data-layout-allow-overflow class="t h white" id="tA2a" style="left:80px;top:1180px;font-size:118px" data-split="chars">TU PRÁCTICA</div>
+      <div data-layout-allow-overlap data-layout-allow-overflow class="t h" id="tA2b" style="left:80px;top:1305px;font-size:132px" data-split="grad">TAMBIÉN</div>
+      <div class="glass" id="cardA">
+        <div class="skel" style="top:110px;width:420px"></div><div class="skel" style="top:200px;width:660px"></div>
+        <div class="skel" style="top:290px;width:560px"></div><div class="skel" style="top:380px;width:680px"></div>
+        <div class="skel" style="top:470px;width:380px"></div><div class="skel" style="top:560px;width:600px"></div>
+      </div>
+
+      <!-- A · composición dividida -->
+      <div class="vwrap" id="v2w">
+        <div class="vz" id="v2z">
+          <video id="v2a" class="clip vid" src="assets/video/abogados.mp4" muted playsinline data-start="4.05" data-duration="1.9" data-media-start="4.24" data-playback-rate="0.85" data-track-index="1"></video>
+          <video id="v2b" class="clip vid" src="assets/video/abogados.mp4" muted playsinline data-start="5.95" data-duration="1.85" data-media-start="5.9" data-playback-rate="0.85" data-track-index="1"></video>
+        </div>
+      </div>
+      <div id="divLine"></div>
+      <div data-layout-allow-overlap data-layout-allow-overflow class="t b" id="tB1" style="left:90px;top:1040px;font-size:52px" data-split="words">Cada asesoría es una oportunidad</div>
+      <div data-layout-allow-overlap data-layout-allow-overflow class="t b" id="tB2" style="left:90px;top:1108px;font-size:52px" data-split="words">para avanzar con</div>
+      <div data-layout-allow-overlap data-layout-allow-overflow class="t h" id="tB3" style="left:84px;top:1210px;font-size:118px" data-split="grad">CONOCIMIENTO</div>
+      <div data-layout-allow-overlap data-layout-allow-overflow class="t h" id="tB4a" style="left:88px;top:1350px;font-size:118px" data-split="chars">Y</div>
+      <div data-layout-allow-overlap data-layout-allow-overflow class="t h" id="tB4b" style="left:190px;top:1350px;font-size:118px" data-split="grad">CONFIANZA</div>
+
+      <!-- B · presentación -->
+      <div data-layout-allow-overlap data-layout-allow-overflow class="t hs" id="tC1" style="left:90px;top:300px;font-size:66px" data-split="words">SEMINARIO PRÁCTICO EN</div>
+      <div data-layout-allow-overlap data-layout-allow-overflow class="t h" id="tC2" style="left:84px;top:385px;font-size:136px" data-split="grad">INSOLVENCIA</div>
+      <div data-layout-allow-overlap data-layout-allow-overflow class="t h" id="tC3" style="left:84px;top:535px;font-size:136px" data-split="grad">DE PERSONA</div>
+      <div data-layout-allow-overlap data-layout-allow-overflow class="t h" id="tC4" style="left:84px;top:685px;font-size:136px" data-split="grad">NATURAL</div>
+      <div data-layout-allow-overlap data-layout-allow-overflow class="t b" id="tC5" style="left:92px;top:868px;font-size:50px" data-split="words">de Academia FLM</div>
+      <div class="vwrap" id="v3w">
+        <div class="vz" id="v3z">
+          <video id="v3a" class="clip vid" src="assets/video/abogados.mp4" muted playsinline data-start="9.0" data-duration="2.6" data-media-start="0" data-playback-rate="0.72" data-track-index="1"></video>
+        </div>
+      </div>
+      <div class="glass" id="chip1" style="left:110px;top:1090px;width:150px;height:150px;border-radius:40px"><div class="tile" style="left:22px;top:22px;width:102px;height:102px;border-radius:28px"><svg class="i"><use href="#i-doc"/></svg></div></div>
+      <div class="glass" id="chip2" style="left:150px;top:1300px;width:150px;height:150px;border-radius:40px"><div class="tile" style="left:22px;top:22px;width:102px;height:102px;border-radius:28px"><svg class="i"><use href="#i-scale"/></svg></div></div>
+
+      <!-- C · formación: calendario y reloj -->
+      <div class="glass" id="calC">
+        <div class="tile" id="calTile"><svg class="i" style="position:absolute;width:78%;height:78%;stroke-width:1.3;opacity:.45"><use href="#i-cal"/></svg><div id="calDay">2</div></div>
+        <div data-layout-allow-overlap data-layout-allow-overflow class="t b" id="cIni" style="left:300px;top:48px;font-size:40px;color:#6c5ce7;letter-spacing:.14em" data-split="words">INICIO</div>
+        <div data-layout-allow-overlap data-layout-allow-overflow class="t h" id="cD1" style="left:300px;top:100px;font-size:58px" data-split="words">2 DE DICIEMBRE</div>
+        <div data-layout-allow-overlap data-layout-allow-overflow class="t h" id="cD1b" style="left:300px;top:168px;font-size:58px" data-split="words">DE 2026</div>
+        <div class="div" id="cDiv" style="left:300px;top:262px;width:560px"></div>
+        <div data-layout-allow-overlap data-layout-allow-overflow class="t b" id="cFin" style="left:300px;top:290px;font-size:40px;color:#6c5ce7;letter-spacing:.14em" data-split="words">FINALIZACIÓN</div>
+        <div data-layout-allow-overlap data-layout-allow-overflow class="t h" id="cD2" style="left:300px;top:342px;font-size:58px" data-split="words">12 DE DICIEMBRE</div>
+        <div data-layout-allow-overlap data-layout-allow-overflow class="t h" id="cD2b" style="left:300px;top:410px;font-size:58px" data-split="words">DE 2026</div>
+      </div>
+      <svg id="clockSvg" viewBox="0 0 300 300">
+        <circle cx="150" cy="150" r="128" fill="rgba(255,255,255,.75)" stroke="#eef0f6" stroke-width="16"/>
+        <circle id="clkRing" cx="150" cy="150" r="128" fill="none" stroke="url(#gl)" stroke-width="16" stroke-linecap="butt" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" transform="rotate(-90 150 150)"/>
+        <line id="clkH" x1="150" y1="150" x2="150" y2="88" stroke="#333" stroke-width="12" stroke-linecap="round"/>
+        <line id="clkM" x1="150" y1="150" x2="150" y2="58" stroke="#6c5ce7" stroke-width="8" stroke-linecap="round"/>
+        <circle cx="150" cy="150" r="12" fill="#333"/>
+      </svg>
+      <div data-layout-allow-overlap data-layout-allow-overflow class="t h gtext" id="k20">20</div>
+      <div data-layout-allow-overlap data-layout-allow-overflow class="t h" id="kHoras" style="left:450px;top:1240px;font-size:96px" data-split="chars">HORAS</div>
+
+      <!-- C · clases en vivo con inserto cinematográfico -->
+      <div class="vwrap" id="v4w">
+        <div class="vz" id="v4z">
+          <video id="v4a" class="clip vid" src="assets/video/abogados.mp4" muted playsinline data-start="16.05" data-duration="2.6" data-media-start="2.1" data-playback-rate="0.8" data-track-index="1"></video>
+        </div>
+      </div>
+      <div class="glass" id="liveC">
+        <div class="ldot" id="lDot" style="left:60px;top:76px"></div>
+        <div data-layout-allow-overlap data-layout-allow-overflow class="t h" id="lT" style="left:116px;top:52px;font-size:66px" data-split="grad">CLASES EN VIVO</div>
+        <div class="div" id="lDiv" style="top:170px"></div>
+        <div class="tile" id="lI1" style="left:60px;top:214px;width:110px;height:110px;border-radius:30px"><svg class="i"><use href="#i-cal"/></svg></div>
+        <div data-layout-allow-overlap data-layout-allow-overflow class="t hs" id="lR1a" style="left:200px;top:214px;font-size:50px;color:#6c5ce7" data-split="words">Martes y jueves</div>
+        <div data-layout-allow-overlap data-layout-allow-overflow class="t b" id="lR1b" style="left:200px;top:278px;font-size:46px" data-split="words">5:30 p. m. a 7:30 p. m.</div>
+        <div class="tile" id="lI2" style="left:60px;top:394px;width:110px;height:110px;border-radius:30px"><svg class="i"><use href="#i-cal"/></svg></div>
+        <div data-layout-allow-overlap data-layout-allow-overflow class="t hs" id="lR2a" style="left:200px;top:394px;font-size:50px;color:#6c5ce7" data-split="words">Sábados</div>
+        <div data-layout-allow-overlap data-layout-allow-overflow class="t b" id="lR2b" style="left:200px;top:458px;font-size:46px" data-split="words">9:00 a. m. a 12:00 m.</div>
+      </div>
+
+      <!-- D · beneficios con tarjeta cinematográfica -->
+      <div class="glass" id="insD">
+        <div id="insV">
+          <video id="v5a" class="clip vid" src="assets/video/abogados.mp4" muted playsinline data-start="18.8" data-duration="2.25" data-media-start="4.24" data-playback-rate="0.72" data-track-index="1" style="object-position:50% 40%"></video>
+          <video id="v5b" class="clip vid" src="assets/video/abogados.mp4" muted playsinline data-start="21.05" data-duration="1.7" data-media-start="0.25" data-playback-rate="0.85" data-track-index="1" style="object-position:50% 45%"></video>
+        </div>
+      </div>
+      <div class="row" id="bD1" style="top:990px"><div class="tile" id="bI1"><svg class="i"><use href="#i-wifi"/></svg></div><div data-layout-allow-overlap data-layout-allow-overflow class="t hs" id="bT1" data-split="words">CAMPUS VIRTUAL 24/7</div></div>
+      <div class="row" id="bD2" style="top:1180px"><div class="tile" id="bI2"><svg class="i"><use href="#i-layers"/></svg></div><div data-layout-allow-overlap data-layout-allow-overflow class="t hs" id="bT2" data-split="words">MÓDULOS A TU RITMO</div></div>
+      <div class="row" id="bD3" style="top:1370px"><div class="tile" id="bI3"><svg class="i"><use href="#i-users"/></svg></div><div data-layout-allow-overlap data-layout-allow-overflow class="t hs" id="bT3" data-split="words">DOCENTES EXPERTOS</div></div>
+
+      <!-- E · paquete básico -->
+      <svg id="svgE" viewBox="0 0 1080 1920">
+        <path id="lnE" pathLength="1" stroke="url(#glE)" stroke-dasharray="1" stroke-dashoffset="1" d="M -40 520 H 1120"/>
+        <path id="bdE" pathLength="1" stroke="url(#glE)" stroke-dasharray="1" stroke-dashoffset="1" d="M 108 520 H 972 A 48 48 0 0 1 1020 568 V 1232 A 48 48 0 0 1 972 1280 H 108 A 48 48 0 0 1 60 1232 V 568 A 48 48 0 0 1 108 520 Z"/>
+      </svg>
+      <div class="glass" id="cardE" style="border-color:transparent">
+        <div class="pill" id="pE" style="left:60px;top:60px;background:linear-gradient(90deg,#32bce5,#00d9b5)">PAQUETE BÁSICO</div>
+        <div class="price" id="prE" style="top:180px;font-size:150px">$400.000<small class="gtext" style="background:linear-gradient(90deg,#32bce5,#00d9b5);-webkit-background-clip:text;background-clip:text">COP</small></div>
+        <div class="div" id="dvE" style="top:384px"></div>
+        <div class="item" id="iE1" style="top:440px"><div class="chk" style="background:linear-gradient(135deg,#32bce5,#00d9b5)"><svg viewBox="0 0 24 24"><use href="#i-check"/></svg></div><span>Seminario práctico</span></div>
+        <div class="item" id="iE2" style="top:550px;font-size:48px"><div class="chk" style="background:linear-gradient(135deg,#32bce5,#00d9b5)"><svg viewBox="0 0 24 24"><use href="#i-check"/></svg></div><span>Grabaciones del Congreso 2026</span></div>
+      </div>
+
+      <!-- F · paquete plus + comparación -->
+      <div id="burstF"></div>
+      <div class="glass" id="cardF" style="background:linear-gradient(rgba(255,255,255,.86),rgba(255,255,255,.86)) padding-box, linear-gradient(135deg,#8f82f0,#6c5ce7) border-box">
+        <div class="pill" id="pF" style="left:60px;top:60px;background:linear-gradient(90deg,#8f82f0,#6c5ce7)">PAQUETE PLUS</div>
+        <div class="price" id="prF" style="top:180px;font-size:150px">$900.000<small style="color:#6c5ce7">COP</small></div>
+        <div class="div" id="dvF" style="top:384px;background:linear-gradient(90deg,rgba(108,92,231,.6),rgba(108,92,231,.15))"></div>
+        <div class="item" id="iF1" style="top:440px"><div class="chk" style="background:#6c5ce7"><svg viewBox="0 0 24 24"><use href="#i-check"/></svg></div><span>Seminario práctico</span></div>
+        <div class="item" id="iF2" style="top:540px"><div class="chk" style="background:#6c5ce7"><svg viewBox="0 0 24 24"><use href="#i-check"/></svg></div><span style="white-space:normal;width:740px">Diplomado en Insolvencia de Persona Natural</span></div>
+        <div class="item" id="iF3" style="top:700px;font-size:48px"><div class="chk" style="background:#6c5ce7"><svg viewBox="0 0 24 24"><use href="#i-check"/></svg></div><span>Grabaciones del Congreso 2026</span></div>
+      </div>
+      <div class="glass mini" id="cmpE" style="left:60px">
+        <div class="pill" style="left:36px;top:44px;height:60px;font-size:30px;padding:0 26px;background:linear-gradient(90deg,#32bce5,#00d9b5)">PAQUETE BÁSICO</div>
+        <div class="price" style="left:36px;top:160px;font-size:86px">$400.000</div>
+        <div class="price" style="left:40px;top:270px;font-size:44px;color:#32bce5">COP</div>
+      </div>
+      <div class="glass mini" id="cmpF" style="left:555px;background:linear-gradient(rgba(255,255,255,.86),rgba(255,255,255,.86)) padding-box, linear-gradient(135deg,#8f82f0,#6c5ce7) border-box">
+        <div class="pill" style="left:36px;top:44px;height:60px;font-size:30px;padding:0 26px;background:linear-gradient(90deg,#8f82f0,#6c5ce7)">PAQUETE PLUS</div>
+        <div class="price" style="left:36px;top:160px;font-size:86px">$900.000</div>
+        <div class="price" style="left:40px;top:270px;font-size:44px;color:#6c5ce7">COP</div>
+      </div>
+
+      <!-- G · cierre -->
+      <div class="vwrap" id="v6w">
+        <div class="vz" id="v6z">
+          <video id="v6a" class="clip vid" src="assets/video/abogados.mp4" muted playsinline data-start="32.7" data-duration="1.85" data-media-start="2.6" data-playback-rate="0.8" data-track-index="1"></video>
+          <video id="v6b" class="clip vid" src="assets/video/abogados.mp4" muted playsinline data-start="34.55" data-duration="3.05" data-media-start="5.9" data-playback-rate="0.7" data-track-index="1"></video>
+        </div>
+      </div>
+      <div data-layout-allow-overlap data-layout-allow-overflow class="t h" id="tG1" style="left:70px;top:1350px;font-size:104px" data-split="grad">¡ACTUALÍZATE!</div>
+      <div data-layout-allow-overlap data-layout-allow-overflow class="t h" id="tG2a" style="left:74px;top:1330px;font-size:92px" data-split="chars">AMPLÍA TU</div>
+      <div data-layout-allow-overlap data-layout-allow-overflow class="t h" id="tG2b" style="left:70px;top:1440px;font-size:118px" data-split="grad">PORTAFOLIO</div>
+      <div data-layout-allow-overlap data-layout-allow-overflow class="t h" id="tG3a" style="left:74px;top:1330px;font-size:92px" data-split="chars">DA EL SIGUIENTE</div>
+      <div data-layout-allow-overlap data-layout-allow-overflow class="t h" id="tG3b" style="left:70px;top:1440px;font-size:118px" data-split="grad">PASO</div>
+      <div data-layout-allow-overlap data-layout-allow-overflow class="t h" id="cta1" style="left:84px;top:540px;font-size:112px" data-split="chars">¡CONTÁCTANOS</div>
+      <div data-layout-allow-overlap data-layout-allow-overflow class="t h" id="cta2" style="left:84px;top:672px;font-size:112px" data-split="grad">E INSCRÍBETE!</div>
+      <div class="div" id="ctaLine" style="left:90px;top:840px;width:560px;height:8px;border-radius:4px;background:var(--grad)"></div>
+      <div class="glass cpill" id="cWa" style="top:930px"><div class="tile" style="background:linear-gradient(135deg,#00d9b5,#32bce5)"><svg class="i" style="stroke-width:1.7"><use href="#i-wa"/></svg></div><div data-layout-allow-overlap data-layout-allow-overflow class="t b" style="font-size:56px">+57 310 383 3262</div></div>
+      <div class="glass cpill" id="cMail" style="top:1090px"><div class="tile" style="background:linear-gradient(135deg,#32bce5,#6c5ce7)"><svg class="i" style="stroke-width:1.7"><use href="#i-mail"/></svg></div><div data-layout-allow-overlap data-layout-allow-overflow class="t b" style="font-size:52px">academia@fundacionlm.org</div></div>
+
+      <!-- transición: barrido en degradado -->
+      <div id="wipe" style="position:absolute;left:-10%;width:120%;top:0;height:3000px;background:linear-gradient(180deg, rgba(0,217,181,0) 0%, #00d9b5 4%, #32bce5 9%, #6c5ce7 14%, #ffffff 20%, #ffffff 100%)" data-layout-ignore></div>
+
+      <!-- sincronización de audio -->
+      <audio id="vo" src="assets/audio/vo.wav" data-start="0.25" data-duration="39.31" data-track-index="5" data-volume="1"></audio>
+      <audio id="music" src="assets/audio/music_bed.wav" data-start="0" data-duration="42" data-track-index="6" data-volume="1"></audio>
+      <audio id="sfx" src="assets/audio/sfx.wav" data-start="0" data-duration="42" data-track-index="7" data-volume="1"></audio>
+    </div>
+
+    <script src="js/components.js"></script>
+    <script src="js/scenes.js"></script>
+  </body>
+</html>
