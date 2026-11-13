@@ -3,7 +3,7 @@
    Tiempos de frase medidos con silencedetect (segundos del video):
      A  0.25 «Los casos cambian» · 1.67 «Tu práctica también» · 3.42–7.62 «Cada asesoría … conocimiento y confianza»
      B  8.15–12.61 «Llega el Seminario Práctico en Insolvencia de Persona Natural de Academia FLM»
-     C  13.11 «A partir del dos de diciembre» · 14.87 «veinte horas de formación» · 16.41–18.60 «clases en vivo …»
+     C  13.11 «A partir del dos de diciembre» (la pantalla muestra la fecha corregida: 1 de diciembre) · 14.87 «veinte horas de formación» · 16.41–18.60 «clases en vivo …»
      D  19.00 «Con campus virtual» · 20.16 «módulos a tu ritmo» · ~21.3 «y docentes expertos» (fin 22.49)
      E  22.94 «Paquete Básico» · 23.89 «cuatrocientos mil pesos» · 25.33–27.59 «con grabaciones del Congreso 2026»
      F  27.98 «Paquete Plus» · 28.86 «novecientos mil pesos» · 30.35–32.38 «con el Diplomado … incluido»
@@ -86,7 +86,7 @@
   FX.wordsIn(tl, "#cFin", 13.85); FX.wordsIn(tl, "#cD2", 14.0, 0.08); FX.wordsIn(tl, "#cD2b", 14.2);
   tl.to("#calDay", { rotationX: 90, duration: 0.18, ease: "power2.in" }, 13.95);
   const day = { v: 0 }, dayEl = document.getElementById("calDay");
-  tl.fromTo(day, { v: 0 }, { v: 1, duration: 0.02, onUpdate: () => { dayEl.textContent = day.v > 0.5 ? "12" : "2"; } }, 14.13);
+  tl.fromTo(day, { v: 0 }, { v: 1, duration: 0.02, onUpdate: () => { dayEl.textContent = day.v > 0.5 ? "12" : "1"; } }, 14.13);
   tl.fromTo("#calDay", { rotationX: -90 }, { rotationX: 0, duration: 0.25, ease: E3, immediateRender: false }, 14.14);
   // reloj: el anillo se dibuja y las manecillas giran mientras cuenta a 20
   tl.fromTo("#clockSvg", { opacity: 0, scale: 0.6, rotation: -30 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.7, ease: E4 }, 14.75);
