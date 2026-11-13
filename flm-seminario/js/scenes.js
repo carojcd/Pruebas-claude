@@ -26,8 +26,8 @@
   tl.fromTo("#v1z", { scale: 1.0 }, { scale: 1.1, duration: 2.6, ease: "none" }, 0);
   tl.fromTo("#v1shade", { opacity: 0 }, { opacity: 1, duration: 0.6, ease: S }, 0.1);
   FX.charsIn(tl, "#tA1a", 0.3, 0.035, 0.6); FX.charsIn(tl, "#tA1b", 0.55, 0.04, 0.6);
-  FX.charsOut(tl, "#tA1a", 1.5); FX.charsOut(tl, "#tA1b", 1.52);
-  FX.charsIn(tl, "#tA2a", 1.65, 0.03, 0.55); FX.charsIn(tl, "#tA2b", 1.95, 0.05, 0.6);
+  FX.charsOut(tl, "#tA1a", 1.36, 0.006); FX.charsOut(tl, "#tA1b", 1.38, 0.006);
+  FX.charsIn(tl, "#tA2a", 1.74, 0.03, 0.55); FX.charsIn(tl, "#tA2b", 2.0, 0.05, 0.6);
   FX.charsOut(tl, "#tA2a", 2.95); FX.charsOut(tl, "#tA2b", 2.97);
   // la fotografía se convierte en una tarjeta blanca (documento → tarjeta digital)
   tl.fromTo("#v1w", { clipPath: "inset(0% 0% 0% 0% round 0px)" }, { clipPath: "inset(30% 12% 30% 12% round 44px)", duration: 0.95, ease: "power3.inOut" }, 2.45);
@@ -164,10 +164,10 @@
   tl.fromTo("#v6z", { scale: 1.14, x: 40 }, { scale: 1.0, x: -20, duration: 4.95, ease: "none" }, 32.65);
   FX.charsIn(tl, "#tG1", 32.78, 0.03, 0.55);
   tl.fromTo("#tG1", { scale: 1.12, transformOrigin: "0% 50%" }, { scale: 1, duration: 0.8, ease: E4 }, 32.78);
-  FX.charsOut(tl, "#tG1", 33.62);
-  FX.charsIn(tl, "#tG2a", 33.75, 0.03, 0.55); FX.charsIn(tl, "#tG2b", 33.95, 0.035, 0.6);
-  FX.charsOut(tl, "#tG2a", 35.4); FX.charsOut(tl, "#tG2b", 35.42);
-  FX.charsIn(tl, "#tG3a", 35.55, 0.025, 0.55); FX.charsIn(tl, "#tG3b", 35.85, 0.05, 0.6);
+  FX.charsOut(tl, "#tG1", 33.45, 0.006);
+  FX.charsIn(tl, "#tG2a", 33.86, 0.03, 0.55); FX.charsIn(tl, "#tG2b", 34.02, 0.035, 0.6);
+  FX.charsOut(tl, "#tG2a", 35.28, 0.006); FX.charsOut(tl, "#tG2b", 35.3, 0.006);
+  FX.charsIn(tl, "#tG3a", 35.7, 0.025, 0.55); FX.charsIn(tl, "#tG3b", 35.95, 0.05, 0.6);
   tl.to("#v6w", { opacity: 0, filter: "blur(14px)", scale: 1.05, duration: 0.6, ease: S }, 37.2);
   FX.charsOut(tl, "#tG3a", 37.3); FX.charsOut(tl, "#tG3b", 37.32);
   // llamado a la acción final
