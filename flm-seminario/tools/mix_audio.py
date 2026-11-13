@@ -9,12 +9,13 @@ Reglas:
   - efectos ~26 dB por debajo de la voz en los tramos hablados, techo de pico -12 dBFS
   - fade-in musical 1.5 s y fade-out limpio de 3 s al final
 """
+import json
 import subprocess
 import wave
 import numpy as np
 
 SR = 48000
-DUR = 42.0
+DUR = 39.0
 VO_START = 0.25
 N = int(SR * DUR)
 rng = np.random.default_rng(11)
@@ -79,8 +80,19 @@ bed = mus * (gain * fade)[:, None]
 sfx = np.zeros((N, 2))
 
 
+TM = json.load(open("tools/timemap.json"))
+
+
+def mapt(t):
+    """traslada las marcas de diseño a los tiempos de la voz actual"""
+    for (a0, b0), (a1, b1) in zip(TM, TM[1:]):
+        if t <= a1:
+            return b0 + (t - a0) * (b1 - b0) / (a1 - a0)
+    return t - TM[-1][0] + TM[-1][1]
+
+
 def put(t0, sig, g=1.0, pan=0.0):
-    i = int(t0 * SR)
+    i = int(mapt(t0) * SR)
     sig = sig[: N - i]
     sfx[i : i + len(sig), 0] += sig * g * np.sqrt(0.5 * (1 - pan))
     sfx[i : i + len(sig), 1] += sig * g * np.sqrt(0.5 * (1 + pan))
@@ -141,5 +153,5 @@ if pk > 10 ** (-12 / 20):
 write_wav("assets/audio/music_bed.wav", bed)
 write_wav("assets/audio/sfx.wav", sfx)
 db = lambda x, m: 20 * np.log10(rms(x[m]) / vo_rms)
-print("música vs voz (habla): %.1f dB | (pausas): %.1f dB | pico música %.1f dBFS" % (db(bed, spoken), db(bed, ~spoken & (t > 1.5) & (t < 39.5)), 20 * np.log10(np.max(np.abs(bed)))))
+print("música vs voz (habla): %.1f dB | (pausas): %.1f dB | pico música %.1f dBFS" % (db(bed, spoken), db(bed, ~spoken & (t > 1.5) & (t < 36.6)), 20 * np.log10(np.max(np.abs(bed)))))
 print("efectos vs voz (habla): %.1f dB | pico efectos %.1f dBFS" % (db(sfx, spoken), 20 * np.log10(np.max(np.abs(sfx)) + 1e-12)))

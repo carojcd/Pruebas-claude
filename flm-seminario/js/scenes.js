@@ -15,6 +15,30 @@
   splitText();
   const tl = gsap.timeline({ paused: true });
 
+  /* ---------- mapa de tiempos: las marcas de diseño se trasladan a las frases reales de la voz (tools/timemap.json) ---------- */
+  const TM = [[0, 0], [0.25, 0.25], [1.67, 1.44], [3.42, 2.66], [5.95, 4.95], [6.85, 5.85], [7.45, 6.45], [7.89, 6.75], [8.35, 7.05], [9.65, 8.35], [11.65, 11.39], [12.65, 13.0], [14.85, 14.75], [16.05, 15.9], [18.6, 18.2], [19.0, 18.44], [20.15, 19.15], [21.3, 19.85], [22.75, 20.8], [23.88, 22.2], [25.33, 23.54], [27.45, 25.75], [28.85, 27.2], [30.3, 28.48], [31.75, 29.75], [32.55, 30.45], [32.65, 30.6], [33.75, 31.5], [35.55, 33.0], [37.3, 34.85], [37.75, 35.2], [38.95, 36.3], [42, 39]];
+  const mapT = (t) => {
+    for (let i = 0; i < TM.length - 1; i++) {
+      const [a0, b0] = TM[i], [a1, b1] = TM[i + 1];
+      if (t <= a1) return b0 + ((t - a0) * (b1 - b0)) / (a1 - a0);
+    }
+    return t - TM[TM.length - 1][0] + TM[TM.length - 1][1];
+  };
+  const remap = (fn) => (...args) => {
+    const pos = args[args.length - 1];
+    if (typeof pos !== "number") return fn(...args);
+    const v = { ...args[args.length - 2] };
+    const d = v.duration ?? 0.5, total = d * ((v.repeat || 0) + 1);
+    const np = mapT(pos), k = (mapT(pos + total) - np) / total;
+    v.duration = d * k;
+    if (typeof v.stagger === "number") v.stagger *= k;
+    args[args.length - 2] = v;
+    args[args.length - 1] = np;
+    return fn(...args);
+  };
+  tl.to = remap(tl.to.bind(tl));
+  tl.fromTo = remap(tl.fromTo.bind(tl));
+
   /* ---------- fondo degradado vivo ---------- */
   tl.to("#o1", { x: 140, y: 120, rotation: 25, duration: 10, ease: S, yoyo: true, repeat: 3 }, 0);
   tl.to("#o2", { x: -160, y: -180, rotation: -20, duration: 12, ease: S, yoyo: true, repeat: 2 }, 0);
