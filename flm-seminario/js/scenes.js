@@ -3,7 +3,7 @@
    Tiempos de frase medidos con silencedetect (segundos del video):
      A  0.25 «Los casos cambian» · 1.67 «Tu práctica también» · 3.42–7.62 «Cada asesoría … conocimiento y confianza»
      B  8.15–12.61 «Llega el Seminario Práctico en Insolvencia de Persona Natural de Academia FLM»
-     C  13.11 «A partir del dos de diciembre» (la pantalla muestra la fecha corregida: 1 de diciembre) · 14.87 «veinte horas de formación» · 16.41–18.60 «clases en vivo …»
+     C  13.11 «A partir del dos de diciembre» (locución actual: «primero de diciembre») · 14.87 «veinte horas de formación» · 16.41–18.60 «clases en vivo …»
      D  19.00 «Con campus virtual» · 20.16 «módulos a tu ritmo» · ~21.3 «y docentes expertos» (fin 22.49)
      E  22.94 «Paquete Básico» · 23.89 «cuatrocientos mil pesos» · 25.33–27.59 «con grabaciones del Congreso 2026»
      F  27.98 «Paquete Plus» · 28.86 «novecientos mil pesos» · 30.35–32.38 «con el Diplomado … incluido»
@@ -16,7 +16,7 @@
   const tl = gsap.timeline({ paused: true });
 
   /* ---------- mapa de tiempos: las marcas de diseño se trasladan a las frases reales de la voz (tools/timemap.json) ---------- */
-  const TM = [[0, 0], [0.25, 0.25], [1.67, 1.44], [3.42, 2.66], [5.95, 4.95], [6.85, 5.85], [7.45, 6.45], [7.89, 6.75], [8.35, 7.05], [9.65, 8.35], [11.65, 11.39], [12.65, 13.0], [14.85, 14.75], [16.05, 15.9], [18.6, 18.2], [19.0, 18.44], [20.15, 19.15], [21.3, 19.85], [22.75, 20.8], [23.88, 22.2], [25.33, 23.54], [27.45, 25.75], [28.85, 27.2], [30.3, 28.48], [31.75, 29.75], [32.55, 30.45], [32.65, 30.6], [33.75, 31.5], [35.55, 33.0], [37.3, 34.85], [37.75, 35.2], [38.95, 36.3], [42, 39]];
+  const TM = [[0, 0], [0.25, 0.25], [1.67, 1.74], [3.42, 3.61], [5.95, 6.1], [6.85, 7.0], [7.45, 7.65], [7.89, 8.1], [8.35, 8.5], [9.65, 9.75], [11.65, 11.4], [12.65, 13.2], [14.85, 15.52], [16.05, 16.95], [18.6, 19.2], [19.0, 19.55], [20.15, 20.72], [21.3, 21.86], [22.75, 23.2], [23.88, 24.37], [25.33, 25.74], [27.45, 28.25], [28.85, 29.31], [30.3, 30.69], [31.75, 32.3], [32.55, 32.95], [32.65, 33.05], [33.75, 34.17], [35.55, 36.13], [37.3, 38.0], [37.75, 38.27], [38.95, 39.4], [42, 42]];
   const mapT = (t) => {
     for (let i = 0; i < TM.length - 1; i++) {
       const [a0, b0] = TM[i], [a1, b1] = TM[i + 1];

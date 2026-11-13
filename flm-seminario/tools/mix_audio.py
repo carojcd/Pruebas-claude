@@ -15,7 +15,7 @@ import wave
 import numpy as np
 
 SR = 48000
-DUR = 39.0
+DUR = 42.0
 VO_START = 0.25
 N = int(SR * DUR)
 rng = np.random.default_rng(11)
@@ -153,5 +153,5 @@ if pk > 10 ** (-12 / 20):
 write_wav("assets/audio/music_bed.wav", bed)
 write_wav("assets/audio/sfx.wav", sfx)
 db = lambda x, m: 20 * np.log10(rms(x[m]) / vo_rms)
-print("música vs voz (habla): %.1f dB | (pausas): %.1f dB | pico música %.1f dBFS" % (db(bed, spoken), db(bed, ~spoken & (t > 1.5) & (t < 36.6)), 20 * np.log10(np.max(np.abs(bed)))))
+print("música vs voz (habla): %.1f dB | (pausas): %.1f dB | pico música %.1f dBFS" % (db(bed, spoken), db(bed, ~spoken & (t > 1.5) & (t < 39.9)), 20 * np.log10(np.max(np.abs(bed)))))
 print("efectos vs voz (habla): %.1f dB | pico efectos %.1f dBFS" % (db(sfx, spoken), 20 * np.log10(np.max(np.abs(sfx)) + 1e-12)))
